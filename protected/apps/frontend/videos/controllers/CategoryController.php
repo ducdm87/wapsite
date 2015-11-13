@@ -25,15 +25,18 @@ class CategoryController extends FrontEndController {
          
         $data['alias'] = $catAlias;
         $obj_category = $model->getCategory($catID, $catAlias);
-        
+          
         if($obj_category == false){
-            $this->redirect($this->createUrl("videos/"));
-        }
+            $this->redirect(Router::buildLink('videos'));
+        }        
         if($currentPage == 1)
             $data['items'] = $model->getItems($obj_category['id'], true,5);
         $start = ($currentPage - 1)*$limit;
         $data['items2'] = $model->getItems($obj_category['id'], false,$limit, $start);
        
+        
+        
+        
         if($obj_category['total'] > $start  + $limit ){            
             $page = $currentPage + 1;
         }else $page = $currentPage - 1;

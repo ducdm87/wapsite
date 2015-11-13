@@ -97,18 +97,19 @@ class Router{
         return $params;
     }
     
-    static function buildLink($app, $query)
+    static function buildLink($app, $query = null)
     {
         $app_router =  PATH_APPS_FRONT."$app/router.php";
         $functionName = $app."BuildRoute";
          
         if(file_exists($app_router)){
             require_once $app_router;
+          
             if(function_exists($functionName)){
                 $segments = $functionName($query);
                 
                 $link = "";
-                
+               
                 if(isset($query['menuID']) AND $query['menuID'] !=0){
                     $YiiMenu = YiiMenu::getInstance();
                     $item = $YiiMenu->getItem($query['menuID']);

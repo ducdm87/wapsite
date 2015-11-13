@@ -85,7 +85,7 @@ class Video extends CFormModel {
          
         if(count($items))
             foreach($items as & $item){
-                $params = array("view"=> "detail","id" =>$item['id'], "alias"=>$item['alias'],"catID" => $item['catID'], "cat_alias"=>$item['cat_alias'] );
+                $params = array("view"=> "detail","id" => $item['id'], "alias" => $item['alias'],"catID" => $item['catID'], "cat_alias"=>$item['cat_alias']);                
                 $item['link'] = Router::buildLink('videos', $params);
                 addObjectID($item['id'], "videos");
             }
@@ -125,7 +125,11 @@ class Video extends CFormModel {
                 ->queryRow();
         $item['slug'] = $item['id']."-".$item['alias'];
         $item['catslug'] = $item['catID']."-".$item['cat_alias'];
-        $item['link'] = Yii::app()->createUrl("videos/detail", array("id"=>$item['id'],"alias"=>$item['alias']));
+        
+        $params = array("view"=> "detail","id" =>$item['id'], "alias"=>$item['alias'],"catID" => $item['catID'], "cat_alias"=>$item['cat_alias'] );
+        $item['link'] = Router::buildLink('videos', $params);
+        
+         
         $item['link_view'] = Yii::app()->createUrl("videos/setview", array("id"=> $item['id']));
         $item['link_like'] = Yii::app()->createUrl("videos/likevideo", array("id"=> $item['id']));
 //        $item['link2'] = Yii::app()->createUrl("videos/detail", array("alias"=>$item['alias']));

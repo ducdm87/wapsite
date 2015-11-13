@@ -61,7 +61,6 @@ function fnHelperFindVideosMenu() {
 function VideosBuildRoute(& $query) {
     $segments = array();
     if (isset($query['view'])) {
-        
         if ($query['view'] == "home") {
             if($menuID = fnHelperFindVideosMenu()){
                 $query['menuID'] = $menuID;
@@ -85,11 +84,12 @@ function VideosBuildRoute(& $query) {
                 if($menuID = fnHelperFindVideosMenuCategory($query['catID'])){
                      $query['menuID'] = $menuID;
                  }else{
+                     if($menuID = fnHelperFindVideosMenu()){
+                        $query['menuID'] = $menuID;
+                    } 
                      $segments[] = $query['cat_alias'];
-                 }
-                 if($menuID = fnHelperFindVideosMenu()){
-                    $query['menuID'] = $menuID;
-                } 
+                 }                 
+                 
                 $segments[] = $query['id']."-".$query['alias'];
                 $query['_suffix'] = ".html";
                 unset($query['catID']);
@@ -100,6 +100,10 @@ function VideosBuildRoute(& $query) {
         unset($query['view']);
         unset($query['id']);
         unset($query['alias']);
+    }else{
+        if($menuID = fnHelperFindVideosMenu()){
+            $query['menuID'] = $menuID;
+        }
     }
    
     return $segments;

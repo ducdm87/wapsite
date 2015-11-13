@@ -40,7 +40,7 @@
                                         <div class="col-md-6 row-box">
                                             <div class="media item">
                                                 <div class="media-left entry-thunb">
-                                                    <a href="<?php echo $this->createUrl('videos/detail?id=' . $item['id'] . '&alias=' . $item['alias']) ?>">
+                                                    <a href="<?php echo $item['link']; ?>">
                                                         <img class="media-object" src="<?php echo $item['image']; ?>" alt="Media <?php echo $item['title'] ?>">
                                                         <span class="entry_time"><?php echo $item['duration'] ?></span>
                                                     </a>

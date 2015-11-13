@@ -13925,3 +13925,79 @@ Stack trace:
 REQUEST_URI=/hai-huoc
 in D:\wamp\www\bhmedia\wapsite\protected\apps\frontend\videos\controllers\CategoryController.php (19)
 in D:\wamp\www\bhmedia\wapsite\index.php (51)
+2015/11/13 05:02:38 [error] [php] Missing argument 2 for Router::buildLink(), called in D:\wamp\www\bhmedia\wapsite\protected\apps\frontend\videos\controllers\CategoryController.php on line 32 and defined (D:\wamp\www\bhmedia\wapsite\protected\router.php:100)
+Stack trace:
+#0 D:\wamp\www\bhmedia\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\wamp\www\bhmedia\wapsite\framework\web\CController.php(286): CategoryController->runAction()
+#2 D:\wamp\www\bhmedia\wapsite\framework\web\CController.php(265): CategoryController->runActionWithFilters()
+#3 D:\wamp\www\bhmedia\wapsite\framework\web\CWebApplication.php(282): CategoryController->run()
+#4 D:\wamp\www\bhmedia\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/hai-huoc
+in D:\wamp\www\bhmedia\wapsite\protected\router.php (100)
+in D:\wamp\www\bhmedia\wapsite\protected\apps\frontend\videos\controllers\CategoryController.php (32)
+in D:\wamp\www\bhmedia\wapsite\index.php (51)
+2015/11/13 05:13:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "backend/menus/categories/edit".' in D:\wamp\www\bhmedia\wapsite\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\wamp\www\bhmedia\wapsite\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/menus/c...')
+#1 D:\wamp\www\bhmedia\wapsite\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\wamp\www\bhmedia\wapsite\protected\components\WebApplicationEndBehavior.php(38): CApplication->run()
+#3 [internal function]: WebApplicationEndBehavior->runEnd('backend')
+#4 D:\wamp\www\bhmedia\wapsite\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#5 D:\wamp\www\bhmedia\wapsite\backend.php(19): CComponent->__call('runEnd', Array)
+#6 D:\wamp\www\bhmedia\wapsite\backend.php(19): CWebApplication->runEnd('backend')
+#7 {main}
+REQUEST_URI=/backend/menus/categories/edit
+HTTP_REFERER=http://dev.wapsite.com/backend/menus/menutypes
+---
+2015/11/13 05:13:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "backend/menus/categories/edit".' in D:\wamp\www\bhmedia\wapsite\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\wamp\www\bhmedia\wapsite\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/menus/c...')
+#1 D:\wamp\www\bhmedia\wapsite\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\wamp\www\bhmedia\wapsite\protected\components\WebApplicationEndBehavior.php(38): CApplication->run()
+#3 [internal function]: WebApplicationEndBehavior->runEnd('backend')
+#4 D:\wamp\www\bhmedia\wapsite\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#5 D:\wamp\www\bhmedia\wapsite\backend.php(19): CComponent->__call('runEnd', Array)
+#6 D:\wamp\www\bhmedia\wapsite\backend.php(19): CWebApplication->runEnd('backend')
+#7 {main}
+REQUEST_URI=/backend/menus/categories/edit
+HTTP_REFERER=http://dev.wapsite.com/backend/menus/menuitems?menu=6
+---
+2015/11/13 05:13:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "backend/menus/categories/edit".' in D:\wamp\www\bhmedia\wapsite\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\wamp\www\bhmedia\wapsite\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/menus/c...')
+#1 D:\wamp\www\bhmedia\wapsite\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\wamp\www\bhmedia\wapsite\protected\components\WebApplicationEndBehavior.php(38): CApplication->run()
+#3 [internal function]: WebApplicationEndBehavior->runEnd('backend')
+#4 D:\wamp\www\bhmedia\wapsite\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#5 D:\wamp\www\bhmedia\wapsite\backend.php(19): CComponent->__call('runEnd', Array)
+#6 D:\wamp\www\bhmedia\wapsite\backend.php(19): CWebApplication->runEnd('backend')
+#7 {main}
+REQUEST_URI=/backend/menus/categories/edit
+HTTP_REFERER=http://dev.wapsite.com/backend/menus/menutypes
+---
+2015/11/13 05:13:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "backend/menus/categories/edit".' in D:\wamp\www\bhmedia\wapsite\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\wamp\www\bhmedia\wapsite\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/menus/c...')
+#1 D:\wamp\www\bhmedia\wapsite\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\wamp\www\bhmedia\wapsite\protected\components\WebApplicationEndBehavior.php(38): CApplication->run()
+#3 [internal function]: WebApplicationEndBehavior->runEnd('backend')
+#4 D:\wamp\www\bhmedia\wapsite\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#5 D:\wamp\www\bhmedia\wapsite\backend.php(19): CComponent->__call('runEnd', Array)
+#6 D:\wamp\www\bhmedia\wapsite\backend.php(19): CWebApplication->runEnd('backend')
+#7 {main}
+REQUEST_URI=/backend/menus/categories/edit
+HTTP_REFERER=http://dev.wapsite.com/backend/menus/menuitems?menu=1
+---
+2015/11/13 05:18:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "backend/menus/categories/edit".' in D:\wamp\www\bhmedia\wapsite\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\wamp\www\bhmedia\wapsite\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/menus/c...')
+#1 D:\wamp\www\bhmedia\wapsite\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\wamp\www\bhmedia\wapsite\protected\components\WebApplicationEndBehavior.php(38): CApplication->run()
+#3 [internal function]: WebApplicationEndBehavior->runEnd('backend')
+#4 D:\wamp\www\bhmedia\wapsite\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#5 D:\wamp\www\bhmedia\wapsite\backend.php(19): CComponent->__call('runEnd', Array)
+#6 D:\wamp\www\bhmedia\wapsite\backend.php(19): CWebApplication->runEnd('backend')
+#7 {main}
+REQUEST_URI=/backend/menus/categories/edit
+HTTP_REFERER=http://dev.wapsite.com/backend/menus/editmenuitem?menu=1&cid=19
+---

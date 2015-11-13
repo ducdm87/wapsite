@@ -82,11 +82,12 @@ function articleBuildRoute(& $query) {
                  if($menuID = fnHelperFindMenuCategory($query['catID'])){
                      $query['menuID'] = $menuID;
                  }else{
+                     if($menuID = fnHelperFindMenuArticles()){
+                        $query['menuID'] = $menuID;
+                     }
                      $segments[] = $query['cat_alias'];
                  }
-                 if($menuID = fnHelperFindMenuArticles()){
-                    $query['menuID'] = $menuID;
-                }
+                 
                 $segments[] = $query['id']."-".$query['alias'];
                 $query['_suffix'] = ".html";
             }
