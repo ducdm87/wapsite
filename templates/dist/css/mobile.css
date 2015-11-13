@@ -1,0 +1,137 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 25, 2015, 4:38:49 PM
+    Author     : Duong
+*/
+
+@media(min-width:768px){
+    .users #wrapper .container{
+        width: 530px;
+    }
+    .no-pading-left{
+        padding-left: 0px;
+    }
+    .no-pading-right{
+        padding-right: 0px;
+    }
+    #wrapper{
+        min-height: 300px;
+    }
+
+}
+
+@media(max-width:767px){
+    .mb-no-pading{
+        padding: 0px;
+    }
+    .navbar-nav>li {
+        /*float: left;*/
+    }
+    .navbar-nav {
+        float: left;
+        margin: 0;
+    }
+    .navbar-nav>li>a:last-child {
+        padding-left: 15px !important; 
+    }
+    .navbar-nav>li>a {
+        padding-right: 15px !important; 
+    }
+
+    .entry-body .item{
+        margin: 25px 0;
+        padding: 15px 0 15px;
+    }
+    .break-line{
+        margin: 0px !important;
+    }
+    .dialog-message p {
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .page-home .well {
+        min-height: 20px;
+        padding: 0;
+        margin-bottom: 20px;
+        background-color: transparent; 
+        border:0;
+        border-radius: 0px !important;
+        -webkit-box-shadow: none; 
+        box-shadow:none;
+        height: auto;
+    }
+    .row-mobile{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .no-padding-md{
+        padding: 0px;
+    }
+    .navbar-nav>li {
+        border-right:none;
+    }
+
+    .navbar-brand {
+        height: auto; 
+        clear: inherit;
+    }
+
+    .navbar-toggle{
+        position: absolute;
+        right: 0;
+        bottom: 0px;
+
+    }
+    .navbar-toggle .icon-bar{
+        background-color: red;
+    }
+    .navbar-collapse{
+        background: #000000;
+        opacity: 0.7;
+    }
+    .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+        background-color: transparent !important;
+    }
+    .search {
+        padding: 5px 0;
+        width: 230px;
+        height: 30px;
+        position: relative;
+        left: 10px;
+        float: left;
+        line-height: 22px;
+    }
+
+    .search input {
+        position: absolute;
+        width: 0px;
+        float: Left;
+        margin-left: 210px;
+        -webkit-transition: all 0.7s ease-in-out;
+        -moz-transition: all 0.7s ease-in-out;
+        -o-transition: all 0.7s ease-in-out;
+        transition: all 0.7s ease-in-out;
+        height: 30px;
+        line-height: 18px;
+        padding: 0 2px 0 2px;
+        border-radius:1px;
+    }
+
+    .search:hover input, .search input:focus {
+        width: 200px;
+        margin-left: 0px;
+    }
+
+    .search .btn {
+        height: 30px;
+        position: absolute;
+        right: 0;
+        top: 5px;
+        border-radius:0;
+    }
+
+}

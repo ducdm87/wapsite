@@ -1,0 +1,5 @@
+[Tue Oct 16 16:10:35 2012] [doLogin] [soap] [client 113.160.55.90 ]  [  ] [ 1 ] [ Login thanh cong ] [ vyW6EHPCGnzs7500YtCJ7ATBs9XNs4/0 ] 
+[Tue Oct 16 16:10:37 2012] [doCardCharge] [soap] [client 113.160.55.90 ]  [ 159457516 ] [ 10 ] [ Yeu cau nhap ma the dung dinh dang ] [ Target: 1 | PINCard: 12121 | Result_Amount:  ] 
+[Wed Oct 17 09:33:14 2012] [doLogin] [soap] [client 113.160.55.90 ]  [  ] [ 1 ] [ Login thanh cong ] [ yDQZkV0lFWfTnrwy6TLyEMclKk8vs2uU ] 
+[Wed Oct 17 09:45:40 2012] [doLogin] [soap] [client 113.160.55.90 ]  [  ] [ 1 ] [ Login thanh cong ] [ yDQZkV0lFWfTnrwy6TLyEMclKk8vs2uU ] 
+[Wed Oct 17 09:53:11 2012] [doCardCharge] [soap] [client 113.160.55.90 ]  [ 159499867 ] [ 10 ] [ Yeu cau nhap ma the dung dinh dang ] [ Target: manhnv | PINCard: 121212 | Result_Amount:  ] 

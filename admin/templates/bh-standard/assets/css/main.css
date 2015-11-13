@@ -1,0 +1,543 @@
+
+
+.left{ float: left; }
+.right{ float: right; }
+.width-5{ 	width: 5%; }
+.width-10{ 	width: 10%; }
+.width-15{ 	width: 15%; }
+.width-20{ 	width: 20%; }
+.width-25{ 	width: 25%; }
+.width-30{ 	width: 30%; }
+.width-35{ 	width: 35%; }
+.width-40{ 	width: 40%; }
+.width-45{ 	width: 45%; }
+.width-50{ 	width: 50%; }
+.width-55{ 	width: 55%; }
+.width-60{ 	width: 60%; }
+.width-65{ 	width: 65%; }
+.width-70{ 	width: 70%; }
+.width-75{ 	width: 75%; }
+.width-80{ 	width: 80%; }
+.width-85{ 	width: 85%; }
+.width-90{ 	width: 90%; }
+.width-95{ 	width: 95%; }
+
+div.toolbar {
+    float: right;
+    padding: 0;
+    text-align: right;
+}
+div.header {
+    background-repeat: no-repeat;
+    color: #0B55C4;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 48px;
+    margin-left: 10px;
+    padding-left: 55px;
+}
+
+#toolbar-box{
+    background: none repeat scroll 0 0 #FBFBFB;
+    margin-bottom: 10px;
+}
+
+div.t, div.b {
+    height: 6px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+div#toolbar-box div.m {
+    padding: 0;
+}
+div.m {
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    padding: 0 8px;
+}
+
+
+div#toolbar-box div.t, div#element-box div.section-box div.t {
+    background: url("../images/j_border.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+div#toolbar-box div.t div.t, div#element-box div.section-box div.t div.t {
+    background: url("../images/j_crn_tr_med.png") no-repeat scroll 100% 0 rgba(0, 0, 0, 0);
+}
+div#toolbar-box div.t div.t div.t, div#element-box div.section-box div.t div.t div.t {
+    background: url("../images/j_crn_tl_med.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+div#toolbar-box div.b, div#element-box div.section-box div.b {
+    background: url("../images/j_border.png") repeat-x scroll 0 100% rgba(0, 0, 0, 0);
+}
+div#toolbar-box div.b div.b, div#element-box div.section-box div.b div.b {
+    background: url("../images/j_crn_br_med.png") no-repeat scroll 100% 0 rgba(0, 0, 0, 0);
+}
+div#toolbar-box div.b div.b div.b, div#element-box div.section-box div.b div.b div.b {
+    background: url("../images/j_crn_bl_med.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+table.toolbar td {
+    color: #666666;
+    height: 48px;
+    padding: 1px 1px 1px 4px;
+    text-align: center;
+}
+
+table.toolbar a {
+    border: 1px solid #FBFBFB;
+    cursor: pointer;
+    display: block;
+    float: left;
+    padding: 1px 5px;
+    white-space: nowrap;
+}
+
+table.toolbar span {
+    display: block;
+    float: none;
+    height: 32px;
+    margin: 0 auto;
+    width: 32px;
+}
+
+
+
+
+table.admintable td.key, table.admintable td.paramlist_key {
+    background-color: #F6F6F6;
+    border-bottom: 1px solid #E9E9E9;
+    border-right: 1px solid #E9E9E9;
+    color: #666666;
+    font-weight: bold;
+    text-align: right;
+    width: 200px;
+}
+table.admintable td {
+    padding: 3px;
+}
+
+input, select {
+    border: 1px solid #C0C0C0;
+}
+
+
+#system-message{
+    margin: 10px 0 0 5px !important;
+    padding-left: 0;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+#system-message .warning{
+    background-color: #C3D2E5;
+    border-bottom: 3px solid #84A7DB;
+    border-top: 3px solid #84A7DB;
+    color: #0055BB;
+    padding: 2px 0 2px 10px;
+}
+
+#system-message .notice{
+    background-color: #E6C0C0;
+    border-bottom: 3px solid #DE7A7B;
+    border-top: 3px solid #DE7A7B;
+    color: #CC0000;
+    padding: 2px 0 2px 10px;
+}
+
+table.adminlist {
+    background-color: #E7E7E7;
+    border-spacing: 1px;
+    color: #666666;
+    width: 100%;
+    position: relative;
+}
+table.adminlist thead th {
+    background: none repeat scroll 0 0 #F0F0F0;
+    border-bottom: 1px solid #999999;
+    border-left: 1px solid #FFFFFF;
+    color: #666666;
+    text-align: center;
+}
+table.adminlist td, table.adminlist th {
+    padding: 4px;
+}
+table.adminlist thead td, table.adminlist thead td {
+    background: none repeat scroll 0 0 #F0F0F0;
+    border-bottom: 1px solid #999999;
+    border-left: 1px solid #FFFFFF;
+    color: #666666;
+    text-align: center;
+}
+
+table.adminlist tbody tr {
+    background-color: #FFFFFF;
+    text-align: left;
+}
+
+table.adminlist tbody tr td {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #FFFFFF;
+    height: 25px;
+}
+table.adminlist tbody tr td img.thumbs {
+    max-height: 140px;
+    width: 120px;
+}
+
+table.adminlist tbody tr.row1 {
+    background: none repeat scroll 0 0 #F9F9F9;
+    border-top: 1px solid #FFFFFF;
+}
+table.adminlist tbody tr.row0:hover td, table.adminlist tbody tr.row1:hover td {
+    background-color: #FFFFDD;
+}
+
+table.adminlist tr.hightlight{
+    color: #0000FF;
+}
+
+.col-lg-3 {
+    width: 33%;
+}
+.row .col-xs-6 {
+    width: 40%;
+}
+
+.navbar-inverse .navbar-nav .current .dropdown-menu{
+    display: block;
+}
+.navbar-inverse .navbar-nav .current a.parent{
+    background-color: #080808;
+    color: #FFFFFF;
+}
+
+.navbar-inverse .navbar-nav .current a{
+    color: #FFFFFF !important;
+}
+
+.row .text-right {
+    width: 60%;
+}
+
+fieldset.adminform {
+    border: 1px solid #CCCCCC;
+    margin: 0 10px 10px;
+    padding: 5px;
+    text-align: left;
+}
+
+.adminform legend {
+    color: #0B55C4;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0 5px;
+    margin-bottom: 0px;
+    width: auto;
+    border: none;
+}
+.btn-controls{
+    cursor: pointer;
+    float: left;
+    margin: 0 3px;
+    height: 32px;    
+    width: 12px;
+}
+.btn-delete{
+    background: url("../images/item_delete.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.btn-edit{
+    background: url("../images/item_edit.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.btn-controls-16{
+    cursor: pointer;
+    float: left;
+    margin: 0 3px;
+    height: 16px;    
+    width: 16px;
+}
+.btn-trash-16{
+    background: url("../images/trash-icon-16.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.btn-delete-16{
+    background: url("../images/icon-16-delete.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.btn-edit-16{
+    background: url("../images/edit-icon-16.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.btn-revert-16{
+    background: url("../images/revert-icon-16.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.btn-preview-16{
+    background: url("../images/preview-icon-16.png") no-repeat scroll 0 0px rgba(0, 0, 0, 0);
+}
+
+#add-record{
+    background: url("../images/item_add.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    cursor: pointer;
+    float: left;
+    height: 32px;
+    margin: 0 3px;    
+    padding: 0 0 0 25px;
+    outline: none;
+}
+
+.save-btn {
+    background: linear-gradient(#76C80A, #3D9A05) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+    height: 26px;
+    margin-top: 9px;
+    text-align: center;
+    width: 105px;
+}
+
+#list-data-sub-field .input-box img {
+    margin: 2px 0 0 2px;
+    cursor: pointer;
+}
+#list-data-sub-field .input-box {
+    margin: 0 0 5px;
+}
+
+
+#gallery-preview {
+    background: none repeat scroll 0 0 #333333;
+    border: 1px solid #CCCCCC;
+    color: #FFFFFF;
+    display: none;
+    padding: 5px;
+    position: absolute;
+}
+
+#edit-template{
+
+}
+#edit-template .listfield {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    width: 300px;
+    position: relative;    
+}
+#edit-template .listfield li {
+    border-bottom: 1px solid;
+    list-style-type: none;
+    padding: 5px 10px;  
+    overflow: hidden;
+}
+#edit-template .listfield li.hover {
+    background: #3D9A05;
+}
+#edit-template .listfield li .left{ font-size: 12px; }
+#edit-template .listfield li .left .title{
+    font-weight: bold;
+    text-transform: capitalize;
+}
+#edit-template .listfield li .right{}
+#edit-template .tbl-detail-field{
+
+}
+#edit-template .listfield .arrow {
+    background: url("../images/arrow_left.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: none;
+    height: 18px;
+    left: 301px;
+    position: absolute;
+    width: 10px;
+    z-index: 99;
+}
+#edit-template .listfield .field-detail {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #000000;
+    display: none;
+    left: 310px;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    width: auto;   
+    height: 670px;
+}
+#edit-template .listfield .field-detail-inner {
+
+    padding: 5px;
+}
+
+#edit-template .listfield .field-detail .items{
+    border-top: 1px solid #7F9DB8;
+    margin: 5px 0 0;
+}
+#edit-template .listfield .field-detail .item{
+    margin: 5px 0 0;
+}
+
+/* popup */
+#sbox-window {
+    background-color: #000000;
+    overflow: visible;
+    padding: 10px;
+    position: absolute;
+    text-align: left;
+}
+#sbox-overlay {
+    background-color: #000000;
+    position: absolute;
+}
+#sbox-content.sbox-content-iframe {
+    overflow: visible;
+}
+#sbox-content {
+    background-color: #FFFFFF;
+    clear: both;
+    height: 100%;
+    overflow: auto;
+    width: 100%;
+}
+#sbox-btn-close {
+    background: url("../images/closebox.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    border: medium none;
+    height: 30px;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 30px;
+}
+
+#control-slide{ position: relative; display: none; }
+#control-slide .buttun {
+    cursor: pointer;
+    height: 130px;
+    position: absolute;
+    top: -300px;
+    width: 66px;
+    z-index: 9999;
+}
+#control-slide .control-back {
+    background: url("../images/button-back.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    left: 0;
+}
+#control-slide .control-next {
+    background: url("../images/button-next.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    right: 0;
+}
+
+/* sort table */
+.JQsortable .ui-state-default{
+    cursor: move;
+}
+.JQsortable .ui-state-default:hover{
+
+}
+#status-order-field{
+    background: none repeat scroll 0 0 #C3D2E5;
+    color: #0055BB;
+    margin: 0 0 0 50px;
+    padding: 5px 10px;
+    display: none;
+}
+
+.JQtabs{
+    margin: 10px 0 -1px;
+    padding: 0;
+    z-index: 50;
+    list-style-type: none;
+    overflow: hidden;
+}
+.JQtabs li{
+    cursor: pointer;
+    background: none repeat scroll 0 0 #F0F0F0;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    color: #666666;
+    float: left;
+    margin-left: 3px;
+    padding: 4px 10px;
+}
+.JQtabs li.active
+{
+    background: none repeat scroll 0 0 #F9F9F9;
+    border-bottom: 1px solid #F9F9F9;
+    color: #0000FF; 
+    z-index: 100;
+}
+
+
+.JQtabs-detail{
+    border: 1px solid #CCCCCC;
+    clear: both;
+    font-size: 14px;
+    padding: 10px;
+}
+
+/* phan trang*/
+
+.mypageing{
+    display: table;
+    height: 25px;
+    margin: 0 auto;
+}
+.mypageing .display{ 
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    margin: 0 10px;     
+}
+.mypageing .list-pageing {   display: inline-table; margin-left: 5px;}
+
+.paging {
+    float: left;
+    height: 24px;
+    margin: 0 10px 0 0;
+}
+.paging ul {
+    list-style-type: none;
+    margin: 2px;
+    padding: 0;
+}
+
+.paging ul li {
+    border: 1px solid #DDDDDD;
+    clear: none;
+    cursor: pointer;
+    float: left;
+    font-size: 13px;
+    height: 20px;
+    line-height: 20px;
+    margin: 0 2px;
+}
+
+.paging .pagenav-active {
+    background: none repeat scroll 0 0 #D72800;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.paging .pagenav-inactive {
+    background: url("../images/pagenavi-bg.jpg") repeat-x scroll 0 0 #FFFFFF;
+}
+.paging ul li a, .paging ul li span {
+    padding: 3px 10px;
+}
+.paging .pagenav-inactive:hover {
+    background: none repeat scroll 0 0 #D72800;
+    color: #FFFFFF;
+    text-align: center;
+}
+.paging .pagenav-inactive:hover a {
+    color: #FFFFFF;
+}
+
+
+.clr {
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}

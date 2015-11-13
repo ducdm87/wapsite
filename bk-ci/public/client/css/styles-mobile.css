@@ -1,0 +1,75 @@
+*{margin:0;padding:0}
+a{text-decoration:none}
+body{background:url(../images/bg_body.png);font-family: Tahoma,Geneva,sans-serif;font-size: 12px;line-height: 15px}
+input{height:24px;text-align:center;border: 1px solid #a10101;border-radius:3px;width:77px;line-height:24px}
+select{height: 24px;border:1px solid #a10101;border-radius:3px;width:auto;margin-bottom:6px;padding: 0 20 0 8px;-webkit-appearance: none;background: url(../images/aro_1.png)  93% no-repeat #fff;}
+header .px640 .status{background:url(../images/black.png) repeat;text-align:center}
+.socuoi{width:10px;height:10px}
+header .px640 .title img{width:25px;height:24px;margin-top:15px;margin-left:15px;float:left}
+.center .px640{height:auto;float:left;width:100%}
+.tab_3 p{color:#FFF;font-family:tahoma;font-size:12px;font-weight:400;margin-bottom: 6px;}
+.but_1{text-align:center;width:100%;display:block;float:right;padding-top:10px;position:relative;padding-bottom:10px}
+.but_1 b{font-family:tahoma;color:#FFF;font-size:12px;position:absolute;padding-top:9px;padding-left:20px}
+.thongbao{display:block;height:auto;border:2px solid #b00104;border-top:40px solid b00104;border-radius:5px;position:relative;margin:20px 10px 0}
+.thongbao p{font-family:tahoma;font-size:12px;color:0;margin-top:6px}
+.thongbao p b{font-weight:700;color:0}
+.nd{padding-top:20px;padding-bottom:30px}
+.ketqua{padding-top:40px}
+.ketqua strong{color:#a80b08}
+.cangiua span{font-family:tahoma;color:#FFF;font-size:12px;display:inline-block}
+#tit_content{text-align:center;padding:12px 0;display:block;font-family:tahoma;font-size:12px;color:#FFF;background:#B00104}
+header .px640{max-width:100%;margin:auto}
+#share{float:right;margin-right:15px;width:29px;height:28px;margin-top:-23px}
+header .px640 .title{background:url(../images/header.png) repeat;height:auto;margin-top:-1px;text-align:center;padding-bottom:15px}
+#xemtiep{font-family:tahoma;font-size:12px;color:#222;display:block;width:85px;background:url(../images/but_2.png) no-repeat;height:31px;padding:7px 0 0}
+.center .left{width:269px;float:left;padding-top:15px}
+.center .left b{font-family:tahoma;font-size:12px;color:#FFF;font-weight:400;padding-right:10px}
+.center .right{width:200px;float:left;padding-top:11px}
+.center .right b{font-family:tahoma;font-size:12px;color:#FFF;background:url(../images/but_1.png) no-repeat;width:116px;height:36px;display:block;padding:9px 0 0 19px}
+.deco .cangiua{width:196px;display:block;height:15px;background:url(../images/deco_1.png) no-repeat;margin:auto}
+table,td,th{border:1px solid #cdcdcd;border-collapse:collapse}
+th{background-color:#c8c8c8;color:#434343}
+table{width:100%;margin:auto}
+td{text-align:center;border-left:0;border-top:0;border-bottom:0;padding:10px 0}
+#chan{background-color:#c8c8c8}
+.noidung{margin-top:12px}
+strong.red{color:#A60B07;font-weight:400}
+table.tbl-ds td{text-align:left}
+.content .cangiua .k1{width:100px;text-align:center;padding-top:40px;float:left;padding-right:20px;padding-left:20px}
+.content .cangiua .k1 a b{color:#222;font-family:tahoma;font-size:12px;padding-top:10px;display:block}
+.thanh1{display:block;width:84%;float:left;padding-left:15px;text-align:left}
+.thanh1 p{font-family:tahoma;display:inline-block;float:right;position:absolute;right:-75px;font-size:12px;top:-8px}
+.thanh1 .thongso{width:53%;float:left;height:10px;background-color:#414141;margin-right:50px;position:relative}
+.thanh1 .thongso .hienthi{width:100%;float:left;height:10px;background-color:#b00104}
+#db01{width:90%;float:left;height:10px;background-color:#b00104}
+td span{float:left;padding-left:15px;color:#222!important}
+#ts{background-color:#e8dcdc;font-weight:700}
+.tab_1{text-align:right;width:50%;height:auto;float:left;margin-bottom:8px}
+.tab_2{width:auto;height:auto;float:left;padding-left:8px;margin-bottom:8px}
+.tab_3{width:100%;display:block;float:left;text-align:center;position:relative;clear:both}
+.tab_3 p b{padding-top:9px;font-family:tahoma;color:#FFF;font-size:12px;margin-left:-30px}
+#ds{background:url(../images/dis_3.png) no-repeat;width:135px;height:27px;font-family:tahoma;font-size:12px;border:0;padding:5px}
+#bd{background:url(../images/dis_1.png) no-repeat;width:57px;height:31px;padding-left:19px;border:0}
+#dam{font-weight:700}
+header{background:url(../images/header.png) repeat;width:100%;float:left}
+.content .cangiua{width:auto;height:auto;margin:auto}
+tr{font-weight:400}
+.xemtiep{padding-top:20px;width:85px;height:auto;margin:auto}
+.aab{max-width: 293px!important;width:auto!important}
+.center{height:auto;position:relative;float:left;width:100%;padding:0;margin:-1px auto auto}
+.content{display:block;width:100%;background:url(../images/bg_content.png) repeat;margin-top:0;text-align:center;position:relative}
+.deco{width:196px;background:url(../images/deco_1.png) no-repeat;height:15px;margin:auto}
+#socuoi{height:10px;width:10px!important}
+#socuoidb{height:10px;width:10px}
+.center .cangiua{display:block;height:auto;text-align:center;padding-bottom:10px;margin:auto}
+th,td{font-family:tahoma;font-size:12px;font-weight:400;padding:10px}
+#conf1{width:100px;border:0;font-family:tahoma;color:#FFF;background-color: #a10101;border-radius:12px;cursor:pointer;padding:0 6px}
+header .px640 .title b{font-family:tahoma;font-size:14px;color:#FFF;padding-top:18px;display:block;margin-right:45px}
+#mogi{height:25px;padding-left:8px;border:1px solid #a10101;width:auto;border-radius:3px}
+input.ismall{width:50px!important}
+.ds{width:50px}
+.cal1{width:100px;margin-bottom:6px;padding: 0 24 0 8px;  -webkit-appearance: none;  background: url(../images/lich_2.png) 93% no-repeat #fff;}
+label,.cangiua b{font-family:tahoma;font-size:12px;color:#FFF}
+footer,header .px640 .status img{width:478px;margin:auto}
+.so{font-family:tahoma;font-size:12px;color:white;margin-bottom: 16px;display: inline-block;}
+.msg{margin:10px;text-align:justify}

@@ -1,0 +1,15 @@
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/system.*
+RewriteRule ^(.*)$ index.php?/$1 [L]
+RewriteRule lg_captcha.jpg lg_captcha.php
+RewriteRule captcha.jpg captcha.php
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php?/$1 [L]
+
+RedirectMatch 301 \/xo-so-mien-bac$ /xo-so-mien-bac.html
+RedirectMatch 301 \/xo-so-mien-trung$ /xoso-mien-trung.html
+RedirectMatch 301 \/xo-so-mien-nam$ /xoso-mien-nam.html
+RedirectMatch 301 \/xoso-mien-trung$ /xoso-mien-trung.html
+RedirectMatch 301 \/xoso-mien-nam$ /xoso-mien-nam.html

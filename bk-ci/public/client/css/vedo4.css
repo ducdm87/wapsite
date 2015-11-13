@@ -1,0 +1,114 @@
+@charset "utf-8";
+body{padding:0;margin:0}
+a{text-decoration:none}
+.box_kqxs{font-family:Arial,Helvetica,sans-serif;border:2px solid #999;padding:0px}
+.box_kqxs td{min-width:3px}
+.box_kqxs .title{text-align:center;font-family:"Times New Roman",Times,serif;font-size:16px;vertical-align:middle;font-weight:bold;padding-top:2px;border-bottom:1px solid #666;height:26px;text-transform:uppercase}
+.box_kqxs .topsms{text-align:center;font-family:"Times New Roman",Times,serif;font-size:12px;vertical-align:middle;padding:0px;height:18px;overflow:hidden;line-height:18px}
+.box_kqxs .bottom{text-align:center;font-family:"Times New Roman",Times,serif;font-size:12px;vertical-align:middle;padding:0px;border-top:1px #666 solid;height:18px}
+.bkqmiennam{border:1px #999 solid;border-right:0px;border-bottom:0px ;size:11px;line-height:100%;margin:0 -1px}
+.bkqmiennam div{line-height:85%}
+.bkqmiennam td{vertical-align:middle}
+.bkqmiennam .leftcl td{border:1px #999 solid;border-top:0px;border-left:0px;text-align:center;height:20px;padding:1px;width:60px;vertical-align:middle}
+.bkqmiennam .rightcl td{border:1px #999 solid;border-top:0px;border-left:0px;text-align:center;height:20px;padding:1px}
+.bkqmiennam .leftcl .thu{height:20px;font-weight:bold;font-size:13px;font-family:"Times New Roman",Times,serif}
+.bkqmiennam .leftcl .ngay{height:20px;font-weight:bold;font-size:11px;background-color:#f3f3f3}
+.bkqmiennam .rightcl .tinh{height:20px;font-weight:bold;font-size:13px;font-family:"Times New Roman",Times,serif}
+.bkqmiennam .rightcl .matinh{height:20px;font-weight:bold;font-size:13px;background-color:#f3f3f3}
+.bkqmiennam .leftcl .giai8{height:25px;font-size:11px}
+.bkqmiennam .rightcl .giai8{height:25px;font-weight:bold;font-size:25px;font-family:Arial,Helvetica,sans-serif;text-align:center;line-height:25px}
+.bkqmiennam .leftcl .giai7{height:22px;font-size:11px;background-color:#f3f3f3}
+.bkqmiennam .rightcl .giai7{text-align:center;height:22px;font-size:18px;font-weight:bold;background-color:#f3f3f3}
+.bkqmiennam .leftcl .giai6{height:54px;font-size:11px}
+.bkqmiennam .rightcl .giai6{text-align:center;height:54px;font-size:18px;font-weight:bold}
+.bkqmiennam .rightcl .giai6 div{clear:both;display:block}
+.bkqmiennam .leftcl .giai5{height:22px;font-size:11px;background-color:#f3f3f3}
+.bkqmiennam .rightcl .giai5{text-align:center;height:22px;font-size:18px;font-weight:bold;background-color:#f3f3f3}
+.bkqmiennam .leftcl .giai4{height:115px;font-size:11px}
+.bkqmiennam .rightcl .giai4{text-align:center;height:115px;font-size:18px;font-weight:bold}
+.bkqmiennam .rightcl .giai4 div{clear:both;display:block}
+.bkqmiennam .leftcl .giai3{height:36px;font-size:11px;background-color:#f3f3f3}
+.bkqmiennam .rightcl .giai3{text-align:center;height:36px;font-size:18px;font-weight:bold;background-color:#f3f3f3}
+.bkqmiennam .rightcl .giai3 div{clear:both;display:block}
+.bkqmiennam .leftcl .giai2{height:22px;font-size:11px}
+.bkqmiennam .rightcl .giai2{text-align:center;height:22px;font-size:18px;font-weight:bold}
+.bkqmiennam .leftcl .giai1{height:22px;font-size:11px;background-color:#f3f3f3}
+.bkqmiennam .rightcl .giai1{text-align:center;height:22px;font-size:18px;font-weight:bold;background-color:#f3f3f3}
+.bkqmiennam .leftcl .giaidb{height:27px;font-size:18px}
+.bkqmiennam .rightcl .giaidb{text-align:center;height:27px;font-weight:bold;font-size:22px}
+.bkqmientrung{border:1px #999 solid;border-right:0px;border-bottom:0px ;size:11px;line-height:100%;margin:0 -1px}
+.bkqmientrung div{line-height:85%}
+.bkqmientrung td{vertical-align:middle}
+.bkqmientrung .leftcl td{border:1px #999 solid;border-top:0px;border-left:0px;text-align:center;height:20px;padding:1px;width:60px;vertical-align:middle}
+.bkqmientrung .rightcl td{border:1px #999 solid;border-top:0px;border-left:0px;text-align:center;height:20px;padding:1px}
+.bkqmientrung .leftcl .thu{height:20px;font-weight:bold;font-size:13px;font-family:"Times New Roman",Times,serif}
+.bkqmientrung .leftcl .ngay{height:20px;font-weight:bold;font-size:11px;background-color:#f3f3f3}
+.bkqmientrung .rightcl .tinh{height:20px;font-weight:bold;font-size:13px;font-family:"Times New Roman",Times,serif}
+.bkqmientrung .rightcl .matinh{height:20px;font-weight:bold;font-size:13px;background-color:#f3f3f3}
+.bkqmientrung .leftcl .giai8{height:25px;font-size:11px}
+.bkqmientrung .rightcl .giai8{height:25px;font-weight:bold;font-size:25px;font-family:Arial,Helvetica,sans-serif;text-align:center;line-height:25px}
+.bkqmientrung .leftcl .giai7{height:22px;font-size:11px;background-color:#f3f3f3}
+.bkqmientrung .rightcl .giai7{text-align:center;height:22px;font-size:18px;font-weight:bold;background-color:#f3f3f3}
+.bkqmientrung .leftcl .giai6{height:54px;font-size:11px}
+.bkqmientrung .rightcl .giai6{text-align:center;height:54px;font-size:18px;font-weight:bold}
+.bkqmientrung .rightcl .giai6 div{clear:both;display:block}
+.bkqmientrung .leftcl .giai5{height:22px;font-size:11px;background-color:#f3f3f3}
+.bkqmientrung .rightcl .giai5{text-align:center;height:22px;font-size:18px;font-weight:bold;background-color:#f3f3f3}
+.bkqmientrung .leftcl .giai4{height:125px;font-size:11px}
+.bkqmientrung .rightcl .giai4{text-align:center;height:125px;font-size:18px;font-weight:bold}
+.bkqmientrung .rightcl .giai4 div{clear:both;display:block}
+.bkqmientrung .leftcl .giai3{height:36px;font-size:11px;background-color:#f3f3f3}
+.bkqmientrung .rightcl .giai3{text-align:center;height:36px;font-size:18px;font-weight:bold;background-color:#f3f3f3}
+.bkqmientrung .rightcl .giai3 div{clear:both;display:block}
+.bkqmientrung .leftcl .giai2{height:22px;font-size:11px}
+.bkqmientrung .rightcl .giai2{text-align:center;height:22px;font-size:18px;font-weight:bold}
+.bkqmientrung .leftcl .giai1{height:22px;font-size:11px;background-color:#f3f3f3}
+.bkqmientrung .rightcl .giai1{text-align:center;height:22px;font-size:18px;font-weight:bold;background-color:#f3f3f3}
+.bkqmientrung .leftcl .giaidb{height:27px;font-size:18px}
+.bkqmientrung .rightcl .giaidb{text-align:center;height:27px;font-weight:bold;font-size:22px}
+.box_kqxs_mienbac .boxtop .title{text-align:center;font-size:16px;vertical-align:middle;font-weight:bold;line-height:26px;text-transform:uppercase}
+.box_kqxs_mienbac .apdung{text-align:center;font-style:italic;font-size:13px;line-height:20px}
+.box_kqxs_mienbac .loaive{text-align:center;font-size:13px;line-height:20px;float:left;width:50%}
+.box_kqxs_mienbac .kyhieu{text-align:center;font-size:13px;line-height:20px;float:left;width:50%}
+.box_kqxs_mienbac .ngay{text-align:right;font-size:13px;line-height:20px;padding-right:10px}
+.box_kqxs_mienbac .txtngay{font-size:18px;font-family:Georgia,"Times New Roman",Times,serif;font-weight:bold}
+.box_kqxs_mienbac .bottom{text-align:right;font-size:13px;line-height:20px;font-weight:bold}
+.bkqmienbac{border:0px #999 solid;size:11px;width:100%}
+.bkqmienbac .title{height:35px;text-align:left;font-size:26px;vertical-align:middle;font-weight:bold;padding-left:25px}
+.bottom1{height:25px;font-size:12px;line-height:25px;vertical-align:middle;font-weight:bold;font-family:"Times New Roman",Times,serif;border-top:1px solid #999}
+.bottom2{height:25px;font-size:12px;line-height:25px;vertical-align:middle;font-weight:bold;font-family:"Times New Roman",Times,serif;border-top:1px solid #999}
+.bkqmienbac .leftcl{width:60px}
+.bkqmienbac .leftcl td{border:1px #999 solid;border-top:0px;border-left:0px;text-align:center;height:20px;padding:1px;width:50px}
+.bkqmienbac .rightcl td{border:1px #999 solid;border-top:0px;border-right:0px;border-left:0px;text-align:center;height:20px;padding:1px 5px 1px 5px;font-family:Tahoma,Geneva,sans-serif}
+.bkqmienbac .thu{border:1px #999 solid;border-top:0px;border-left:0px;height:30px;font-weight:bold;font-size:11px}
+.bkqmienbac .rightcl div{line-height:100%}
+.bkqmienbac .ngay{border:1px #999 solid;border-top:0px;border-left:0px;height:30px;text-align:left;padding-left:20px;font-weight:bold;font-size:11px}
+.bkqmienbac .rightcl .tinh{height:20px;font-weight:bold;font-size:11px}
+.bkqmienbac .rightcl .matinh{height:20px;font-weight:bold;font-size:11px;background-color:#f3f3f3}
+.bkqmienbac .leftcl .giai8{height:36px;font-size:11px}
+.bkqmienbac .rightcl .giai8{height:36px;font-weight:bold;color:#903;font-size:24px;line-height:100%}
+.bkqmienbac .leftcl .giai7{height:30px;font-size:11px;background-color:#f3f3f3}
+.bkqmienbac .rightcl .giai7{height:30px;font-size:25px;font-weight:bold;background-color:#F3F3F3;line-height:100%}
+.bkqmienbac .rightcl .giai7 div{width:25%;display:inline-block;float:left}
+.bkqmienbac .leftcl .giai6{height:30px;font-size:11px}
+.bkqmienbac .rightcl .giai6{height:30px;font-size:18px;font-weight:bold;line-height:100%}
+.bkqmienbac .rightcl .giai6 div{width:33%;display:inline-block;float:left}
+.bkqmienbac .leftcl .giai5{height:45px;font-size:11px;background-color:#f3f3f3}
+.bkqmienbac .rightcl .giai5{height:45px;font-size:18px;font-weight:bold;background-color:#F3F3F3;line-height:100%}
+.bkqmienbac .rightcl .giai5 div{width:33%;display:inline-block;float:left}
+.bkqmienbac .leftcl .giai4{height:45px;font-size:11px}
+.bkqmienbac .rightcl .giai4{height:45px;font-size:18px;font-weight:bold;line-height:100%}
+.bkqmienbac .rightcl .giai4 div{width:50%;display:inline-block;float:left}
+.bkqmienbac .leftcl .giai3{height:45px;font-size:11px;background-color:#f3f3f3}
+.bkqmienbac .rightcl .giai3{height:45px;font-size:18px;font-weight:bold;line-height:100%;background-color:#f3f3f3}
+.bkqmienbac .rightcl .giai3 div{width:33%;display:inline-block;float:left}
+.bkqmienbac .leftcl .giai2{height:30px;font-size:11px}
+.bkqmienbac .rightcl .giai2{height:30px;font-size:18px;font-weight:bold}
+.bkqmienbac .rightcl .giai2 div{width:50%;display:inline-block;float:left}
+.bkqmienbac .leftcl .giai1{height:35px;font-size:11px;background-color:#f3f3f3}
+.bkqmienbac .rightcl .giai1{height:35px;font-size:30px;font-weight:bold;background-color:#F3F3F3;line-height:100%}
+.bkqmienbac .leftcl .giaidb{height:45px;font-size:11px;font-weight:bold}
+.bkqmienbac .rightcl .giaidb{height:45px;font-weight:bold;font-size:40px;line-height:100%}
+.vdtopdate{float:right;position:relative;padding-right:5px}
+.vdtopname{float:left;padding-left:5px;font-weight:bold;font-style:italic}
+.vdbottom{font-weight:bold;font-style:italic}

@@ -1,0 +1,23 @@
+*{font-family:arial}
+.ketqua{float:left; border-top:#4E4E4E 1px solid; border-left:#4E4E4E 1px solid; margin-bottom:10px; margin-right:10px; border-collapse: collapse}
+.ketqua *{font-weight:bold; font-size:12px; text-align:center; padding:5; border-bottom:#4E4E4E 1px solid; border-right:#4E4E4E 1px solid}
+.ketqua th{background:#A7A7A7}
+.ketqua .leftcol{font-weight:normal}
+
+.dau{float:left; border-top:#4E4E4E 1px solid; border-left:#4E4E4E 1px solid; margin-bottom:10px; margin-right:10px; border-collapse: collapse}
+.dau *{font-weight:bold; font-size:12px; text-align:left; padding:5; border-bottom:#4E4E4E 1px solid; border-right:#4E4E4E 1px solid}
+.dau th{background:#A7A7A7}
+
+.dit{float:left; border-top:#4E4E4E 1px solid; border-left:#4E4E4E 1px solid; margin-bottom:10px; margin-right:10px; border-collapse: collapse}
+.dit *{font-weight:bold; font-size:12px; text-align:left; padding:5; border-bottom:#4E4E4E 1px solid; border-right:#4E4E4E 1px solid; text-a}
+.dit th{background:#A7A7A7}
+
+.lastrow *{padding:0; *padding:10; *visibility:hidden}
+
+.ketquacau{background:#3F414E; margin-top:3px}
+.ketquacau th{background:#C0C0C0; text-align:center}
+.ketquacau td{background:#FFFFFF; text-align:center}
+
+.cau_vt1{color:#000000; font-size:18px; font-weight:bold; text-decoration:underline}
+.cau_vt2{color:#000000; font-size:23px; font-weight:bold; text-decoration:underline}
+.cau_lo{background:#FED683; padding:2px; font-size:15px; font-weight:bold; border:#575757 1px solid}

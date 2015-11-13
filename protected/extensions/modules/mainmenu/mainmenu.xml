@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<extension type="module" version="1.0" client="site">
+    <name>main menu</name>
+    <author>ducdm87</author>
+    <version>1.0</version>
+    <description>module mainmenu</description>
+    <creationDate>September 4</creationDate>
+
+	
+	
+    <config>
+        <param title="Module Parameters" path="">
+            <field label="Menu Name" name="menutype" type="menutype" description="menu type" />
+            <field label="Menu Style" name="menu_style" type="list" default="1" description="menu style">
+                 <option value="horiz_flat">Horizontal</option>
+                 <option value="vert_flat">Vertical</option>
+            </field>
+            <field label="Always show sub-menu Items" name="showAllChildren" type="radio" default="1" description="Display all sub-menu items regardless of whether or not parent is active.">
+                 <option value="1">Yes</option>
+                 <option value="0">No</option>
+            </field>            
+        </param> 
+        <param title="Advanced Parameters" path="">
+             <field label="Module Class Suffix" name="moduleclass_sfx" type="text" description="Module Class Suffix" />             
+             <field label="Header" name="header" type="textarea" rows="3" description="Header for module" />
+             <field label="Footer" name="footer" type="textarea" rows="3" description="Footer for module" />
+             <field label="Caching" name="cache" type="radio" default="1" description="Display all sub-menu items regardless of whether or not parent is active.">
+                 <option value="1">Use Global</option>
+                 <option value="0">No Caching</option>
+            </field>
+            <field label="Cache Time" name="cache_time" default="600" type="text" description="The period of time in second before the Module is re-cached." class="text_area" />
+        </param>
+    </config>
+</extension>

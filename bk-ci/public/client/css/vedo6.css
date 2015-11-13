@@ -1,0 +1,197 @@
+body {
+	font-size: 11pt;
+	font-family: Arial, Helvetica, sans-serif;
+	height: 842px;
+	/*width: 779.92px;*/
+	width: 745px;
+	margin-left: auto;
+	margin-right: auto;
+}
+table.zebra tbody td {
+	border-bottom: 1px solid #000;
+}
+table.zebra tbody tr:first-child td {
+	border-top: 1px solid #000;
+}
+table.zebra tbody tr.odd {
+	background: none repeat scroll 0 0 #F8F8F8;
+}
+table.zebra tbody tr:nth-of-type(2n+1) {
+	background: none repeat scroll 0 0 #F8F8F8;
+}
+table.zebra {
+	width: 100%;
+	border: 1px solid #000;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08);
+	border-collapse: collapse
+}
+table.zebra caption {
+	color: #333333;
+}
+table.zebra thead {
+	background: none repeat scroll 0 0 #FFFFFF;
+}
+table.zebra thead tr td, table.zebra thead tr th {
+	border-top: 1px solid #000;
+}
+table.zebra thead th {
+	color: #88888A;
+	font-weight: bold;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	text-transform: uppercase;
+}
+table.zebra tbody tr:hover, table.zebra tbody tr:nth-of-type(2n+1):hover, table.zebra tbody tr.odd:hover {
+	background: none repeat scroll 0 0 #FFFFFF;
+}
+table.zebra tr td, table.zebra tr th {
+	border-left: 1px solid #000;
+}
+table.zebra tfoot tr {
+	border-bottom: 1px solid #C7C7C7;
+	color: #444444;
+}
+.giai_dac_biet {
+	line-height: 105%;
+	font-size: 18px;
+	font-weight: bold;
+}
+.giai_nhat {
+	line-height: 105%;
+	font-size: 18px;
+	font-weight: bold;
+}
+.giai_nhi {
+	line-height: 105%;
+	font-size: 18px;
+	font-weight: bold;
+}
+.giai_ba {
+	line-height: 105%;
+	font-size: 18px;
+	font-weight: bold;
+}
+.giai_tu {
+	line-height: 105%;
+	font-size: 18px;
+	font-weight: bold;
+}
+.giai_nam {
+	line-height: 105%;
+	font-size: 18px;
+	font-weight: bold;
+}
+.giai_sau {
+	line-height: 105%;
+	font-size: 18px;
+	font-weight: bold;
+}
+.giai_bay {
+	line-height: 105%;
+	font-size: 18px;
+	font-weight: bold;
+}
+.giai_tam {
+	line-height: 100%;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+}
+.ten_giai_nhat {
+	font-size: 9px;
+}
+.ten_giai_nhi {
+	font-size: 9px;
+}
+.ten_giai_ba {
+	font-size: 9px;
+}
+.ten_giai_tu {
+	font-size: 9px;
+}
+.ten_giai_nam {
+	font-size: 9px;
+}
+.ten_giai_sau {
+	font-size: 9px;
+}
+.ten_giai_bay {
+	font-size: 9px;
+}
+.ten_giai_tam {
+	vertical-align: middle;
+	font-size: 9px;
+}
+.ten_giai_dac_biet {
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 110%
+}
+.giai_cuoi {
+	line-height: 160%;
+	font-size: 27px !important;
+}
+.mien_bac_giai_dac_biet {
+	line-height: 130%;
+	font-size: 40px;
+	font-weight: bold;
+}
+.mien_bac_giai_nhat {
+	line-height: 145%;
+	font-size: 30px;
+	font-weight: bold;
+}
+.mien_bac_giai_nhi {
+	line-height: 170%;
+	font-size: 18px;
+	font-weight: bold;
+}
+.mien_bac_giai_ba {
+	line-height: 170%;
+	font-size: 18px;
+	font-weight: bold;
+}
+.mien_bac_giai_tu {
+	line-height: 180%;
+	font-size: 17px;
+	font-weight: bold;
+}
+.mien_bac_giai_nam {
+	line-height: 170%;
+	font-size: 18px;
+	font-weight: bold;
+}
+.mien_bac_giai_sau {
+	line-height: 170%;
+	font-size: 18px;
+	font-weight: bold;
+}
+.mien_bac_giai_bay {
+	line-height: 160%;
+	font-size: 27px;
+	font-weight: bold;
+}
+.mien_bac_giai_tam {
+	line-height: 160%;
+	font-size: 27px;
+	font-weight: bold;
+	text-align: center;
+}
+.mien_bac_giai_cuoi {
+	line-height: 160%;
+	font-size: 27px !important;
+}
+
+#thu_ngay {
+	text-transform: uppercase;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 13px;
+	font-weight: bold;
+	height: 20px;
+}
+#ngay_thang {
+	text-transform: uppercase;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 13px;
+	font-weight: bold;
+	height: 20px;
+}

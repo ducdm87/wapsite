@@ -1,0 +1,1 @@
+This is the string data or code I want to place in the newly created file

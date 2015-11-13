@@ -1,0 +1,1591 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="ctl00_Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>
+	Tổng công ty Điện lực thành phố Hồ Chí Minh Online
+</title><meta http-equiv="content-language" content="en-gb" /><meta name="description" /><meta name="keywords" /><meta name="author" /><meta name="copyright" /><meta name="googlebot" /><meta name="robots" /><link rel="icon" href="favicon.ico" type="image/x-icon" /><meta name="google-site-verification" content="h-WvKob53-XDOst9ZJpm8P-NmufAh-IF3LupLVdxzJ0" />
+	
+
+	
+	
+	<script type="text/javascript">
+
+	  
+
+	    function inp() {
+
+	        $('#rn_Queryskw_0').val("Đánh Câu Hỏi");
+
+	        $('#rn_Queryskw_0').focus(function () {
+	            if ($(this).val() == 'Đánh Câu Hỏi')
+	                $(this).val('');
+	        });
+
+	        $('#rn_Queryskw_0').blur(function () {
+	            if ($(this).val() == '')
+	                $(this).val('Đánh Câu Hỏi');
+	        });
+
+	    }
+
+	    setTimeout(inp, 1300);
+
+	    document.write('<style>.home-nojs { display:none;visibility:hidden; }</style>');
+	
+	</script><style>.home-nojs { display:none;visibility:hidden; }</style>
+
+<link rel="stylesheet" type="text/css" href="css/global.css" media="all" /><link rel="stylesheet" type="text/css" href="css/index.css" media="all" /><link rel="stylesheet" type="text/css" href="css/indexTT.css" media="all" /><link href="script/ads/js-image-slider.css" rel="stylesheet" type="text/css" />
+    <script src="script/ads/js-image-slider.js" type="text/javascript"></script>
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+     <script src="script/ads/js-image-slider-TC.js" type="text/javascript"></script>
+
+</head>
+
+
+
+<body id="athome" bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+    
+<div id="wrapping">  
+
+       
+<script type="text/javascript">
+
+function startclock(){
+var curTime=new Date();
+var nhours=curTime.getHours();
+var nmins=curTime.getMinutes();
+var nsecn=curTime.getSeconds();
+var nday=curTime.getDay();
+var nmonth=curTime.getMonth();
+var ntoday=curTime.getDate();
+var nyear=curTime.getYear();
+var AMorPM="AM";
+if (nhours>=12)
+AMorPM="PM";
+else
+AMorPM="AM";
+
+if (nhours>=13)
+nhours-=12;
+if (nhours==0)
+nhours=12;
+if (nsecn<10)
+nsecn="0"+nsecn;
+if (nmins<10)
+nmins="0"+nmins;
+if (nday==0)
+nday="Chủ Nhật";
+if (nday==1)
+nday="Thứ Hai";
+if (nday==2)
+nday="Thứ Ba";
+if (nday==3)
+nday="Thứ Tư";
+if (nday==4)
+nday="Thứ Năm";
+if (nday==5)
+nday="Thứ Sáu";
+if (nday==6)
+nday="Thứ Bảy";
+nmonth+=1;
+if (nyear<=99)
+nyear= "19"+nyear;
+if ((nyear>99) && (nyear<2000))
+nyear+=1900;
+var d;
+var Str0="";
+if (nhours>9) Str0 = "";
+else Str0 = "0";
+d= document.getElementById("theClock");
+//d.innerHTML = " <span>" + Str0 + nhours + ":" + nmins + ":" + nsecn + " " + AMorPM + "</span>" + nday + ", " + ntoday + "/" + nmonth + "/" + nyear;
+d.innerHTML = " <span>" + Str0 + nhours + ":" + nmins + " " + AMorPM + " - " + "</span>" + ntoday + "/" + nmonth + "/" + nyear;
+setTimeout('startclock()',1000);
+}
+//]]>
+
+
+    </script>   
+    
+    
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        $(".txtSearch").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: "Default.aspx/SearchAjax",
+                    data: "{ 'article': '" + request.term + "' }",
+                    dataType: "json",
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    dataFilter: function (data) { return data; },
+                    success: function (data) {
+                        response($.map(data.d, function (item) {
+                            return {
+                                value: item.NameArticle
+                            }
+                        }))
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(textStatus);
+                    }
+                });
+            },
+            minLength: 2
+        });
+});
+       
+
+      
+
+    </script>
+
+    
+      
+    <div id="ttop">
+<div id="headwrap">
+			
+			<!-- start: header -->
+			
+
+<style>    
+body#athome {background: url("Image/no.gif") no-repeat;}    
+/*body#athome {
+    background: url("Image/banner-evnhcmc.gif") no-repeat;
+    background-size:58.4em 150px;
+    background-position:55% 0px;
+    
+}
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{ 
+    body#athome {
+        background: url("Image/banner-evnhcmc.gif") no-repeat;
+        background-size:58.4em 150px;
+        background-position:57% 0px;
+    
+    }
+}*/
+
+#ttop{margin-top:0px;}
+#query,#website-submit-button {
+  
+}
+.tierOne {
+    border: 1px solid #ECECEC;
+}
+
+</style>
+<div>
+
+                <a href="default.aspx">
+                <img src="upload_images/logo/23092014159Ibanner-top.gif" style="width:100%;max-height:300px" /></a>
+            
+</div>
+<!--			
+<a indepth="true" href="default.aspx">
+    <div id="hcmlogo">
+    <div id="hcmbanner"></div>   
+    </div>       
+</a>  -->
+
+			<!-- <div id="print">
+				<h4>Page address: </h4>
+				<p id="printurl"></p>
+			</div> -->
+
+			
+		
+			
+			<!--
+			<div id="search">
+				<form name="SearchForm" method="get" action="/search-results.php">
+					<input name="query" value="Search" onfocus="if(this.value == 'Search'){this.value = '';}" onblur="if(this.value == ''){this.value='Search';}" type="text">
+					<p style="display:none;"><a href="/about-us/cookies/cookie-policy.shtml" title="Cookie Policy" class="lkOrange">How we use cookies</a></p>
+				</form>
+			</div>
+			-->
+
+			<div id="nav">
+	<!-- start: navigation -->
+				<ul style="display: block;" class="megamenu">
+					<li style="float: left;" class="mainNav blu mm-item"><a class="mm-item-link " href="default.aspx" style="padding-right: 10px;padding-left: 10px;"><img src="Image/Home.png" style="width:20px"/></a>
+						
+					</li>
+					
+					<li id="mhoatdong" style="float: left;" class="mainNav blu forbusiness mm-item"><a class="mm-item-link  selected" href="grouptintuc.aspx">CÁC HOẠT ĐỘNG</a>
+                    
+                    <div id="mhoatdong1" class="mm-item-content" style="width: auto; display: none; z-index:999;"><div class="mm-content-base">
+							<div class="contentNav">
+                      
+                                <ul>
+									<li><h3><a>TIN TỨC</a></h3></li>
+
+                                    
+									            <li><a href="tintuc.aspx?ID=1"> .:. Tổng công ty </a></li>
+                                                 
+									
+									            <li><a href="tintuc.aspx?ID=4"> .:. Đảng - Đoàn thể </a></li>
+                                                 
+									
+									            <li><a href="tintuc.aspx?ID=18"> .:. Văn hóa EVNHCMC </a></li>
+                                                 
+									
+									            <li><a href="tintuc.aspx?ID=35"> .:. Ký kết </a></li>
+                                                 
+									
+									            <li><a href="tintuc.aspx?ID=15"> .:. Học tập & làm theo tấm gương đạo đức Hồ Chí Minh </a></li>
+                                                 
+									
+                                   
+                                     					
+								</ul>
+                                
+                                <ul>
+									<li><h3><a>TRUYỀN THÔNG</a></h3></li>
+
+                                    
+									            <li><a href="tintuc.aspx?ID=45"> .:. Thông cáo báo chí </a></li>
+                                                 
+									
+									            <li><a href="dtintuc.aspx?ID=5377"> .:. Người phát ngôn, cung cấp thông tin cho Báo - Đài </a></li>
+                                                 
+									
+									            <li><a href="tintuc.aspx?ID=16"> .:. Điểm báo - Phản hồi </a></li>
+                                                 
+									
+									            <li><a href="tintuc.aspx?ID=36"> .:. Họ nói về chúng tôi </a></li>
+                                                 
+									
+                                   
+                                     					
+								</ul>
+                                
+                                <ul>
+									<li><h3><a>THÔNG TIN CẦN BIẾT</a></h3></li>
+
+                                    
+									            <li><a href="tinebookread.aspx?Loai=ds"> .:. Các điểm thu tiền điện </a></li>
+                                                 
+									
+									            <li><a href="tintuc.aspx?ID=34"> .:. Thông báo từ EVNHCMC </a></li>
+                                                 
+									
+									            <li><a href="phapche.aspx"> .:. Pháp Chế </a></li>
+                                                 
+									
+									            <li><a href="tintuc.aspx?ID=29"> .:. Thông tin tuyển dụng </a></li>
+                                                 
+									
+									            <li><a href="hoigopy.aspx"> .:. Hỏi đáp – góp ý </a></li>
+                                                 
+									
+                                   
+                                     					
+								</ul>
+                                
+                                <ul>
+									<li><h3><a>KHẮP NƠI</a></h3></li>
+
+                                    
+									            <li><a href="tintuc.aspx?ID=3"> .:. Tin trong ngành </a></li>
+                                                 
+									
+									            <li><a href="tintuc.aspx?ID=44"> .:. Tin vắn khắp nơi </a></li>
+                                                 
+									
+									            <li><a href="tintuc.aspx?ID=19"> .:. Đặc san kỹ thuật </a></li>
+                                                 
+									
+                                   
+                                     					
+								</ul>
+                                
+                                <ul>
+									<li><h3><a>CẨM NANG - ẤN PHẨM</a></h3></li>
+
+                                    
+									            <li><a href="tinebook.aspx?ID=6"> .:. Báo cáo thường niên </a></li>
+                                                 
+									
+									            <li><a href="tinebookread.aspx?Loai=vhevn"> .:. Cẩm nang Văn hóa EVN </a></li>
+                                                 
+									
+									            <li><a href="tinebookread.aspx?Loai=vh"> .:. Cẩm nang Văn hóa EVNHCMC </a></li>
+                                                 
+									
+									            <li><a href="tinebookread.aspx?Loai=attk"> .:. Cẩm nang sử dụng điện An toàn – Tiết kiệm </a></li>
+                                                 
+									
+									            <li><a href="tinebook.aspx?ID=2"> .:. Bản tin Công đoàn </a></li>
+                                                 
+									
+									            <li><a href="tinebook.aspx?ID=3"> .:. Bản tin Zoom </a></li>
+                                                 
+									
+                                   
+                                     					
+								</ul>
+                                
+                              
+                               
+								
+ 								<div class="clear"></div>					
+							</div>
+						</div></div>
+						
+					</li>
+					 <li style="float: left;" class="mainNav blu largebusiness  mm-item"><a class="mm-item-link  " href="lienhe.aspx">LIÊN HỆ</a>
+						
+					</li>
+                    <li style="float: left;" class="mainNav blu forbusiness navspc mm-item"><a class="mm-item-link" href="MoiThau.aspx">THÔNG TIN MỜI THẦU</a>
+                    </li>
+                   
+
+					
+					<li style="margin-right:0px" class="cmenu mm-item flag"><a class="mm-item-link" target="_blank" href="http://english.hcmpc.com.vn/customer/tintuc.aspx"><img src="Image/us.jpg"/></a>					
+					</li>
+                    <li  class="cmenu mm-item flag"><a class="mm-item-link" href=""><img src="Image/vn.jpg"/></a>					
+					</li>
+                    <li  class="corpNav divider cmenu mm-item"><a class="mm-item-link" href="sitemap.aspx">SƠ ĐỒ WEB</a>
+                    </li>
+                      <li  class="corpNav divider cmenu mm-item"><a class="mm-item-link" href="logo.aspx">LIÊN KẾT</a>
+                    </li>
+					<li id="mgioithieu" class="corpNav divider cmenu mm-item"><a class="mm-item-link" href="gioithieu.aspx">GIỚI THIỆU</a>
+						<div id="mgioithieu1" class="mm-item-content" style="width: 857px; display: none; z-index:999;"><div class="mm-content-base">
+							
+                            <div class="contentNav">
+
+								<ul>
+									<li><h3><a href="gioithieu.aspx?tab=1">Tổng Quan</a></h3></li>									
+                                    <li><a href="gioithieu.aspx?tab=2">Quá Trình Đầu Tư</a></li>
+									<li><a href="gioithieu.aspx?tab=3">Lĩnh Vực Hoạt Động</a></li>
+                                    <li><a href="thanhtich.aspx">Các Thành Tích Đạt Được</a></li>	
+                                    <li><a href="gioithieu.aspx?tab=8">Thông Tin Chung</a></li>								
+								</ul>
+                                <ul>
+									<li><h3><a href="chinhsachchatluong.aspx">Chính Sách Chất Lượng</a></h3></li>								
+                               </ul>
+								<ul>
+
+									<li><h3><a href="gioithieu.aspx?tab=4">Sơ Đồ Tổ Chức</a></h3></li>
+									<li><a href="gioithieu.aspx?tab=5">Các Đơn Vị Thành Viên</a></li>
+									<li><a href="gioithieu.aspx?tab=6">Giới Thiệu Công Nghệ Mới</a></li>									
+								</ul>				
+
+								<ul>
+									<li><h3><a href="gioithieu.aspx?tab=7">Sơ Đồ Lưới Điện Truyền Tải Năm 2004</a></h3></li>
+									<li><a href="gioithieu.aspx?tab=7">Sơ Đồ Lưới Điện Truyền Tải Năm 2005</a></li>
+									<li><a href="gioithieu.aspx?tab=7">Sơ Đồ Lưới Điện Truyền Tải Năm 2006</a></li>
+									<li><a href="gioithieu.aspx?tab=7">Sơ Đồ Lưới Điện Truyền Tải Năm 2008</a></li>
+									<li><a href="gioithieu.aspx?tab=7">Sơ Đồ Lưới Điện Truyền Tải Năm 2010</a></li>
+
+								</ul>
+							
+								
+ 								<div class="clear"></div>					
+							</div>
+						</div></div>
+					</li>
+                  
+                    
+					
+                    
+					
+					<li class="clear-fix"></li>
+				</ul>
+	<!-- end: navigation -->			
+			</div>
+           
+		 
+		<div class="clear"></div>
+			
+			<!-- end: header -->
+			
+		</div>
+        <div style="float:left;width: 932px;margin-top:4px;margin-bottom:6px;border-bottom: 1px solid #999999;margin-left:30px;align=center" >
+             <div style="font-size:13px; float:left;color:#036;padding-top: 6px;width: 580px;">          
+            <div style="font-weight: bold;float:left;padding-right:10px">Tin nóng:</div>
+            <div style="float:left;width:503px;">
+            <marquee align="center" direction="left" scrollamount="4">
+           <a style='color: #036;' href='dtintuc.aspx?ID=5529'>Cuộc thi vẽ tranh biếm họa về đề tài tiết kiệm điện – Bảo đảm an ninh năng lượng Quốc gia trên báo chí cả nước</a><span style='color:#ff0000;font-weight:bold'>  |   </span><a style='color: #036;' href='dtintuc.aspx?ID=5506'>Điện lực TPHCM đón nhận Huân chương Độc lập hạng Nhất</a>  
+                   
+            </marquee>
+            </div>
+            </div>
+             <div id="theClock" style="text-align: right;width: 150px;font-size:13px; float:right;color:#036;padding-top: 6px;">
+          
+            <script type="text/javascript">                startclock();</script>
+
+            </div>
+            <div id="search">		
+				<form name="SearchForm" method="get" role="search" action="timkiem.aspx">
+				
+	        
+            				
+	
+
+					<input id="query" name="q" value="Tìm kiếm" onfocus="if(this.value == 'Tìm kiếm'){this.value = '';}" onblur="if(this.value == ''){this.value='Tìm kiếm';}" type="text">
+					
+					<input id="website-submit-button" value="" name="IDButton" class="website-submit-button" type="submit">
+								
+				</form>
+				
+                
+				
+			</div>
+           
+        </div>
+    <!-- <div id="hcmaward"></div> -->
+     </div>	
+       <form name="aspnetForm" method="post" action="" id="aspnetForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNTE1MjU5NzE5D2QWAmYPZBYCAgUPZBYCAgEPZBYCAgEPZBYEZg8WAh4LXyFJdGVtQ291bnQCChYUZg9kFgJmDxUDBTE1NjU0Iy4vdXBsb2FkX2ltYWdlcy9ub3JtYWwvSU1HXzU2NTEuanBnRFBDIER1ecOqbiBI4bqjaTogxJHhu5FpIHRob+G6oWkgduG7m2kgbmfGsOG7nWkgZMOibiBIdXnhu4duIE5ow6AgQsOoZAIBD2QWAmYPFQMFMTU2NDkdLi91cGxvYWRfaW1hZ2VzL25vcm1hbC9IMi5KUEdLRVZOIEhDTUM6IEN1bmcgY+G6pXAgxJFp4buHbiDhu5VuIMSR4buLbmgsIGFuIHRvw6BuIHRyw6puIMSR4buLYSBiw6BuVFAuSENNZAICD2QWAmYPFQMFMTU2NDcoLi91cGxvYWRfaW1hZ2VzL25vcm1hbC9leHBvIDIwMTUgKDEpLmpwZ1lFVk5IQ01DOiBUw6BpIHRy4bujIGNow61uaCBjaG8gVHJp4buFbiBsw6NtIHF14buRYyB04bq/IFZJRVROQU0gRVRFIHbDoCBFTkVSVEVDIEVYUE8gMjAxNWQCAw9kFgJmDxUDBTE1NjQ2JC4vdXBsb2FkX2ltYWdlcy9ub3JtYWwvSU1HXzg0MDBzLmpwZ2BI4buZaSB0aOG6o28g4oCcVHJhbyDEkeG7lWkga2luaCBuZ2hp4buHbSB24buBIGPDtG5nIHTDoWMgcGjDsm5nIGNo4buRbmcgdHLhu5ltIGPhuq9wIMSRaeG7h27igJ1kAgQPZBYCZg8VAwUxNTY0MyMuL3VwbG9hZF9pbWFnZXMvbm9ybWFsL0lNR180MTU3LmpwZ0FUUC5IQ006IFjhu60gcGjhuqF0IG7hurduZyBow6BuaCB2aSB2aSBwaOG6oW0gc+G7rSBk4bulbmcgxJFp4buHbmQCBQ9kFgJmDxUDBTE1NjM5Iy4vdXBsb2FkX2ltYWdlcy9ub3JtYWwvZXZuaGNtYzEuanBnU0VWTiBIQ01DOiBDaMSDbSBzw7NjIGtow6FjaCBow6BuZyBxdWEg4bupbmcgZOG7pW5nIHRyw6puIMSRaeG7h24gdGhv4bqhaSBkaSDEkeG7mW5nZAIGD2QWAmYPFQMFMTU2MzgxLi91cGxvYWRfaW1hZ2VzL25vcm1hbC8xMzA4MTI0NjgyMDQ1MDI5OTVjc2toLmpwZ0NUaHUgNSw2IHThu4kgxJHhu5NuZyB0aeG7gW4gxJFp4buHbiBxdWEgV2Vic2l0ZSDigJxjc2toLmhjbXBjLnZu4oCdZAIHD2QWAmYPFQMFMTU2MzAoLi91cGxvYWRfaW1hZ2VzL25vcm1hbC90YW5nY3VvbmdwY2NjLmpwZyhFVk4gSENNQzogVMSDbmcgY8aw4budbmcgY8O0bmcgdMOhYyBQQ0NDZAIID2QWAmYPFQMFMTU2Mjk2Li91cGxvYWRfaW1hZ2VzL25vcm1hbC90dXllbnRydXllbmhvY3NpbmhiaW5odGhhbmguanBnakVWTkhDTUMgdHV5w6puIHRydXnhu4FuIHPhu60gZOG7pW5nIMSRaeG7h24gYW4gdG/DoG4g4oCTIHRp4bq/dCBraeG7h20gY2hvIGjhu41jIHNpbmggcXXhuq1uIELDrG5oIFRo4bqhbmhkAgkPZBYCZg8VAwUxNTYyOCYuL3VwbG9hZF9pbWFnZXMvbm9ybWFsL2hvY2JvbmcyMDE1LmpwZ4MBVOG7lW5nIGPDtG5nIFR5IMSQaeG7h24gbOG7sWMgVFAuSOG7kyBDaMOtIE1pbmggcGjDoXQgdGjGsOG7n25nIGjhu41jIHNpbmggZ2nhu49pIHbDoCB0cmFvIGjhu41jIGLhu5VuZyBOZ3V54buFbiDEkOG7qWMgQ+G6o25oIDIwMTVkAgEPFgIfAAIKFhRmD2QWAmYPFQIFMTU2NTREUEMgRHV5w6puIEjhuqNpOiDEkeG7kWkgdGhv4bqhaSB24bubaSBuZ8aw4budaSBkw6JuIEh1eeG7h24gTmjDoCBCw6hkAgEPZBYCZg8VAgUxNTY0OUtFVk4gSENNQzogQ3VuZyBj4bqlcCDEkWnhu4duIOG7lW4gxJHhu4tuaCwgYW4gdG/DoG4gdHLDqm4gxJHhu4thIGLDoG5UUC5IQ01kAgIPZBYCZg8VAgUxNTY0N1lFVk5IQ01DOiBUw6BpIHRy4bujIGNow61uaCBjaG8gVHJp4buFbiBsw6NtIHF14buRYyB04bq/IFZJRVROQU0gRVRFIHbDoCBFTkVSVEVDIEVYUE8gMjAxNWQCAw9kFgJmDxUCBTE1NjQ2YEjhu5lpIHRo4bqjbyDigJxUcmFvIMSR4buVaSBraW5oIG5naGnhu4dtIHbhu4EgY8O0bmcgdMOhYyBwaMOybmcgY2jhu5FuZyB0cuG7mW0gY+G6r3AgxJFp4buHbuKAnWQCBA9kFgJmDxUCBTE1NjQzQVRQLkhDTTogWOG7rSBwaOG6oXQgbuG6t25nIGjDoG5oIHZpIHZpIHBo4bqhbSBz4butIGThu6VuZyDEkWnhu4duZAIFD2QWAmYPFQIFMTU2MzlTRVZOIEhDTUM6IENoxINtIHPDs2Mga2jDoWNoIGjDoG5nIHF1YSDhu6luZyBk4bulbmcgdHLDqm4gxJFp4buHbiB0aG/huqFpIGRpIMSR4buZbmdkAgYPZBYCZg8VAgUxNTYzOENUaHUgNSw2IHThu4kgxJHhu5NuZyB0aeG7gW4gxJFp4buHbiBxdWEgV2Vic2l0ZSDigJxjc2toLmhjbXBjLnZu4oCdZAIHD2QWAmYPFQIFMTU2MzAoRVZOIEhDTUM6IFTEg25nIGPGsOG7nW5nIGPDtG5nIHTDoWMgUENDQ2QCCA9kFgJmDxUCBTE1NjI5akVWTkhDTUMgdHV5w6puIHRydXnhu4FuIHPhu60gZOG7pW5nIMSRaeG7h24gYW4gdG/DoG4g4oCTIHRp4bq/dCBraeG7h20gY2hvIGjhu41jIHNpbmggcXXhuq1uIELDrG5oIFRo4bqhbmhkAgkPZBYCZg8VAgUxNTYyOIMBVOG7lW5nIGPDtG5nIFR5IMSQaeG7h24gbOG7sWMgVFAuSOG7kyBDaMOtIE1pbmggcGjDoXQgdGjGsOG7n25nIGjhu41jIHNpbmggZ2nhu49pIHbDoCB0cmFvIGjhu41jIGLhu5VuZyBOZ3V54buFbiDEkOG7qWMgQ+G6o25oIDIwMTVkZNArM4X2kJemAKnOFkcAFgaNL3eMqNGkb2Mt3jfUNZVB" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+</div>
+             
+    <div id="magictabs_iuluaf6q" class="magictabs_style_lightblue_rounded">
+	    
+<div id="middle">
+		
+			<!-- start: tier one -->
+            <style>
+            .topbox {
+                border: 1px solid #ececec;
+                border-bottom-left-radius: 0;
+                border-top-right-radius: 0;
+                box-shadow: 3px 3px 7px 0 rgb(224, 224, 224);
+                float: left;
+                height: 290px;
+                margin: 0px 20px 4px 0;
+                padding: 0;
+                position: relative;
+                width: 416px;
+            }
+            .bxslider3 .bx-caption
+            {
+            	bottom:5px;
+            }
+            .topbox .bx-wrapper .bx-prev { left: 5px; background: url('css/sprites.png') no-repeat scroll -50px -71px transparent; }
+            .topbox .bx-wrapper .bx-next { right: 5px; background: url('css/sprites.png') no-repeat scroll -82px -71px transparent; }
+            .topbox .bx-wrapper .bx-controls-direction a {               
+                z-index: 900;
+            }
+            .topbox .bx-wrapper .bx-caption span {                
+                font-size: 1.2em;
+                /*font-weight: bold;*/                
+            }
+            
+            
+            .latest {
+                background: none repeat scroll 0 0 #f9f9f9;
+                float: left;
+                
+                padding-bottom: 0px;
+                padding-right: 10px;
+                padding-left: 10px;
+                padding-top: 0px;
+                width: 175px;
+                height:290px;
+                overflow:auto;
+                right:0px;
+                position:absolute;
+            }
+            .latest h2 {
+    font-size: 13px;
+    line-height: 1.2em;
+     border-bottom: 1px solid #ddd;    
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    text-transform: uppercase; 
+}
+h2 a:link, h2 a:visited {
+    color: #036;
+}
+h2 a:hover {
+    color: #c00;
+}                      
+            .storylist li {
+                border-bottom: 1px solid #efefef;
+                font-size: 13px;
+                line-height: 1.3em;
+                margin-bottom: 7px;
+                padding-bottom: 7px;
+            }
+            .storylist li.last {
+                border-bottom: medium none;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+            
+            .storylist a:link, .storylist a:visited {
+                color: #036;
+                text-decoration: none;
+            }
+            .storylist a:hover, .storylist a:active {
+                color: #c00;
+            }
+            </style>
+            <div class="topbox" style="overflow:hidden">
+                <ul class="bxslider3">
+                    
+                            <li><a href="dtintuc.aspx?ID=15654"><img src="./upload_images/normal/IMG_5651.jpg" width="416" height="290" title="PC Duyên Hải: đối thoại với người dân Huyện Nhà Bè" /></a></li>
+                        
+                            <li><a href="dtintuc.aspx?ID=15649"><img src="./upload_images/normal/H2.JPG" width="416" height="290" title="EVN HCMC: Cung cấp điện ổn định, an toàn trên địa bànTP.HCM" /></a></li>
+                        
+                            <li><a href="dtintuc.aspx?ID=15647"><img src="./upload_images/normal/expo 2015 (1).jpg" width="416" height="290" title="EVNHCMC: Tài trợ chính cho Triễn lãm quốc tế VIETNAM ETE và ENERTEC EXPO 2015" /></a></li>
+                        
+                            <li><a href="dtintuc.aspx?ID=15646"><img src="./upload_images/normal/IMG_8400s.jpg" width="416" height="290" title="Hội thảo “Trao đổi kinh nghiệm về công tác phòng chống trộm cắp điện”" /></a></li>
+                        
+                            <li><a href="dtintuc.aspx?ID=15643"><img src="./upload_images/normal/IMG_4157.jpg" width="416" height="290" title="TP.HCM: Xử phạt nặng hành vi vi phạm sử dụng điện" /></a></li>
+                        
+                            <li><a href="dtintuc.aspx?ID=15639"><img src="./upload_images/normal/evnhcmc1.jpg" width="416" height="290" title="EVN HCMC: Chăm sóc khách hàng qua ứng dụng trên điện thoại di động" /></a></li>
+                        
+                            <li><a href="dtintuc.aspx?ID=15638"><img src="./upload_images/normal/130812468204502995cskh.jpg" width="416" height="290" title="Thu 5,6 tỉ đồng tiền điện qua Website “cskh.hcmpc.vn”" /></a></li>
+                        
+                            <li><a href="dtintuc.aspx?ID=15630"><img src="./upload_images/normal/tangcuongpccc.jpg" width="416" height="290" title="EVN HCMC: Tăng cường công tác PCCC" /></a></li>
+                        
+                            <li><a href="dtintuc.aspx?ID=15629"><img src="./upload_images/normal/tuyentruyenhocsinhbinhthanh.jpg" width="416" height="290" title="EVNHCMC tuyên truyền sử dụng điện an toàn – tiết kiệm cho học sinh quận Bình Thạnh" /></a></li>
+                        
+                            <li><a href="dtintuc.aspx?ID=15628"><img src="./upload_images/normal/hocbong2015.jpg" width="416" height="290" title="Tổng công Ty Điện lực TP.Hồ Chí Minh phát thưởng học sinh giỏi và trao học bổng Nguyễn Đức Cảnh 2015" /></a></li>
+                        
+                </ul> 
+            </div>
+            <div class="latest">
+	            <h2><a href="grouptintuc.aspx">Tin tức nổi bật</a></h2>
+    
+                        <ul class="storylist" style="list-style: none outside none;">
+                        
+                            <li class="">
+                                <a href="dtintuc.aspx?ID=15654" style=" text-align:justify;">
+                                        PC Duyên Hải: đối thoại với người dân Huyện Nhà Bè
+                                </a><p></p></li>
+                            
+                            <li class="">
+                                <a href="dtintuc.aspx?ID=15649" style=" text-align:justify;">
+                                        EVN HCMC: Cung cấp điện ổn định, an toàn trên địa bànTP.HCM
+                                </a><p></p></li>
+                            
+                            <li class="">
+                                <a href="dtintuc.aspx?ID=15647" style=" text-align:justify;">
+                                        EVNHCMC: Tài trợ chính cho Triễn lãm quốc tế VIETNAM ETE và ENERTEC EXPO 2015
+                                </a><p></p></li>
+                            
+                            <li class="">
+                                <a href="dtintuc.aspx?ID=15646" style=" text-align:justify;">
+                                        Hội thảo “Trao đổi kinh nghiệm về công tác phòng chống trộm cắp điện”
+                                </a><p></p></li>
+                            
+                            <li class="">
+                                <a href="dtintuc.aspx?ID=15643" style=" text-align:justify;">
+                                        TP.HCM: Xử phạt nặng hành vi vi phạm sử dụng điện
+                                </a><p></p></li>
+                            
+                            <li class="">
+                                <a href="dtintuc.aspx?ID=15639" style=" text-align:justify;">
+                                        EVN HCMC: Chăm sóc khách hàng qua ứng dụng trên điện thoại di động
+                                </a><p></p></li>
+                            
+                            <li class="">
+                                <a href="dtintuc.aspx?ID=15638" style=" text-align:justify;">
+                                        Thu 5,6 tỉ đồng tiền điện qua Website “cskh.hcmpc.vn”
+                                </a><p></p></li>
+                            
+                            <li class="">
+                                <a href="dtintuc.aspx?ID=15630" style=" text-align:justify;">
+                                        EVN HCMC: Tăng cường công tác PCCC
+                                </a><p></p></li>
+                            
+                            <li class="">
+                                <a href="dtintuc.aspx?ID=15629" style=" text-align:justify;">
+                                        EVNHCMC tuyên truyền sử dụng điện an toàn – tiết kiệm cho học sinh quận Bình Thạnh
+                                </a><p></p></li>
+                            
+                            <li class="">
+                                <a href="dtintuc.aspx?ID=15628" style=" text-align:justify;">
+                                        Tổng công Ty Điện lực TP.Hồ Chí Minh phát thưởng học sinh giỏi và trao học bổng Nguyễn Đức Cảnh 2015
+                                </a><p></p></li>
+                            
+                        </ul>
+        
+            </div>
+			<div class="tierOne" style="display:none">
+			
+				<!--<img src="Image/ah-t1.png" alt="Tiếp tục nâng cao hiệu quả sử dụng vốn, chất lượng cung ứng điện & chất lượng dịch vụ khách hàng"> 
+						
+				<h1 style=" font-size:28px;">"Tiếp tục nâng cao hiệu quả sử dụng vốn, chất lượng cung ứng điện & chất lượng dịch vụ khách hàng"</h1>
+				<h1 style=" font-size:20px; color:red; background-color:White; width:263px; padding:0; margin-top:10px;">   >> Chủ đề của EVNHCMC</h1>	
+				-->
+                
+				
+               
+
+
+
+
+                
+                
+                
+                
+                	
+			</div>
+					
+			<div class="clear"></div>
+		
+			<!-- end: tier one -->
+            
+             <div class="tierChiSo">
+             <div style="margin:5px;text-align:justify">
+	            <p><span style="font-size: 12px;"><strong><span style="font-size: 12px; color: #636363; background: none 0% 0% repeat scroll #fcfcff;"></span></strong>
+</span></p>
+<p><strong><span style="font-size: 9pt; font-family: arial, sans-serif; color: #636363; background: #fcfcff;"><span class="Apple-tab-span" style="white-space: pre;">	</span><span style="text-decoration: underline;">Những con số quan tâm</span></span></strong><strong><span style="font-size: 9pt; font-family: arial, sans-serif; color: #636363; background: #fcfcff;"><br />
+<strong><span class="Apple-tab-span" style="white-space: pre;">	</span>Quý </strong></span></strong><strong><span style="font-size: 9pt; font-family: arial, sans-serif; color: red; background: #fcfcff;">1/2015</span></strong><strong><span style="font-size: 9pt; font-family: arial, sans-serif; color: #636363; background: #fcfcff;">, TP.HCM thực hiện tiết kiệm đạt </span></strong><strong><span style="font-size: 9pt; font-family: arial, sans-serif; color: red; background: #fcfcff;">110,257 </span></strong><strong><span style="font-size: 9pt; font-family: arial, sans-serif; color: #636363; background: #fcfcff;">triệu kWh, chiếm </span></strong><strong><span style="font-size: 9pt; font-family: arial, sans-serif; color: red; background: #fcfcff;">2,6</span></strong><strong><span style="font-size: 9pt; font-family: arial, sans-serif; color: #636363; background: #fcfcff;">% điện thương phẩm.</span></strong><strong><span style="font-size: 9pt; font-family: arial, sans-serif; color: #636363; background: #fcfcff;"><br />
+<strong><span class="Apple-tab-span" style="white-space: pre;">	</span>So kế hoạch năm </strong></span></strong><strong><span style="font-size: 9pt; font-family: arial, sans-serif; color: red; background: #fcfcff;">2015</span></strong><strong><span style="font-size: 9pt; font-family: arial, sans-serif; color: #636363; background: #fcfcff;"> đạt </span></strong><strong><span style="font-size: 9pt; font-family: arial, sans-serif; color: red; background: #fcfcff;">29,02</span></strong><strong><span style="font-size: 9pt; font-family: arial, sans-serif; color: #636363; background: #fcfcff;">%</span></strong> </p>
+<span style="font-size: 12px;"><strong><span style="font-size: 12px; color: #636363; background: none 0% 0% repeat scroll #fcfcff;" class="apple-converted-space"></span></strong></span>
+<p><br />
+</p>
+	</div>
+            </div>
+            <div class="tierTuyenTruyen">
+	
+	<img style="padding-left:10px;margin-top:10px" src="image/Banner-TKD-2k12.gif" width="97%" />
+		
+	
+	
+	<div class="clear"></div>
+	
+</div>
+			<!--<div class="tierTuyenTruyen" style="margin-top:3px">
+	
+	<img style="" src="image/giotraidat.jpg" width="100%" />
+		
+	
+	
+	<div class="clear"></div>
+	
+</div>-->
+			
+			
+			<!-- end: tier two -->
+			
+			<div class="wrapper">
+			
+				<!-- start: tier three -->
+				
+				<div class="tierThreeLeftHp">
+					<h4>An toàn - Tiết kiệm điện</h4>
+					
+					<a indepth="true" href="tintuc.aspx?ID=2" class="hpnewbutton" style=" text-align:center" role="button">Xem thông tin ►</a>
+					
+					<span>Thông tin an toàn, tiết kiệm điện năng</span>
+
+				</div>
+				
+				<div class="tierThreeCentreHp">
+				
+					<h4>Văn hóa EVNHCMC</h4>
+					
+					<a indepth="true" href="tintuc.aspx?ID=18" class="hpnewbutton" style="  text-align:center" role="button" >Xem thông tin ►</a>
+					
+					<span>Hướng về cộng đồng & xã hội</em></span>
+					
+				</div>
+
+				<div class="tierThreeOrangeRight">
+				
+					<h4>Pháp chế</h4>
+					
+					<a indepth="true" href="phapche.aspx" class="hpnewbutton" role="button" >Xem thông tin ►</a>
+					
+					<span>Văn bản quy phạm pháp luật có liên quan đến lĩnh vực Điện lực</span>
+					
+				</div>
+
+				<div class="clear"></div>
+				
+				<!-- end: tier three -->
+				
+
+				<!-- start: tier four -->
+				
+				<div class="tierFour" style="height:100px;">
+	
+	<div class="tierFourItem tierFourDiv">
+	
+		<h5><a indepth="true" href="lichcatdien.aspx" title="" onmouseover="(document.energyGeneration.src)='images/customer_care1.png';" onmouseout="(document.energyGeneration.src)='images/customer_care2.png';">Lịch tạm ngưng cung cấp điện</a></h5>
+		
+		<a indepth="true" href="lichcatdien.aspx" title="" class="copy" onmouseover="(document.energyGeneration.src)='images/customer_care1.png';" onmouseout="(document.energyGeneration.src)='images/customer_care2.png';">
+				
+			<img name="energyGeneration" src="images/customer_care2.png" style="margin-left:15px;" alt="" height="52" width="52">
+			Thông báo tạm ngưng cung cấp điện trên địa bàn TP HCM
+			
+			
+		</a>
+
+	</div>
+
+    <div class="tierFourItem tierFourDiv tierFourSpace">
+	
+		<h5><a indepth="true" href="tintuc.aspx?ID=29" title="" onmouseover="(document.sustainability.src)='images/green-energy1.png';" onmouseout="(document.sustainability.src)='images/green-energy2.png';">Tuyển dụng</a></h5>
+
+		<a indepth="true" href="tintuc.aspx?ID=29" title="" class="copy" onmouseover="(document.sustainability.src)='images/green-energy1.png';" onmouseout="(document.sustainability.src)='images/green-energy2.png';">
+				
+			<img name="sustainability" src="images/green-energy2.png" style="margin-left:15px;" alt="" height="52" width="52">
+		
+			Thông tin tuyển dụng của Tổng Cty Điện Lực Tp.HCM
+		
+		</a>
+		
+	</div>
+	
+	<div class="tierFourItem tierFourSpace" style="width: 170px;">
+	
+		<h5><a indepth="true" href="hoigopy.aspx" title="" onmouseover="(document.nuclearNewBuild.src)='images/faq1.png';" onmouseout="(document.nuclearNewBuild.src)='images/faq2.png';">Hỏi đáp - Góp ý</a></h5>
+		
+		<a indepth="true" href="hoigopy.aspx" class="copy" title="" onmouseover="(document.nuclearNewBuild.src)='images/faq1.png';" onmouseout="(document.nuclearNewBuild.src)='images/faq2.png';">
+				
+			<img name="nuclearNewBuild" src="images/faq2.png" style="margin-left:15px;" alt="" height="52" width="52">
+			
+			Ý kiến của khách hàng cho Điện Lực Tp.HCM
+		
+		</a>
+		
+	</div>
+		
+	
+	
+	<div class="clear"></div>
+	
+</div>
+
+
+
+			
+
+				
+				<!-- end: tier four -->
+			
+			</div> <!-- end wrapper for tier 3 and tier 4 -->
+
+
+
+            <!-- start: tier two -->
+            
+		<div class="clear"></div>
+			<div class="wrapper">
+		
+				 
+					<a href="http://cskh.hcmpc.vn/">
+				<div class="tierTwoBlack">
+				
+					<img src="upload_images/logo/19092014149Iah-t2l.gif" alt=""> 
+					
+					
+					
+					
+				</div></a>
+				<a href="tintuc.aspx?ID=41">									
+				<div class="tierTwoBlackRight">
+				
+					<img src="upload_images/logo/24092014109Iptttt-tknl2.gif" alt=""> 
+					
+					
+					
+					<span></span>
+					
+					
+				
+				</div>
+				</a>
+			</div>
+
+			
+
+		
+		</div>
+
+    </div>    
+    
+       
+         
+
+
+ <script src="js/jwplayer.js" type="text/javascript"></script>
+
+ 
+     <script>
+         function fnOpenPopup(url, width, height) {
+             var win = window.open(url, '_blank');
+             win.focus();
+         }
+         function fnOpen(url) {
+             window.location = url;
+         }
+
+
+         function SelectMeOnly(objRadioButton) {
+             var i, obj;
+             id = objRadioButton.value;
+             var button = document.getElementById('BC' + objRadioButton.name);
+             button.itemid = id;
+         }
+         function OpenW(url) {
+             window.open(url, "", "width=500,height=250,top=100,left=150,directories=no, menubar=no,location=no,toolbar=no,scrollbars=yes,dependent=yes,noresize=yes");
+             return false;
+         }
+
+         function BinhChon(objButtton) {
+             var id = objButtton.name;
+             var item = objButtton.itemid;
+             $.ajax(
+            {
+                type: "POST",
+                dataType: "json",
+                url: "Default.aspx/BinhChon",
+                data: '{ "id": "' + id + '","item":"'+item+'"}',
+                contentType: "application/json; charset=utf-8",
+                success: function (result) { alert(result.d); }
+            }
+            );
+             return false;
+         }
+
+       
+
+    </script>
+
+    <style>
+    
+
+a.blue1{color:#1F83D7; text-decoration:none;}
+	a.blue1:hover{text-decoration:underline;}		
+
+    </style>
+
+
+
+<div id="right-col">
+		
+			<!-- start: customer area -->
+			<div id="holder-trangchu" style="height:auto">
+			
+            
+
+
+ <script src="js/jwplayer.js" type="text/javascript"></script>
+      
+    <style>
+     #tabs,#tabs_0,.tab{
+  overflow: hidden;
+  width:320px ;
+  margin: 0;
+  padding: 0;
+  list-style: none;  
+  margin-top: 1px;
+  height: 32px;
+}
+
+#tabs li,#tabs_0 li,.tab li{
+  float: left;
+  margin: 0 .1em 0 0;line-height: 18px;
+  height: 100%;
+}
+
+#tabs a,#tabs_0 a,.tab li{
+  position: relative;
+  background: #4487ed;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#013f9d), to(#4487ed));
+  background-image: -webkit-linear-gradient(top, #013f9d, #4487ed);
+  background-image: -moz-linear-gradient(top, #013f9d, #4487ed);
+  background-image: -ms-linear-gradient(top, #013f9d, #4487ed);
+  background-image: -o-linear-gradient(top, #013f9d, #4487ed);
+  background-image: linear-gradient(to bottom, #013f9d, #4487ed);  
+  padding: 0.3em 0.5em;
+  float: left;
+  text-decoration: none;
+  color:#fff;
+  /*text-shadow: 0 1px 0 rgba(255,255,255,.8);*/
+ /* -webkit-border-radius: 5px 0 0 0;*/
+  /*-moz-border-radius: 5px 0 0 0;*/
+  /*border-radius: 5px 0 0 0;*/
+  -moz-box-shadow: 0 2px 2px rgba(0,0,0,.4);
+  -webkit-box-shadow: 0 2px 2px rgba(0,0,0,.4);
+  /*box-shadow: 0 2px 2px rgba(0,0,0,.4); */
+  font-size:12.5px;
+}
+.tab li a{ color:#fff;}
+#tabs a:hover,#tabs_0 a:hover,
+#tabs a:hover::after,#tabs_0 a:hover::after,
+#tabs a:focus,#tabs_0 a:focus,
+#tabs a:focus::after,#tabs_0 a:focus::after{
+  background: #4487ed;
+}
+
+#tabs a:focus,#tabs_0 a:focus{
+  outline: 0;
+}
+
+#tabs a::after,#tabs_0 a::after,.tab a::after{
+  content:'';
+  position:absolute;
+  z-index: 1;
+  top: 0;
+  /*right: -.5em;  */
+  bottom: 0;
+  /*width: 1em;*/
+  background: #ddd;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#013F9D), to(#013F9D));
+  background-image: -webkit-linear-gradient(top, #013F9D, #013F9D);
+  background-image: -moz-linear-gradient(top, #013F9D, #013F9D);
+  background-image: -ms-linear-gradient(top, #013F9D, #013F9D);
+  background-image: -o-linear-gradient(top, #013F9D, #013F9D);
+  background-image: linear-gradient(to bottom, #013F9D, #013F9D);  
+  -moz-box-shadow: 2px 2px 2px rgba(0,0,0,.4);
+  -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,.4);
+  /*box-shadow: 2px 2px 2px rgba(0,0,0,.4);*.
+  /*-webkit-transform: skew(10deg);
+  -moz-transform: skew(10deg);
+  -ms-transform: skew(10deg);
+  -o-transform: skew(10deg);
+  transform: skew(10deg);*/
+  /*-webkit-border-radius: 0 5px 0 0;*/
+  -moz-border-radius: 0 5px 0 0;
+  /*border-radius: 0 5px 0 0;  */
+}
+
+#tabs #current a,#tabs_0 #current_0 a{
+  background: #013F9D;
+  z-index: 3; color: #fff;
+}
+
+#tabs #current a::after,#tabs_0 #current_0 a::after{
+  background: #013F9D;
+  z-index: 3;
+}
+
+a.blue1{color:#1F83D7; text-decoration:none;}
+	a.blue1:hover{text-decoration:underline;}		
+
+    </style>
+
+               <ul id="tabs">
+               <li><a style="width:60px;height:100%;padding-top: 7px;padding-left:10px;padding-right: 10px;" href="#" name="tab1">Video clip</a></li>
+               <li style="margin: 0px 1px 0px 0px;"><a style="width:56px;height:100%;padding-top: 7px;padding-left:10px;padding-right: 10px;" href="#" name="tab2">PS Ảnh</a></li>
+               <li><a style="width:125px;height:100%;padding-top: 7px;padding-left:10px;padding-right: 10px;" href="#" name="tab3">EVNHCMC qua ảnh</a></li>            
+            </ul>
+
+            <div id="content"> 
+                <div id="tab1" style="padding-bottom:10px;">  
+                    <div id="thePlayer" style="height:237px;"></div>
+	                <script type="text/javascript">
+	                    jwplayer("thePlayer").setup({
+	                        flashplayer: "wplayer.swf",
+	                        file: "upload_images/psanh/EVNBacHo.mp4", image: "upload_images/psanh/bachovoinganhdien.png", height: 237, width: 300, allowfullscreen: "true", allowscriptaccess: "always",
+	                        controlbar: "bottom", loop: "false", showdigits: 'true', backcolor: 'FFFFFF', frontcolor: '555555',
+	                        lightcolor: '555555', screencolor: '2A2A2A', quality: 'high', volume: '100', shownavigation: 'true',
+	                        autostart: 'false', bufferlength: '1', mute: 'false', wmode: "transparent"
+	                    });
+                    </script>  
+                                       
+                    <p style="padding:5px 10px 5px 0; margin:0; float:right" class="xemthem"><a href="clip.aspx?ID=1040" class="blue1"> Xem thêm</a></p>                   
+                    
+                </div>
+                <div id="tab2" style="padding-bottom:10px;">                    
+                    <ul class="psanh" style=" width:325px; height:237px;">
+                        <li><a href="#"><img src="upload_images/psanh/130391132919122596Chungtoi-nhungnguoithodien-TP mang ten Bac (1).jpg" width="300" height="237" title="Chúng tôi - Người công nhân thành phố mang tên Bác" /></a></li>
+<li><a href="#"><img src="upload_images/psanh/130391133141890894Chungtoi-nhungnguoithodien-TP mang ten Bac (2).jpg" width="300" height="237" title="Chúng tôi - Người công nhân thành phố mang tên Bác" /></a></li>
+<li><a href="#"><img src="upload_images/psanh/130391133400963828Chungtoi-nhungnguoithodien-TP mang ten Bac (3).jpg" width="300" height="237" title="Chúng tôi - Người công nhân thành phố mang tên Bác" /></a></li>
+<li><a href="#"><img src="upload_images/psanh/130391133624442237Chungtoi-nhungnguoithodien-TP mang ten Bac (4).jpg" width="300" height="237" title="Chúng tôi - Người công nhân thành phố mang tên Bác" /></a></li>
+<li><a href="#"><img src="upload_images/psanh/130391133791443456Chungtoi-nhungnguoithodien-TP mang ten Bac (5).jpg" width="300" height="237" title="Chúng tôi - Người công nhân thành phố mang tên Bác" /></a></li>
+<li><a href="#"><img src="upload_images/psanh/130391133966045628Chungtoi-nhungnguoithodien-TP mang ten Bac (6).JPG" width="300" height="237" title="Chúng tôi - Người công nhân thành phố mang tên Bác" /></a></li>
+<li><a href="#"><img src="upload_images/psanh/130391134117914941Chungtoi-nhungnguoithodien-TP mang ten Bac (7).jpg" width="300" height="237" title="Chúng tôi - Người công nhân thành phố mang tên Bác" /></a></li>
+<li><a href="#"><img src="upload_images/psanh/130391134300148116Chungtoi-nhungnguoithodien-TP mang ten Bac (8).jpg" width="300" height="237" title="Chúng tôi - Người công nhân thành phố mang tên Bác" /></a></li>
+<li><a href="#"><img src="upload_images/psanh/130391134521556354Chungtoi-nhungnguoithodien-TP mang ten Bac (9).jpg" width="300" height="237" title="Chúng tôi - Người công nhân thành phố mang tên Bác" /></a></li>
+<li><a href="#"><img src="upload_images/psanh/130391134852158276Chungtoi-nhungnguoithodien-TP mang ten Bac (11).jpg" width="300" height="237" title="Chúng tôi - Người công nhân thành phố mang tên Bác" /></a></li>
+<li><a href="#"><img src="upload_images/psanh/130391135045582835Chungtoi-nhungnguoithodien-TP mang ten Bac (12).jpg" width="300" height="237" title="Chúng tôi - Người công nhân thành phố mang tên Bác" /></a></li>
+<li><a href="#"><img src="upload_images/psanh/130391135332169277Chungtoi-nhungnguoithodien-TP mang ten Bac (13).jpg" width="300" height="237" title="Chúng tôi - Người công nhân thành phố mang tên Bác" /></a></li>
+
+                    </ul>        
+                                
+                    <p style="padding:5px 10px 5px 0; margin:0; float:right" class="xemthem"><a href="psanh.aspx?ID=29" class="blue1"> Xem thêm</a></p>
+                    
+                </div>
+                <div id="tab3" style="padding-bottom:10px;">
+                    <ul class="quaanh" style=" width:325px; height:237px;">
+                        <li><a href="#"><img src="upload_images/psanh/130392331899614257Dlap16a.jpg" width="300" height="237" title="Lãnh đạo TPHCM - gắn huân chương Độc lập hạng ba cho Công ty Điện Lực TPHCM - ngày 25-9-2002" /></a></li>
+<li><a href="#"><img src="upload_images/psanh/130392332496819787Dlap12.jpg" width="300" height="237" title="Lãnh đạo TPHCM - gắn huân chương Độc lập hạng ba cho Công ty Điện Lực TPHCM - ngày 25-9-2002" /></a></li>
+<li><a href="#"><img src="upload_images/psanh/130392333234463495130403607007310102scan0082.jpg" width="300" height="237" title="Chụp ảnh lưu niệm tại lễ đoán nhận Huân chương độc lập Hạng Ba - Công ty Điện Lực TPHCM - ngày 25-9-2002" /></a></li>
+<li><a href="#"><img src="upload_images/psanh/130392333505178321Dlap20.jpg" width="300" height="237" title="Chụp ảnh lưu niệm tại lễ đoán nhận Huân chương độc lập Hạng Ba - Công ty Điện Lực TPHCM - ngày 25-9-2002" /></a></li>
+<li><a href="#"><img src="upload_images/psanh/130392333763750871Dlap21.jpg" width="300" height="237" title="Chụp ảnh lưu niệm tại lễ đoán nhận Huân chương độc lập Hạng Ba - Công ty Điện Lực TPHCM - ngày 25-9-2002" /></a></li>
+                         
+                    </ul>
+                    
+                    <p style=" padding:5px 10px 5px 0; margin:0; float:right" class="xemthem"><a href="psanh.aspx?ID=1030" class="blue1"> Xem thêm</a></p>
+                    
+                </div>
+            </div>	
+            
+<div style=" padding-left:7px;padding-right:7px;padding-bottom:7px;padding-top:0px;"></div>
+<div class="accountWrap">
+				
+				<div class="accountPane">
+					<div class="accountTop">
+					<h3>Thông Tin Cần Biết</em></h3>					    
+					</div>
+					
+
+    <div id="sliderFrame">
+        <div id="slider">
+         	
+            <a href="tinebookread.aspx?Loai=attk">
+                <img src="upload_images/logo/21032014003ICamNangSudungdienAntoanTietkiem.jpg" width="300px" height="100%">
+            </a>
+            
+             	
+            <a href="tintuc.aspx?ID=2">
+                <img src="upload_images/logo/antoandien.jpg" width="300px" height="100%">
+            </a>
+            
+             	
+            <a href="tintuc.aspx?ID=42">
+                <img src="upload_images/logo/21032014003IHoadon.jpg" width="300px" height="100%">
+            </a>
+            
+             	
+            <a href="tintuc.aspx?ID=29">
+                <img src="upload_images/logo/21032014003IThongtinTuyendung.jpg" width="300px" height="100%">
+            </a>
+            
+             	
+            <a href="tinebookread.aspx?Loai=ds">
+                <img src="upload_images/logo/21032014003IDanhsachCacdiemthuTiendien.jpg" width="300px" height="100%">
+            </a>
+            
+            
+        </div>
+    </div>
+
+  
+
+
+               
+				
+					
+
+				</div>
+				
+</div>	
+
+				<!-- end: account login pane -->
+	<!-- THAM DO Y KIEN -->		
+ 
+
+<!-- END THAM DO Y KIEN -->
+				
+			</div>
+			<!-- end: customer area -->
+			
+			<div class="socialWrap" style="box-shadow: none;height:115px;margin:0px;text-align:center;"> <!-- previous class was tierThreeDouble -->
+
+				
+                
+                <div>
+                    <a href="dtintuc.aspx?ID=5377" target="_blank">
+                        <img src="upload_images/logo/24092014099Inguoiphatngon.gif" width="300px" height="55px">
+                    </a>
+                </div>
+                <div >
+                    <a href="http://cskh.hcmpc.vn/" target="_blank">
+                        <img src="upload_images/logo/24092014099Ievn-khachhang.gif" width="300px" height="55px">
+                    </a>
+                </div>
+                 <div >
+                    <a href="http://hcmpc.vn/tintuc.aspx?ID=34" target="_blank">
+                        <img src="upload_images/logo/21042015134ITHONGBAOCHUNG.gif" width="300px" height="55px">
+                    </a>
+                </div>
+                 <div >
+                    <a href="http://hcmpc.vn/tinebookread.aspx?Loai=vhevn" target="_blank">
+                        <img src="upload_images/logo/06052015155ITAILIEUVANHOA.gif" width="300px" height="55px">
+                    </a>
+                </div>
+				
+			</div>
+
+		</div>
+
+        
+<div>
+         <div style="float:left;width:616px;height:55px float:left;margin-left:30px; clear:both;">
+            <div>
+            
+      <a href="tinebookread.aspx?Loai=attk"> <img width="616px" height="55px" border="0" src="upload_images/logo/22092014149Ibanner-bottom.gif"> </a>
+
+            </div>
+         </div>
+ <div style="float:right;width: 300px; font-size:12px;">
+            <div style="color:#0066FF; float:right; text-align:right">
+
+            <div class="socialWrap" style="box-shadow:none;border: 1px solid rgb(236, 236, 236);height:53px;margin:0px !important;text-align:center;"> <!-- previous class was tierThreeDouble -->
+
+				<div class="mediaBarTop" style="color:#013f9d;text-align:right;padding-right:15px">					
+				
+                   Tổng số lượt truy cập: 3660061<br />
+                Số khách đang online: 71	
+               				
+				</div>				
+				
+              
+               
+			</div>
+
+            	
+  			
+				
+                
+            </div> 
+                                 
+         </div> 
+         </div>       
+           <div id="footer">
+                <ul>
+	                <li>
+	                <b>TỔNG CÔNG TY ĐIỆN LỰC THÀNH PHỐ HỒ CHÍ MINH</b>
+	                <br>
+                35 Tôn Đức Thắng, Phường Bến Nghé, Quận 1, Thành phố Hồ Chí Minh.
+                <br>Điện thoại: (84.8) 2220.1177 - 2220.1188 - 2220.1199  
+                <br>Fax: (84.8) 2220.1155 - 2220.1166
+	             
+	                </li>
+	                <li class="info">
+               
+	                Bản quyền thuộc về Tổng công ty Điện lực thành phố Hồ Chí Minh
+                <br>Thông tin trích từ trang tin điện tử này yêu cầu ghi rõ từ nguồn www.hcmpc.com.vn
+	               </li>
+	
+                </ul>
+            </div>
+       	
+
+<style>
+.NaviMenu {
+	background: url(js/menu/bg-navi-menu4.png) no-repeat left top;
+	width: 1005px;
+	height: 30px;
+}
+.bx-controls{ }
+</style>
+
+
+
+
+		
+
+
+<script type="text/javascript" src="js/jquery-latest.pack.js"></script>
+<script type="text/javascript" src="js/ui.tabs.js"></script>
+<script type="text/javascript" src="js/ui.tabs.ext.pack.js"></script>     
+<link href="css/ui.tabs.lightblue_rounded.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+    var $CdMagicTabs = jQuery.noConflict();
+    $CdMagicTabs(function () {
+        $CdMagicTabs('#magictabs_iuluaf6q > ul').tabs({ event: 'click', selected: 0 }).tabs('rotate', 0);
+    });
+    $CdMagicTabs(function () {
+        $CdMagicTabs('#magictabs_iuluaf6r > ul').tabs({ event: 'click', selected: 0 }).tabs('rotate', 0);
+    });
+    $CdMagicTabs(function () {
+        $CdMagicTabs('#magictabs_iuluaf6h > ul').tabs({ event: 'click', selected: 0 }).tabs('rotate', 0);
+    });
+</script>
+<style type="text/css">
+		.ui-tabs-panel-iuluaf6q,.ui-tabs-panel-iuluaf6r {
+			
+		}
+		div#magictabs_iuluaf6q .ui-tabs-nav li, div#magictabs_iuluaf6r .ui-tabs-nav li, div#magictabs_iuluaf6h .ui-tabs-nav li {
+			float: left;
+		}
+		</style>
+
+
+
+    <script src="script/jquery.tools.min.js" type="text/javascript"></script>
+
+<script src="script/jquery.megamenu.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    jQuery(function () { jQuery('.megamenu').megamenu(); });
+</script>
+
+
+
+<script type="text/javascript">
+    $(function () { $("ul.tabs").tabs("div.panes", { event: 'mouseover' }); });
+
+    var pathname = window.location.pathname;
+    var pathSlashesReplaced = pathname.replace(/\//g, "-");
+    var pathSlashesReplacedNoFirstDash = pathSlashesReplaced.replace("-", "");
+    var newID = pathSlashesReplacedNoFirstDash.replace(/(\.[\s\S]+)/ig, "");
+
+    var forLB = "products-services-large-business"
+    var forB = "products-services-sme"
+    var atH = "products-services-for-your-home"
+
+    if (newID.indexOf(forB) != -1) {
+        $("body").attr("id", "forbusiness");
+    } else if (newID.indexOf(atH) != -1) {
+        $("body").attr("id", "athome");
+    } else if (newID.indexOf(forLB) != -1) {
+        $("body").attr("id", "largebusiness");
+    }
+
+</script>
+
+
+<!-- Print current page URL for print CSS -->
+<script type="text/javascript">
+
+    if (document.getElementById("printurl") != null) {
+
+        document.getElementById("printurl").innerHTML = window.location.href;
+
+    }
+
+</script>
+<!-- End of print current page URL for print CSS -->
+
+<!--
+ <script type="text/javascript" src="/zeusstatic/js/zeus-jquery.min.js"></script> -->
+
+
+
+
+
+
+<!--Current Topnav highlighting -->
+
+<script type="text/javascript">
+
+    var thisURL = window.location.href;
+
+    var currentTabName = secondLevelUrlPart(thisURL);
+
+
+
+    jQuery("#topnav-inner ul li").each(function () {
+
+        var url = secondLevelUrlPart(jQuery(this).find('a').attr("href"));
+
+        if (url == currentTabName) {
+
+            jQuery(this).addClass('selected');
+
+            return false;
+
+        }
+
+    });
+
+
+
+    function secondLevelUrlPart(url) {
+
+        var URLPart = url.split("/");
+
+        if (isAbsoluteUrl(URLPart)) {
+
+            return URLPart[3];
+
+        } else {
+
+            return URLPart[1]
+
+        }
+
+    }
+
+
+
+    function isAbsoluteUrl(urlParts) {
+
+        return urlParts[0] == "none:";
+
+    }
+
+</script>
+
+
+
+<script type="text/javascript" src="script/zeus-secondary-navigation.js"></script>
+
+<!-- touch device fix for top nav -->
+
+<script type="text/javascript" src="script/touchdevice-fix.js"></script>
+
+<script type="text/javascript">
+
+            //<![CDATA[
+
+    jQuery(document).ready(function () {
+
+        jQuery(".mainNav > a").bind('touchstart', function (evt) { touchEventFix(evt.originalEvent); });
+
+        jQuery(".corpNav > a").bind('touchstart', function (evt) { touchEventFix(evt.originalEvent); });
+
+        jQuery(".tabs > li > a").bind('touchstart', function (evt) { touchEventFix(evt.originalEvent); });
+
+    });
+
+            //]]>
+
+</script>
+
+
+
+
+<!-- Start Event Tracking -->
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-9018886-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('nones:' == document.location.protocol ? 'nones://ssl' : 'none://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+<!-- End of Event Tracking -->
+		
+		<!-- end: footer -->
+		</form>
+	</div>
+
+	<script type="text/javascript">
+	    setTimeout(function () {
+	        var a = document.createElement("script");
+	        var b = document.getElementsByTagName("script")[0];
+	      //  a.src = document.location.protocol + "//dnn506yrbagrg.cloudfront.net/pages/scripts/0018/0263.js?" + Math.floor(new Date().getTime() / 3600000);
+	        a.async = true; a.type = "text/javascript"; b.parentNode.insertBefore(a, b)
+	    }, 1);
+	</script>
+
+
+    <style>
+.NaviMenu {
+	background: url(js/menu/bg-navi-menu5.png) no-repeat left top;
+	width: 1005px;
+	height: 30px;
+}
+.text,.blue1{ font-size:12px;}
+</style>
+
+
+
+
+		
+<script type="text/javascript">
+    var megamenu = new jsMegaMenuMoo('js-meganav', {
+        'bgopacity': 0,
+        'delayHide': 300,
+        'slide': 1,
+        'fading': 0,
+        'direction': 'down',
+        'action': 'mouseover',
+        'tips': false,
+        'duration': 300
+    });
+</script>
+
+
+<script src="js/jquery.bxslider.js" type="text/javascript"></script>
+<script src="js/jquery.bxslider__.css" type="text/javascript"></script>
+<script src="js/slide-tto.js" type="text/javascript"></script>
+<link href="js/jquery.mCustomScrollbar.css" rel="stylesheet" />
+<script src="js/jquery.mCustomScrollbar.js"></script>
+<link rel="stylesheet" href="css/jMenu.jquery.css" type="text/css" />
+<script type="text/javascript" src="js/jMenu.jquery.js"></script>
+<script>
+
+    function tFocus(i, num) {
+        if (i.value == i.defaultValue) {
+            i.value = "";
+            //i.style.color = "#777";
+            if (num != -1)
+                $("#s" + num).hide();
+        }
+    }
+
+    function tBlur(i, num) {
+        if (i.value == "") {
+            i.value = i.defaultValue;
+            //i.style.color = "#ccc";
+            if (num != -1)
+                $("#s" + num).show();
+        }
+    }
+
+    function GetWeather(val) {
+        $('#sweather').html("<img src='images/4.gif' style='vertical-align:bottom; padding-left:10px;padding-top:5px' />  <span style='color:#666;vertical-align:bottom;padding-top:5px;'>Đang tải dữ liệu</span>    ");
+        /*$("#sweather").load("aj.aspx?weather=" + val, null,
+        // Callback function on completion (optional)  
+        function (content) {
+        // make content visible with effect  
+        $(this).hide().fadeIn("slow");
+        return false;
+        }
+        );*/
+
+    }
+    function isIE() {
+        var myNav = navigator.userAgent.toLowerCase();
+        return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+    }
+    $(window).load(function () {
+        $('.bxslider3').bxSlider({
+            auto: true,
+            mode: 'horizontal',
+            mode: 'fade',
+            speed: 1500,
+            pause: 9000,
+            captions: true,
+            controls: true,
+            pager: false,
+            slideMargin: 0
+        });
+
+        $("#content_0 div").hide(); // Initially hide all content
+        //$("#box1").show();
+        $("#mCSB_1").show();
+        
+        $(".mCSB_container,.mCSB_scrollTools,.mCSB_draggerContainer,.mCSB_dragger,.mCSB_dragger_bar,.mCSB_draggerRail").show();
+
+        $("#tabs_0 li:first").attr("id", "current_0"); // Activate first tab
+        $("#content_0 div:first").fadeIn(); // Show first tab content
+
+        $('#tabs_0 a').click(function (e) {
+            e.preventDefault();
+            if ($(this).closest("li").attr("id") == "current_0") { //detection for current tab
+                return
+            }
+            else {
+                $("#content_0 div").hide(); //Hide all content
+                //$("#box1").show(); //them vao
+                $("#mCSB_1").show();
+                $(".mCSB_container,.mCSB_scrollTools,.mCSB_draggerContainer,.mCSB_dragger,.mCSB_dragger_bar,.mCSB_draggerRail").show();
+                //$("#thePlayer").show(); 
+
+                $("#tabs_0 li").attr("id", ""); //Reset id's
+                $(this).parent().attr("id", "current_0"); // Activate this
+                $('#' + $(this).attr('name')).fadeIn(); // Show content for current tab
+            }
+        });
+        $("#content div").siblings().not(".xemthem, a").hide(); $("#thePlayer").show();
+        $("#tabs li:first").attr("id", "current"); // Activate first tab
+        $("#content div:first").fadeIn(); // Show first tab content        
+        $('#tabs a').click(function (e) {
+            e.preventDefault();
+            if ($(this).closest("li").attr("id") == "current") { //detection for current tab 
+                return;
+            }
+            else {
+                $("#content div").siblings().not(".xemthem, a").hide(); $("#thePlayer").show();
+                $("#content .bx-viewport").css("height", "");
+                $("#content .bx-caption").css("width", "300px");
+                $("#tabs li").attr("id", ""); //Reset id's
+                $(this).parent().attr("id", "current"); // Activate this
+                $('#' + $(this).attr('name')).fadeIn(); // Show content for current tab                
+            }
+        });
+        var ie = isIE();
+        //        if (ie != 6 && ie != 7) {
+        //            $("#box1").mCustomScrollbar({
+        //                theme: "dark", autoDraggerLength: true
+        //            });
+        //        }
+        //thoi tiet
+        $('#weather').click(function () {
+            $('.weatherbox').css("display", "inline");
+        });
+        $('.H-row').click(function () {
+            $('.weatherbox').css("display", "none");
+        });
+
+        $('ul.H-row li').click(function (e) {
+            var $target = $(e.target);
+            if (!$target.is("li")) //magic happens here!!
+            {
+                return;
+            }
+            GetWeather($(this).attr('value'));
+            $("#txt-City").html($(this).text());
+        });
+        GetWeather('VMXX0007');
+        //end thoi tiet
+        $('.bxslider').bxSlider({
+            auto: true,
+            mode: 'horizontal',
+            mode: 'fade',
+            speed: 1500,
+            pause: 5000,
+            slideMargin: 0
+        });
+        //psanh
+        $('.psanh').bxSlider({
+            auto: true,
+            mode: 'horizontal',
+            mode: 'fade',
+            speed: 1500,
+            pause: 9000,
+            captions: true,
+            controls: false,
+            pager: false,
+            slideMargin: 0
+        });
+        //qua anh
+        $('.quaanh').bxSlider({
+            auto: true,
+            mode: 'horizontal',
+            mode: 'fade',
+            speed: 1500,
+            pause: 9000,
+            captions: true,
+            controls: false,
+            pager: false,
+            slideMargin: 0
+        });
+        //resize block  
+        if (document.getElementById("bl1") !== null) {
+            if ($('#bl1').height() < $('#bl2').height())
+                $('#bl1').height($('#bl2').height());
+            else
+                $('#bl2').height($('#bl1').height());
+            if ($('#bl3').height() < $('#bl4').height())
+                $('#bl3').height($('#bl4').height());
+            else
+                $('#bl4').height($('#bl3').height());
+            if ($('#bl5').height() < $('#bl6').height())
+                $('#bl5').height($('#bl6').height());
+            else
+                $('#bl6').height($('#bl5').height());
+            if ($('#bl7').height() < $('#bl8').height())
+                $('#bl7').height($('#bl8').height());
+            else
+                $('#bl8').height($('#bl7').height());
+        }
+    });
+</script>
+
+
+</body>
+</html>

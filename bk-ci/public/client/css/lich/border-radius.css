@@ -1,0 +1,54 @@
+/* This is for Gecko-based browsers */
+
+.DynarchCalendar {
+  border-radius: 5px;
+}
+
+.DynarchCalendar-title, .DynarchCalendar-title div {
+  border-radius: 0 0 4px 4px;
+}
+
+.DynarchCalendar-topBar {
+  border-radius: 4px 4px 0 0;
+}
+
+.DynarchCalendar-bottomBar {
+  border-radius: 0 0 4px 4px;
+}
+
+.DynarchCalendar-bottomBar-today {
+  border-radius: 4px;
+}
+
+.DynarchCalendar-navBtn, .DynarchCalendar-navBtn div {
+  border-radius: 4px;
+}
+
+.DynarchCalendar-menu {
+  border-radius: 5px;
+}
+
+.DynarchCalendar-menu table td div {
+  border-radius: 4px;
+}
+
+.DynarchCalendar-weekNumber {
+  border-radius: 4px 0 0 4px;
+}
+
+.DynarchCalendar-day {
+  border-radius: 1px;
+}
+
+.DynarchCalendar-day-disabled {
+  border-radius: 0;
+}
+
+.DynarchCalendar-tooltipCont {
+}
+
+.DynarchCalendar-time-hour, .DynarchCalendar-time-minute {
+}
+
+.DynarchCalendar-time-am {
+}

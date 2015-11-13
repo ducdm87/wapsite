@@ -1,0 +1,1 @@
+Đăng ký <a href="<?php echo $uri_root?>thanh-vien-vip.html"><strong class="red">Thành viên VIP</strong></a> để dùng đầy đủ chức năng của website

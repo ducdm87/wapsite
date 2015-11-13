@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root type="module" client="site">
+    <name>tophits</name>
+    <author>BHmedia group php</author>
+    <version>1.0.0</version>
+    <creationDate>July 2006</creationDate>
+    <description>Top hits article</description>
+    
+    <install>
+        <file>install/install.sql</file>
+    </install>
+    <uninstall>
+        <file>install/uninstall.sql</file>
+    </uninstall>
+    
+    <params>
+        <param title="advance" path="extensions/modules/tophits/element">
+            <field type="text" name="field1" default="dvas" label="field 1" description="input field 1" />
+            <field type="textarea" name="field2" default="" label="" description="" cols="10" rows="10" />
+            <field type="radio" name="field3" default="" label="" description="" >
+                <option value="1">On</option>
+                <option value="0">Off</option>
+            </field>
+            <field type="select" name="layout" default="" label="" description="" >
+                <option value="tinmoi">tin moi</option>
+                <option value="tinnoibat">tin noi bat</option>
+            </field>
+            <field type="category" name="catID" label="" description="" scope="" parent="" maxlevel="2" />
+            <field type="date" name="date" label="" description="" />            
+        </param>
+    </params>
+</root>

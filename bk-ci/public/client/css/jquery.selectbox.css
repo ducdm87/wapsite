@@ -1,0 +1,132 @@
+@CHARSET "UTF-8";
+.sbHolder{
+  position: relative; width: 133px;
+  background-color: #fdfdfd;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#e1e1e1)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, #fdfdfd, #e1e1e1); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, #fdfdfd, #e1e1e1); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, #fdfdfd, #ee1e1e1); /* IE10 */
+  background-image:      -o-linear-gradient(top, #fdfdfd, #e1e1e1); /* Oper*/
+   line-height: 22px;
+	margin: 0px 0px 0px;
+	display: inline-block; height: 22px;
+	border: 1px solid #f09500;
+}
+.select-provice .sbHolder,.title-tk .sbHolder{ width: 150px; vertical-align: middle; background: none; border: none; height: 28px;  }
+.title-tk .sbHolder{ width: 155px;}
+.select-provice .sbHolder a.sbSelector,.title-tk .sbHolder a.sbSelector{ background: url(../images/sprites.png) no-repeat left -1280px; width: 117px; padding: 0px 0px 0px 5px; line-height: 27px; color: #111; text-indent: 0px;}
+.box-ticket.select-provice .sbHolder, .title-tk .sbHolder{ width: 98px;}
+.box-ticket.select-provice .sbHolder a.sbSelector{ width: 65px;}
+.title-tk .sbHolder a.sbSelector{ width: 122px;}
+.select-provice .numberbox .sbHolder{ width: 80px;}
+.select-provice .numberbox .sbHolder a.sbSelector{ width: 52px; padding: 0px; text-align: center;}
+
+
+.sort-by1 .sbHolder{ width: 95px;}
+.tabs-toolbar .sbHolder{ width: 85px;}
+.sbHolder:focus .sbSelector{
+	
+}
+.sbSelector{
+	display: block;
+	left: 0;
+	line-height: 22px;
+	outline: none;
+	overflow: hidden;
+	position: absolute;
+	text-indent: 10px;
+	top: 0;
+	width: 110px;
+	padding: 0px 0px 0px 0px; text-shadow: 1px 1px 1px #fff;
+}
+.sort-by1 .sbSelector{ width: 75px;}
+.tabs-toolbar .sbSelector{ width: 95px;}
+.sbSelector:link, .sbSelector:visited, .sbSelector:hover{
+	color: #313131;
+	outline: none;
+	text-decoration: none;
+}
+.sbToggle{
+	display: block;
+	height: 5px;
+	outline: none;
+	position: absolute;
+	right: 5px;
+	top: 8px;
+	width: 10px;
+	background: url(../images/sprites.png) no-repeat right -501px;
+}
+.select-provice .sbToggle,.title-tk .sbToggle{ background-position: right -1280px; width: 28px; height: 28px; right: 0px; top: -1px;}
+.sbToggle:hover{
+}
+.sbToggleOpen{
+}
+.sbToggleOpen:hover{
+}
+.sbHolderDisabled{
+	background-color: #3C3C3C;
+	border: solid 1px #515151;
+}
+.sbHolderDisabled .sbHolder{
+	
+}
+.sbHolderDisabled .sbToggle{
+	
+}
+.sbOptions{
+	background-color: #eaeaea;
+	list-style: none;
+	left: 0px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 23px !important;
+	width: 125px;
+	z-index: 1;
+	overflow-y: auto;
+}
+.tabs-toolbar .sbOptions{ width: 110px;}
+.sort-by1 .sbOptions{ width: 120px;}
+.select-provice .numberbox .sbOptions{ width: 52px;}
+.sbOptions li{
+	padding: 0 7px;
+}
+.sbOptions a{
+	
+	display: block;
+	outline: none;
+	padding: 7px 0 7px 3px;
+}
+.sbOptions a:link, .sbOptions a:visited{
+	color: #313131;
+	text-decoration: none;
+}
+.sbOptions a:hover,
+.sbOptions a:focus,
+.sbOptions a.sbFocus{
+	color: #313131;
+}
+.sbOptions li.last a{
+	border-bottom: none;
+}
+.sbOptions .sbDisabled{
+	border-bottom: dotted 1px #515151;
+	color: #999;
+	display: block;
+	padding: 7px 0 7px 3px;
+}
+.sbOptions .sbGroup{
+	border-bottom: dotted 1px #515151;
+	color: #EBB52D;
+	display: block;
+	font-weight: bold;
+	padding: 7px 0 7px 3px;
+}
+.sbOptions .sbSub{
+	padding-left: 17px;
+}
+
+.select-provice .box-fromto .sbHolder{ width: 75px; margin: 0px 20px 0px 0px;} 
+.select-provice .box-fromto .sbHolder a.sbSelector{ width: 44px; text-align: center;}
+.select-provice .box-fromto .sbOptions{ width: 60px;}
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root type="app">
+    <name>article</name>
+    <title>Article</title>
+    <author>BHmedia group php</author>
+    <version>1.0.0</version>
+    <creationDate>July 2006</creationDate>
+    <description>Top hits article</description>
+    
+    <params>
+        <param title="advance" path="extensions/modules/tophits/element">
+            <field type="radio" name="show_link_title" default="1" label="Show Link Title" >
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </field>
+        </param>
+    </params>
+    
+    <views>
+        <view name="home" title="Home" desc="Trang tin tức">
+             <param title="advance">
+                     <field type="text" name="id" label="Category" />
+                     <field type="text" name="limit" label="Limit" />
+                     <field type="text" name="col" label="Col" />
+                </param>
+        </view>       
+        <view name="category" title="Category" desc="Danh mục bài viết">
+            <layouts>
+                <layout value="blog" desc="Danh mục bài viết blog">Blog</layout>
+                <layout value="list" desc="Danh mục bài danh sach">List</layout>
+            </layouts>              
+            <param title="advance">
+                <field type="catid" name="id" label="Category" />                 
+                 <field type="text" name="limit" label="Limit" />
+                 <field type="text" name="col" label="Col" />
+            </param>
+        </view>
+        
+        <view name="detail" title="Detail" desc="Chi tiết bài viết">
+            <param title="advance">
+               <field type="text" name="id" label="Category" />
+            </param>
+        </view>
+    </views>
+    
+</root>

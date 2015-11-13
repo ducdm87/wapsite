@@ -1,0 +1,22 @@
+#AddDefaultCharset utf-8
+  
+
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+        Options +SymLinksIfOwnerMatch
+        
+	# Make the backend accessible via url: http://site/backend.
+	RewriteRule ^backend/ backend.php 
+	
+	# If a directory or a file exists, use it directly.
+        RewriteRule ^cropping/(\d+)-(\d+)/images/resumes/(.*)\.(gif|jpg|jpeg|png|GIF|JPG|JPEG|PNG) /thumbs/cropping.php?mwidth=$1&mheight=$2&filename=../images/resumes/$3.$4 [QSA,L]
+        RewriteRule ^resize/(\d+)-(\d+)/images/resumes/(.*)\.(gif|jpg|jpeg|png|GIF|JPG|JPEG|PNG) /thumbs/makethumb.php?mwidth=$1&mheight=$2&filename=../images/resumes/$3.$4 [QSA,L]
+        RewriteRule ^thumbs/(\d+)-(\d+)/resumes/(.*)\.(gif|jpg|jpeg|png|GIF|JPG|JPEG|PNG) /thumbs/makethumb.php?mwidth=$1&mheight=$2&filename=../templates/resume/thumbs/$3.$4 [QSA,L]
+
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+	
+	# Otherwise forward it to index.php.
+        # internally rewrite the request to the index.php script
+        RewriteRule .* index.php 
+</IfModule>
