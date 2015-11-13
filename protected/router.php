@@ -75,8 +75,12 @@ class Router{
                 $sub_path = trim($sub_path,"/");
                 $segments = explode("/", $sub_path);
                 $functionName = $_app."ParseRoute";
-                require_once $app_router;
-                $params = $functionName($segments, $params);
+                if(file_exists($app_router)){
+                    require_once $app_router;
+                }
+                if(function_exists($functionName)){
+                    $params = $functionName($segments, $params);
+                }
                 $params['app'] = $_app; 
             }else if($item['params'] != null){
                 foreach ($item['params'] as $key => $value) {
