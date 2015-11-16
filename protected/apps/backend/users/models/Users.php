@@ -14,15 +14,20 @@ class Users extends CFormModel {
      * Logs in the user using the given username and password in the model.
      * @return boolean whether login is successful
      */
-    public function getUsers() {
+    public function getUsers($groupID = null, $order = null) {
         $obj_users = YiiUser::getInstance();
-        $items = $obj_users->getUsers();
+        $cond = "";
+        if($groupID != null){ $cond = " groupID = $groupID"; }
+        $items = $obj_users->getUsers($cond, '*', $order);
         return $items;
     }
 
-    function getGroups() {
+    function getGroups($parentID = null, $getAll = true) {
         $obj_user = YiiUser::getInstance();
-        $groups = $obj_user->getGroups();
+        $cond = "";
+        if($parentID != null){ $cond = " parentID = $parentID"; }
+
+        $groups = $obj_user->getGroups($cond);
         $arr_new = array();
         foreach ($groups as $group) {
             $arr_new[$group['id']] = $group;

@@ -23,6 +23,7 @@
                         <label class="control-label left col-md-3">Ordering</label>
                         <div class="col-md-9"><?php echo $list['ordering']; ?></div>
                     </div>
+                    <?php echo buildHtml::renderList("radio", "IS Backend", 'backend',array(array(1,'Yes'),array(0,'No')), $item->backend,null,3,9); ?>
                 </div>
             </div>
         </div>

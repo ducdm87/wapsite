@@ -38,9 +38,10 @@ class Group extends CFormModel {
         return $groups;
     }
     
-    function getItem()
+    function getItem($cid = null)
     {
-        $cid = Request::getVar("cid", 0);
+        if($cid == null OR $cid == "")
+            $cid = Request::getVar("cid", 0);
         
         if (is_array($cid))
             $cid = $cid[0];

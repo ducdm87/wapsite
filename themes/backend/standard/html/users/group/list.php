@@ -22,6 +22,7 @@
                                 <input type="checkbox" name="toggle" value="" onclick="checkAll(<?php echo $items ? count($items) : 0; ?>);"> 
                             </th>
                             <th width="50%">Name</th>    
+                            <th width="2%">Users</th>    
                             <th width="2%">level</th>    
                             <th width="5%">Site</th>    
                             <th width="5%" align="center">Status</th>
@@ -38,6 +39,7 @@
                                     continue;
                                 $link_edit = Router::buildLink("users", array("view"=>"group",'layout'=>'edit', "cid" => $item['id']));
                                 $item['name'] = str_repeat("&nbsp; &nbsp; ", $item['level'] - 1) . " - " . $item['name'];
+                                $link_items = Router::buildLink('users', array("view"=>"user", 'layout'=>'tree','groupID'=>$item['id'])); 
                                 ?>
                                 <tr>
                                     <td><?php echo $k + 1; ?></td>                                        
@@ -45,6 +47,7 @@
                                         <input id="cb<?php echo $i; ?>" type="checkbox" name="cid[]" value="<?php echo $item["id"]; ?>" onclick="isChecked(this.checked);">                                            
                                     </td>
                                     <td><a href="<?php echo $link_edit; ?>"><?php echo $item['name']; ?></a></td>                                        
+                                    <td><?php echo buildHtml::showBtnIcon("Items", $link_items,"mainmenu.png"); ?></td>  
                                     <td align="center"><?php echo $item['level']; ?></td>                                        
 
                                     <td align="center"><?php if ($item['backend'] == 1) echo "Backend";

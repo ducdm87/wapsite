@@ -17,7 +17,7 @@ $settings = array(
             ),
         ),
         'user' => array(
-            'loginUrl' => array('users/login'),
+            'loginUrl' => "backend?app=user&view=user&layout=login",
         ),
         'session' => array(
             'class' => 'CHttpSession',

@@ -287,6 +287,37 @@ class buildHtml {
             else
                 return mb_substr($text, 0, $max_len - 1, 'UTF-8') . '...';
         }
+        /*
+         * $items: danh sach[value, text]
+         */
+        static function renderList($type = "radio",$title, $name, $items = array(), $value = 0, $class = null, $w1 = 2, $w2 = 10){
+             
+            $html = '<div class="form-group row">';
+            $html .= '<label class="control-label left col-md-' . $w1 . '">' . $title . '</label>';
+            $html .= '<div class="col-md-' . $w2 . '">';
+                
+                foreach($items as $item){
+                    if($type == "radio"){
+                        if($item[0] == $value)
+                            $html .= '<input checked type="radio" name="' . $name . '" '
+                                    . 'class="'. $class . '" value="' . $item[0] . '"> '. $item[1].' &nbsp; ';
+                        else $html .= '<input type="radio" name="' . $name . '" '
+                                    . 'class="' . $class . '" value="' . $item[0] . '"> '. $item[1].' &nbsp; ';
+                    }else if($type=="check"){
+                        if($item[0] == $value)
+                            $html .= '<input checked type="checkbox" name="' . $name . '" '
+                                    . 'class="'. $class . '" value="' . $item[0] . '"> '. $item[1].' &nbsp; ';
+                        else $html .= '<input type="checkbox" name="' . $name . '" '
+                                    . 'class="' . $class . '" value="' . $item[0] . '"> '. $item[1].' &nbsp; ';
+                    }
+                 }
+                
+             
+            $html .= '</div>';
+            $html .= '</div>';
 
+
+            return $html;
+        }
     }
     

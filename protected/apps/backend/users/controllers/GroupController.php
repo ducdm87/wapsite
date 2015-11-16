@@ -103,14 +103,16 @@ class GroupController extends BackEndController {
         $tbl_group->_old_parent = $tbl_group->parentID;        
         
         $tbl_group->bind($post); 
-        $tbl_group->parentID = intval($tbl_group->parentID);
-        if($tbl_group->parentID >0){
-            $tbl_group_parent = $obj_user->getGroup($tbl_group->parentID);
-            $tbl_group->backend = $tbl_group_parent->backend;
-        }else{
-            $tbl_group->backend = 0;
-        }
-        
+//        $tbl_group->parentID = intval($tbl_group->parentID);
+//        if($tbl_group->parentID >0){
+//            $tbl_group_parent = $obj_user->getGroup($tbl_group->parentID);
+//            if($tbl_group->parentID == 1)
+//                $tbl_group->backend = 1;
+//            else $tbl_group->backend = $tbl_group_parent->backend;
+//        }else{
+//            $tbl_group->backend = 0;
+//        }
+//        
         $tbl_group->store();
        
         return $tbl_group->id; 

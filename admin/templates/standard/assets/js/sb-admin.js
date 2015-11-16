@@ -211,6 +211,31 @@ $(function () {
          $(".modal-dialog .close").click();
     });
     
+     $(document).delegate(".user-tree ul li.folder .folder-btn", "click", function() {
+         var parent_group = $(this).parent();
+         if($(this).hasClass('btn-close')){
+            $(this).removeClass('btn-close');
+            $(this).addClass('btn-open');
+            var rel = $(this).attr('rel');
+            $(this).attr('rel', "");            
+            if(rel != undefined && rel != "" ){
+                $.ajax({
+                    type: "POST",
+                    url: rel,
+                    data:{"tmpl":"app"},
+                    complete: function(event){                        
+                        $(parent_group).html($(parent_group).html() + event.responseText);
+                    }
+                }).done(function() {  });
+            }
+            $(parent_group).removeClass('hide-sub');
+         }else{
+             $(parent_group).addClass('hide-sub');
+            $(this).removeClass('btn-open'); 
+            $(this).addClass('btn-close');
+         }
+    });
+    
 });
 
 function setmenutype(app_name, view_name, layout_name){
@@ -238,7 +263,7 @@ function loadConfigFile(app_name, view_name){
     $.ajax({
         type: "POST",
         url: link_load_config_menu,
-        data:{"menuID":menuID,"app":app_name, "view":view_name},
+        data:{"menuID":menuID,"pr_app":app_name, "pr_view":view_name},
         complete: function(event){
             var data = JSON.parse(event.responseText);
             $(".nav-tabs #title-param-custome").html(data[0]);

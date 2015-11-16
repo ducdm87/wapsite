@@ -32,7 +32,7 @@ class BackEndController extends CController {
 
         parent::init();
 
-        $app = Yii::app();
+        $YiiApp = Yii::app();
         if (!$mainframe->isLogin()) {            
             $duration = time() + 300; // 365 days            
         } else {
@@ -43,11 +43,11 @@ class BackEndController extends CController {
         }
         
         $cookie = new CHttpCookie(session_name(), session_id(), array("expire" => $duration));
-        $app->getRequest()->getCookies()->add($cookie->name, $cookie);
-    }
+        $YiiApp->getRequest()->getCookies()->add($cookie->name, $cookie);
+    } 
     
     function render($layout = "blog", $data = NULL, $return = false) {
-         $app = Request::getVar('app',"cpanel");
+         $YiiApp = Request::getVar('app',"cpanel");
          $controller = Request::getVar('controller',null);
          $view = Request::getVar('view',"home");
          $controller = $controller?$controller:$view;
@@ -57,11 +57,11 @@ class BackEndController extends CController {
           if($pagetype == 1){
             $found = false;
             if(is_dir(ROOT_PATH."themes/backend/$cur_temp")){
-                $file_layout = $yiiapp->getViewPath()."/html/$app/$controller/$layout.php";
+                $file_layout = $yiiapp->getViewPath()."/html/$YiiApp/$controller/$layout.php";
                 
                 if(file_exists($file_layout)){
                     $found = true;
-                    $view =  "//html/$app/$controller/$layout"; 
+                    $view =  "//html/$YiiApp/$controller/$layout"; 
                 }
             }
            
@@ -73,11 +73,11 @@ class BackEndController extends CController {
                 }
             }
             if($found == false){                
-                $app_viewpath = PATH_APPS_FRONT . "/$app/views";
-                $file_layout = "$app_viewpath/$controller/$layout.php"; 
+                $YiiApp_viewpath = PATH_APPS_FRONT . "/$YiiApp/views";
+                $file_layout = "$YiiApp_viewpath/$controller/$layout.php"; 
                 if(file_exists($file_layout)){
                     $found = true;
-                    $yiiapp->setViewPath($app_viewpath);
+                    $yiiapp->setViewPath($YiiApp_viewpath);
                     $view =  "/$controller/$layout";
                 }                
             }
@@ -108,16 +108,21 @@ class BackEndController extends CController {
     public function accessRules() {
 
         global $db, $user, $mainframe;
-        $app = Yii::app();
+        $YiiApp = Yii::app();
+        $app = Request::getVar('app','cpanel');
+        $view = Request::getVar('view','cpanel');
+        $layout = Request::getVar('layout','cpanel');
         if ($mainframe->isLogin()) {
             if (!$mainframe->isAdmin()) {
                 YiiMessage::raseWarning("Your account not have permission to visit backend page");
-                Yii::app()->session['userbackend'] = null;
-                $this->redirect(array('users/logout'));
+                Yii::app()->session['userbackend'] = null;                
+                $this->redirect(Router::buildLink("users",array("view"=>'user','layout'=>'logout')));
+//                $this->redirect(array('users/logout'));
                 return;
-            }
-            if ($app->controller->id == "users" and $app->controller->action->id == "login") {
-                $this->redirect(array('/cpanel'));
+            }            
+            if ($app == "users" and $view == "user" AND $layout == "login") {
+                $this->redirect(Router::buildLink("cpanel"));
+//                $this->redirect(array('/cpanel'));
                 return;
             }
             return array();
@@ -128,7 +133,7 @@ class BackEndController extends CController {
                 )
             );
             return $return;
-        } else if ($app->controller->id == "users" and $app->controller->action->id == "login") {
+        } else if ($app == "users" and $view == "user" AND $layout == "login") {
 
             return array(
                 array('allow', // allow all users to access 'formlogin' and 'login' actions.
@@ -142,8 +147,8 @@ class BackEndController extends CController {
                     'users' => array('*'),
                 ),
             );
-        } else {
-            $this->redirect(array('users/login'));
+        } else {            
+            $this->redirect(Router::buildLink("users",array("view"=>'user','layout'=>'login')));
 //            return array();
         }
     }
@@ -180,7 +185,7 @@ class BackEndController extends CController {
                                 </td>';
     }
 
-    function addIconToolbarDelete($alert = "Please select a item from the list to delete") {
+    function addIconToolbarDelete($alert = "Please select a item from the list to delete", $title = "delete") {
         $this->iconToolbar[] = ' <td id="toolbar-delete" class="button">
                                      <a class="toolbar" onclick="javascript:if (document.adminForm.boxchecked.value == 0) {
                                         alert(\'' . $alert . '\');
@@ -189,7 +194,7 @@ class BackEndController extends CController {
                                     }" href="#">
                                         <span title="delete" class="icon-32-delete">
                                         </span>
-                                        delete
+                                        '.$title.'
                                     </a>
                                 </td>';
     }

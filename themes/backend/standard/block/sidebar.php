@@ -97,9 +97,9 @@
             <li class="dropdown user-dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $mainframe->getUserUsername(); ?> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="<?php echo Yii::app()->createUrl("users/profile"); ?>"><i class="fa fa-user"></i> Profile</a></li>                
-                    <li class="divider"></li>
-                    <li><a href="<?php echo Yii::app()->createUrl("users/logout"); ?>"> <i class="fa fa-power-off"></i> Logout</a></li>                
+                    <li><a href="<?php echo Router::buildLink("users", array("view"=>'user','layout'=>'progile')); ?>"><i class="fa fa-user"></i> Profile</a></li>                
+                    <li class="divider"></li>                    
+                    <li><a href="<?php echo Router::buildLink("users", array("view"=>'user','layout'=>'logout')); ?>"> <i class="fa fa-power-off"></i> Logout</a></li>                
                 </ul>
             </li>
         </ul>

@@ -313,3 +313,77 @@ input[disabled],input[readonly]
     cursor: not-allowed;
 }
  
+.user-tree{ }
+.user-tree ul{
+    margin: 0;
+    padding: 0 0 0 18px;
+    list-style-type: none;
+}
+.user-tree ul.line{
+    background:  url("../images/icons/line_conn.gif") repeat-y scroll 0 0;
+}
+.user-tree ul li{ }
+.user-tree ul li a.active{ font-weight: bold; }
+.user-tree ul li a{ color: #333; }
+
+.user-tree ul li .leader{ 
+    color: red;
+    font-weight: bold;
+}
+ 
+.user-tree ul li .icon{ 
+     display: inline-block;
+    float: left;
+    height: 18px;
+    line-height: 1;
+    width: 18px;
+}
+.user-tree ul li.folder .folder-btn{
+     float: left;
+    height: 18px;
+    padding: 0 0 0 15px;
+    width: 18px;
+    cursor: pointer;
+    background:  url("../images/icons/plus_center.gif") no-repeat scroll 0 0; 
+}
+ 
+ 
+.user-tree ul li.folder.last .folder-btn{ 
+     background:  url("../images/icons/plus_bottom.gif") no-repeat scroll 0 0;
+} 
+
+.user-tree ul li.folder.first{ 
+     background:  url("../images/icons/plus_top.gif") no-repeat scroll 0 0;
+}
+
+
+.user-tree ul li.folder .btn-open{ 
+    background:  url("../images/icons/minus_center.gif") no-repeat scroll 0 0; 
+} 
+.user-tree ul li.folder.last .btn-open{ 
+    background:  url("../images/icons/minus_bottom.gif") no-repeat scroll 0 0;
+}
+.user-tree ul li.folder.first .btn-open{ 
+    /*background:  url("../images/icons/minus_top.gif") no-repeat scroll 0 0;*/
+}
+
+.user-tree ul li .hide-sub{
+    height: 20px;
+    overflow: hidden;
+}
+ 
+.user-tree ul li.file{ 
+    background:  url("../images/icons/line_center.gif") no-repeat;
+    padding: 0 0 0 15px;
+}
+.user-tree ul li.file:last-child{
+    background:  url("../images/icons/line_bottom.gif") no-repeat;
+    padding: 0 0 0 15px;
+}
+
+.user-tree ul li.folder .icon{ 
+     background:  url("../images/icons/folder_Close.gif") no-repeat;
+}
+.user-tree ul li.file .icon{ 
+    background:  url("../images/icons/page.gif") no-repeat;
+}

@@ -31,10 +31,10 @@ class YiiUser{
     }
     
     // lay tat ca user
-    function getUsers($condition = null, $fields = "*")
+    function getUsers($condition = null, $fields = "*", $order = "ID DESC ")
     {
         $tbl_user = YiiTables::getInstance(TBL_USERS);
-        $items = $tbl_user->loads($fields, $condition, "ID DESC ", null);
+        $items = $tbl_user->loads($fields, $condition, $order , null);
         return $items;
     }
     

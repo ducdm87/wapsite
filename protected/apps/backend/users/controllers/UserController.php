@@ -11,32 +11,32 @@ class UserController extends BackEndController {
         parent::init();
     } 
 
-    function actionDisplay(){        
-        $this->addIconToolbar("Edit", Router::buildLink("users", array("view"=>"user", "layout"=>"edit")), "edit", 1, 1, "Please select a item from the list to edit");
-        $this->addIconToolbar("New", Router::buildLink("users", array("view"=>"user", "layout"=>"new")), "new");
-//        $this->addIconToolbarDelete();
-        $this->addIconToolbar("Delete", Router::buildLink("users", array("view"=>"user", "layout"=>"remove")), "trash", 1, 1, "Please select a item from the list to Remove");        
-        $this->addBarTitle("User <small>[list]</small>", "user");
+    function actionDisplay(){ 
+            $this->addIconToolbar("Edit", Router::buildLink("users", array("view"=>"user", "layout"=>"edit")), "edit", 1, 1, "Please select a item from the list to edit");
+            $this->addIconToolbar("New", Router::buildLink("users", array("view"=>"user", "layout"=>"new")), "new");
+    //        $this->addIconToolbarDelete();
+            $this->addIconToolbar("Delete", Router::buildLink("users", array("view"=>"user", "layout"=>"remove")), "trash", 1, 1, "Please select a item from the list to Remove");        
+            $this->addBarTitle("User <small>[list]</small>", "user");
 
-        $task = Request::getVar('task', "");
-        if ($task == "hidden" OR $task == 'publish' OR $task == "unpublish") {
-            $cids = Request::getVar('cid');
-            for ($i = 0; $i < count($cids); $i++) {
-                $cid = $cids[$i];
-                if ($task == "publish")
-                    $this->changeStatus ($cid, 1);
-                else if ($task == "hidden")
-                    $this->changeStatus ($cid, 2);
-                else $this->changeStatus ($cid, 0);
+            $task = Request::getVar('task', "");
+            if ($task == "hidden" OR $task == 'publish' OR $task == "unpublish") {
+                $cids = Request::getVar('cid');
+                for ($i = 0; $i < count($cids); $i++) {
+                    $cid = $cids[$i];
+                    if ($task == "publish")
+                        $this->changeStatus ($cid, 1);
+                    else if ($task == "hidden")
+                        $this->changeStatus ($cid, 2);
+                    else $this->changeStatus ($cid, 0);
+                }
+                YiiMessage::raseSuccess("Successfully saved changes status for users");
             }
-            YiiMessage::raseSuccess("Successfully saved changes status for users");
-        }
 
-        $model = new Users();
-        $list_user = $model->getUsers();
-        $arr_group = $model->getGroups();
-    
-        $this->render('list', array("list_user" => $list_user, 'arr_group' => $arr_group));
+            $model = new Users();
+            $list_user = $model->getUsers();
+            $arr_group = $model->getGroups();
+
+            $this->render('list', array("list_user" => $list_user, 'arr_group' => $arr_group)); 
     }
     
      function changeStatus($cid, $value)
@@ -91,7 +91,7 @@ class UserController extends BackEndController {
 
     function actionSave() {
         $this->store();
-        $this->redirect(Router::buildLink("users", array("view"=>"user",'layout'=>'edit')));
+        $this->redirect(Router::buildLink("users", array("view"=>"user")));
     }
 
     function store() {
@@ -180,6 +180,36 @@ class UserController extends BackEndController {
         }
         YiiMessage::raseSuccess("Successfully delete User(s)");
         $this->redirect(Router::buildLink("users", array("view"=>"user")));
+    }
+    
+    function actionTree(){
+        global $user;
+        $tmpl = Request::getVar('tmpl',null);
+        $modelUser = new Users();
+        $modelGroup = new Group();
+         
+        $this->addBarTitle("User <small>[list]</small>", "user");
+        
+        $groupID = Request::getVar('groupID',null);
+        if($groupID == null){
+            $groupID = $user['groupID'];
+            $group = $modelGroup->getItem($user['groupID']);
+            if($group->parentID == 1)
+                $groupID = $group->parentID;
+        }
+
+        
+        
+        $group = $modelGroup->getItem($groupID);
+        $list_user = $modelUser->getUsers($groupID, " leader DESC, id ASC ");
+        $arr_group = $modelUser->getGroups($groupID);
+        
+        if($tmpl ==null)
+            $this->render('tree', array("objGroup"=>$group,"list_user" => $list_user, 'arr_group' => $arr_group));
+        else if($tmpl == 'app'){
+            $this->render('treegroup', array("objGroup"=>$group,"list_user" => $list_user, 'arr_group' => $arr_group));
+            die;
+        }
     }
     
 }
