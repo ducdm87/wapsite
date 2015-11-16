@@ -6,7 +6,7 @@
         Options +SymLinksIfOwnerMatch
         
 	# Make the backend accessible via url: http://site/backend.
-	RewriteRule ^backend/ backend.php 
+	RewriteRule ^backend backend.php 
 	
 	# If a directory or a file exists, use it directly.
         RewriteRule ^cropping/(\d+)-(\d+)/images/resumes/(.*)\.(gif|jpg|jpeg|png|GIF|JPG|JPEG|PNG) /thumbs/cropping.php?mwidth=$1&mheight=$2&filename=../images/resumes/$3.$4 [QSA,L]

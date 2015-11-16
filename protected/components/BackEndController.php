@@ -44,7 +44,50 @@ class BackEndController extends CController {
         
         $cookie = new CHttpCookie(session_name(), session_id(), array("expire" => $duration));
         $app->getRequest()->getCookies()->add($cookie->name, $cookie);
-    } 
+    }
+    
+    function render($layout = "blog", $data = NULL, $return = false) {
+         $app = Request::getVar('app',"cpanel");
+         $controller = Request::getVar('controller',null);
+         $view = Request::getVar('view',"home");
+         $controller = $controller?$controller:$view;
+         
+          global $pagetype, $cur_temp, $yiiapp, $cur_temp;
+          
+          if($pagetype == 1){
+            $found = false;
+            if(is_dir(ROOT_PATH."themes/backend/$cur_temp")){
+                $file_layout = $yiiapp->getViewPath()."/html/$app/$controller/$layout.php";
+                
+                if(file_exists($file_layout)){
+                    $found = true;
+                    $view =  "//html/$app/$controller/$layout"; 
+                }
+            }
+           
+            if($found == false){
+                $file_layout = $yiiapp->getViewPath()."/$controller/$layout.php";                
+                if(file_exists($file_layout)){
+                    $found = true;
+                    $view =  "/$controller/$layout";
+                }
+            }
+            if($found == false){                
+                $app_viewpath = PATH_APPS_FRONT . "/$app/views";
+                $file_layout = "$app_viewpath/$controller/$layout.php"; 
+                if(file_exists($file_layout)){
+                    $found = true;
+                    $yiiapp->setViewPath($app_viewpath);
+                    $view =  "/$controller/$layout";
+                }                
+            }
+            if($found == false){
+                die("Invalid view");
+            }
+          }else $view =  $layout;
+
+        parent::render($view, $data, $return);
+    }
 
     public function actions()
     {
