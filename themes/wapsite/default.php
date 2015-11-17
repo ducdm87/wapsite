@@ -48,8 +48,8 @@
                                 </ul>
                             </li>
                         <?php else: ?>
-                            <li><a href="<?php echo $this->createUrl('/users') ?>">Đăng Kí</a> <span class="span-header-top"> | </span></li>
-                            <li><a href="<?php echo $this->createUrl('/users/login') ?>">Đăng Nhập</a></li>
+                            <li><a href="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'register')); ?>">Đăng Kí</a> <span class="span-header-top"> | </span></li>
+                            <li><a href="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'login')); ?>">Đăng Nhập</a> <span class="span-header-top"> </span></li>                            
                         <?php endif; ?>
                     </ul>
                 </div>

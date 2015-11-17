@@ -35,24 +35,35 @@
                         $k = 0;
                         if (isset($items) && $items) {
                             foreach ($items as $i => $item) {
-                                if ($item['level'] == 0 OR $item['parentID'] == 0)
-                                    continue;
-                                $link_edit = Router::buildLink("users", array("view"=>"group",'layout'=>'edit', "cid" => $item['id']));
-                                $item['name'] = str_repeat("&nbsp; &nbsp; ", $item['level'] - 1) . " - " . $item['name'];
+                                $link_edit = Router::buildLink("users", array("view"=>"group",'layout'=>'edit', "cid" => $item['id']));                                
+                                $item['name'] = str_repeat("&nbsp; &nbsp; ", $item['level']) . " - " . $item['name'];
                                 $link_items = Router::buildLink('users', array("view"=>"user", 'layout'=>'tree','groupID'=>$item['id'])); 
+                                if ($item['level'] == 0 OR $item['parentID'] == 0)
+                                    $link_edit = "";
                                 ?>
                                 <tr>
                                     <td><?php echo $k + 1; ?></td>                                        
                                     <td>
                                         <input id="cb<?php echo $i; ?>" type="checkbox" name="cid[]" value="<?php echo $item["id"]; ?>" onclick="isChecked(this.checked);">                                            
                                     </td>
-                                    <td><a href="<?php echo $link_edit; ?>"><?php echo $item['name']; ?></a></td>                                        
+                                    <td>
+                                        <?php if ($item['level'] == 0 OR $item['parentID'] == 0){
+                                                echo $item['name'];
+                                            }else{ ?>                                        
+                                            <a href="<?php echo $link_edit; ?>"><?php echo $item['name']; ?></a>
+                                        <?php } ?>
+                                        
+                                    </td>
                                     <td><?php echo buildHtml::showBtnIcon("Items", $link_items,"mainmenu.png"); ?></td>  
                                     <td align="center"><?php echo $item['level']; ?></td>                                        
 
-                                    <td align="center"><?php if ($item['backend'] == 1) echo "Backend";
-                                else echo "Frontend" ?></td>
-                                    <td align="center"><?php echo buildHtml::status($i, $item['status']); ?></td>
+                                    <td align="center"><?php if ($item['backend'] == 0) echo "Frontend";
+                                else echo "Backend" ?></td>
+                                    <td align="center">
+                                         <?php if ($item['level'] != 0 AND $item['parentID'] != 0){
+                                                echo buildHtml::status($i, $item['status']);
+                                            }?>
+                                    </td>
                                     <td><?php echo $item['mdate']; ?></td>
                                     <td><?php echo $item['id']; ?></td>
                                 </tr>                                    

@@ -26,9 +26,15 @@ class Group extends CFormModel {
         return $instance;
     } 
 
-    public function getItems() {
+    public function getItems($groupID = null) {
         $obj_user = YiiUser::getInstance();
-        $groups = $obj_user->getGroups();
+        $cond = null;
+        if($groupID != null){
+            $group = $this->getItem($groupID);
+            if($group->parentID > 1)
+                $cond = " lft >=  $group->lft AND rgt <= $group->rgt ";
+        }       
+        $groups = $obj_user->getGroups($cond);
         $arr_new = array();
         foreach ($groups as $group) {
             $arr_new[$group['id']] = $group;

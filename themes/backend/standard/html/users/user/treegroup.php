@@ -13,8 +13,8 @@
             ?>
                 <li class="file">
                     <i class='icon'></i>
-                    <a href="<?php echo $link_edit; ?>" class="<?php if($_user['leader'] == 1) echo 'leader'; ?> <?php if($user['id']==$_user['id']) echo 'active'; ?>">
-                        <?php echo $_user['username']; ?><?php if($user['id']==$_user['id']) echo ' (*)'; ?>
+                    <a href="<?php echo $link_edit; ?>" class="<?php if($_user['leader'] == 1) echo 'leader'; ?> <?php if($user->id==$_user['id']) echo 'active'; ?>">
+                        <?php echo $_user['username']; ?><?php if($user->id==$_user['id']) echo ' (*)'; ?>
                     </a>
                 </li>
             <?php

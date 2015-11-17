@@ -14,7 +14,7 @@ class MainFrame {
 
     function __construct($db, $user, $site = "backend") {
         $this->db = $db;
-
+        if(is_array($user)) $user = (object)$user;
         $this->user = $user;
         $this->site = $site;
     }
@@ -37,11 +37,11 @@ class MainFrame {
     }
 
     function getUserID() {        
-        return $this->user ? $this->user["id"] : 0;
+        return $this->user ? $this->user->id : 0;
     }
 
     function getUserUsername() {
-        return $this->user ? $this->user["username"] : "";
+        return $this->user ? $this->user->username : "";
     }
 
     function isLogin() {
@@ -49,7 +49,8 @@ class MainFrame {
     }
 
     function isAdmin() {
-        return $this->user ? ($this->user['backend'] == 1 ? true : false) : false;
+        
+        return $this->user ? ($this->user->backend == 1 ? true : false) : false;
     }
 
     function isBackEnd() {

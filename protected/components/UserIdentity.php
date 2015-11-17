@@ -20,52 +20,10 @@ class UserIdentity extends CUserIdentity {
      */
     public function authenticate() {
         global $mainframe, $user;
-
-        if ($mainframe->isBackEnd()) {
-
-            $query = "SELECT u.*,g.lft,g.name groupname, g.backend "
-                    . "FROM " . $this->table_group . " g right join " . $this->tablename . " u ON g.id = u.groupID "
-                    . " WHERE username = :username ANd password=:password AND u.status = 1 ";
-            $password = md5($this->password);
-            $conmmand = Yii::app()->db->createCommand($query);
-            $conmmand->bindParam(':username', $this->username);
-            $conmmand->bindParam(':password', $password);
-            $result = $conmmand->queryRow();
-            
-            if (!$result) {
-                YiiMessage::raseWarning("Invalid your usename or password");
-                $this->errorCode = self::ERROR_USERNAME_INVALID;
-            } else {
-                $query = "UPDATE " . $this->tablename . " SET lastvisit = now() WHERE id = " . $result['id'];
-                $command = Yii::app()->db->createCommand($query);
-                $command->execute();
-                $this->errorCode = self::ERROR_NONE;
-            }
-
-            $user = Yii::app()->session['userbackend'] = $result;
-
-            $mainframe->set("user",$user);
-            return !$this->errorCode;
-        }else{
-             $query = "SELECT * "
-                    . "FROM " . $this->tablename
-                    . " WHERE email = :username ANd password=:password AND status = 1 AND verify = 1 ";
-             $password = md5($this->password);
-            $conmmand = Yii::app()->dbuser->createCommand($query);
-            $conmmand->bindParam(':username', $this->username);
-            $conmmand->bindParam(':password', $password);
-            $result = $conmmand->queryRow();
-
-            if (!$result) {                
-                $this->errorCode = self::ERROR_USERNAME_INVALID;
-            } else {                
-                $this->errorCode = self::ERROR_NONE;
-            }
-            $result['suppliers'] = "";
-            $user = Yii::app()->session['userfront'] = $result;
-            $mainframe->set("user",$user);
-            return !$this->errorCode;
-        }
+        $user = new YiiUser();
+        
+        $this->errorCode = $user->login($this->username, $this->password);
+        return !$this->errorCode;
     }
 
 }

@@ -11,7 +11,7 @@ class UserController extends BackEndController {
         parent::init();
     } 
 
-    function actionDisplay(){ 
+    function actionDisplay(){
             $this->addIconToolbar("Edit", Router::buildLink("users", array("view"=>"user", "layout"=>"edit")), "edit", 1, 1, "Please select a item from the list to edit");
             $this->addIconToolbar("New", Router::buildLink("users", array("view"=>"user", "layout"=>"new")), "new");
     //        $this->addIconToolbarDelete();
@@ -31,12 +31,21 @@ class UserController extends BackEndController {
                 }
                 YiiMessage::raseSuccess("Successfully saved changes status for users");
             }
-
+            global $user;
+            
             $model = new Users();
-            $list_user = $model->getUsers();
+            $modelGroup = new Group();
+            
+            $groupID = $user->groupID;
+            $group = $modelGroup->getItem($user->groupID);
+            if($group->parentID == 1){ $list_user = $model->getUsers(); }
+            else $list_user = $model->getUsers($groupID);
+            
+            
             $arr_group = $model->getGroups();
 
-            $this->render('list', array("list_user" => $list_user, 'arr_group' => $arr_group)); 
+            $this->render('list', array("list_user" => $list_user, 'arr_group' => $arr_group));
+       
     }
     
      function changeStatus($cid, $value)
@@ -56,6 +65,7 @@ class UserController extends BackEndController {
     }
 
     function actionEdit() {
+        global $user;
         setSysConfig("sidebar.display", 0); 
         $model = new Users();
         $cid = Request::getVar("cid", 0);
@@ -77,7 +87,19 @@ class UserController extends BackEndController {
         }
 
         $model = new Users();
-        $item = $model->getItem($cid) ;       
+        $item = $model->getItem($cid) ;
+        if($item->id != 0){
+            if(!$bool = $user->modifyChecking($item->id)){
+                YiiMessage::raseNotice("Your account not have permission to visit page");
+                $this->redirect(Router::buildLink("cpanel"));
+            }
+        }else{
+           
+            if($user->leader == 0){
+                YiiMessage::raseNotice("Your account not have permission to make account");
+                $this->redirect(Router::buildLink("cpanel"));
+            }
+        }
          
         $list = $model->getListEdit($item);
 
@@ -150,7 +172,8 @@ class UserController extends BackEndController {
         if (isset($_POST['LoginForm'])) {
             $model->attributes = $_POST['LoginForm'];
             $session_id = session_id();
-            // validate user input and redirect to the previous page if valid                    
+            // validate user input and redirect to the previous page if valid  
+            
             if ($model->validate() && $model->login()) {
                 $this->afterLogin($session_id, session_id());
                 $this->redirect(Router::buildLink("cpanel"));                
@@ -166,7 +189,7 @@ class UserController extends BackEndController {
      public function actionLogout() {
 //        Yii::app()->session['userbackend'] = null;
         Yii::app()->user->logout();
-        $this->redirect(Router::buildLink("users", array("view"=>"user",'layout'=>'login')));        
+        $this->redirect(Router::buildLink("users", array("view"=>"user",'layout'=>'login')));
     }
     
     function actionRemove()
@@ -187,18 +210,19 @@ class UserController extends BackEndController {
         $tmpl = Request::getVar('tmpl',null);
         $modelUser = new Users();
         $modelGroup = new Group();
-         
+        
         $this->addBarTitle("User <small>[list]</small>", "user");
-        
-        $groupID = Request::getVar('groupID',null);
-        if($groupID == null){
-            $groupID = $user['groupID'];
-            $group = $modelGroup->getItem($user['groupID']);
-            if($group->parentID == 1)
-                $groupID = $group->parentID;
+       
+        $groupID = Request::getVar('groupID',$user->groupID);
+        $group = $modelGroup->getItem($user->groupID);
+ 
+        if($group->parentID != 1){
+            if(!$user->groupChecking($groupID)){ 
+                $group = $modelGroup->getItem($user->groupID);
+                YiiMessage::raseNotice("Your account not have permission to visit page");
+                $this->redirect(Router::buildLink("cpanel"));
+            }
         }
-
-        
         
         $group = $modelGroup->getItem($groupID);
         $list_user = $modelUser->getUsers($groupID, " leader DESC, id ASC ");

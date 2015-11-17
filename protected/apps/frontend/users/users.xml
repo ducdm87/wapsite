@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root type="app">
+    <name>users</name>
+    <title>Users</title>
+    <author>BHmedia group php</author>
+    <version>1.0.0</version>
+    <creationDate>July 2006</creationDate>
+    <description>Action user</description>
+    
+    <views>
+        <view name="user">              
+             <layouts>
+                <layout value="user" desc="Hồ sơ cá nhân">Profile</layout>
+                <layout value="login" desc="Trang đăng nhập">Loin</layout>
+                <layout value="logout" desc="Đăng xuất">Logout</layout>
+                <layout value="register" desc="Đăng ký thành viên">Register</layout>
+                <layout value="forgotpass" desc="Quên mật khẩu">Forgot password</layout>
+                <layout value="changepass" desc="Đổi mật khẩu">Change password</layout>
+            </layouts>
+        </view>        
+    </views>
+    
+</root>

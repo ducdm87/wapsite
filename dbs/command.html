@@ -1,1 +1,3 @@
-ALTER TABLE `tbl_menu_item` CHANGE `controller` `app` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+UPDATE `tbl_extensions`  SET `name` = 'users' , `title` = 'Users', `alias` = 'users', `folder` = 'users', WHERE `id` = 7;
+
+ALTER TABLE `tbl_users` ADD `isBlock` TINYINT NOT NULL AFTER `lastvisit`;

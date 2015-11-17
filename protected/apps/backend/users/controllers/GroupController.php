@@ -34,7 +34,11 @@ class GroupController extends BackEndController {
         $this->addBarTitle("Group <small>[list]</small>", "user");
 
         $model = Group::getInstance();
-        $items = $model->getItems();
+        global $user;
+        $groupID = $user->groupID;
+        $group = $model->getItem($user->groupID);
+        if($group->parentID == 1){ $items = $model->getItems(); }
+        else $items = $model->getItems($groupID);
 
         $this->render('list', array('items' => $items));
     }

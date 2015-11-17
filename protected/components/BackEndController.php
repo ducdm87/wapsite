@@ -27,7 +27,7 @@ class BackEndController extends CController {
         }
         $db = $this->db = Yii::app()->db;
         Yii::app()->name = "Back end";
-        $user = $this->user = Yii::app()->session['userbackend'];
+        $user = $this->user = Yii::app()->session['userbackend'];        
         $mainframe = MainFrame::getInstance($this->db, $this->user);
 
         parent::init();
@@ -108,12 +108,14 @@ class BackEndController extends CController {
     public function accessRules() {
 
         global $db, $user, $mainframe;
+        
         $YiiApp = Yii::app();
         $app = Request::getVar('app','cpanel');
         $view = Request::getVar('view','cpanel');
         $layout = Request::getVar('layout','cpanel');
-        if ($mainframe->isLogin()) {
-            if (!$mainframe->isAdmin()) {
+        
+        if (is_object($user) AND $user->isLogin()) {
+            if (!$user->isAdmin()) {
                 YiiMessage::raseWarning("Your account not have permission to visit backend page");
                 Yii::app()->session['userbackend'] = null;                
                 $this->redirect(Router::buildLink("users",array("view"=>'user','layout'=>'logout')));
