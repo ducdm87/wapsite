@@ -271,7 +271,8 @@ and open the template in the editor.
 .entry-container .entry-header .entry-title .box-bg-center a{     
     color: #fff;
     font-size: 18px;    
-    line-height: 32px;        
+    line-height: 32px;   
+     font-weight: bold;
 }
 
 .entry-container .entry-body{  
@@ -298,9 +299,9 @@ and open the template in the editor.
 
 }
 .entry-all a{
-    color: #000;
+    color: #8B8A8A;
+    font-size: 13px;
     font-weight: 600;
-    font-size: 15px;
 }
 .entry-info {
     border: 1px solid #e0e0e0;
@@ -371,22 +372,26 @@ and open the template in the editor.
     border: 2px solid #afcf4a;
     height: 276px;
     margin: 0;
-    padding: 0 5px;
+    padding: 0;
     position: relative;
 }
 .entry-body .thumbnail img{
-    height: 100%;
+    height: 267px;
     width: 100%;
 }
 .entry-body .thumbnail .caption{
     /*position: absolute; bottom: 0;*/
      padding: 9px;
     position: absolute;
-    width: 100%;
+    width: 99%;
      background: #0e1501 none repeat scroll 0 0;
-    opacity: 0.8;
+    opacity: 0.5;
+    margin-bottom:  2px;
+    margin-right:  2px;
+    margin-left: 2px;
     bottom: 0;
     left: 0;
+    
 }
 .entry-body .thumbnail .caption a{
     color: #fff;
@@ -807,4 +812,17 @@ body.users {
 .page-article-detail .container{  
     line-height: 24px;
     text-align: justify;
+}
+.btn-warning,.btn-warning:hover {
+    background-color: #FF0000;
+    border: 1px solid #FF0000 ; 
+}
+.close {
+    float: right;
+    margin-right:  -25px;
+    margin-top: 0px;
+}
+.img-border-white{
+    border: 2px solid #fff;
+    width: 100%
 }

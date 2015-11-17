@@ -64,7 +64,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="<?php echo $this->createUrl('/app') ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/logo.png" class="hidden-xs hiden-sm"/>
+                            <a class="navbar-brand" href="<?php echo $this->createUrl('')?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/logo.png" class="hidden-xs hiden-sm"/>
                                 <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/app/mobile-logo.png" class="hidden-lg hiden-md"/>
                             </a>
                         </div>
@@ -86,26 +86,13 @@
             
             <div class="hidden-lg hidden-md">
                  <div class="collapse navbar-collapse " id="navbar-collapse-mobile">
-                    <ul class="nav navbar-nav">
-                            <li><a href="<?php echo $this->createUrl('articles/') ?>" class="<?php if($controll == "articles") echo 'active'; ?>">Tin Tức</a></li>
-                            <li><a href="<?php echo $this->createUrl('videos/category',array('alias'=> "the-thao") ); ?>" class="<?php if($controll == "videos" AND $param_alias == "the-thao") echo 'active'; ?>">Thể Thao</a></li>
-                            <li><a href="<?php echo $this->createUrl('videos/category',array('alias'=> "hai-huoc") ); ?>" class="<?php if($controll == "videos" AND $param_alias == "hai-huoc") echo 'active'; ?>">Hài hước</a></li>
-                            <li><a href="<?php echo $this->createUrl('videos/category',array('alias'=> "vui-nhon") ); ?>"  class="<?php if($controll == "videos" AND $param_alias == "vui-nhon") echo 'active'; ?>">Vui nhộn</a></li>
-                    </ul>
+                    <div id="nav"><?php echo YiiModule::loadModules($position = "menu-nav", "benhvien"); ?></div>
                 </div>
             </div>
-            <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1s">-->
-            <div class="nav-main">
+            <div class="nav-main hidden-sm hidden-xs">
                 <div class="container-nav">
                     <nav class="navbar navbar-static-top">
                         <div id="nav"><?php echo YiiModule::loadModules($position = "menu-nav", "benhvien"); ?></div>
-                        <ul class="nav navbar-nav hide">
-                            <li><a href="<?php echo $this->createUrl('app/') ?>" class="<?php if($controll == "app") echo 'active'; ?>">Home</a></li>
-                            <li><a href="<?php echo $this->createUrl('articles/') ?>" class="<?php if($controll == "articles") echo 'active'; ?>">Tin Tức</a></li>
-                            <li><a href="<?php echo $this->createUrl('videos/category',array('alias'=> "the-thao") ); ?>" class="<?php if($controll == "videos" AND $param_alias == "the-thao") echo 'active'; ?>">Thể Thao</a></li>
-                            <li><a href="<?php echo $this->createUrl('videos/category',array('alias'=> "hai-huoc") ); ?>" class="<?php if($controll == "videos" AND $param_alias == "hai-huoc") echo 'active'; ?>">Hài hước</a></li>
-                            <li><a href="<?php echo $this->createUrl('videos/category',array('alias'=> "vui-nhon") ); ?>"  class="<?php if($controll == "videos" AND $param_alias == "vui-nhon") echo 'active'; ?>">Vui nhộn</a></li>
-                        </ul>
                     </nav>
                 </div>
             </div>  
@@ -113,17 +100,15 @@
         </header>
         <div id="wrapper">
             <div class="section">                 
-                <div class="container-fluid" style="padding: 0px;">
-                    <div class="banner">
+                    <div class="banner hidden-xs hidden-sm">
                         <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/app/banner.png" alt="Banner" class="img-responsive"/>
                     </div>
                     <div class="dialog-message">
                         <div class="alert alert-warning alert-dismissible text-center" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <p>Qúy khách vui lòng đăng nhập <strong>Tại đây</strong> hoặc vui lòng chuyển sang truy cập GPRS/3G/DEGE</p>
+                            <p>Qúy khách vui lòng đăng nhập <strong>Tại đây</strong> hoặc vui lòng chuyển sang truy cập GPRS/3G/DEGE
+                            </p>
                         </div>
                     </div>
-                </div>
                 <div class="page-content">
                     <?php echo $content; ?>                
                 </div>

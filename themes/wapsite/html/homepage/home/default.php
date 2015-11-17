@@ -25,16 +25,18 @@ function showBlockHome($items, $title = "Video Hot", $url = "", $type="video"){
                 </div>
                 <div class="entry-body">                    
                         <div class="container-fluid">
-                            <div class="col-md-4 no-padding-md">                                 
+                            <div class="col-md-4 no-padding-md">  
                                     <div href="<?php echo $item['link']; ?>" class="thumbnail">
-                                        <img src="<?php echo $item['thumbnail'] ?>" alt="<?php echo $item['title'] ?>">
-                                        <?php if($type == "video"){?>
-                                            <a href="<?php echo $item['link']; ?>" class="icon-play"></a>
-                                        <?php } ?>
-                                        <div class="caption">
-                                            <a href="<?php echo $item['link']; ?>"><?php echo isset($item['title']) ? $item['title'] : '' ?></a>
-                                        </div>
-                                    </div>                                
+                                        <div class="img-border-white">
+                                            <img src="<?php echo $item['thumbnail'] ?>" alt="<?php echo $item['title'] ?>">
+                                            <?php if($type == "video"){?>
+                                                <a href="<?php echo $item['link']; ?>" class="icon-play"></a>
+                                            <?php } ?>
+                                            <div class="caption">
+                                                <a href="<?php echo $item['link']; ?>"><?php echo isset($item['title']) ? $item['title'] : '' ?></a>
+                                            </div>
+                                        </div> 
+                                    </div>
                             </div>
                             <div class="col-md-8 no-padding-md">
                                 <div class="well">

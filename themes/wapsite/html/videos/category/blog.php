@@ -25,10 +25,12 @@
                 <div class="container-fluid">
                     <div class="col-md-5 no-padding-md">
                         <div class="thumbnail">
-                            <img src="<?php echo $item['image']; ?>" alt="" style="height: 270px; width: 480px;">
-                            <a href="<?php echo $item['link']; ?>" class="icon-play"></a>
-                            <div class="caption">
-                                <a href="<?php echo $item['link']; ?>"><?php echo $item['title']; ?></a>
+                            <div class="img-border-white">
+                                <img src="<?php echo $item['image']; ?>" alt="<?php echo $item['title']; ?>" >
+                                <a href="<?php echo $item['link']; ?>" class="icon-play"></a>
+                                <div class="caption">
+                                    <a href="<?php echo $item['link']; ?>"><?php echo $item['title']; ?></a>
+                                </div>
                             </div>
                         </div>
                     </div>                   
