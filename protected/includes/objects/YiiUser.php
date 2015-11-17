@@ -125,6 +125,47 @@ class YiiUser{
         return $errorCode;
     }
     
+    function reloaUserLogin($isBackEnd = 1){
+         global $user;        
+          if ($isBackEnd) {
+        
+            $query = "SELECT u.*,g.lft,g.name groupname, g.backend "
+                    . "FROM " . TBL_USERS_GROUP . " g right join " . TBL_USERS . " u ON g.id = u.groupID "
+                    . " WHERE u.id = $this->id AND u.status = 1 ";            
+            $conmmand = Yii::app()->db->createCommand($query); 
+            $result = $conmmand->queryRow();
+            
+            if (!$result) {
+                YiiMessage::raseWarning("Your account not have permission to visit backend");
+                $this->redirect(Router::buildLink("users",array( "view"=>"user")));
+            } else {
+                $query = "UPDATE " . TBL_USERS . " SET lastvisit = now() WHERE id = " . $this->id;
+                $command = Yii::app()->db->createCommand($query);
+                $command->execute();
+                foreach($result as $field_name => $field_value){
+                    if(strpos($field_name, "_") === 0) continue;
+                    $this->$field_name = $field_value;
+                }
+                $user = Yii::app()->session['userbackend'] = $this;
+            }            
+        }else{
+             $query = "SELECT * "
+                    . "FROM " . TBL_USERS
+                    . " WHERE u.id = $this->id AND status = 1 AND verify = 1 ";           
+            $conmmand = Yii::app()->dbuser->createCommand($query); 
+            $result = $conmmand->queryRow();
+
+            if (!$result) { }else{
+                $result['suppliers'] = "";
+                foreach($result as $field_name => $field_value){
+                    if(strpos($field_name, "_") === 0) continue;
+                    $this->$field_name = $field_value;
+                }
+                $user = Yii::app()->session['userfront'] = $this;
+            }            
+        }
+    }
+    
     function logout($cid){
         Yii::app()->user->logout();
         $link = Router::buildLink("users", array("view"=>"user",'layout'=>'login'));

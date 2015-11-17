@@ -11,6 +11,7 @@ class Group extends CFormModel {
     private $table = '{{users_group}}';
     private $command;
     private $connection;
+    private $_items = array();
 
     function __construct() {
         $this->command = Yii::app()->db->createCommand();
@@ -51,9 +52,11 @@ class Group extends CFormModel {
         
         if (is_array($cid))
             $cid = $cid[0];
+        if(isset($this->_items[$cid])) return $this->_items[$cid];
         
         $obj_user = YiiUser::getInstance();
         $tbl_group = $obj_user->getGroup($cid);
+        $this->_items[$cid] = $tbl_group;
         return $tbl_group;
     }
     

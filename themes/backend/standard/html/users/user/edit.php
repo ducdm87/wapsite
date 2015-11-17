@@ -7,8 +7,8 @@
             </div>
             <div class="panel-body">
                 <?php echo buildHtml::renderField("text", "username", $item->username, "User Name", "form-control title-generate"); ?>
-                <?php echo buildHtml::renderField("text", "changepassword", "", "Password"); ?>
-                <?php echo buildHtml::renderField("text", "repassword", "", "Retype Password"); ?>
+                <?php echo buildHtml::renderField("password", "changepassword", "", "Password"); ?>
+                <?php echo buildHtml::renderField("password", "repassword", "", "Retype Password"); ?>
                 
                 <?php echo buildHtml::renderField("text", "first_name", $item->first_name, "First Name"); ?>
                 <?php echo buildHtml::renderField("text", "last_name", $item->last_name, "Last Name"); ?>
@@ -27,15 +27,27 @@
                 <span><b>More info</b></span>                            
             </div>
             <div class="panel-body">
+                <?php  global $user;
+                       $modelGroup = new Group();
+                       $group = $modelGroup->getItem($user->groupID);
+                ?>
                 <?php echo buildHtml::renderField("label", "id", $item->id, "ID"); ?>                 
                  <?php echo buildHtml::renderField("label", "cdate", $item->cdate, "Created"); ?>
                  <?php echo buildHtml::renderField("label", "mdate", $item->mdate, "Modified"); ?>
-                 <?php echo buildHtml::renderField("label", "lastvisit", $item->lastvisit, "Last visit"); ?>
-                <div class="form-group row">
-                    <label class="control-label left col-md-3">Status</label>
-                    <div class="col-md-9"><?php echo buildHtml::choseStatus("status", $item->status); ?></div>
-                </div>
-                <?php echo buildHtml::renderList("radio","Leader", "leader", array(array(1,'Yes'), array(0,'No')), $item->leader); ?>
+                 <?php echo buildHtml::renderField("label", "lastvisit", $item->lastvisit, "Last visit"); ?>                 
+                 
+                <?php
+                if($group->parentID == 1){
+                    echo buildHtml::renderField("label", "status", $list['status'], "status");
+                }
+                
+                echo buildHtml::renderList("radio","Leader", "leader", array(array(1,'Yes'), array(0,'No')), $item->leader);
+                
+                if($group->parentID != 1){
+                    echo '<font style="color: red; ">Just create a group leader for children group</font>';
+                }
+                 ?>
+                
             </div>
         </div>
         
