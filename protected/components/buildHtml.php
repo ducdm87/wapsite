@@ -238,6 +238,8 @@ class buildHtml {
             $html .= '<div class="col-md-' . $w2 . '">';
             if ($type == "text")
                 $html .= '<input placeholder="' . $placeholder . '" type="text" name="' . $name . '" class="' . $class . '" value="' . $value . '">';
+            else if ($type == "password")
+                $html .= '<input placeholder="' . $placeholder . '" type="password" name="' . $name . '" class="' . $class . '" value="' . $value . '">';
             else if ($type == "textarea")
                 $html .= '<textarea rows="3" style="width: 100%;" name="' . $name . '" class="' . $class . '">' . $value . '</textarea>';
             else if ($type == "editor")

@@ -24,9 +24,7 @@ class UserController extends BackEndController {
                 for ($i = 0; $i < count($cids); $i++) {
                     $cid = $cids[$i];
                     if ($task == "publish")
-                        $this->changeStatus ($cid, 1);
-                    else if ($task == "hidden")
-                        $this->changeStatus ($cid, 2);
+                        $this->changeStatus ($cid, 1);                    
                     else $this->changeStatus ($cid, 0);
                 }
                 YiiMessage::raseSuccess("Successfully saved changes status for users");
@@ -38,20 +36,29 @@ class UserController extends BackEndController {
             
             $groupID = $user->groupID;
             $group = $modelGroup->getItem($user->groupID);
-            if($group->parentID == 1){ $list_user = $model->getUsers(); }
-            else $list_user = $model->getUsers($groupID);
-            
+            if($group->parentID == 1){ $list_user = $model->getUsers(null, null, true); }
+            else $list_user = $model->getUsers($groupID,null, true);
+            $lists = $model->getList();
             
             $arr_group = $model->getGroups();
 
-            $this->render('list', array("list_user" => $list_user, 'arr_group' => $arr_group));
+            $this->render('list', array("list_user" => $list_user, 'arr_group' => $arr_group,"lists"=>$lists));
        
     }
     
      function changeStatus($cid, $value)
     {
-        $obj_users = YiiUser::getInstance();
-        $item_user = $obj_users->getUser($id);
+         global $user;
+         $groupID = $user->groupID;
+         $obj_users = YiiUser::getInstance();
+         $item_user = $obj_users->getUser($cid);
+        
+         if(!$bool = $user->modifyChecking($cid)){            
+            YiiMessage::raseNotice("Your account not have permission to change status of this user: $item_user->username");
+            $this->redirect(Router::buildLink("users", array('view'=>'user')));
+            return false;
+        }         
+        
         $item_user->status = $value;
         $item_user->store();
     }
@@ -88,13 +95,15 @@ class UserController extends BackEndController {
 
         $model = new Users();
         $item = $model->getItem($cid) ;
+
         if($item->id != 0){
             if(!$bool = $user->modifyChecking($item->id)){
-                YiiMessage::raseNotice("Your account not have permission to visit page");
-                $this->redirect(Router::buildLink("cpanel"));
+                if($item->status != -1){
+                    YiiMessage::raseNotice("Your account not have permission to visit page");
+                    $this->redirect(Router::buildLink("cpanel"));
+                }
             }
-        }else{
-           
+        }else{           
             if($user->leader == 0){
                 YiiMessage::raseNotice("Your account not have permission to make account");
                 $this->redirect(Router::buildLink("cpanel"));
@@ -117,7 +126,7 @@ class UserController extends BackEndController {
     }
 
     function store() {
-        global $mainframe;
+        global $mainframe, $user;
         $post = $_POST;
         $id = Request::getVar("id", 0);
         $obj_users = YiiUser::getInstance();
@@ -151,9 +160,36 @@ class UserController extends BackEndController {
             if(($_POST["changepassword"] == $_POST["repassword"] AND $_POST["changepassword"] != "")){
                 $item_user->password = md5($_POST["changepassword"]);
             }
-           
-            YiiMessage::raseSuccess("Successfully saved changes to User: " . $item_user->username);
+            
+            // kiem tra xem co duoc tao trong group do khong va gan la leader khong
+            $modelGroup = new Group();
+            $obj_user = YiiUser::getInstance();
+            $group = $modelGroup->getItem($user->groupID);
+
+            // khong phai la super admin
+            if($group->parentID != 1){
+                // neu duoc phep thi check lai xem co cung group khong
+                if($bool = $user->groupChecking($item_user->groupID)){
+                    if($user->groupID == $item_user->groupID){
+                        if($item_user->leader == 1){
+                            YiiMessage::raseNotice("Your account not have permission to creat user is leader in group: $group->name");
+                            $item_user->leader = 0;
+                            $this->redirect(Router::buildLink("users",array( "view"=>"user")));
+                        }
+                    }
+                }else{ // khi tao acc khong nam trong group ma no duoc tao
+                    $group = $modelGroup->getItem($item_user->groupID);
+                     YiiMessage::raseNotice("Your account not have permission to creat user in group: $group->name");
+                     $this->redirect(Router::buildLink("users",array( "view"=>"user",'layout'=>'logout')));
+                     return false;
+                }
+                if((int)$item_user->id == 0){
+                    $item_user->status = -1;
+                }
+            } 
+            
             $item_user->store();
+            YiiMessage::raseSuccess("Successfully saved changes to User: " . $item_user->username);
             return $item_user->id;
         }
     }
@@ -194,11 +230,26 @@ class UserController extends BackEndController {
     
     function actionRemove()
     {
+        global $user; 
+        
         $cids = Request::getVar("cid", 0);
         if(count($cids) >0){
-            $obj_table = YiiUser::getInstance();
+            $obj_users = YiiUser::getInstance();
             for($i=0;$i<count($cids);$i++){
-               $obj_table->removeUser($cids[$i]);
+                $cid = $cids[$i];
+               $item_user = $obj_users->getUser($cid);                
+               if($item_user->status != -1){
+                   YiiMessage::raseNotice("Please contact your administrator,\"$item_user->username\" is active");
+                   $this->redirect(Router::buildLink("users", array('view'=>'user')));
+                   return false;
+               }elseif(!$bool = $user->modifyChecking($cid)){            
+                    YiiMessage::raseNotice("Your account not have permission to remove user: $item_user->username");
+                    $this->redirect(Router::buildLink("users", array('view'=>'user')));
+                    return false;
+                }
+               
+               $obj_users->removeUser($cid);
+               
             }
         }
         YiiMessage::raseSuccess("Successfully delete User(s)");

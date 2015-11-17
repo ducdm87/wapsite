@@ -1,5 +1,14 @@
 
-<form name="adminForm" method="post" action="">   
+<form name="adminForm" method="post" action="">
+    <div class="row">  
+        <div class="col-lg-7">            
+        </div>
+        <div class="col-lg-5">
+            <?php echo $lists['filter_state']; ?>
+        </div>
+    </div>
+    
+    
     <table class="adminlist" cellpadding="1">
         <thead>
             <tr>
@@ -8,7 +17,7 @@
                 <th class="title"> <a>Name</a></th>
                 <th class="title"> <a>User Name</a></th>
                 <th class="title"> <a>Login</a></th>
-                <th class="title"> <a>Enable</a></th>
+                <th class="title"> <a>Enable</a></th>                
                 <th class="title"> <a>Group</a></th>
                 <th class="title"> <a>Email</a></th>
                 <th class="title"> <a>Last login</a></th>
@@ -31,7 +40,7 @@
                     </td>
                     <td><?php echo $item['username'] ?></td>
                     <td>v</td>
-                    <td><?php echo buildHtml::status($i, $item['status']); ?></td>
+                    <td><?php echo buildHtml::status($i, $item['status']); ?></td>                 
                     <td><?php echo isset($arr_group[$item['groupID']])?$arr_group[$item['groupID']]['name']:""; ?></td>
                     <td><?php echo $item['email'] ?></td>
                     <td><?php echo $item['lastvisit'] ?></td>
