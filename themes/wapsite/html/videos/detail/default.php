@@ -1,5 +1,3 @@
- 
-
 <div class="page-video">
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/jwplayer/jwplayer.js"></script>
     <script type="text/javascript">jwplayer.key = "Il334Pdk5OF2EBrjO5LrSA/ZK7qdYC/nL80QExPiIxoQ96iqPROaAEye70E=";</script>
@@ -21,7 +19,9 @@
             </div>
             <div class="entry-body">
                 <?php if (isset($item) && $item): ?>
-                <h1><a href="<?php echo $item['link']; ?>"><?php echo $item['title']; ?></a></h1>
+                <div class="h1-fix-detail-video">
+                    <h1 class="h1-content-detail"><a href="<?php echo $item['link']; ?>"><?php echo $item['title']; ?></a></h1>
+                </div>
                     <div class="container-fluid">
                         <div class="col-md-5">
                             <div class="row">
@@ -139,7 +139,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <?php echo ($index == 2) ? '<div class="break-line clearfix"></div>' : '' ?>
+                                <div class="hidden-lg hidden-md"><br /></div>
+                                <?php echo ($index == 2 || $index == 5) ? '<div class="break-line clearfix"></div>' : '' ?>
                                 <?php $index++; ?>
                             <?php endforeach; ?>
                         <?php endif; ?>
@@ -147,6 +148,5 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </div>

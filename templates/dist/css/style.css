@@ -7,7 +7,10 @@ and open the template in the editor.
     Created on : Aug 25, 2015, 1:17:10 PM
     Author     : Duong
 */
-
+a:hover{
+    text-decoration: none;
+    color: #FF0000;
+}
 
 .width-5{ 	width: 5%; }
 .width-10{ 	width: 10%; }
@@ -53,6 +56,7 @@ and open the template in the editor.
 .container-fluid{
     position: relative;
     display: block;
+    
 }
 
 
@@ -86,7 +90,7 @@ and open the template in the editor.
 }
 
 .navbar-brand{
-    height: 100px;
+    height: 130px;
     clear: both;
 }
 .navbar-brand img{ height: 80px; }
@@ -189,8 +193,8 @@ and open the template in the editor.
 }
 .search-container{
     position: absolute;
-    right: 10px;
-    top: 20px;
+    right: 28px;
+    top: 25px;
 }
 
 .search {
@@ -400,8 +404,8 @@ and open the template in the editor.
 }
 
 .entry-body .row-box{ 
-    margin: 0 0 25px;
-    padding: 0 15px;
+    margin: 0 0 32px;
+    padding: 0px;
 }
 .entry-thunb img{
     height: 100px;
@@ -423,8 +427,8 @@ and open the template in the editor.
 }
 .entry-control {
     position: absolute;
-    left: -5%;
-    bottom: 30%;
+    bottom: 22%;
+    left: 9%;
 }
 .entry-control span{
     padding: 15px 15px;
@@ -456,7 +460,9 @@ and open the template in the editor.
 }
 
 .media-body{
+    padding-right: 10px;
     position: relative;
+    text-align: justify;
 }
 .readmore{
     position: relative;
@@ -473,7 +479,7 @@ and open the template in the editor.
     box-shadow: none;
     margin-bottom: 0;
     min-height: 20px;
-    padding: 19px 19px 0;
+    padding: 22px 55px 0;
     height: 276px;
 }
 
@@ -488,6 +494,7 @@ and open the template in the editor.
 }
 .media-heading, .media-heading a{
     font-weight: bold;
+    text-align: justify;
 
 }
 .border-botton{
@@ -825,4 +832,22 @@ body.users {
 .img-border-white{
     border: 2px solid #fff;
     width: 100%
+}
+.h1-fix-detail-video {
+    margin-left: 12px
+}
+.h1-fix-detail-video .h1-content-detail {
+    font-size: 17px;
+    font-weight: bold;
+    text-align: justify;
+}
+.h1-content-detail a{
+    color: #FF0000;
+}
+
+//Register
+.captcha img{
+    height: 34px;
+    width: 120px;
+    padding-right: 20px;
 }

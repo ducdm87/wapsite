@@ -42,9 +42,9 @@
                             <li class="dropdown">
                                 <a href="<?php echo $this->createUrl('/users/profile') ?>"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="span-header-top">Xin chào : <?php echo $user_session['username'] ?></span> </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="/users/profile">Tài khoản của tôi</a></li>
+                                    <li><a href="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'register')); ?>">Tài khoản của tôi</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="/users/logout">Thoát</a></li>
+                                    <li><a href="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'logout')); ?>">Thoát</a></li>
                                 </ul>
                             </li>
                         <?php else: ?>
@@ -56,16 +56,19 @@
             </div>
             <div class="header">
                 <div class="header-selction">
-                    <div class="container-fluid">
+                    <div class="container-fluid mobile-container-fluid">
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-mobile" aria-expanded="false">
-                                <span class="sr-only">Toggle navigation</span>
+                                <span class="lg-social"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="<?php echo $this->createUrl('')?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/logo.png" class="hidden-xs hiden-sm"/>
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/app/mobile-logo.png" class="hidden-lg hiden-md"/>
+                            <a class="navbar-brand" href="<?php echo $this->createUrl('')?>">
+                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/logo.png" class="hidden-xs hiden-sm"/>
+                                <div class="text-center ">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/app/mobile-logo.png" class="hidden-lg hiden-md"/>
+                                </div>
                             </a>
                         </div>
                         <div class="search-container">
@@ -96,16 +99,25 @@
                     </nav>
                 </div>
             </div>  
+            <div class="nav-main hidden-lg hidden-md">
+                <div class="container-nav">
+                    <nav class="navbar navbar-static-top show-mobile">
+                        <ul class="show-nav-main-mobile">
+                            <li><a href="<?php echo $this->createUrl(''); ?>">TRANG CHỦ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>  
             <!--</div>-->
         </header>
         <div id="wrapper">
             <div class="section">                 
-                    <div class="banner hidden-xs hidden-sm">
+                    <div class="banner hidden-xs hidden-sm"> 
                         <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/app/banner.png" alt="Banner" class="img-responsive"/>
                     </div>
                     <div class="dialog-message">
                         <div class="alert alert-warning alert-dismissible text-center" role="alert">
-                            <p>Qúy khách vui lòng đăng nhập <strong>Tại đây</strong> hoặc vui lòng chuyển sang truy cập GPRS/3G/DEGE
+                            <p>Qúy khách vui lòng đăng nhập <strong><a href="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'login')); ?>">Tại đây</a></strong> hoặc vui lòng chuyển sang truy cập GPRS/3G/DEGE
                             </p>
                         </div>
                     </div>
