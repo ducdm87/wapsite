@@ -12,12 +12,31 @@ class SysconfigController extends BackEndController {
     } 
 
     function actionDisplay(){
+        global $mainframe, $user;
+
+        // chi useradmin moi duoc tao/sua       
+        $obj_users = YiiUser::getInstance();
+        $group_currentUser = $obj_users->getGroup($user->groupID);
+        if ($group_currentUser->parentID != 1) {
+            YiiMessage::raseNotice("Your account not have permission to view setting");
+            $this->redirect(Router::buildLink("cpanel"));
+        }
+        
         $this->addIconToolbar("Save", Router::buildLink("cpanel", array("view"=>"sysconfig", "layout"=>"save")), "save");         
         $this->addBarTitle("User <small>[list]</small>", "user");            
         $this->render('default', array());
     } 
     
-    public function actionSave() {         
+    public function actionSave() {
+         global $mainframe, $user;
+         
+        // chi useradmin moi duoc tao/sua       
+        $obj_users = YiiUser::getInstance();
+        $group_currentUser = $obj_users->getGroup($user->groupID);
+        if ($group_currentUser->parentID != 1) {
+            YiiMessage::raseNotice("Your account not have permission to modify setting");
+            $this->redirect(Router::buildLink("cpanel"));
+        }
         $post = Request::get();
         
         $db_info = $post['config']['database'];        
