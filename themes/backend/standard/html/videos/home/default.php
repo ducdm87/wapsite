@@ -1,5 +1,13 @@
  
-<form name="adminForm" method="post" action="">   
+<form name="adminForm" method="post" action=""> 
+    <div class="row">  
+        <div class="col-lg-7">            
+        </div>
+        <div class="col-lg-5">
+            <?php echo $lists['filter_created_by']; ?>
+            <?php echo $lists['filter_state']; ?>
+        </div>
+    </div>
     <table class="adminlist" cellpadding="1">
         <thead> 
             <tr>
@@ -8,7 +16,8 @@
                 <th class="title"> <a>Name</a></th>
                 <th class="title" width="3%"> <a>Status</a></th>
                 <th class="title" width="3%"> <a>Feature</a></th>
-                <th class="title" width="20%"> <a>Category</a></th>
+                <th class="title" width="15%"> <a>Category</a></th>
+                <th class="title" width="12%"> <a>Created By</a></th>
                 <th class="title" width="15%"> <a>Created</a></th>
                 <th class="title"  width="3%"> <a>ID</a></th>
             </tr>
@@ -23,6 +32,7 @@
                 $params = urlencode(json_encode( array("id"=>$item['slug']) ));
                  
                 $link_view = "/goto.php?control=videos&action=detail&params=$params";
+                $link_created = Router::buildLink("videos",array('filter_created_by'=>$item['created_by']));   
                 ?>
                 <tr class="row1">
                     <td><?php echo ($i + 1); ?></td>
@@ -37,7 +47,12 @@
                     <td>
                         <a href="<?php echo $link_edit_cat; ?>"><?php echo $item['cat_title']; ?></a>                           
                     </td>
-                    <td><?php echo $item['cdate'] ?></td>
+                    <td>
+                        <a href="<?php echo $link_created; ?>">
+                            <?php echo $item['created_name'] ?>
+                        </a>
+                    </td>
+                    <td><?php echo date("H:i d/m/Y", strtotime($item['cdate'])); ?></td>
                     <td><?php echo $item['id'] ?></td>
                 </tr>
                 <?php $k = 1 - $k;

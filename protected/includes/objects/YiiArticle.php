@@ -48,11 +48,12 @@ class YiiArticle{
     function getItems($field = "*", $condition = "", $orderBy = " A.id DESC ", $limit = 10, $start = 0)
     {
         if($field == null){
-            $field = "A.*, B.title cat_title, B.alias cat_alias";
+            $field = "A.*, B.title cat_title, B.alias cat_alias, C.username created_name";
         }
         $command = $this->_db->createCommand()->select($field)
                 ->from($this->table ." A")
-                ->leftJoin(TBL_CATEGORIES ." B", "A.catID = B.id");
+                ->leftJoin(TBL_CATEGORIES ." B", "A.catID = B.id")
+                ->leftJoin(TBL_USERS ." C", "A.created_by = C.id");
         
         if($condition != null) $command->where($condition);
         if($orderBy != null AND $orderBy != "") $command->order($orderBy);

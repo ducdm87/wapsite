@@ -36,7 +36,14 @@ class YiiUser{
     function getUsers($condition = null, $fields = "*", $order = "ID DESC ")
     {
         $tbl_user = YiiTables::getInstance(TBL_USERS);
-        $items = $tbl_user->loads($fields, $condition, $order , null);
+        $loadColumn = false;
+        if(trim($fields) != "*"){
+            $_fields = explode(",", $fields);
+            if(count($_fields) == 1) $loadColumn = true;
+        }
+        if($loadColumn == false)
+            $items = $tbl_user->loads($fields, $condition, $order , null);
+        else $items = $tbl_user->loadColumn($fields, $condition, $order , null);
         return $items;
     }
     
@@ -57,6 +64,22 @@ class YiiUser{
         $tbl_group = YiiTables::getInstance(TBL_USERS_GROUP,"id",true);
         $tbl_group->load($cid, $field);
         return $tbl_group;
+    }
+    
+    function getUserInGroup($groupID = null, $fields = "*", $allSub = false, $orderBy = "id desc", $conds = null)
+    {
+        if($allSub == false){
+            return $this->getUsers("groupID = $groupID", $fields, $orderBy);
+        }else{
+            $group = $this->getGroup($groupID);
+            $_conds = " lft >= $group->lft AND rgt <= $group->rgt ";
+            
+            $tbl_group = YiiTables::getInstance(TBL_USERS_GROUP);
+            $list_group = $tbl_group->loadColumn("id", $_conds, "lft asc ", null); 
+            $list_group = implode(",", $list_group);
+            $conds = " groupID in($list_group) ";
+            return $this->getUsers($conds, $fields, $orderBy);
+        }
     }
     
     function loadGroup($conditions,$field = "*", $orderby = "" ){
@@ -205,6 +228,8 @@ class YiiUser{
      */
     
     function userChecking($userID){
+        $userID = (int) $userID;
+        if($userID == 0) return true;
         if($this->id == $userID) return true;
         $tbl_user = YiiTables::getInstance(TBL_USERS, null, true);
         $tbl_user->load($userID);
@@ -216,6 +241,8 @@ class YiiUser{
      */
     
     function groupChecking($groupID){
+        $groupID = (int) $groupID;
+        if($groupID == 0) return true;
         if($groupID == $this->groupID){
        //     echo 'la 1 <hr />';
             return true;
@@ -236,6 +263,8 @@ class YiiUser{
     
     // kiem tra xem tai nguyen cua userID co cho user hien tai xem hay khong
     function viewChecking($userID){
+        $userID = (int) $userID;
+        if($userID == 0) return true;
         if($this->id == $userID) return true;
         if($this->userChecking($userID) == false ) return false;
         return true;
@@ -248,6 +277,8 @@ class YiiUser{
      *      false: khong cho phep leader sua tai nguyen cua thanh vien cung nhom(cung level)
      */
     function modifyChecking($userID, $allowLeader = false){
+        $userID = (int) $userID;
+        if($userID == 0) return true;
         // sua tai nguyen cua chinh minh
         if($this->id == $userID) return true;
 

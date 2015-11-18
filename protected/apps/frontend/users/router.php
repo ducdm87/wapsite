@@ -29,13 +29,14 @@ function usersBuildRoute(& $query) {
                 $query['menuID'] = $menuID;
         }else{
             $segments[] = $query['view'];
-            $segments[] = $query['layout'];            
-        }  
-        unset($query['view']);   
-        unset($query['layout']);  
+            $segments[] = $query['layout'];
+            unset($query['view']);   
+            unset($query['layout']);  
+        }      
     }     
     return $segments;
 }
+
 // $segments: array path from url[0: tin-tuc,1:tin-lam-dep ... ]
 function usersParseRoute($segments, $_params = null) {
     $n = count($segments);
@@ -46,4 +47,3 @@ function usersParseRoute($segments, $_params = null) {
     
     return $params;
 }
-

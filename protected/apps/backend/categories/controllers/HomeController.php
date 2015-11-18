@@ -75,6 +75,15 @@ class HomeController extends BackEndController {
         $model = Categories::getInstance();
         $lists = $model->getListEdit($item);
         
+        // chi useradmin moi duoc tao/sua
+       global $user;
+       $obj_users = YiiUser::getInstance();
+       $group_currentUser = $obj_users->getGroup($user->groupID);       
+       if($group_currentUser->parentID != 1){
+           YiiMessage::raseNotice("Your account not have permission to add/edit category");
+           $this->redirect(Router::buildLink("categories"));
+       }
+        
         $this->render('edit', array("item" => $item, "lists"=>$lists));
     }
 
@@ -94,14 +103,26 @@ class HomeController extends BackEndController {
     }
     
     public function store() {
-        global $mainframe;
+        global $mainframe, $user;
         
+        // chi useradmin moi duoc tao/sua       
+       $obj_users = YiiUser::getInstance();
+       $group_currentUser = $obj_users->getGroup($user->groupID);       
+       if($group_currentUser->parentID != 1){
+           YiiMessage::raseNotice("Your account not have permission to modify category");
+           $this->redirect(Router::buildLink("categories"));
+       }
+       
         $cid = Request::getVar("id", 0); 
         
         $obj_category = YiiCategory::getInstance();        
         $obj_category = $obj_category->loadItem($cid, "*", false); 
          
-        $obj_category->bind($_POST);           
+        $obj_category->bind($_POST);
+        if($obj_category->id == 0){
+            $obj_category->created_by = $user->id;
+        }
+        $obj_category->modified_by = $user->id;
         $obj_category->store(); 
  
         YiiMessage::raseSuccess("Successfully save Category");
@@ -109,7 +130,7 @@ class HomeController extends BackEndController {
     }
     
     
-     function actionPublish()
+    function actionPublish()
     {
         $cids = Request::getVar("cid", 0);        
         if(count($cids) >0){
@@ -135,6 +156,14 @@ class HomeController extends BackEndController {
     
     function changeStatus($cid, $value)
     {
+        global $user;
+        $obj_users = YiiUser::getInstance();
+        $group_currentUser = $obj_users->getGroup($user->groupID);
+        if ($group_currentUser->parentID != 1) {
+            YiiMessage::raseNotice("Your account not have permission to modify category");
+            $this->redirect(Router::buildLink("categories"));
+        }
+
         $obj = YiiCategory::getInstance();        
         $obj = $obj->loadItem($cid, "*", false); 
         $obj->status = $value;
@@ -142,9 +171,40 @@ class HomeController extends BackEndController {
     }
     function changeFeature($cid, $value)
     {
+        global $user;
+        $obj_users = YiiUser::getInstance();
+        $group_currentUser = $obj_users->getGroup($user->groupID);
+        if ($group_currentUser->parentID != 1) {
+            YiiMessage::raseNotice("Your account not have permission to modify category");
+            $this->redirect(Router::buildLink("categories"));
+        }
+        
         $obj = YiiCategory::getInstance();        
         $obj = $obj->loadItem($cid, "*", false); 
         $obj->feature = $value;
         $obj->store();
-    } 
+    }
+    
+    function actionRemove()
+    {
+       global $user; 
+       // chi useradmin moi duoc tao/sua group
+       $obj_users = YiiUser::getInstance();
+       $group_currentUser = $obj_users->getGroup($user->groupID);
+       if($group_currentUser->parentID != 1){
+           YiiMessage::raseNotice("Your account not have permission remove category");
+           $this->redirect(Router::buildLink("categories"));
+       }
+       
+        $cids = Request::getVar("cid", 0);
+        if(count($cids) >0){
+            $obj_table = YiiTables::getInstance(TBL_CATEGORIES);            
+            for($i=0;$i<count($cids);$i++){
+                $cid = $cids[$i];
+                 $obj_table->remove($cid);
+            }
+        }
+        YiiMessage::raseSuccess("Successfully delete GroupUser(s)");
+        $this->redirect(Router::buildLink("categories"));
+    }
 }

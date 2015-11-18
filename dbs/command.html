@@ -1,3 +1,8 @@
-UPDATE `tbl_extensions`  SET `name` = 'users' , `title` = 'Users', `alias` = 'users', `folder` = 'users' WHERE `id` = 7;
+ALTER TABLE `tbl_categories` ADD `created_by` INT NOT NULL AFTER `scope`, ADD `modified_by` INT NOT NULL AFTER `created_by`;
 
-ALTER TABLE `tbl_users` ADD `isBlock` TINYINT NOT NULL AFTER `lastvisit`;
+  
+ALTER TABLE `tbl_articles` ADD `created_by` INT NOT NULL AFTER `created`, ADD `modified_by` INT NOT NULL AFTER `created_by`;
+
+ 
+
+ALTER TABLE `tbl_videos` ADD `created_by` INT NOT NULL AFTER `mdate`, ADD `modified_by` INT NOT NULL AFTER `created_by`;

@@ -46,7 +46,7 @@ class UserController extends BackEndController {
        
     }
     
-     function changeStatus($cid, $value)
+    function changeStatus($cid, $value)
     {
          global $user;
          $groupID = $user->groupID;
@@ -57,7 +57,7 @@ class UserController extends BackEndController {
             YiiMessage::raseNotice("Your account not have permission to change status of this user: $item_user->username");
             $this->redirect(Router::buildLink("users", array('view'=>'user')));
             return false;
-        }         
+        }
         
         $item_user->status = $value;
         $item_user->store();
@@ -96,15 +96,17 @@ class UserController extends BackEndController {
         $model = new Users();
         $item = $model->getItem($cid) ;
 
-        if($item->id != 0){
-            if(!$bool = $user->modifyChecking($item->id)){
-                if($item->status != -1){
-                    YiiMessage::raseNotice("Your account not have permission to visit page");
+        if($item->id != 0){ // account da duoc tao
+            if(!$bool = $user->modifyChecking($item->id)){ // user leader nhom cha
+                if($item->status != -1){ // user da duoc active thi khong duoc thay doi
+                    YiiMessage::raseNotice("Your account not have permission to modify this account");
                     $this->redirect(Router::buildLink("cpanel"));
                 }
             }
+            // => user da active thi chi user do va superadmin moi thay doi thong tin
         }else{           
             if($user->leader == 0){
+                // neu khong phai leader thi khong duoc tao acc moi
                 YiiMessage::raseNotice("Your account not have permission to make account");
                 $this->redirect(Router::buildLink("cpanel"));
             }
@@ -116,12 +118,14 @@ class UserController extends BackEndController {
     }
 
     function actionApply() {
-        $userID = $this->store();        
+        $userID = $this->store();
+        YiiMessage::raseSuccess("User save succesfully");
         $this->redirect(Router::buildLink("users", array("view"=>"user",'layout'=>'edit','cid'=>$userID)));
     }
 
     function actionSave() {
         $this->store();
+        YiiMessage::raseSuccess("User save succesfully");
         $this->redirect(Router::buildLink("users", array("view"=>"user")));
     }
 

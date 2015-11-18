@@ -7,8 +7,6 @@
             <?php echo $lists['filter_state']; ?>
         </div>
     </div>
-    
-    
     <table class="adminlist" cellpadding="1">
         <thead>
             <tr>

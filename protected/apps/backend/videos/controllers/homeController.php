@@ -44,6 +44,7 @@ class HomeController extends BackEndController {
             
         $model = Video::getInstance();
         $items = $model->getItems(); 
+        $data['lists'] = $model->getList();
         $data["items"] = $items;
         $this->render('default', $data);
     }
@@ -65,6 +66,17 @@ class HomeController extends BackEndController {
         
         $model = Video::getInstance();
         $item = $model->getItem($cid);
+        
+        global $user;
+
+         if(!$bool = $user->modifyChecking($item->created_by)){            
+            $obj_users = YiiUser::getInstance();
+            $item_user = $obj_users->getUser($item->created_by);
+            YiiMessage::raseNotice("Your account not have permission to edit resource of: $item_user->username");
+            $this->redirect(Router::buildLink("articles"));
+            return false;
+        }
+        
         $list = $model->getListEdit($item);
         
         $this->render('edit', array("item" => $item, "list"=>$list));
@@ -72,11 +84,13 @@ class HomeController extends BackEndController {
 
     function actionApply() {
         $cid = $this->store();
+         YiiMessage::raseSuccess("User save succesfully");
         $this->redirect(Router::buildLink("videos",array('layout'=>'edit','cid'=>$cid)));
     }
     
     function actionSave() {
         $cid = $this->store();
+         YiiMessage::raseSuccess("User save succesfully");
         $this->redirect(Router::buildLink("videos"));
     }
     
@@ -90,15 +104,29 @@ class HomeController extends BackEndController {
         
         $cid = Request::getVar("id", 0); 
         
-        $obj = YiiTables::getInstance(TBL_VIDEOS);        
-        $obj = $obj->load($cid); 
+        $obj_table = YiiTables::getInstance(TBL_VIDEOS);        
+        $obj_table = $obj_table->load($cid); 
         
-        $obj->bind($_POST);           
+        $obj_table->bind($_POST);           
        
-        $obj->store();
+        if($obj_table->id == 0){
+            $obj_table->created_by = $user->id;
+        }else{
+            // check quyen so huu
+            global $user;
+            if(!$bool = $user->modifyChecking($obj_table->created_by)){
+               $obj_users = YiiUser::getInstance();
+               $item_user = $obj_users->getUser($obj_table->created_by);
+               YiiMessage::raseNotice("Your account not have permission to modify resource of: $item_user->username");
+               $this->redirect(Router::buildLink("articles"));
+               return false;
+           }
+        }
+        $obj_table->modified_by = $user->id;
+        $obj_table->store();
  
-        YiiMessage::raseSuccess("Successfully save Category");
-        return $obj->id;
+        YiiMessage::raseSuccess("Successfully save Video");
+        return $obj_table->id;
     }
     
     
@@ -128,29 +156,63 @@ class HomeController extends BackEndController {
 
     function changeStatus($cid, $value)
     {
-        $obj = YiiTables::getInstance(TBL_VIDEOS);   
-        $obj->load($cid); 
-        $obj->status = $value;
-        $obj->store();
+        $obj_table = YiiTables::getInstance(TBL_VIDEOS);   
+        $obj_table->load($cid); 
+        
+        // check quyen so huu
+        global $user;
+        if(!$bool = $user->modifyChecking($obj_table->created_by)){
+           $obj_users = YiiUser::getInstance();
+           $item_user = $obj_users->getUser($obj_table->created_by);
+ 
+           YiiMessage::raseNotice("Your account not have permission to modify resource of: $item_user->username");
+           $this->redirect(Router::buildLink("articles"));
+           return false;
+       }
+        
+        $obj_table->status = $value;
+        $obj_table->store();
     }
     function changeFeature($cid, $value)
     {
-        $obj = YiiTables::getInstance(TBL_VIDEOS);   
-        $obj->load($cid); 
-        $obj->feature = $value;
-        $obj->store();
+        $obj_table = YiiTables::getInstance(TBL_VIDEOS);   
+        $obj_table->load($cid); 
+        
+         // check quyen so huu
+        global $user;
+        if(!$bool = $user->modifyChecking($obj_table->created_by)){
+           $obj_users = YiiUser::getInstance();
+           $item_user = $obj_users->getUser($obj_table->created_by);
+           YiiMessage::raseNotice("Your account not have permission to modify resource of: $item_user->username");
+           $this->redirect(Router::buildLink("articles"));
+           return false;
+       }
+        
+        $obj_table->feature = $value;
+        $obj_table->store();
     }
     
     function actionRemove()
     {
+        global $user;
+         
         $cids = Request::getVar("cid", 0);
-        $table = YiiTables::getInstance(TBL_VIDEOS);
+        $obj_table = YiiTables::getInstance(TBL_VIDEOS);
        
         if(count($cids) >0){
             for($i=0;$i<count($cids);$i++){
                 $cid = $cids[$i];
+                $obj_table->load($cid);
+ 
+                if(!$bool = $user->modifyChecking($obj_table->created_by)){
+                    $obj_users = YiiUser::getInstance();
+                    $item_user = $obj_users->getUser($obj_table->created_by);
+                    YiiMessage::raseNotice("Your account not have permission to delete video: $obj_table->title");
+                    $this->redirect(Router::buildLink("videos"));
+                    return false;
+                }
                 //check item first
-                $table->remove($cid);
+                $obj_table->remove($cid);
             }
         }
         YiiMessage::raseSuccess("Successfully remove Video(s)");
