@@ -1,13 +1,3 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Aug 25, 2015, 4:38:49 PM
-    Author     : Duong
-*/
-
 @media(min-width:768px){
     .users #wrapper .container{
         width: 530px;
@@ -82,8 +72,8 @@ and open the template in the editor.
 
     .navbar-toggle{
         position: absolute;
-        //right: 0;
-        bottom: 0px;
+        bottom: 4px;
+        left: 12px;
 
     }
     .navbar-toggle .icon-bar{
@@ -97,13 +87,13 @@ and open the template in the editor.
         background-color: transparent !important;
     }
     .search {
-        padding: 5px 0;
-        width: 230px;
-        height: 30px;
-        position: relative;
-        left: 10px;
         float: left;
+        height: 30px;
+        left: -122px;
         line-height: 22px;
+        padding: 5px 0;
+        position: relative;
+        width: 84px;
     }
 
     .search input {
@@ -127,11 +117,45 @@ and open the template in the editor.
     }
 
     .search .btn {
+        margin-right: -132px;
         height: 30px;
         position: absolute;
-        right: 0;
         top: 5px;
-        border-radius:0;
+        border-radius: 0px;
+        width: 33px;
+        border: 0px 
+    }
+    .navbar-brand {
+        float: none;
+        height: 10px;
+    }
+    .show-nav-main-mobile{
+        font-weight: bold;
+        color: #FF0000;
+    }
+    .show-mobile{
+        float: left;
+        //left: 200px;
+    }
+    .show-mobile ul li{
+        list-style: none;
+        margin-left: -20px;
+        margin-top: 12px;
+    }
+    .show-mobile ul li a{
+        color: #FF0000;
+    }
+    .mobile-container-fluid{
+        height: 60px;
+    }
+    .navbar-brand img {
+        height: 60px;
+        margin-top: -21px;
+    }
+    .search-container {
+        position: absolute;
+        right: 10px;
+        top: 12px;
     }
 
 }

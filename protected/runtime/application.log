@@ -14001,3 +14001,810 @@ Stack trace:
 REQUEST_URI=/backend/menus/categories/edit
 HTTP_REFERER=http://dev.wapsite.com/backend/menus/editmenuitem?menu=1&cid=19
 ---
+2015/11/17 09:00:36 [warning] [application] Failed to set unsafe attribute "rememberMe" of "UserForm".
+in E:\wamp\www\wapsite\protected\apps\backend\users\controllers\UserController.php (173)
+in E:\wamp\www\wapsite\backend.php (44)
+2015/11/17 09:13:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "category/display".' in E:\wamp\www\wapsite\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('category/displa...')
+#1 {main}
+REQUEST_URI=/app/users/
+HTTP_REFERER=http://dev.wapsite.com/
+---
+2015/11/17 09:23:24 [error] [php] trim() expects parameter 1 to be string, array given (E:\wamp\www\wapsite\protected\includes\YiiTables.php:59)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\backend\videos\controllers\homeController.php(67): Video->getItem()
+#1 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): HomeController->actionEdit()
+#2 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 E:\wamp\www\wapsite\framework\web\filters\CFilterChain.php(133): HomeController->runAction()
+#4 E:\wamp\www\wapsite\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 E:\wamp\www\wapsite\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 E:\wamp\www\wapsite\framework\web\filters\CInlineFilter.php(58): HomeController->filterAccessControl()
+#7 E:\wamp\www\wapsite\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 E:\wamp\www\wapsite\framework\web\CController.php(291): CFilterChain->run()
+#9 E:\wamp\www\wapsite\framework\web\CController.php(265): HomeController->runActionWithFilters()
+#10 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): HomeController->run()
+#11 E:\wamp\www\wapsite\backend.php(44): CWebApplication->runController()
+REQUEST_URI=/backend/?app=videos&layout=edit
+in E:\wamp\www\wapsite\protected\includes\YiiTables.php (59)
+in E:\wamp\www\wapsite\protected\apps\backend\videos\models\Video.php (50)
+in E:\wamp\www\wapsite\protected\apps\backend\videos\controllers\homeController.php (67)
+2015/11/17 09:23:37 [error] [php] trim() expects parameter 1 to be string, array given (E:\wamp\www\wapsite\protected\includes\YiiTables.php:59)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\backend\articles\models\Article.php(40): YiiArticle->loadItem()
+#1 E:\wamp\www\wapsite\protected\apps\backend\articles\controllers\homeController.php(63): Article->getItem()
+#2 unknown(0): HomeController->actionEdit()
+#3 E:\wamp\www\wapsite\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#4 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 E:\wamp\www\wapsite\framework\web\filters\CFilterChain.php(133): HomeController->runAction()
+#7 E:\wamp\www\wapsite\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 E:\wamp\www\wapsite\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#9 E:\wamp\www\wapsite\framework\web\filters\CInlineFilter.php(58): HomeController->filterAccessControl()
+#10 E:\wamp\www\wapsite\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#11 E:\wamp\www\wapsite\framework\web\CController.php(291): CFilterChain->run()
+#12 E:\wamp\www\wapsite\framework\web\CController.php(265): HomeController->runActionWithFilters()
+#13 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): HomeController->run()
+#14 E:\wamp\www\wapsite\backend.php(44): CWebApplication->runController()
+REQUEST_URI=/backend/?app=articles&layout=edit
+in E:\wamp\www\wapsite\protected\includes\YiiTables.php (59)
+in E:\wamp\www\wapsite\protected\includes\objects\YiiArticle.php (43)
+in E:\wamp\www\wapsite\protected\apps\backend\articles\models\Article.php (40)
+2015/11/17 09:32:04 [error] [exception.CException] exception 'CException' with message 'The view path "E:\wamp\www\wapsite\protected\views\frontend" is not a valid directory.' in E:\wamp\www\wapsite\framework\web\CWebApplication.php:444
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\base\CComponent.php(152): CWebApplication->setViewPath('E:\\wamp\\www\\wap...')
+#1 E:\wamp\www\wapsite\protected\components\WebApplicationEndBehavior.php(55): CComponent->__set('viewPath', 'E:\\wamp\\www\\wap...')
+#2 E:\wamp\www\wapsite\framework\base\CComponent.php(561): WebApplicationEndBehavior->changeModulePaths(Object(CEvent))
+#3 E:\wamp\www\wapsite\protected\components\WebApplicationEndBehavior.php(46): CComponent->raiseEvent('onModuleCreate', Object(CEvent))
+#4 E:\wamp\www\wapsite\protected\components\WebApplicationEndBehavior.php(37): WebApplicationEndBehavior->onModuleCreate(Object(CEvent))
+#5 [internal function]: WebApplicationEndBehavior->runEnd('frontend')
+#6 E:\wamp\www\wapsite\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#7 E:\wamp\www\wapsite\index.php(53): CComponent->__call('runEnd', Array)
+#8 E:\wamp\www\wapsite\index.php(53): CWebApplication->runEnd('frontend')
+#9 {main}
+REQUEST_URI=/app/homepage?view=home
+HTTP_REFERER=http://dev.wapsite.com/tin-tuc
+---
+2015/11/17 09:34:47 [error] [exception.CException] exception 'CException' with message 'The view path "E:\wamp\www\wapsite\protected\views\frontend" is not a valid directory.' in E:\wamp\www\wapsite\framework\web\CWebApplication.php:444
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\base\CComponent.php(152): CWebApplication->setViewPath('E:\\wamp\\www\\wap...')
+#1 E:\wamp\www\wapsite\protected\components\WebApplicationEndBehavior.php(55): CComponent->__set('viewPath', 'E:\\wamp\\www\\wap...')
+#2 E:\wamp\www\wapsite\framework\base\CComponent.php(561): WebApplicationEndBehavior->changeModulePaths(Object(CEvent))
+#3 E:\wamp\www\wapsite\protected\components\WebApplicationEndBehavior.php(46): CComponent->raiseEvent('onModuleCreate', Object(CEvent))
+#4 E:\wamp\www\wapsite\protected\components\WebApplicationEndBehavior.php(37): WebApplicationEndBehavior->onModuleCreate(Object(CEvent))
+#5 [internal function]: WebApplicationEndBehavior->runEnd('frontend')
+#6 E:\wamp\www\wapsite\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#7 E:\wamp\www\wapsite\index.php(53): CComponent->__call('runEnd', Array)
+#8 E:\wamp\www\wapsite\index.php(53): CWebApplication->runEnd('frontend')
+#9 {main}
+REQUEST_URI=/app/homepage?view=home
+HTTP_REFERER=http://dev.wapsite.com/homepage
+---
+2015/11/17 11:01:44 [error] [php] Undefined variable: obj_item (E:\wamp\www\wapsite\protected\apps\frontend\videos\controllers\DetailController.php:30)
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CController.php(286): DetailController->runAction()
+#1 E:\wamp\www\wapsite\framework\web\CController.php(265): DetailController->runActionWithFilters()
+#2 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): DetailController->run()
+#3 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/vui-nhon/?page=2
+in E:\wamp\www\wapsite\protected\apps\frontend\videos\controllers\DetailController.php (30)
+in E:\wamp\www\wapsite\index.php (51)
+2015/11/17 14:28:17 [error] [php] Undefined variable: obj_item (E:\wamp\www\wapsite\protected\apps\frontend\videos\controllers\DetailController.php:30)
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CController.php(286): DetailController->runAction()
+#1 E:\wamp\www\wapsite\framework\web\CController.php(265): DetailController->runActionWithFilters()
+#2 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): DetailController->run()
+#3 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/vui-nhon/?page=2
+in E:\wamp\www\wapsite\protected\apps\frontend\videos\controllers\DetailController.php (30)
+in E:\wamp\www\wapsite\index.php (51)
+2015/11/17 17:07:06 [error] [php] Undefined variable: obj_item (E:\wamp\www\wapsite\protected\apps\frontend\videos\controllers\DetailController.php:30)
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CController.php(286): DetailController->runAction()
+#1 E:\wamp\www\wapsite\framework\web\CController.php(265): DetailController->runActionWithFilters()
+#2 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): DetailController->run()
+#3 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/vui-nhon/?page=2
+in E:\wamp\www\wapsite\protected\apps\frontend\videos\controllers\DetailController.php (30)
+in E:\wamp\www\wapsite\index.php (51)
+2015/11/17 17:47:12 [error] [php] Undefined offset: 1 (E:\wamp\www\wapsite\protected\apps\frontend\users\router.php:46)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\router.php(46): CWebApplication->handleError()
+#1 E:\wamp\www\wapsite\protected\router.php(82): usersParseRoute()
+#2 E:\wamp\www\wapsite\index.php(19): parseLink()
+REQUEST_URI=/dang-ky/?view=user&layout=register
+in E:\wamp\www\wapsite\protected\apps\frontend\users\router.php (46)
+in E:\wamp\www\wapsite\protected\router.php (82)
+in E:\wamp\www\wapsite\index.php (19)
+2015/11/17 17:47:15 [error] [php] Undefined offset: 1 (E:\wamp\www\wapsite\protected\apps\frontend\users\router.php:46)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\router.php(46): CWebApplication->handleError()
+#1 E:\wamp\www\wapsite\protected\router.php(82): usersParseRoute()
+#2 E:\wamp\www\wapsite\index.php(19): parseLink()
+REQUEST_URI=/dang-nhap/?view=user&layout=login
+in E:\wamp\www\wapsite\protected\apps\frontend\users\router.php (46)
+in E:\wamp\www\wapsite\protected\router.php (82)
+in E:\wamp\www\wapsite\index.php (19)
+2015/11/17 17:48:07 [error] [php] Undefined offset: 1 (E:\wamp\www\wapsite\protected\apps\frontend\users\router.php:46)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\router.php(46): CWebApplication->handleError()
+#1 E:\wamp\www\wapsite\protected\router.php(82): usersParseRoute()
+#2 E:\wamp\www\wapsite\index.php(19): parseLink()
+REQUEST_URI=/dang-nhap/?view=user&layout=login
+in E:\wamp\www\wapsite\protected\apps\frontend\users\router.php (46)
+in E:\wamp\www\wapsite\protected\router.php (82)
+in E:\wamp\www\wapsite\index.php (19)
+2015/11/18 01:55:16 [error] [exception.CException] exception 'CException' with message 'HomeController and its behaviors do not have a method or closure named "creaturl".' in E:\wamp\www\wapsite\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\wapsite\themes\wapsite\default.php(106): CComponent->__call('creaturl', Array)
+#1 E:\wamp\www\wapsite\themes\wapsite\default.php(106): HomeController->creaturl('')
+#2 E:\wamp\www\wapsite\framework\web\CBaseController.php(126): require('E:\\wamp\\www\\wap...')
+#3 E:\wamp\www\wapsite\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\\wamp\\www\\wap...', Array, true)
+#4 E:\wamp\www\wapsite\framework\web\CController.php(784): CBaseController->renderFile('E:\\wamp\\www\\wap...', Array, true)
+#5 E:\wamp\www\wapsite\protected\components\FrontEndController.php(106): CController->render('//html/homepage...', Array, false)
+#6 E:\wamp\www\wapsite\protected\apps\frontend\homepage\controllers\HomeController.php(29): FrontEndController->render('default', Array)
+#7 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): HomeController->actionDisplay()
+#8 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 E:\wamp\www\wapsite\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 E:\wamp\www\wapsite\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('display')
+#12 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('home/display')
+#13 {main}
+REQUEST_URI=/
+---
+2015/11/18 03:10:49 [error] [php] Undefined offset: 1 (E:\wamp\www\wapsite\protected\apps\frontend\users\router.php:46)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\router.php(46): CWebApplication->handleError()
+#1 E:\wamp\www\wapsite\protected\router.php(82): usersParseRoute()
+#2 E:\wamp\www\wapsite\index.php(19): parseLink()
+REQUEST_URI=/dang-nhap/?view=user&layout=login
+in E:\wamp\www\wapsite\protected\apps\frontend\users\router.php (46)
+in E:\wamp\www\wapsite\protected\router.php (82)
+in E:\wamp\www\wapsite\index.php (19)
+2015/11/18 03:51:47 [error] [php] Undefined offset: 1 (E:\wamp\www\wapsite\protected\apps\frontend\users\router.php:46)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\router.php(46): CWebApplication->handleError()
+#1 E:\wamp\www\wapsite\protected\router.php(82): usersParseRoute()
+#2 E:\wamp\www\wapsite\index.php(19): parseLink()
+REQUEST_URI=/dang-nhap/?view=user&layout=login
+in E:\wamp\www\wapsite\protected\apps\frontend\users\router.php (46)
+in E:\wamp\www\wapsite\protected\router.php (82)
+in E:\wamp\www\wapsite\index.php (19)
+2015/11/18 04:24:20 [error] [php] implode(): Invalid arguments passed (E:\wamp\www\wapsite\protected\router.php:126)
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CBaseController.php(126): require()
+#1 E:\wamp\www\wapsite\framework\web\CBaseController.php(95): HomeController->renderInternal()
+#2 E:\wamp\www\wapsite\framework\web\CController.php(784): HomeController->renderFile()
+#3 E:\wamp\www\wapsite\protected\components\FrontEndController.php(106): HomeController->render()
+#4 E:\wamp\www\wapsite\protected\apps\frontend\homepage\controllers\HomeController.php(29): HomeController->render()
+#5 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): HomeController->actionDisplay()
+#6 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 E:\wamp\www\wapsite\framework\web\CController.php(286): HomeController->runAction()
+#8 E:\wamp\www\wapsite\framework\web\CController.php(265): HomeController->runActionWithFilters()
+#9 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): HomeController->run()
+#10 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/
+in E:\wamp\www\wapsite\protected\router.php (126)
+in E:\wamp\www\wapsite\themes\wapsite\default.php (51)
+in E:\wamp\www\wapsite\protected\components\FrontEndController.php (106)
+2015/11/18 04:24:39 [error] [php] implode(): Invalid arguments passed (E:\wamp\www\wapsite\protected\router.php:126)
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CBaseController.php(126): require()
+#1 E:\wamp\www\wapsite\framework\web\CBaseController.php(95): CategoryController->renderInternal()
+#2 E:\wamp\www\wapsite\framework\web\CController.php(784): CategoryController->renderFile()
+#3 E:\wamp\www\wapsite\protected\components\FrontEndController.php(106): CategoryController->render()
+#4 E:\wamp\www\wapsite\protected\apps\frontend\videos\controllers\CategoryController.php(58): CategoryController->render()
+#5 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): CategoryController->actionBlog()
+#6 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 E:\wamp\www\wapsite\framework\web\CController.php(286): CategoryController->runAction()
+#8 E:\wamp\www\wapsite\framework\web\CController.php(265): CategoryController->runActionWithFilters()
+#9 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CategoryController->run()
+#10 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/hai-huoc/
+in E:\wamp\www\wapsite\protected\router.php (126)
+in E:\wamp\www\wapsite\themes\wapsite\default.php (51)
+in E:\wamp\www\wapsite\protected\components\FrontEndController.php (106)
+2015/11/18 04:24:41 [error] [php] implode(): Invalid arguments passed (E:\wamp\www\wapsite\protected\router.php:126)
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CBaseController.php(126): require()
+#1 E:\wamp\www\wapsite\framework\web\CBaseController.php(95): HomeController->renderInternal()
+#2 E:\wamp\www\wapsite\framework\web\CController.php(784): HomeController->renderFile()
+#3 E:\wamp\www\wapsite\protected\components\FrontEndController.php(106): HomeController->render()
+#4 E:\wamp\www\wapsite\protected\apps\frontend\homepage\controllers\HomeController.php(29): HomeController->render()
+#5 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): HomeController->actionDisplay()
+#6 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 E:\wamp\www\wapsite\framework\web\CController.php(286): HomeController->runAction()
+#8 E:\wamp\www\wapsite\framework\web\CController.php(265): HomeController->runActionWithFilters()
+#9 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): HomeController->run()
+#10 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/category/blog
+in E:\wamp\www\wapsite\protected\router.php (126)
+in E:\wamp\www\wapsite\themes\wapsite\default.php (51)
+in E:\wamp\www\wapsite\protected\components\FrontEndController.php (106)
+2015/11/18 04:24:41 [error] [php] implode(): Invalid arguments passed (E:\wamp\www\wapsite\protected\router.php:126)
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CBaseController.php(126): require()
+#1 E:\wamp\www\wapsite\framework\web\CBaseController.php(95): CategoryController->renderInternal()
+#2 E:\wamp\www\wapsite\framework\web\CController.php(784): CategoryController->renderFile()
+#3 E:\wamp\www\wapsite\protected\components\FrontEndController.php(106): CategoryController->render()
+#4 E:\wamp\www\wapsite\protected\apps\frontend\videos\controllers\CategoryController.php(58): CategoryController->render()
+#5 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): CategoryController->actionBlog()
+#6 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 E:\wamp\www\wapsite\framework\web\CController.php(286): CategoryController->runAction()
+#8 E:\wamp\www\wapsite\framework\web\CController.php(265): CategoryController->runActionWithFilters()
+#9 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CategoryController->run()
+#10 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/vui-nhon
+in E:\wamp\www\wapsite\protected\router.php (126)
+in E:\wamp\www\wapsite\themes\wapsite\default.php (51)
+in E:\wamp\www\wapsite\protected\components\FrontEndController.php (106)
+2015/11/18 04:24:44 [error] [php] implode(): Invalid arguments passed (E:\wamp\www\wapsite\protected\router.php:126)
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CBaseController.php(126): require()
+#1 E:\wamp\www\wapsite\framework\web\CBaseController.php(95): HomeController->renderInternal()
+#2 E:\wamp\www\wapsite\framework\web\CController.php(784): HomeController->renderFile()
+#3 E:\wamp\www\wapsite\protected\components\FrontEndController.php(106): HomeController->render()
+#4 E:\wamp\www\wapsite\protected\apps\frontend\homepage\controllers\HomeController.php(29): HomeController->render()
+#5 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): HomeController->actionDisplay()
+#6 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 E:\wamp\www\wapsite\framework\web\CController.php(286): HomeController->runAction()
+#8 E:\wamp\www\wapsite\framework\web\CController.php(265): HomeController->runActionWithFilters()
+#9 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): HomeController->run()
+#10 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/
+in E:\wamp\www\wapsite\protected\router.php (126)
+in E:\wamp\www\wapsite\themes\wapsite\default.php (51)
+in E:\wamp\www\wapsite\protected\components\FrontEndController.php (106)
+2015/11/18 05:03:18 [error] [php] Undefined variable: category (E:\wamp\www\wapsite\themes\wapsite\html\users\user\register.php:13)
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CController.php(869): UserController->renderFile()
+#1 E:\wamp\www\wapsite\framework\web\CController.php(782): UserController->renderPartial()
+#2 E:\wamp\www\wapsite\protected\components\FrontEndController.php(106): UserController->render()
+#3 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(8): UserController->render()
+#4 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionRegister()
+#5 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 E:\wamp\www\wapsite\framework\web\CController.php(286): UserController->runAction()
+#7 E:\wamp\www\wapsite\framework\web\CController.php(265): UserController->runActionWithFilters()
+#8 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): UserController->run()
+#9 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/dang-ky/
+in E:\wamp\www\wapsite\themes\wapsite\html\users\user\register.php (13)
+in E:\wamp\www\wapsite\protected\components\FrontEndController.php (106)
+in E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php (8)
+2015/11/18 05:05:02 [error] [php] Undefined variable: category (E:\wamp\www\wapsite\themes\wapsite\html\users\user\register.php:13)
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CController.php(869): UserController->renderFile()
+#1 E:\wamp\www\wapsite\framework\web\CController.php(782): UserController->renderPartial()
+#2 E:\wamp\www\wapsite\protected\components\FrontEndController.php(106): UserController->render()
+#3 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(8): UserController->render()
+#4 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionRegister()
+#5 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 E:\wamp\www\wapsite\framework\web\CController.php(286): UserController->runAction()
+#7 E:\wamp\www\wapsite\framework\web\CController.php(265): UserController->runActionWithFilters()
+#8 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): UserController->run()
+#9 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/dang-ky/
+in E:\wamp\www\wapsite\themes\wapsite\html\users\user\register.php (13)
+in E:\wamp\www\wapsite\protected\components\FrontEndController.php (106)
+in E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php (8)
+2015/11/18 05:09:34 [error] [php] include(User.php): failed to open stream: No such file or directory (E:\wamp\www\wapsite\framework\YiiBase.php:427)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(8): spl_autoload_call()
+#1 E:\wamp\www\wapsite\framework\web\CWebApplication.php(281): UserController->init()
+#2 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/dang-nhap/
+in E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php (8)
+in E:\wamp\www\wapsite\index.php (51)
+2015/11/18 05:09:35 [error] [php] include(User.php): failed to open stream: No such file or directory (E:\wamp\www\wapsite\framework\YiiBase.php:427)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(8): spl_autoload_call()
+#1 E:\wamp\www\wapsite\framework\web\CWebApplication.php(281): UserController->init()
+#2 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/dang-ky/
+in E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php (8)
+in E:\wamp\www\wapsite\index.php (51)
+2015/11/18 05:09:38 [error] [php] include(User.php): failed to open stream: No such file or directory (E:\wamp\www\wapsite\framework\YiiBase.php:427)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(8): spl_autoload_call()
+#1 E:\wamp\www\wapsite\framework\web\CWebApplication.php(281): UserController->init()
+#2 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/dang-ky/
+in E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php (8)
+in E:\wamp\www\wapsite\index.php (51)
+2015/11/18 05:11:30 [error] [php] require_once(include/header.php): failed to open stream: No such file or directory (E:\wamp\www\wapsite\themes\wapsite\html\users\user\register.php:1)
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CBaseController.php(95): UserController->renderInternal()
+#1 E:\wamp\www\wapsite\framework\web\CController.php(869): UserController->renderFile()
+#2 E:\wamp\www\wapsite\framework\web\CController.php(782): UserController->renderPartial()
+#3 E:\wamp\www\wapsite\protected\components\FrontEndController.php(106): UserController->render()
+#4 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(8): UserController->render()
+#5 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionRegister()
+#6 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 E:\wamp\www\wapsite\framework\web\CController.php(286): UserController->runAction()
+#8 E:\wamp\www\wapsite\framework\web\CController.php(265): UserController->runActionWithFilters()
+#9 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): UserController->run()
+#10 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/dang-ky/
+in E:\wamp\www\wapsite\themes\wapsite\html\users\user\register.php (1)
+in E:\wamp\www\wapsite\themes\wapsite\html\users\user\register.php (1)
+in E:\wamp\www\wapsite\protected\components\FrontEndController.php (106)
+2015/11/18 05:11:46 [error] [php] require_once(include/footer.php): failed to open stream: No such file or directory (E:\wamp\www\wapsite\themes\wapsite\html\users\user\register.php:146)
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CBaseController.php(95): UserController->renderInternal()
+#1 E:\wamp\www\wapsite\framework\web\CController.php(869): UserController->renderFile()
+#2 E:\wamp\www\wapsite\framework\web\CController.php(782): UserController->renderPartial()
+#3 E:\wamp\www\wapsite\protected\components\FrontEndController.php(106): UserController->render()
+#4 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(8): UserController->render()
+#5 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionRegister()
+#6 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 E:\wamp\www\wapsite\framework\web\CController.php(286): UserController->runAction()
+#8 E:\wamp\www\wapsite\framework\web\CController.php(265): UserController->runActionWithFilters()
+#9 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): UserController->run()
+#10 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/dang-ky/
+in E:\wamp\www\wapsite\themes\wapsite\html\users\user\register.php (146)
+in E:\wamp\www\wapsite\themes\wapsite\html\users\user\register.php (146)
+in E:\wamp\www\wapsite\protected\components\FrontEndController.php (106)
+2015/11/18 05:16:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user/register".' in E:\wamp\www\wapsite\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/register')
+#1 {main}
+REQUEST_URI=/dang-ky/
+HTTP_REFERER=http://dev.wapsite.com/users/create
+---
+2015/11/18 07:00:44 [error] [php] include(Article.php): failed to open stream: No such file or directory (E:\wamp\www\wapsite\framework\YiiBase.php:427)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\videos\controllers\HomeController.php(15): spl_autoload_call()
+#1 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): HomeController->actionDisplay()
+#2 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 E:\wamp\www\wapsite\framework\web\CController.php(286): HomeController->runAction()
+#4 E:\wamp\www\wapsite\framework\web\CController.php(265): HomeController->runActionWithFilters()
+#5 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): HomeController->run()
+#6 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/videos/
+in E:\wamp\www\wapsite\protected\apps\frontend\videos\controllers\HomeController.php (15)
+in E:\wamp\www\wapsite\index.php (51)
+2015/11/18 07:22:34 [error] [php] Undefined offset: 1 (E:\wamp\www\wapsite\protected\apps\frontend\users\router.php:45)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\router.php(45): CWebApplication->handleError()
+#1 E:\wamp\www\wapsite\protected\router.php(82): usersParseRoute()
+#2 E:\wamp\www\wapsite\index.php(19): parseLink()
+REQUEST_URI=/dang-ky/dang_ky
+in E:\wamp\www\wapsite\protected\apps\frontend\users\router.php (45)
+in E:\wamp\www\wapsite\protected\router.php (82)
+in E:\wamp\www\wapsite\index.php (19)
+2015/11/18 07:44:06 [error] [php] Undefined offset: 1 (E:\wamp\www\wapsite\protected\apps\frontend\users\router.php:45)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\router.php(45): CWebApplication->handleError()
+#1 E:\wamp\www\wapsite\protected\router.php(82): usersParseRoute()
+#2 E:\wamp\www\wapsite\index.php(19): parseLink()
+REQUEST_URI=/dang-ky/dang_ky
+in E:\wamp\www\wapsite\protected\apps\frontend\users\router.php (45)
+in E:\wamp\www\wapsite\protected\router.php (82)
+in E:\wamp\www\wapsite\index.php (19)
+2015/11/18 08:36:14 [error] [php] include(User.php): failed to open stream: No such file or directory (E:\wamp\www\wapsite\framework\YiiBase.php:427)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(15): spl_autoload_call()
+#1 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionCheckLogin()
+#2 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 E:\wamp\www\wapsite\framework\web\CController.php(286): UserController->runAction()
+#4 E:\wamp\www\wapsite\framework\web\CController.php(265): UserController->runActionWithFilters()
+#5 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): UserController->run()
+#6 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/app/users/user/checklogin
+in E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php (15)
+in E:\wamp\www\wapsite\index.php (51)
+2015/11/18 08:37:56 [error] [php] Undefined offset: 1 (E:\wamp\www\wapsite\protected\apps\frontend\users\router.php:45)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\router.php(45): CWebApplication->handleError()
+#1 E:\wamp\www\wapsite\protected\router.php(82): usersParseRoute()
+#2 E:\wamp\www\wapsite\index.php(19): parseLink()
+REQUEST_URI=/app/users/checklogin/
+in E:\wamp\www\wapsite\protected\apps\frontend\users\router.php (45)
+in E:\wamp\www\wapsite\protected\router.php (82)
+in E:\wamp\www\wapsite\index.php (19)
+2015/11/18 08:43:42 [error] [php] Invalid argument supplied for foreach() (E:\wamp\www\wapsite\protected\router.php:134)
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CBaseController.php(95): UserController->renderInternal()
+#1 E:\wamp\www\wapsite\framework\web\CController.php(869): UserController->renderFile()
+#2 E:\wamp\www\wapsite\framework\web\CController.php(782): UserController->renderPartial()
+#3 E:\wamp\www\wapsite\protected\components\FrontEndController.php(106): UserController->render()
+#4 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(12): UserController->render()
+#5 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionLogin()
+#6 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 E:\wamp\www\wapsite\framework\web\CController.php(286): UserController->runAction()
+#8 E:\wamp\www\wapsite\framework\web\CController.php(265): UserController->runActionWithFilters()
+#9 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): UserController->run()
+#10 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/dang-nhap/
+in E:\wamp\www\wapsite\protected\router.php (134)
+in E:\wamp\www\wapsite\themes\wapsite\html\users\user\login.php (10)
+in E:\wamp\www\wapsite\protected\components\FrontEndController.php (106)
+2015/11/18 08:43:51 [error] [php] Invalid argument supplied for foreach() (E:\wamp\www\wapsite\protected\router.php:134)
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CBaseController.php(95): UserController->renderInternal()
+#1 E:\wamp\www\wapsite\framework\web\CController.php(869): UserController->renderFile()
+#2 E:\wamp\www\wapsite\framework\web\CController.php(782): UserController->renderPartial()
+#3 E:\wamp\www\wapsite\protected\components\FrontEndController.php(106): UserController->render()
+#4 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(12): UserController->render()
+#5 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionLogin()
+#6 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 E:\wamp\www\wapsite\framework\web\CController.php(286): UserController->runAction()
+#8 E:\wamp\www\wapsite\framework\web\CController.php(265): UserController->runActionWithFilters()
+#9 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): UserController->run()
+#10 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/dang-nhap/
+in E:\wamp\www\wapsite\protected\router.php (134)
+in E:\wamp\www\wapsite\themes\wapsite\html\users\user\login.php (10)
+in E:\wamp\www\wapsite\protected\components\FrontEndController.php (106)
+2015/11/18 08:44:15 [error] [php] Undefined offset: 1 (E:\wamp\www\wapsite\protected\apps\frontend\users\router.php:45)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\router.php(45): CWebApplication->handleError()
+#1 E:\wamp\www\wapsite\protected\router.php(82): usersParseRoute()
+#2 E:\wamp\www\wapsite\index.php(19): parseLink()
+REQUEST_URI=/app/users/checklogin/
+in E:\wamp\www\wapsite\protected\apps\frontend\users\router.php (45)
+in E:\wamp\www\wapsite\protected\router.php (82)
+in E:\wamp\www\wapsite\index.php (19)
+2015/11/18 08:49:04 [error] [php] Undefined offset: 1 (E:\wamp\www\wapsite\protected\apps\frontend\users\router.php:45)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\router.php(45): CWebApplication->handleError()
+#1 E:\wamp\www\wapsite\protected\router.php(82): usersParseRoute()
+#2 E:\wamp\www\wapsite\index.php(19): parseLink()
+REQUEST_URI=/app/users/checklogin/
+in E:\wamp\www\wapsite\protected\apps\frontend\users\router.php (45)
+in E:\wamp\www\wapsite\protected\router.php (82)
+in E:\wamp\www\wapsite\index.php (19)
+2015/11/18 09:23:19 [error] [php] Undefined offset: 1 (E:\wamp\www\wapsite\protected\apps\frontend\users\router.php:45)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\router.php(45): CWebApplication->handleError()
+#1 E:\wamp\www\wapsite\protected\router.php(82): usersParseRoute()
+#2 E:\wamp\www\wapsite\index.php(19): parseLink()
+REQUEST_URI=/dang-nhap/checklogin
+in E:\wamp\www\wapsite\protected\apps\frontend\users\router.php (45)
+in E:\wamp\www\wapsite\protected\router.php (82)
+in E:\wamp\www\wapsite\index.php (19)
+2015/11/18 09:25:38 [error] [php] Undefined offset: 1 (E:\wamp\www\wapsite\protected\apps\frontend\users\router.php:45)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\router.php(45): CWebApplication->handleError()
+#1 E:\wamp\www\wapsite\protected\router.php(82): usersParseRoute()
+#2 E:\wamp\www\wapsite\index.php(19): parseLink()
+REQUEST_URI=/dang-nhap/checklogin
+in E:\wamp\www\wapsite\protected\apps\frontend\users\router.php (45)
+in E:\wamp\www\wapsite\protected\router.php (82)
+in E:\wamp\www\wapsite\index.php (19)
+2015/11/18 09:25:44 [error] [php] include(User.php): failed to open stream: No such file or directory (E:\wamp\www\wapsite\framework\YiiBase.php:427)
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(15): spl_autoload_call()
+#1 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionCheckLogin()
+#2 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 E:\wamp\www\wapsite\framework\web\CController.php(286): UserController->runAction()
+#4 E:\wamp\www\wapsite\framework\web\CController.php(265): UserController->runActionWithFilters()
+#5 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): UserController->run()
+#6 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/app/users/user/CheckLogin
+in E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php (15)
+in E:\wamp\www\wapsite\index.php (51)
+2015/11/18 09:54:20 [error] [exception.CException] exception 'CException' with message 'UserController and its behaviors do not have a method or closure named "set_userdata".' in E:\wamp\www\wapsite\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): CComponent->__call('set_userdata', Array)
+#1 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): UserController->set_userdata(Array)
+#2 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionCheckLogin()
+#3 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\wapsite\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\wapsite\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('checklogin')
+#7 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/checklogin')
+#8 {main}
+REQUEST_URI=/app/users/user/checklogin
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 09:54:47 [error] [exception.CException] exception 'CException' with message 'UserController and its behaviors do not have a method or closure named "set_userdata".' in E:\wamp\www\wapsite\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): CComponent->__call('set_userdata', Array)
+#1 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): UserController->set_userdata(Array)
+#2 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionCheckLogin()
+#3 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\wapsite\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\wapsite\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('checklogin')
+#7 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/checklogin')
+#8 {main}
+REQUEST_URI=/app/users/user/checklogin
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 09:57:55 [error] [exception.CException] exception 'CException' with message 'UserController and its behaviors do not have a method or closure named "set_userdata".' in E:\wamp\www\wapsite\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): CComponent->__call('set_userdata', Array)
+#1 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): UserController->set_userdata(Array)
+#2 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionCheckLogin()
+#3 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\wapsite\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\wapsite\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('checklogin')
+#7 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/checklogin')
+#8 {main}
+REQUEST_URI=/app/users/user/checklogin
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:11:23 [error] [exception.CException] exception 'CException' with message 'UserController and its behaviors do not have a method or closure named "set_userdata".' in E:\wamp\www\wapsite\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): CComponent->__call('set_userdata', Array)
+#1 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): UserController->set_userdata(Array)
+#2 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionCheckLogin()
+#3 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\wapsite\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\wapsite\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('checklogin')
+#7 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/checklogin')
+#8 {main}
+REQUEST_URI=/app/users/user/checklogin
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:11:40 [error] [exception.CException] exception 'CException' with message 'UserController and its behaviors do not have a method or closure named "set_userdata".' in E:\wamp\www\wapsite\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): CComponent->__call('set_userdata', Array)
+#1 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): UserController->set_userdata(Array)
+#2 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionCheckLogin()
+#3 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\wapsite\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\wapsite\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('checklogin')
+#7 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/checklogin')
+#8 {main}
+REQUEST_URI=/app/users/user/checklogin
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:11:43 [error] [exception.CException] exception 'CException' with message 'UserController and its behaviors do not have a method or closure named "set_userdata".' in E:\wamp\www\wapsite\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): CComponent->__call('set_userdata', Array)
+#1 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): UserController->set_userdata(Array)
+#2 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionCheckLogin()
+#3 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\wapsite\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\wapsite\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('checklogin')
+#7 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/checklogin')
+#8 {main}
+REQUEST_URI=/app/users/user/checklogin
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:11:45 [error] [exception.CException] exception 'CException' with message 'UserController and its behaviors do not have a method or closure named "set_userdata".' in E:\wamp\www\wapsite\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): CComponent->__call('set_userdata', Array)
+#1 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): UserController->set_userdata(Array)
+#2 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionCheckLogin()
+#3 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\wapsite\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\wapsite\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('checklogin')
+#7 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/checklogin')
+#8 {main}
+REQUEST_URI=/app/users/user/checklogin
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:11:51 [error] [php] Undefined variable: item (E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php:25)
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CController.php(286): UserController->runAction()
+#1 E:\wamp\www\wapsite\framework\web\CController.php(265): UserController->runActionWithFilters()
+#2 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): UserController->run()
+#3 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/app/users/user/checklogin
+in E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php (25)
+in E:\wamp\www\wapsite\index.php (51)
+2015/11/18 10:12:03 [error] [exception.CException] exception 'CException' with message 'UserController and its behaviors do not have a method or closure named "set_userdata".' in E:\wamp\www\wapsite\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): CComponent->__call('set_userdata', Array)
+#1 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): UserController->set_userdata(Array)
+#2 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionCheckLogin()
+#3 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\wapsite\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\wapsite\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('checklogin')
+#7 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/checklogin')
+#8 {main}
+REQUEST_URI=/app/users/user/checklogin
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:12:07 [error] [exception.CException] exception 'CException' with message 'UserController and its behaviors do not have a method or closure named "set_userdata".' in E:\wamp\www\wapsite\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): CComponent->__call('set_userdata', Array)
+#1 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): UserController->set_userdata(Array)
+#2 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionCheckLogin()
+#3 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\wapsite\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\wapsite\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('checklogin')
+#7 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/checklogin')
+#8 {main}
+REQUEST_URI=/app/users/user/checklogin
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:15:05 [error] [exception.CException] exception 'CException' with message 'UserController and its behaviors do not have a method or closure named "set_userdata".' in E:\wamp\www\wapsite\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): CComponent->__call('set_userdata', Array)
+#1 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): UserController->set_userdata(Array)
+#2 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionCheckLogin()
+#3 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\wapsite\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\wapsite\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('checklogin')
+#7 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/checklogin')
+#8 {main}
+REQUEST_URI=/app/users/user/checklogin
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:15:23 [error] [exception.CException] exception 'CException' with message 'UserController and its behaviors do not have a method or closure named "set_userdata".' in E:\wamp\www\wapsite\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): CComponent->__call('set_userdata', Array)
+#1 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): UserController->set_userdata(Array)
+#2 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionCheckLogin()
+#3 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\wapsite\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\wapsite\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('checklogin')
+#7 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/checklogin')
+#8 {main}
+REQUEST_URI=/app/users/user/checklogin
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:27:20 [error] [exception.CException] exception 'CException' with message 'UserController and its behaviors do not have a method or closure named "set_userdata".' in E:\wamp\www\wapsite\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): CComponent->__call('set_userdata', Array)
+#1 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): UserController->set_userdata(Array)
+#2 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionCheckLogin()
+#3 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\wapsite\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\wapsite\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('checklogin')
+#7 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/checklogin')
+#8 {main}
+REQUEST_URI=/app/users/user/checklogin
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:27:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "users".' in E:\wamp\www\wapsite\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CController.php(270): CController->missingAction('users')
+#1 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('users')
+#2 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/users')
+#3 {main}
+REQUEST_URI=/app/users/user/users/login
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:27:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "users".' in E:\wamp\www\wapsite\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CController.php(270): CController->missingAction('users')
+#1 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('users')
+#2 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/users')
+#3 {main}
+REQUEST_URI=/app/users/user/users/login
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:28:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "users".' in E:\wamp\www\wapsite\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CController.php(270): CController->missingAction('users')
+#1 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('users')
+#2 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/users')
+#3 {main}
+REQUEST_URI=/app/users/user/users/login
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:28:12 [error] [exception.CException] exception 'CException' with message 'UserController and its behaviors do not have a method or closure named "set_userdata".' in E:\wamp\www\wapsite\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): CComponent->__call('set_userdata', Array)
+#1 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): UserController->set_userdata(Array)
+#2 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionCheckLogin()
+#3 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\wapsite\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\wapsite\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('checklogin')
+#7 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/checklogin')
+#8 {main}
+REQUEST_URI=/app/users/user/checklogin
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:28:14 [error] [exception.CException] exception 'CException' with message 'UserController and its behaviors do not have a method or closure named "set_userdata".' in E:\wamp\www\wapsite\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): CComponent->__call('set_userdata', Array)
+#1 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): UserController->set_userdata(Array)
+#2 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionCheckLogin()
+#3 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\wapsite\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\wapsite\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('checklogin')
+#7 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/checklogin')
+#8 {main}
+REQUEST_URI=/app/users/user/checklogin
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:28:17 [error] [exception.CException] exception 'CException' with message 'UserController and its behaviors do not have a method or closure named "set_userdata".' in E:\wamp\www\wapsite\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): CComponent->__call('set_userdata', Array)
+#1 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): UserController->set_userdata(Array)
+#2 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionCheckLogin()
+#3 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\wapsite\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\wapsite\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('checklogin')
+#7 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/checklogin')
+#8 {main}
+REQUEST_URI=/app/users/user/checklogin
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:28:53 [error] [exception.CException] exception 'CException' with message 'UserController and its behaviors do not have a method or closure named "set_userdata".' in E:\wamp\www\wapsite\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): CComponent->__call('set_userdata', Array)
+#1 E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php(22): UserController->set_userdata(Array)
+#2 E:\wamp\www\wapsite\framework\web\actions\CInlineAction.php(49): UserController->actionCheckLogin()
+#3 E:\wamp\www\wapsite\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\wapsite\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\wapsite\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('checklogin')
+#7 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/checklogin')
+#8 {main}
+REQUEST_URI=/app/users/user/checklogin
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:40:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "logout".' in E:\wamp\www\wapsite\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CController.php(270): CController->missingAction('logout')
+#1 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('logout')
+#2 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/logout')
+#3 {main}
+REQUEST_URI=/logout/
+HTTP_REFERER=http://dev.wapsite.com/vui-nhon
+---
+2015/11/18 10:44:59 [error] [php] Undefined index: username (E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php:18)
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CController.php(286): UserController->runAction()
+#1 E:\wamp\www\wapsite\framework\web\CController.php(265): UserController->runActionWithFilters()
+#2 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): UserController->run()
+#3 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/app/users/user/checklogin
+in E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php (18)
+in E:\wamp\www\wapsite\index.php (51)
+2015/11/18 10:45:19 [error] [php] Undefined index: username (E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php:18)
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CController.php(286): UserController->runAction()
+#1 E:\wamp\www\wapsite\framework\web\CController.php(265): UserController->runActionWithFilters()
+#2 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): UserController->run()
+#3 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController()
+REQUEST_URI=/app/users/user/checklogin
+in E:\wamp\www\wapsite\protected\apps\frontend\users\controllers\UserController.php (18)
+in E:\wamp\www\wapsite\index.php (51)
+2015/11/18 10:50:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "app".' in E:\wamp\www\wapsite\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CController.php(270): CController->missingAction('app')
+#1 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('app')
+#2 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/app')
+#3 {main}
+REQUEST_URI=/app/users/user/app/homepage?view=home&layout=home
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:51:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "app".' in E:\wamp\www\wapsite\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CController.php(270): CController->missingAction('app')
+#1 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('app')
+#2 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/app')
+#3 {main}
+REQUEST_URI=/app/users/user/app/homepage?view=home&layout=home
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:52:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "app".' in E:\wamp\www\wapsite\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CController.php(270): CController->missingAction('app')
+#1 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('app')
+#2 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/app')
+#3 {main}
+REQUEST_URI=/app/users/user/app/homepage?view=home
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
+2015/11/18 10:53:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "app".' in E:\wamp\www\wapsite\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\wapsite\framework\web\CController.php(270): CController->missingAction('app')
+#1 E:\wamp\www\wapsite\framework\web\CWebApplication.php(282): CController->run('app')
+#2 E:\wamp\www\wapsite\index.php(51): CWebApplication->runController('user/app')
+#3 {main}
+REQUEST_URI=/app/users/user/app/homepage?view=home
+HTTP_REFERER=http://dev.wapsite.com/dang-nhap/
+---
