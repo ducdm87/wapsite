@@ -31,11 +31,30 @@ class Video extends CFormModel {
     }
   
 
-    public function getItems($limit = 10, $start = 0, $where = array()) {
-         $field = "A.*, B.title cat_title, B.alias cat_alias";
+    public function getItems($limit = 20, $start = 0, $where = array()) {
+        global $user;
+        $filter_created_by = Request::getVar('filter_created_by', $user->id);
+        $filter_state = Request::getVar('filter_state', -2);
+        $conditions = "";
+        $where = array();
+        if($filter_state == 2){ $where [] = " A.feature = 1 ";}
+        else if($filter_state != -2){  $where [] = " A.status = $filter_state "; }
+        
+        if($filter_created_by != -2){
+             $where [] = " A.created_by = $filter_created_by ";
+        }else{
+            $obj_user = new YiiUser();
+            $all_user = $obj_user->getUserInGroup($user->groupID, 'id', true);
+            $all_user = implode(",", $all_user);
+            $where [] = " A.created_by IN($all_user) ";
+        }
+        if(count($where) >0) $conditions = implode (" AND ", $where);
+        $field = "A.*, B.title cat_title, B.alias cat_alias, C.username created_name";
         $command = Yii::app()->db->createCommand()->select($field)
                 ->from(TBL_VIDEOS ." A")
-                ->leftJoin(TBL_CATEGORIES ." B", "A.catID = B.id");
+                ->leftJoin(TBL_CATEGORIES ." B", "A.catID = B.id")
+                ->leftJoin(TBL_USERS ." C", "A.created_by = C.id")
+                ->where($conditions);
         
         $command->order("id desc");
         if($limit != null)$command->limit($limit, $start);
@@ -43,6 +62,30 @@ class Video extends CFormModel {
         $results = $command->queryAll();
         
         return $results;
+    }
+    
+    function getList()
+    {
+         global $user;
+        $list = array();
+        
+        $filter_created_by = Request::getVar('filter_created_by', $user->id);
+        $filter_state = Request::getVar('filter_state', -2);
+        
+        $obj_user = new YiiUser();
+        $all_user[] = array("value"=>-2, "text"=>"- Select User -");
+        //$all_user = array_merge($all_user, $obj_user->getUsers(null, 'id value, username text'));
+        $all_user = array_merge($all_user, $obj_user->getUserInGroup($user->groupID, 'id value, username text', true));
+        $list['filter_created_by'] = buildHtml::select($all_user, $filter_created_by, "filter_created_by",  "filter_created_by", "onchange=\"document.adminForm.submit();\"");
+         
+        $items = array();
+        $items[] = array("value"=>-2, "text"=>"- Select state -");
+        $items[] = array("value"=>0, "text"=>"Unpublish");
+        $items[] = array("value"=>1, "text"=>"Publish");
+        $items[] = array("value"=>2, "text"=>"Featured");
+        $list['filter_state'] = buildHtml::select($items, $filter_state, "filter_state", "filter_state", "onchange=\"document.adminForm.submit();\"");
+        
+        return $list;
     }
 
     public function getItem($cid){

@@ -28,7 +28,9 @@ class BackEndController extends CController {
         $db = $this->db = Yii::app()->db;
         Yii::app()->name = "Back end";
         $user = $this->user = Yii::app()->session['userbackend'];
-        $user->reloaUserLogin(); 
+         
+        if(is_object($user))
+            $user->reloaUserLogin(); 
          
         $mainframe = MainFrame::getInstance($this->db, $user);
 
