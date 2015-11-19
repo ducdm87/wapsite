@@ -21,6 +21,12 @@ class ManagerController extends BackEndController {
      * For menu type
      */
     public function actionDisplay() {
+        global $mainframe, $user;
+        if (!$user->isSuperAdmin()) {
+            YiiMessage::raseNotice("Your account not have permission to manager extension");
+            $this->redirect(Router::buildLink("cpanel"));
+        }
+        
         $task = Request::getVar('task', "");
         $task = Request::getVar('task', "");
         if ($task == "hidden" OR $task == 'publish' OR $task == "unpublish") {
@@ -50,6 +56,12 @@ class ManagerController extends BackEndController {
     }
 
     function changeStatus($cid, $value) {
+        global $mainframe, $user;
+        if (!$user->isSuperAdmin()) {
+            YiiMessage::raseNotice("Your account not have permission to modify extension");
+            $this->redirect(Router::buildLink("cpanel"));
+        }
+        
         $obj_ext = YiiExtensions::getInstance();
         $obj_tblExt = $obj_ext->loadExt($cid);
         $obj_tblExt->status = $value;

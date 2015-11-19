@@ -76,10 +76,8 @@ class HomeController extends BackEndController {
         $lists = $model->getListEdit($item);
         
         // chi useradmin moi duoc tao/sua
-       global $user;
-       $obj_users = YiiUser::getInstance();
-       $group_currentUser = $obj_users->getGroup($user->groupID);       
-       if($group_currentUser->parentID != 1){
+       global $user;             
+       if(!$user->isSuperAdmin()){
            YiiMessage::raseNotice("Your account not have permission to add/edit category");
            $this->redirect(Router::buildLink("categories"));
        }
@@ -103,12 +101,8 @@ class HomeController extends BackEndController {
     }
     
     public function store() {
-        global $mainframe, $user;
-        
-        // chi useradmin moi duoc tao/sua       
-       $obj_users = YiiUser::getInstance();
-       $group_currentUser = $obj_users->getGroup($user->groupID);       
-       if($group_currentUser->parentID != 1){
+        global $mainframe, $user;             
+       if(!$user->isSuperAdmin()){
            YiiMessage::raseNotice("Your account not have permission to modify category");
            $this->redirect(Router::buildLink("categories"));
        }
@@ -156,10 +150,8 @@ class HomeController extends BackEndController {
     
     function changeStatus($cid, $value)
     {
-        global $user;
-        $obj_users = YiiUser::getInstance();
-        $group_currentUser = $obj_users->getGroup($user->groupID);
-        if ($group_currentUser->parentID != 1) {
+        global $mainframe, $user;             
+       if(!$user->isSuperAdmin()){
             YiiMessage::raseNotice("Your account not have permission to modify category");
             $this->redirect(Router::buildLink("categories"));
         }
@@ -171,10 +163,8 @@ class HomeController extends BackEndController {
     }
     function changeFeature($cid, $value)
     {
-        global $user;
-        $obj_users = YiiUser::getInstance();
-        $group_currentUser = $obj_users->getGroup($user->groupID);
-        if ($group_currentUser->parentID != 1) {
+        global $mainframe, $user;             
+        if(!$user->isSuperAdmin()){
             YiiMessage::raseNotice("Your account not have permission to modify category");
             $this->redirect(Router::buildLink("categories"));
         }
@@ -187,11 +177,8 @@ class HomeController extends BackEndController {
     
     function actionRemove()
     {
-       global $user; 
-       // chi useradmin moi duoc tao/sua group
-       $obj_users = YiiUser::getInstance();
-       $group_currentUser = $obj_users->getGroup($user->groupID);
-       if($group_currentUser->parentID != 1){
+       global $mainframe, $user;             
+       if(!$user->isSuperAdmin()){
            YiiMessage::raseNotice("Your account not have permission remove category");
            $this->redirect(Router::buildLink("categories"));
        }

@@ -15,6 +15,7 @@ class YiiUser{
     private $active = 0;
     
     private $user = null;
+    private $arr_group = array();
     
     private $table = "{{users}}";
     
@@ -60,9 +61,11 @@ class YiiUser{
         return $items;
     }
     
-    function getGroup($cid, $field = "*"){ 
+    function getGroup($cid, $field = "*"){
+        if(isset($this->arr_group[$cid])) return $this->arr_group[$cid];
         $tbl_group = YiiTables::getInstance(TBL_USERS_GROUP,"id",true);
         $tbl_group->load($cid, $field);
+        $this->arr_group[$cid] = $tbl_group;
         return $tbl_group;
     }
     
@@ -204,12 +207,32 @@ class YiiUser{
     function isLogout($cid = null){}
     
     function isAdmin($cid = null){
-        if(isset($this->id) AND $this->backend == 1 )
-            return true;
+        if($cid != null) $user = $this->getUser($cid);
+        else $user = $this;
+
+        if($user->id >0 AND $user->backend == 1 )  return true;        
         return false;
     }
     
-    function isLeader($cid = null){ }
+    function isLeader($cid = null){
+        if($cid != null) $user = $this->getUser($cid);
+        else $user = $this;
+
+        if($user->id >0 AND $user->leader == 1 )  return true; 
+        return false;
+    }
+    
+    function isSuperAdmin($cid = null)
+    {
+        if($cid != null) $user = $this->getUser($cid);
+        else $user = $this;
+            
+        $obj_group = $this->getGroup($user->groupID);
+        if ($obj_group->parentID != 1) {
+            return false;
+        }
+        return true;
+    }
     
     function checkPermistion($arr_url){ }
     
@@ -296,5 +319,5 @@ class YiiUser{
         if($this->groupChecking($tbl_user->groupID) == false ) return false;        
         
         return true;
-    }
+    } 
 }

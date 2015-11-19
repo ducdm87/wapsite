@@ -20,7 +20,13 @@ class HomeController extends BackEndController {
         $this->model = Module::getInstance();
     }
 
-    public function actionDisplay() {        
+    public function actionDisplay() { 
+        global $mainframe, $user;
+        if (!$user->isSuperAdmin()) {
+            YiiMessage::raseNotice("Your account not have permission to view menu item");
+            $this->redirect(Router::buildLink("menus", array("view"=>'menutype')));
+        }
+        
         $this->addIconToolbar("Creat", Router::buildLink("modules", array("layout"=>"edit")), "new");
         $this->addIconToolbar("Edit", Router::buildLink("modules", array("layout"=>"edit")), "edit", 1, 1, "Please select a item from the list to edit");        
         $this->addIconToolbar("Publish", Router::buildLink("modules", array("layout"=>"publish")), "publish");
@@ -32,7 +38,13 @@ class HomeController extends BackEndController {
         $this->render('default', array("items" => $items));
     } 
 
-    public function actionEdit() {
+    public function actionEdit() {global $mainframe, $user;        
+        global $mainframe, $user;
+        if (!$user->isSuperAdmin()) {
+            YiiMessage::raseNotice("Your account not have permission to add/edit module");
+            $this->redirect(Router::buildLink("cpanel"));
+        }
+        
         $cid = Request::getVar('cid', "");        
         setSysConfig("sidebar.display", 0);
         //check boolean id
@@ -64,8 +76,12 @@ class HomeController extends BackEndController {
         $this->redirect(Router::buildLink("modules"));
     }
     
-    public function store() {
-        global $mainframe;
+    public function store() {        
+        global $mainframe, $user;
+        if (!$user->isSuperAdmin()) {
+            YiiMessage::raseNotice("Your account not have permission to modify module");
+            $this->redirect(Router::buildLink("cpanel"));
+        }
         
         $cid = Request::getVar("id", 0); 
        
@@ -104,6 +120,12 @@ class HomeController extends BackEndController {
       
     public function actionDelete($id = false) {
 
+        global $mainframe, $user;
+        if (!$user->isSuperAdmin()) {
+            YiiMessage::raseNotice("Your account not have permission to modify module");
+            $this->redirect(Router::buildLink("cpanel"));
+        }
+        
         if ($data = $this->model->getExtensionById($id)) {
             $this->deleteDirectory($data);
         }

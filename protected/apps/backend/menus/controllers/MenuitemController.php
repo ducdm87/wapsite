@@ -22,11 +22,7 @@ class MenuitemController extends BackEndController {
      */
     public function actionDisplay() {
         global $mainframe, $user;
-
-        // chi useradmin moi duoc tao/sua       
-        $obj_users = YiiUser::getInstance();
-        $group_currentUser = $obj_users->getGroup($user->groupID);
-        if ($group_currentUser->parentID != 1) {
+        if (!$user->isSuperAdmin()) {
             YiiMessage::raseNotice("Your account not have permission to view menu item");
             $this->redirect(Router::buildLink("menus", array("view"=>'menutype')));
         }
@@ -74,11 +70,8 @@ class MenuitemController extends BackEndController {
     }
     
     public function actionEdit() {
-        global $user;
-        // chi useradmin moi duoc tao/sua       
-        $obj_users = YiiUser::getInstance();
-        $group_currentUser = $obj_users->getGroup($user->groupID);
-        if ($group_currentUser->parentID != 1) {
+        global $mainframe, $user;
+        if (!$user->isSuperAdmin()) {
             YiiMessage::raseNotice("Your account not have permission to edit menu item");
             $this->redirect(Router::buildLink("menus", array("view"=>'menutype')));
         }
@@ -128,12 +121,8 @@ class MenuitemController extends BackEndController {
      
     function changeStatus($cid, $value)
     {
-        global $mainframe, $db, $user;
-        
-        // chi useradmin moi duoc tao/sua       
-        $obj_users = YiiUser::getInstance();
-        $group_currentUser = $obj_users->getGroup($user->groupID);
-        if ($group_currentUser->parentID != 1) {
+        global $mainframe, $user;
+        if (!$user->isSuperAdmin()) {
             YiiMessage::raseNotice("Your account not have permission to modify menu item");
             $this->redirect(Router::buildLink("menus", array("view"=>'menutype')));
         }
@@ -168,12 +157,8 @@ class MenuitemController extends BackEndController {
    
     
     function store() {
-        global $mainframe, $db, $user;
-        
-        // chi useradmin moi duoc tao/sua       
-        $obj_users = YiiUser::getInstance();
-        $group_currentUser = $obj_users->getGroup($user->groupID);
-        if ($group_currentUser->parentID != 1) {
+        global $mainframe, $user;
+        if (!$user->isSuperAdmin()) {
             YiiMessage::raseNotice("Your account not have permission to modify menu item");
             $this->redirect(Router::buildLink("menus", array("view"=>'menutype')));
         }
@@ -203,11 +188,8 @@ class MenuitemController extends BackEndController {
     
     function actionRemove()
     {
-        global $user;
-        // chi useradmin moi duoc tao/sua       
-        $obj_users = YiiUser::getInstance();
-        $group_currentUser = $obj_users->getGroup($user->groupID);
-        if ($group_currentUser->parentID != 1) {
+        global $mainframe, $user;
+        if (!$user->isSuperAdmin()) {
             YiiMessage::raseNotice("Your account not have permission to remove menu item");
             $this->redirect(Router::buildLink("menus", array("view"=>'menutype')));
         }

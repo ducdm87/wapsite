@@ -16,30 +16,42 @@ class HomeController extends BackEndController {
      * For menu type
      */
     public function actionDisplay() {
+        global $mainframe, $user;
+        if (!$user->isSuperAdmin()) {
+            YiiMessage::raseNotice("Your account not have permission to install extension");
+            $this->redirect(Router::buildLink("cpanel"));
+        }
         $this->render('default');
     }
     
     public function actionUploadext() {
-            $pack_install = $_FILES['install_package'];
-            if ($pack_install == null or $pack_install['error'] != 0) {
-                YiiMessage::raseWarning("Unable to find install package");
-                $this->redirect(Router::buildLink("installer"));
-            }
+        global $mainframe, $user;
+        if (!$user->isSuperAdmin()) {
+            YiiMessage::raseNotice("Your account not have permission to install extension");
+            $this->redirect(Router::buildLink("cpanel"));
+        }
 
-             
-           // $YiiFile = new YiiFile; 
-            
-            $path_file_pach_install = PATH_TMP . $pack_install['name'];
-            YiiFile::upload($pack_install['tmp_name'], $path_file_pach_install); 
-            
-            $file_info = pathinfo($path_file_pach_install);
-            if (strtolower($file_info['extension']) != "zip") {
-                
-                YiiMessage::raseWarning("Invalid extension install package");
-                YiiFile::delete($path_file_pach_install);
-                $this->redirect(Router::buildLink("installer"));
-            }
-            $filename = $file_info['filename'];
+
+        $pack_install = $_FILES['install_package'];
+        if ($pack_install == null or $pack_install['error'] != 0) {
+            YiiMessage::raseWarning("Unable to find install package");
+            $this->redirect(Router::buildLink("installer"));
+        }
+
+
+       // $YiiFile = new YiiFile; 
+
+        $path_file_pach_install = PATH_TMP . $pack_install['name'];
+        YiiFile::upload($pack_install['tmp_name'], $path_file_pach_install); 
+
+        $file_info = pathinfo($path_file_pach_install);
+        if (strtolower($file_info['extension']) != "zip") {
+
+            YiiMessage::raseWarning("Invalid extension install package");
+            YiiFile::delete($path_file_pach_install);
+            $this->redirect(Router::buildLink("installer"));
+        }
+        $filename = $file_info['filename'];
         
 
         $zip = new ZipArchive;

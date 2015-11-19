@@ -22,11 +22,7 @@ class MenutypeController extends BackEndController {
      */
     public function actionDisplay() {
          global $mainframe, $user;
-
-        // chi useradmin moi duoc tao/sua       
-        $obj_users = YiiUser::getInstance();
-        $group_currentUser = $obj_users->getGroup($user->groupID);
-        if ($group_currentUser->parentID != 1) {
+        if (!$user->isSuperAdmin()) {
             YiiMessage::raseNotice("Your account not have permission to view menu");
             $this->redirect(Router::buildLink("cpanel"));
         }
@@ -65,11 +61,7 @@ class MenutypeController extends BackEndController {
     
     public function actionEdit() {  
         global $mainframe, $user;
-
-        // chi useradmin moi duoc tao/sua       
-        $obj_users = YiiUser::getInstance();
-        $group_currentUser = $obj_users->getGroup($user->groupID);
-        if ($group_currentUser->parentID != 1) {
+        if (!$user->isSuperAdmin()) {
             YiiMessage::raseNotice("Your account not have permission to add/edit menu");
             $this->redirect(Router::buildLink("cpanel"));
         }
@@ -117,11 +109,7 @@ class MenutypeController extends BackEndController {
     
     function store() {
         global $mainframe, $user;
-
-        // chi useradmin moi duoc tao/sua       
-        $obj_users = YiiUser::getInstance();
-        $group_currentUser = $obj_users->getGroup($user->groupID);
-        if ($group_currentUser->parentID != 1) {
+        if (!$user->isSuperAdmin()) {
             YiiMessage::raseNotice("Your account not have permission to modify menu");
             $this->redirect(Router::buildLink("cpanel"));
         }
@@ -142,11 +130,7 @@ class MenutypeController extends BackEndController {
     
     function actionRemove() {
         global $mainframe, $user;
-
-        // chi useradmin moi duoc tao/sua       
-        $obj_users = YiiUser::getInstance();
-        $group_currentUser = $obj_users->getGroup($user->groupID);
-        if ($group_currentUser->parentID != 1) {
+        if (!$user->isSuperAdmin()) {
             YiiMessage::raseNotice("Your account not have permission remove menu");
             $this->redirect(Router::buildLink("cpanel"));
         }
@@ -201,11 +185,7 @@ class MenutypeController extends BackEndController {
     function changeStatus($cid, $value)
     {
         global $mainframe, $user;
-
-        // chi useradmin moi duoc tao/sua       
-        $obj_users = YiiUser::getInstance();
-        $group_currentUser = $obj_users->getGroup($user->groupID);
-        if ($group_currentUser->parentID != 1) {
+        if (!$user->isSuperAdmin()) {
             YiiMessage::raseNotice("Your account not have permission to modify menu");
             $this->redirect(Router::buildLink("cpanel"));
         }

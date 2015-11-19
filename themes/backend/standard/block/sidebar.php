@@ -9,7 +9,8 @@
         </button>
         <a class="navbar-brand" href="/backend/"><?php echo CHtml::encode(Yii::app()->name); ?></a>
     </div>
-    <?php 
+    <?php
+        global $user;
         $app = Request::getVar('app',"cpanel");
         $view = Request::getVar('view',null);
     ?>
@@ -56,16 +57,22 @@
                 </li> 
 
                 <?php echo showSideBarMenu("modules","", "Modules"); ?>
-                <li class="dropdown <?php if($app == "installer") echo "active"; ?>">            
-                    <a href="#" class="dropdown-toggle parent" data-toggle="dropdown">
-                        <i class="fa fa-caret-square-o-down"></i> Installer 
-                        <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <?php echo showSideBarMenu("installer","-manager", "Install"); ?>
-                            <?php echo showSideBarMenu("installer","manager", "Manager"); ?>
-                        </ul> 
-                </li>
+                <?php
+                if ($user->isSuperAdmin()) {
+                ?>
+                    <li class="dropdown <?php if($app == "installer") echo "active"; ?>">            
+                        <a href="#" class="dropdown-toggle parent" data-toggle="dropdown">
+                            <i class="fa fa-caret-square-o-down"></i> Installer 
+                            <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <?php echo showSideBarMenu("installer","-manager", "Install"); ?>
+                                <?php echo showSideBarMenu("installer","manager", "Manager"); ?>
+                            </ul> 
+                    </li> 
+                    <?php echo showSideBarMenu("permission","", "Permission"); ?>
+                <?php 
                 
+                } ?>
 
             </ul>
         <?php } ?>
@@ -109,6 +116,15 @@
 <?php 
 function showSideBarMenu($_app, $_view, $title, $_class="fa-folder")
 {
+    global $user;
+    $arr_ignore = array("menus", 'modules','installer');
+    if(!$user->isSuperAdmin() AND in_array($_app, $arr_ignore)){
+        return false;
+    }
+    if(!$user->isSuperAdmin() AND $_app == 'cpanel' AND $_view == "sysconfig"){
+        return false;
+    }
+    
     $app = Request::getVar('app',"cpanel");
     $view = Request::getVar('view',"");
     
