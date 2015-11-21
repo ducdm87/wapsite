@@ -106,7 +106,7 @@ class MenuItem extends CFormModel {
         $list['menuID'] = buildHtml::select($items, $menuID, "menuID");
          
         $condition = null;
-        if($cid != 0){
+        if($main_item->id != 0){
             $items = array();
             $condition = "parentID = ". $main_item->parentID;
             $results = $obj_menu->loadItems($menuID, 'id value, title text, level', $condition);

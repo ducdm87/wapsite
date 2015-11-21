@@ -1,8 +1,50 @@
-ALTER TABLE `tbl_categories` ADD `created_by` INT NOT NULL AFTER `scope`, ADD `modified_by` INT NOT NULL AFTER `created_by`;
+CREATE TABLE IF NOT EXISTS `tbl_rsm_resources` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `affected` varchar(4) NOT NULL,
+  `parentID` int(11) NOT NULL,
+  `type` varchar(32) NOT NULL COMMENT 'label/request',
+  `app` varchar(64) NOT NULL,
+  `params` varchar(255) NOT NULL,
+  `redirect_url` varchar(255) NOT NULL,
+  `message` varchar(25) NOT NULL,
+  `created_by` int(11) NOT NULL,
+  `modified_by` int(11) NOT NULL,
+  `cdate` datetime NOT NULL,
+  `mdate` datetime NOT NULL,
+  `status` smallint(6) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `affected` (`affected`),
+  KEY `app` (`app`),
+  KEY `type` (`type`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-  
-ALTER TABLE `tbl_articles` ADD `created_by` INT NOT NULL AFTER `created`, ADD `modified_by` INT NOT NULL AFTER `created_by`;
 
- 
 
-ALTER TABLE `tbl_videos` ADD `created_by` INT NOT NULL AFTER `mdate`, ADD `modified_by` INT NOT NULL AFTER `created_by`;
+CREATE TABLE IF NOT EXISTS `tbl_rsm_role` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `cdate` datetime NOT NULL,
+  `mdate` datetime NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+
+
+CREATE TABLE IF NOT EXISTS `tbl_rsm_role_xref` (
+  `role_id` int(11) NOT NULL,
+  `object_id` int(11) NOT NULL,
+  `object_type` tinyint(11) NOT NULL COMMENT '1: userID, 2:groupID, 3: resourceID',
+  UNIQUE KEY `role_id` (`role_id`,`object_id`,`object_type`),
+  KEY `object_type` (`object_type`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+ALTER TABLE `tbl_rsm_resources` ADD `lft` INT NOT NULL AFTER `status`, ADD `rgt` INT NOT NULL AFTER `lft`, ADD `ordering` INT NOT NULL AFTER `rgt`;
+
+ALTER TABLE `tbl_rsm_resources` CHANGE `message` `redirect_msg` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+
+ALTER TABLE `tbl_rsm_resources` ADD `level` TINYINT NOT NULL AFTER `parentID`;

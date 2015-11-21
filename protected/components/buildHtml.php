@@ -27,13 +27,17 @@ class buildHtml {
             $title = 'Hidden';
             $task = 'unpublish';
             $img_name = "disabled.png";
+        }else if ($status == -1) {
+            $title = 'Block';
+            $task = 'publish';
+            $img_name = "disabled.png";
         }
 
         ob_start();
         $fldName = $fldName . "$cid";
         ?>
         <span class="editlinktip hasTip"><a onclick="return listItemTask('<?php echo $fldName; ?>', '<?php echo $task; ?>')" href="javascript:void(0);">
-                <img width="16" height="16" border="0" alt="<?php echo $title; ?>" src="/admin/templates/standard/assets/images/icons/<?php echo $img_name; ?>"></a></span>
+                <img width="16" height="16" border="0" alt="<?php echo $title; ?>" src="/images/jassets/icons/<?php echo $img_name; ?>"></a></span>
         <?php
         $return = ob_get_contents();
         ob_end_clean();
@@ -46,7 +50,7 @@ class buildHtml {
         ?>
         <span class="editlinktip hasTip">
             <a href="<?php echo $link; ?>">
-                <img width="16" height="16" border="0" alt="<?php echo $title; ?>" src="/admin/templates/standard/assets/images/icons/<?php echo $img_name; ?>">
+                <img width="16" height="16" border="0" alt="<?php echo $title; ?>" src="/images/jassets/icons/<?php echo $img_name; ?>">
             </a>
         </span>
         <?php
@@ -176,7 +180,7 @@ class buildHtml {
             <?php echo $title; ?>                
             <?php
             if ($order == $order_current)
-                echo '<img alt="" src="/admin/templates/standard/assets/images/' . $imgsort . '.png"></a>';
+                echo '<img alt="" src="/images/jicon/' . $imgsort . '.png"></a>';
             $return = ob_get_contents();
             ob_end_clean();
             return $return;
@@ -193,9 +197,12 @@ class buildHtml {
             $html = "<select name='$name' id='$id' $attr >";
             foreach ($items as $item) {
                 $item = (object) $item;
-                if ($text_level1 != "" and $item->level > 0) {
-                    $item->text = str_repeat($text_level1, $item->level) . $text_level2 . ucfirst($item->text);
+                if(isset($item->level)){
+                    if ($text_level1 != "" and $item->level > 0) {
+                        $item->text = str_repeat($text_level1, $item->level) . $text_level2 . ucfirst($item->text);
+                    }
                 }
+                
                 if (in_array($item->value, $seleted))
                     $html .= "<option value='$item->value' selected='true'>$item->text</option>";
                 else
@@ -223,7 +230,7 @@ class buildHtml {
             $fldName = $fldName . "$cid";
             ?>
             <span class="editlinktip hasTip"><a onclick="return listItemTask('<?php echo $fldName; ?>', '<?php echo $task; ?>')" href="javascript:void(0);">
-                    <img width="16" height="16" border="0" alt="<?php echo $title; ?>" src="/admin/templates/standard/assets/images/icons/<?php echo $img_name; ?>"></a></span>
+                    <img width="16" height="16" border="0" alt="<?php echo $title; ?>" src="/images/jassets/icons/<?php echo $img_name; ?>"></a></span>
             <?php
             $return = ob_get_contents();
             ob_end_clean();
@@ -241,7 +248,7 @@ class buildHtml {
             else if ($type == "password")
                 $html .= '<input placeholder="' . $placeholder . '" type="password" name="' . $name . '" class="' . $class . '" value="' . $value . '">';
             else if ($type == "textarea")
-                $html .= '<textarea rows="3" style="width: 100%;" name="' . $name . '" class="' . $class . '">' . $value . '</textarea>';
+                $html .= '<textarea rows="3" cols="20" name="' . $name . '" class="' . $class . '">' . $value . '</textarea>';
             else if ($type == "editor")
                 $html .= buildHtml::editors($name, $value, $width, $height);
             else if ($type == "label")
@@ -298,19 +305,25 @@ class buildHtml {
             $html .= '<label class="control-label left col-md-' . $w1 . '">' . $title . '</label>';
             $html .= '<div class="col-md-' . $w2 . '">';
                 
-                foreach($items as $item){
+                foreach($items as $k => $item){
+                    $v = $k;
+                    $t = $item;
+                    if(is_array($item)){
+                        $v = $item[0];
+                        $t = $item[1];
+                    }
                     if($type == "radio"){
-                        if($item[0] == $value)
+                        if($v == $value)
                             $html .= '<input checked type="radio" name="' . $name . '" '
-                                    . 'class="'. $class . '" value="' . $item[0] . '"> '. $item[1].' &nbsp; ';
+                                    . 'class="'. $class . '" value="' . $v . '"> '. $t.' &nbsp; ';
                         else $html .= '<input type="radio" name="' . $name . '" '
-                                    . 'class="' . $class . '" value="' . $item[0] . '"> '. $item[1].' &nbsp; ';
+                                    . 'class="' . $class . '" value="' . $v . '"> '. $t.' &nbsp; ';
                     }else if($type=="check"){
-                        if($item[0] == $value)
+                        if($v == $value)
                             $html .= '<input checked type="checkbox" name="' . $name . '" '
-                                    . 'class="'. $class . '" value="' . $item[0] . '"> '. $item[1].' &nbsp; ';
+                                    . 'class="'. $class . '" value="' . $v . '"> '. $t.' &nbsp; ';
                         else $html .= '<input type="checkbox" name="' . $name . '" '
-                                    . 'class="' . $class . '" value="' . $item[0] . '"> '. $item[1].' &nbsp; ';
+                                    . 'class="' . $class . '" value="' . $v . '"> '. $t.' &nbsp; ';
                     }
                  }
                 
@@ -321,5 +334,6 @@ class buildHtml {
 
             return $html;
         }
+
     }
     

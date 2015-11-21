@@ -31,7 +31,7 @@ class GroupController extends BackEndController {
         $this->addIconToolbar("New", Router::buildLink("users", array("view"=>"group", "layout"=>"new")), "new");
 //        $this->addIconToolbarDelete();
         $this->addIconToolbar("Delete", Router::buildLink("users", array("view"=>"group", "layout"=>"remove")), "trash", 1, 1, "Please select a item from the list to Remove");        
-        $this->addBarTitle("Group <small>[list]</small>", "user");
+        $this->addBarTitle("Group <small>[list]</small>", "group");
 
         $model = Group::getInstance();
         global $user;

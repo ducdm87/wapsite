@@ -4,7 +4,7 @@
 //var_dump($arr_group);
 ?>
 
-<div class='user-tree'>
+<div class='items-tree user-tree'>
     <ul>
         <li class="folder folder-root">
             <i class='icon'></i><a><?php echo $objGroup->name; ?></a>

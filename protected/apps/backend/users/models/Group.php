@@ -69,7 +69,7 @@ class Group extends CFormModel {
  
         $obj_user = YiiUser::getInstance();
         $condition = ""; 
-        if($cid != 0){
+        if($main_item ->id != 0){
             $condition = "(`lft` <" . $main_item->lft . " OR `lft` > ". $main_item->rgt .")";
         }
         
@@ -79,7 +79,7 @@ class Group extends CFormModel {
         
         
         $items = array();
-        if($cid != 0){
+        if($main_item ->id != 0){
             $condition = "parentID = ". $main_item->parentID;
             $results = $obj_user->getGroups($condition, 'id value, name text, level');
             $items = array_merge($items, $results);

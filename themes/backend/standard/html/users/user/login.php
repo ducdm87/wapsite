@@ -1,7 +1,3 @@
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<?php $this->createUrl('user/login'); ?>
-<link href="<?php echo Yii::app()->request->baseUrl; ?>/admin/templates/standard/assets/css/bootstrap.css" rel="stylesheet">
 <div class="container">
     <div class="row">
         <?php YiiMessage::showMessage(); ?>
@@ -108,5 +104,4 @@
         margin-top: 10px;
     } 
 </style>
-<?php
-die;
+<?php 

@@ -223,6 +223,7 @@ class UserController extends BackEndController {
             }
         }
         $this->pageTitle = "Page login";
+        $this->layout = "//login";
         $this->render('login');
     }
     
@@ -266,7 +267,7 @@ class UserController extends BackEndController {
         $modelUser = new Users();
         $modelGroup = new Group();
         
-        $this->addBarTitle("User <small>[list]</small>", "user");
+        $this->addBarTitle("Users <small>[tree]</small>", "user");
        
         $groupID = Request::getVar('groupID',$user->groupID);
         $group = $modelGroup->getItem($user->groupID);
