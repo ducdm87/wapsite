@@ -121,6 +121,7 @@
                             </p>
                         </div>
                     </div>
+                <?php YiiMessage::showMessage(); ?>
                 <div class="page-content">
                     <?php echo $content; ?>                
                 </div>

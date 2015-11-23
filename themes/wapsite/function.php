@@ -33,6 +33,5 @@ function modYii_Benhvien($content_module, &$module = null) {
             }
             echo '<div class="mod-body">' . $content_module . '</div>';
         echo '</div>';
-        echo "";
     }
 }

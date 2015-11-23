@@ -11,6 +11,16 @@ class UserController extends FrontEndController {
         $data = array();
         $this->render('login', $data);  
     }
+    
+     public function actions() {
+        return array(
+            'captcha' => array(
+                'class' => 'CCaptchaAction',
+                'backColor' => 0xFFFFFF,
+                'testLimit' => 3,
+            )
+        );
+    }
      public function actionCheckLogin() {
         $user = User::getInstance();
         if (isset($_POST) && $_POST) {
@@ -22,6 +32,7 @@ class UserController extends FrontEndController {
                 $this->set_userdata($user_data);
                 $this->redirect("/app");
             } else {
+                YiiMessage::raseWarning("Passwords Do Not Match.");
                 $this->redirect(Router::buildLink("users", array("view"=>"user",'layout'=>'login')));
             }
         }
@@ -36,5 +47,20 @@ class UserController extends FrontEndController {
       public function actionLogout() {
         Yii::app()->user->logout();
         $this->redirect(Router::buildLink("users", array("view"=>"user",'layout'=>'login')));
+    }
+    
+     public function actionCheckCaptcha() {
+        $captcha = Yii::app()->getController()->createAction("captcha");
+
+        $code = $captcha->verifyCode;
+
+        $ivalid = true;
+
+        if ($code === $_GET['captcha']) {
+            $ivalid = true;
+        } else {
+            $ivalid = false;
+        }
+        echo json_encode(array('valid' => $ivalid,));
     }
 }

@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 class VideosController extends FrontEndController {
 
     public $item = array();
@@ -85,7 +79,7 @@ class VideosController extends FrontEndController {
         }
         
         $items = $model->getItems($obj_item['catID'], true,4);
-        $items2 = $model->getItems($obj_item['catID'], false,15);
+        $items2 = $model->getItems($obj_item['catID'], false,4);
         $obj_category = $model->getCategory($obj_item['catID']);
         
         $data['item'] = $obj_item;
