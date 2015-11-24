@@ -136,5 +136,11 @@
         </div>
     </div>
 </div>
-    <div class=" clearfix">.</div>
+<style>
+    .captcha img{
+        height: 34px;
+        width: 120px;
+        padding-right: 20px;
+    }
+</style>
 </body>

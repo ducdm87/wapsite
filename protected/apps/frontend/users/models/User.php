@@ -305,5 +305,4 @@ class User extends CFormModel {
 
         return $result;
     }
-
 }

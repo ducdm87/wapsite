@@ -11,6 +11,16 @@ class UserController extends FrontEndController {
         $data = array();
         $this->render('login', $data);  
     }
+    
+     public function actions() {
+        return array(
+            'captcha' => array(
+                'class' => 'CCaptchaAction',
+                'backColor' => 0xFFFFFF,
+                'testLimit' => 3,
+            )
+        );
+    }
      public function actionCheckLogin() {
         $user = User::getInstance();
         if (isset($_POST) && $_POST) {
@@ -22,6 +32,7 @@ class UserController extends FrontEndController {
                 $this->set_userdata($user_data);
                 $this->redirect("/app");
             } else {
+                YiiMessage::raseWarning("Passwords Do Not Match.");
                 $this->redirect(Router::buildLink("users", array("view"=>"user",'layout'=>'login')));
             }
         }
@@ -36,5 +47,46 @@ class UserController extends FrontEndController {
       public function actionLogout() {
         Yii::app()->user->logout();
         $this->redirect(Router::buildLink("users", array("view"=>"user",'layout'=>'login')));
+    }
+    
+     public function actionCheckCaptcha() {
+        $captcha = Yii::app()->getController()->createAction("captcha");
+
+        $code = $captcha->verifyCode;
+
+        $ivalid = true;
+
+        if ($code === $_GET['captcha']) {
+            $ivalid = true;
+        } else {
+            $ivalid = false;
+        }
+        echo json_encode(array('valid' => $ivalid,));
+    }
+    
+    
+    public function actionCreate() {
+        if (isset($_POST) && $_POST) {
+            $data['user'] = array(
+                'username' => $_POST['username'],
+                'password' => md5($_POST['password']),
+                'mobile' => $_POST['phone'],
+                'first_name' => $_POST['firstname'],
+                'last_name' => $_POST['lastname'],
+                'status' => 1,
+                'groupID' => 19
+            );
+            if (isset($_POST['meta']) && $_POST['meta']) {
+                foreach ($_POST['meta'] as $meta_key => $meta_value) {
+                    $data['user_meta'][] = array($meta_key => $meta_value);
+                }
+            }
+            if (!$this->user->userRegister($data)) {
+                $this->set_userdata($_POST);
+                $this->redirect('/app');
+            } else {
+                $this->redirect('/users');
+            }
+        }
     }
 }
