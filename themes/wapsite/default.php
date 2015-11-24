@@ -19,9 +19,10 @@
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+          
         <![endif]-->
+<!--        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>-->
     </head>
     <body>
         <div id="fb-root"></div>
@@ -72,7 +73,7 @@
                             </a>
                         </div>
                         <div class="search-container">
-                            <form method="get" action="/search">
+                            <form method="get" action="<?php echo Router::buildLink('search', array('view'=>'search','layout'=>'search')); ?>">
                                 <div class="search">
                                     <input type="text" name="q" class="form-control input-sm" maxlength="64" value="<?php echo isset($_GET['q']) ? $_GET['q'] : '' ?>" placeholder="Tìm kiếm..." />
                                     <button type="submit" class="btn btn-warning btn-sm"><i class="fa fa-search"></i></button>
