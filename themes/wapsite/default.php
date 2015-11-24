@@ -21,8 +21,8 @@
         <!--[if lt IE 9]>
           
         <![endif]-->
-<!--        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>-->
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     </head>
     <body>
         <div id="fb-root"></div>
@@ -43,7 +43,7 @@
                             <li class="dropdown">
                                 <a href="<?php echo $this->createUrl('/users/profile') ?>"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="span-header-top">Xin chào : <?php echo $user_session['username'] ?></span> </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'register')); ?>">Tài khoản của tôi</a></li>
+                                    <li><a href="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'profile')); ?>">Tài khoản của tôi</a></li>
                                     <li class="divider"></li>
                                     <li><a href="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'logout')); ?>">Thoát</a></li>
                                 </ul>
@@ -73,7 +73,7 @@
                             </a>
                         </div>
                         <div class="search-container">
-                            <form method="get" action="<?php echo Router::buildLink('search', array('view'=>'search','layout'=>'search')); ?>">
+                            <form method="get" action="<?php echo Router::buildLink('users', array('view'=>'search','layout'=>'search')); ?>">
                                 <div class="search">
                                     <input type="text" name="q" class="form-control input-sm" maxlength="64" value="<?php echo isset($_GET['q']) ? $_GET['q'] : '' ?>" placeholder="Tìm kiếm..." />
                                     <button type="submit" class="btn btn-warning btn-sm"><i class="fa fa-search"></i></button>

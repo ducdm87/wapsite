@@ -3,7 +3,6 @@ function showBlockHome($items, $title = "Video Hot", $url = "", $type="video"){
     if(count($items)<1) return false;
     $item = $items[0];
     unset($items[0]);
-    
     if(isset($item['image'])) $item['thumbnail'] = $item['image'];
     ?>
         <div class="entry-container">
@@ -79,18 +78,13 @@ function showBlockHome($items, $title = "Video Hot", $url = "", $type="video"){
             </div>
     <?php
 }
- 
- 
 ?>
- 
-
 <div class="page-home">
     <?php foreach($items_videos as $category){     
         ?>
         <?php showBlockHome($category['videos'], $category['title'], $category['link'] ); ?>
     <?php } ?>
-    
-    <?php showBlockHome($items_news, "Tin tức", Yii::app()->createUrl("articles/"),"article" ); ?>
+    <?php showBlockHome($items_news, "Tin tức", Yii::app()->createUrl("tin-tuc/"),"tin-tuc/" ); ?>
 </div>
        
      

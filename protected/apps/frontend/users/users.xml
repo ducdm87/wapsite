@@ -15,9 +15,13 @@
                 <layout value="register" desc="Đăng ký thành viên">Register</layout>
                 <layout value="forgotpass" desc="Quên mật khẩu">Forgot password</layout>
                 <layout value="changepass" desc="Đổi mật khẩu">Change password</layout>
-                <layout value="search" desc="Tìm Kiếm">Tìm kiếm</layout>
             </layouts>             
         </view>  
+        <view name="search" title="Tìm kiếm" desc="Tìm kiếm nhanh"> 
+            <layouts>
+                <layout value="search" desc="Tìm Kiếm">Tìm kiếm</layout>
+            </layouts>             
+        </view> 
         <view name="group" title="group" desc="groups">
             <param title="advance">
                 <field type="text" name="id" label="group user" />                 

@@ -3,10 +3,19 @@
 class User extends CFormModel {
 
     var $tablename = "{{users}}";
+    //var $tablenamesearch = "{{videos}}";
     var $tbl_resume = "{{rsm_resume}}";
     var $tbl_template = "{{rsm_template}}";
     var $default_groupID = 19;
     var $table_user_meta = "{{user_metas}}";
+    
+    //search
+    var $tablenamesearch = "{{videos}}";
+    var $table_categories = "{{categories}}";
+//    var $table_episode = "{{episode}}";
+//    var $table_like = "{{like}}";
+    //end search
+    
     var $str_error = "";
     var $db = "";
     var $user = null;
@@ -305,4 +314,43 @@ class User extends CFormModel {
 
         return $result;
     }
+    
+    //search
+    
+    public function getVideos($limit = 10, $offset = 0, $where = array(), $query = array(), $oder = 'm.viewed', $by = 'DESC', $random = false) {
+        //var_dump($query); die;
+        if ($limit > 0) {
+            $this->command->limit($limit, $offset);
+        }
+
+        if ($where && is_array($where)) {
+            foreach ($where as $key => $value) {
+                if (!is_array($value)) {
+                    $param = explode('.', $key);
+                    if (is_array($param))
+                        $param = $param[1];
+                    $this->command->where(array("OR", "$key" . "=:" . "$param"), array("$param" => $value));
+                }
+            }
+        }
+        
+        if ($query) {
+            $this->command->where(array('like', 'm.title', "%$query%"));
+        }
+        if ($oder) {
+            $this->command->order("$oder $by");
+        }
+        if ($random) {
+            $this->command->order(array('RAND()'));
+        }
+        $results = $this->command->select('m.*,c.title as name,c.alias as calias, c.id as cid')
+                ->from("$this->tablenamesearch  m")
+                ->join("$this->table_categories  c", 'm.catID=c.id')
+//                ->join("$this->table_episode  ep", 'm.id=ep.film_id')
+//                ->leftjoin("$this->table_like lk", "m.id=lk.fid")
+                ->queryAll();
+        return $results;
+    }
+    
+    //register cbv
 }

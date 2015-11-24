@@ -1,6 +1,7 @@
 @media(min-width:768px){
     .users #wrapper .container{
         width: 530px;
+        margin-top: 7px;
     }
     .no-pading-left{
         padding-left: 0px;

@@ -26,7 +26,7 @@ class DetailController extends FrontEndController {
         }else{
             $obj_item = $model->getItem($id);
         }
-        
+       
         $items = $model->getItems($obj_item['catID'], true,4);
         $items2 = $model->getItems($obj_item['catID'], false,9);
         $obj_category = $model->getCategory($obj_item['catID']);

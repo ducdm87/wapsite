@@ -7,7 +7,7 @@
                     <h4><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/app/key-user.png"/> Đăng Ký Tài khoản <strong>DG MEDIA</strong></h4>
                 </legend> 
                 <div class="form-entry-body">
-                    <form action="" class="" method="post" id="formRegister">
+                    <form action="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'Create')); ?>" class="" method="post" id="formRegister">
                         <div class="col-md-12">
                             <div class="row-fuld form-group">
                                 <label class="control-label" style="color: #fff !important;">Tên</label>
@@ -136,11 +136,5 @@
         </div>
     </div>
 </div>
-<style>
-    .captcha img{
-        height: 34px;
-        width: 120px;
-        padding-right: 20px;
-    }
-</style>
+
 </body>

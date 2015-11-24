@@ -40,10 +40,15 @@ function usersBuildRoute(& $query) {
 function usersParseRoute($segments, $_params = null) {
     $n = count($segments);
     $params = array(); 
-     
-    $params['view'] = $segments[0];
-    $params['layout'] = $segments[1];
-    
+    if ($_params == null) { 
+        $params['view'] = $segments[0]; 
+        $params['layout'] = $segments[1];
+//        var_dump($segments); die;
+    } else {
+        $params['view'] = $_params->view;
+        $params['layout'] = $_params->layout;
+    }
+    //var_dump($params); die;
     return $params;
 }
 

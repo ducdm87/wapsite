@@ -56,7 +56,6 @@ a:hover{
 .container-fluid{
     position: relative;
     display: block;
-    
 }
 
 
@@ -102,7 +101,11 @@ a:hover{
     min-height: auto;
 }
 
-.alert{ padding: 5px; margin: 0; }
+.alert{ 
+    padding: 5px; 
+    margin: 0;
+    text-align: center;
+}
 
 #wrapper .banner{ height: 200px; overflow: hidden; }
 #wrapper .banner img{ height: 200px; overflow: hidden;  width: 100%; }
@@ -130,7 +133,7 @@ a:hover{
     width: 100%;
 }
 .navbar-nav>li>a:last-child{
-    padding-left: 50px;
+    padding-left: 40px;
 }
 .navbar-nav>li>a:hover,.navbar-nav>li>a:focus,.navbar-nav>li>a:active{
     background: transparent;
@@ -364,12 +367,13 @@ a:hover{
 }
 .entry_time{
     position: absolute;
-    right: 10px;
+    right: 11px;
     bottom: 0;
     background: #333;
     opacity: 0.8;
     padding-left: 10px;
     padding-right: 10px;
+    bottom: 1px;
     color: #fff;
 }
 .entry-body .thumbnail{
@@ -410,6 +414,7 @@ a:hover{
 .entry-thunb img{
     height: 100px;
     width: 100px;
+    border: 1px solid #afcf4a;
 }
 .entry-social{
     position: absolute;

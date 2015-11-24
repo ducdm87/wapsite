@@ -32,7 +32,7 @@ class UserController extends FrontEndController {
                 $this->set_userdata($user_data);
                 $this->redirect("/app");
             } else {
-                YiiMessage::raseWarning("Passwords Do Not Match.");
+                YiiMessage::raseWarning("Kiểm tra lại thông tin vừa đăng nhập.");
                 $this->redirect(Router::buildLink("users", array("view"=>"user",'layout'=>'login')));
             }
         }
@@ -44,12 +44,13 @@ class UserController extends FrontEndController {
         }
         return $session;
     }
-      public function actionLogout() {
+    
+    public function actionLogout() {
         Yii::app()->user->logout();
         $this->redirect(Router::buildLink("users", array("view"=>"user",'layout'=>'login')));
     }
     
-     public function actionCheckCaptcha() {
+    public function actionCheckCaptcha() {
         $captcha = Yii::app()->getController()->createAction("captcha");
 
         $code = $captcha->verifyCode;
@@ -66,6 +67,7 @@ class UserController extends FrontEndController {
     
     
     public function actionCreate() {
+         $user = User::getInstance();
         if (isset($_POST) && $_POST) {
             $data['user'] = array(
                 'username' => $_POST['username'],
@@ -81,12 +83,30 @@ class UserController extends FrontEndController {
                     $data['user_meta'][] = array($meta_key => $meta_value);
                 }
             }
-            if (!$this->user->userRegister($data)) {
+            
+            if (!$user->userRegister($data)) {
                 $this->set_userdata($_POST);
                 $this->redirect('/app');
             } else {
                 $this->redirect('/users');
             }
         }
+    }
+    
+    public function actionProfile() {
+        $session = Yii::app()->session->get('user_data');
+        $this->render('profile', array('user'=>$session));
+    }
+    //tim kiem
+    public function actionSearch() {
+        $media = User::getInstance();
+        $data = array();
+
+        if (isset($_GET['q']) && $_GET['q']) {
+            $data['videos'] = $media->getMedias(0, 0, array('m.status' => 1), $_GET['q']);
+        } else {
+            $this->redirect('/app');
+        }
+        $this->render('default', $data);
     }
 }
