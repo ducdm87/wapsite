@@ -63,4 +63,30 @@ class UserController extends FrontEndController {
         }
         echo json_encode(array('valid' => $ivalid,));
     }
+    
+    
+    public function actionCreate() {
+        if (isset($_POST) && $_POST) {
+            $data['user'] = array(
+                'username' => $_POST['username'],
+                'password' => md5($_POST['password']),
+                'mobile' => $_POST['phone'],
+                'first_name' => $_POST['firstname'],
+                'last_name' => $_POST['lastname'],
+                'status' => 1,
+                'groupID' => 19
+            );
+            if (isset($_POST['meta']) && $_POST['meta']) {
+                foreach ($_POST['meta'] as $meta_key => $meta_value) {
+                    $data['user_meta'][] = array($meta_key => $meta_value);
+                }
+            }
+            if (!$this->user->userRegister($data)) {
+                $this->set_userdata($_POST);
+                $this->redirect('/app');
+            } else {
+                $this->redirect('/users');
+            }
+        }
+    }
 }

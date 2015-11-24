@@ -4,15 +4,15 @@
  * and open the template in the editor.
  */
 
-//var isftclpv = 1;
-//jwplayer().onDisplayClick(function(event) {
-//    jwplayer().play();
-//    if (isftclpv == 1) {
-//        var tag_script = $('<script/>', {src: "<?php echo $item['link_view']; ?>"});
-//        $("head").append(tag_script);
-//    }
-//    isftclpv = 0;
-//});
+var isftclpv = 1;
+jwplayer().onDisplayClick(function(event) {
+    jwplayer().play();
+    if (isftclpv == 1) {
+        var tag_script = $('<script/>', {src: "<?php echo $item['link_view']; ?>"});
+        $("head").append(tag_script);
+    }
+    isftclpv = 0;
+});
 
 
 $('.info-social').hide();
