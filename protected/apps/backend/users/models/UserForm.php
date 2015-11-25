@@ -69,12 +69,7 @@ class UserForm extends CFormModel {
             } else {
                 $cookie = new CHttpCookie('remember_admin', 0, array("expire" => time() - 1 ));
                 $app->getRequest()->getCookies()->add($cookie->name, $cookie);
-                $duration = 0;
-            }
-            $app->user->login($this->_identity,$duration);
-
-            $cookie = new CHttpCookie(session_name(), session_id(), array("expire" => $duration));
-            $app->getRequest()->getCookies()->add($cookie->name, $cookie);
+            }         
 
             return true;
         } else

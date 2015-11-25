@@ -16,7 +16,7 @@ require_once($yii);
 $yiiapp = Yii::createWebApplication($config);
 require_once dirname(__FILE__).'/protected/router.php';
 
-$params = Router::parseLink($_SERVER['REQUEST_URI']);
+$params = Router::parseLink();
 
 global $pagetype, $cur_temp;
 $debug = isset($_REQUEST['debug'])?$_REQUEST['debug']:0;

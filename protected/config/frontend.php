@@ -8,7 +8,8 @@ $settings = array(
             'rules' => array(
                 // home page
                 '/' => array('home/display'),
-                '' => array('home/'),                             
+                '/dang-ky/captcha/<v:.*>' => array('home/captcha'),
+                '/dang-ky/re-captcha/<refresh:.*>' => array('home/captcha'),
 
             ),
         ),
@@ -30,7 +31,8 @@ $settings = array(
     ),
     'params' => array(
         // time out minute
-        'timeout' => 60, 
+        'timeout' => 15, 
+        'timeout2' => 30*24*60, 
          'adminEmail' => 'ducdm@binhhoang.com',
         'siteoffline' => 0,
         'offlineMessage' => "This site is down for maintenance. Please check back again soon.",

@@ -27,12 +27,12 @@
                                     </li>
 
                                     <li>
-                                        <a href="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'register')); ?>">
+                                        <a href="<?php echo Router::buildLink('users', array('layout'=>'changepass')); ?>">
                                             <i class="glyphicon glyphicon-ok"></i>
-                                            Thay đổi thông tin  </a>
+                                            Đổi mật khẩu  </a>
                                     </li>
                                     <li>
-                                        <a href="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'logout')); ?>">
+                                        <a href="<?php echo Router::buildLink('users', array('layout'=>'logout')); ?>">
                                             <i class="glyphicon glyphicon-off"></i>
                                             Đăng xuất </a>
                                     </li>

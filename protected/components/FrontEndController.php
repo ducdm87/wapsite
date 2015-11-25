@@ -39,19 +39,24 @@ class FrontEndController extends CController {
         parent::init();
         Yii::app()->name = "Front end";        
         $user = $this->user = Yii::app()->session['userfront'];
-      
+        if(is_object($user))
+            $user->reloaUserLogin(); 
         $mainframe = MainFrame::getInstance($this->db, $this->user, "frontend");
-        $app = Yii::app();
-        if (!$mainframe->isLogin()) {
-            $duration = time() + 86400 * 365; // 365 days
-        } else {
-            $timeout = isset(Yii::app()->params->timeout)?Yii::app()->params->timeout:15;
-            $duration = time() + $timeout*60; // 365 days
-        }
-
-        $cookie = new CHttpCookie(session_name(), session_id(), array("expire" => $duration));
-        $app->getRequest()->getCookies()->add($cookie->name, $cookie);
         
+        $YiiApp = Yii::app();
+        if (!$mainframe->isLogin()) {            
+            $duration = time() + 300; // 365 days            
+        } else {
+            $remember_user = (isset($_COOKIE['remember_user']) AND $_COOKIE['remember_user'] == 1 )?1:0;
+            if($remember_user == 1)
+                $timeout = isset(Yii::app()->params->timeout2)?Yii::app()->params->timeout2:43200; // 30 ngay
+            else $timeout = isset(Yii::app()->params->timeout)?Yii::app()->params->timeout:15; // 15 phut    
+            $duration = time() + $timeout * 60;
+        }
+        
+        $cookie = new CHttpCookie(session_name(), session_id(), array("expire" => $duration));
+        $YiiApp->getRequest()->getCookies()->add($cookie->name, $cookie);
+         
         $afterLogin = (isset($_SESSION['afterLogin']) and $_SESSION['afterLogin'] == 1)?1:0;
         if($mainframe->isLogin() == true and $afterLogin == 0)
         {

@@ -7,13 +7,14 @@
     <creationDate>July 2006</creationDate>
     <description>Action user</description>
     <views>
-        <view name="user" title="users2" desc="users1"> 
+        <view name="home" title="user" desc="user"> 
             <layouts>
-                <layout value="user" desc="Hồ sơ cá nhân">Profile</layout>
+                <layout desc="Hồ sơ cá nhân">Profile</layout>
                 <layout value="login" desc="Trang đăng nhập">Loin</layout>
                 <layout value="logout" desc="Đăng xuất">Logout</layout>
                 <layout value="register" desc="Đăng ký thành viên">Register</layout>
                 <layout value="forgotpass" desc="Quên mật khẩu">Forgot password</layout>
+                <layout value="changeinfo" desc="Thay đổi thông tin">Change Info</layout>
                 <layout value="changepass" desc="Đổi mật khẩu">Change password</layout>
             </layouts>             
         </view>  

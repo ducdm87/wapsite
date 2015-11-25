@@ -9,14 +9,22 @@
 class Router{
     
     // khi vào trang bất kỳ, gọi hàm này để parse from url
-    static function parseLink($_path)
+    static function parseLink($_path = "")
     {
+        if($_path == ""){
+            if(isset($_SERVER['REDIRECT_URL']))
+                $_path = $_SERVER['REDIRECT_URL'];
+            else
+                $path = $_SERVER['REQUEST_URI'];
+        }
+        
         $_path = str_replace(".html", "", $_path);
         $YiiMenu = YiiMenu::getInstance();
         $db = Yii::app()->db;
         $params = array();        
         $all_menu = $YiiMenu->getItems();
-      //  var_dump($path); die;
+        
+       
         $app = Request::getVar('app',null);
         $menuID = Request::getVar('menuID',null);
         
@@ -51,9 +59,9 @@ class Router{
             if($menuID ==null){
                 $menuID = $YiiMenu->getActive();
             }
-            
+
             $item = $YiiMenu->getItem($menuID);
-            $app_router = null;
+            $app_router = null; 
             if($found_menu == true){
                 $url1 = trim($item['url'],"/");
                 $url2 = trim($_path,"/");
@@ -63,14 +71,21 @@ class Router{
                     $sub_path = preg_replace("|$url1|ism", "", $url2, 1);
                     $params = $item['params'];
                 }
+                
             }else{ 
-                if(preg_match("/app\/([\d\w]+)(.*?)$/",$_path, $matches)){
+                if(preg_match("/app\/([\d\w]+)(\/*.*?)$/",$_path, $matches)){
                     $_app = $matches[1];                    
-                    $app_router =  PATH_APPS_FRONT."$_app/router.php";
-                    $sub_path = $matches[2];
-                    $params = null;
+                    //$app_router =  PATH_APPS_FRONT."$_app/router.php";
+                    $sub_path = ltrim($matches[2],"/");                    
+                    $sub_path = explode("/", $sub_path);
+                    $params = array();
+                    $params['app'] = $_app;
+                    if(isset($sub_path[0])) $params['view'] = $sub_path[0];
+                    if(isset($sub_path[1])) $params['layout'] = $sub_path[1];
+
                 }
             }
+            
             if($app_router != null){
                 $sub_path = trim($sub_path,"/");
                 $segments = explode("/", $sub_path);
@@ -78,17 +93,21 @@ class Router{
                 if(file_exists($app_router)){
                     require_once $app_router;
                 }
+                 
                 if(function_exists($functionName)){
                     $params = $functionName($segments, $params);
                 }
                 $params['app'] = $_app; 
             }else if($item['params'] != null){
                 foreach ($item['params'] as $key => $value) {
-                    $params[$key] = $value;
-                }            
+                    if(!isset($params[$key]) OR empty($params[$key]))
+                        $params[$key] = $value;
+                }
            }
+           if(!isset($params['view']) OR empty($params['view'])) $params['view'] = 'home';
+           if(!isset($params['layout']) OR empty($params['layout'])) $params['layout'] = 'display';
         }
-         
+        
         $params['menuID'] = $menuID;
         setSysConfig("sys.menuID", $menuID); 
          
@@ -98,6 +117,7 @@ class Router{
             $_POST[$key] = $value;
         }
         if(!isset($params['layout']) OR $params['layout'] == "" ) $params['layout'] = "display";
+//var_dump($params); die;
         return $params;
     }
     
@@ -110,6 +130,9 @@ class Router{
             require_once $app_router;
           
             if(function_exists($functionName)){
+                if(!isset($query['view']) OR empty($query['view'])) $query['view'] = 'home';
+                if(!isset($query['layout']) OR empty($query['layout'])) $query['layout'] = 'display';
+
                 $segments = $functionName($query);
                 
                 $link = "";

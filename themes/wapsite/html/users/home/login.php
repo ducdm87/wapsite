@@ -7,7 +7,7 @@
                     <h4><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/app/key-user.png"/> Đăng Nhập</h4>
                 </legend> 
                 <div class="form-entry-body">
-                    <form class="" method="post" action="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'checklogin')); ?>" id="formLogin">
+                    <form class="" method="post" action="" id="formLogin">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label class="control-label">Tên</label>
@@ -27,7 +27,7 @@
                                         <input type="checkbox"  name="remembre"> Lưu mật khẩu
                                     </label>
                                     <span class="btn-forget">
-                                        <a href="" > Đổi mật khẩu</a>
+                                         
                                     </span>
                                 </div>
                             </div>
@@ -38,6 +38,7 @@
                                 <button class="btn btn-block" type="submit">Đăng Nhập</button>
                             </div>
                         </div>
+                        <input type="hidden" name="submitform" value="regies account" />
                     </form>
                 </div>
             </div>
@@ -45,7 +46,7 @@
     </div>
     <div class="container">
         <div class="col-md-12 input-control">
-            <a href="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'register')); ?>" class="btn btn-warning btn-register">Đăng ký tài khoản mới</a>
+            <a href="<?php echo Router::buildLink('users', array('layout'=>'register')); ?>" class="btn btn-warning btn-register">Đăng ký tài khoản mới</a>
         </div>
     </div>
 </div>

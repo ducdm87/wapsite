@@ -5,6 +5,10 @@ class UserController extends FrontEndController {
     } 
     public function actionRegister() {
         $data = array();
+        $captcha = Yii::app()->getController()->createAction("captcha");
+
+        $code = $captcha->verifyCode;
+        
         $this->render('register', $data);  
     }
     public function actionLogin() {
@@ -86,9 +90,9 @@ class UserController extends FrontEndController {
             
             if (!$user->userRegister($data)) {
                 $this->set_userdata($_POST);
-                $this->redirect('/app');
+                $this->redirect('');
             } else {
-                $this->redirect('/users');
+                $this->redirect(Router::buildLink('users',array('view')));
             }
         }
     }

@@ -1,5 +1,4 @@
-<body class="users">
- <div id="wrapper">
+<div class="users">
     <div class="section">
         <div class="container">
             <div class="form-entry row">
@@ -7,7 +6,7 @@
                     <h4><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/app/key-user.png"/> Đăng Ký Tài khoản <strong>DG MEDIA</strong></h4>
                 </legend> 
                 <div class="form-entry-body">
-                    <form action="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'Create')); ?>" class="" method="post" id="formRegister">
+                    <form action="" class="" method="post" id="formRegister">
                         <div class="col-md-12">
                             <div class="row-fuld form-group">
                                 <label class="control-label" style="color: #fff !important;">Tên</label>
@@ -119,7 +118,7 @@
                             <div class="form-group">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" > Tôi đồng ý với dịch vụ và chính sách của <strong>DG MEDIA</strong>
+                                        <input type="checkbox" name="agree" value="1" > Tôi đồng ý với dịch vụ và chính sách của <strong>DG MEDIA</strong>
                                     </label>
                                 </div>
                             </div>
@@ -130,11 +129,10 @@
                                 <button class="btn btn-block" type="submit">Xác Nhận</button>
                             </div>
                         </div>
+                        <input type="hidden" name="submitform" value="register account" />
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-</body>

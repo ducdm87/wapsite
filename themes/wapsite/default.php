@@ -1,4 +1,4 @@
-<?php $user_session = Yii::app()->session->get('user_data'); ?>
+<?php global $mainframe, $user; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,14 +7,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title><?php echo getSysConfig("seopage.title"); ?></title>
+        <?php 
+        global $cur_temp;
+        ?>
         <meta name="description" content="<?php echo getSysConfig("seopage.description"); ?>" />
         <meta name="keywords" content="<?php echo getSysConfig("seopage.keyword"); ?>" />
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/templates/dist/css/bootstrap.min.css" /> 
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/templates/dist/font-awesome/css/font-awesome.css" />
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/templates/dist/css/color.css" />
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/templates/dist/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/templates/dist/css/mobile.css" />
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/templates/dist/growl/jquery.growl.css" />
+        
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/css/bootstrap.min.css" /> 
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/css/color.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/css/mobile.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/growl/jquery.growl.css" />
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,18 +43,19 @@
             <div class="header-top">
                 <div class="container-fluid">
                     <ul class="pull-right list-inline">
-                        <?php if (isset($user_session) && $user_session): ?>
+                        <?php 
+                        if ($mainframe->isLogin()): ?>
                             <li class="dropdown">
-                                <a href="<?php echo $this->createUrl('/users/profile') ?>"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="span-header-top">Xin chào : <?php echo $user_session['username'] ?></span> </a>
+                                <a href="<?php echo $this->createUrl('/users/profile') ?>"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="span-header-top">Xin chào : <?php echo $user->username ?></span> </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'profile')); ?>">Tài khoản của tôi</a></li>
+                                    <li><a href="<?php echo Router::buildLink('users', array('layout'=>'profile')); ?>">Tài khoản của tôi</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'logout')); ?>">Thoát</a></li>
+                                    <li><a href="<?php echo Router::buildLink('users', array('layout'=>'logout')); ?>">Thoát</a></li>
                                 </ul>
                             </li>
                         <?php else: ?>
-                            <li><a href="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'register')); ?>">Đăng Kí</a> <span class="span-header-top"> | </span></li>
-                            <li><a href="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'login')); ?>">Đăng Nhập</a> <span class="span-header-top"> </span></li>                            
+                            <li><a href="<?php echo Router::buildLink('users', array('layout'=>'register')); ?>">Đăng Kí</a> <span class="span-header-top"> | </span></li>
+                            <li><a href="<?php echo Router::buildLink('users', array('layout'=>'login')); ?>">Đăng Nhập</a> <span class="span-header-top"> </span></li>                            
                         <?php endif; ?>
                     </ul>
                 </div>
@@ -144,10 +149,10 @@
             </div>
         </footer>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/templates/dist/js/jquery-1.11.1.min.js"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/js/jquery-1.11.1.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/templates/dist/js/bootstrap.min.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/templates/dist/js/jquery.growl.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/templates/dist/js/local-script.js"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/js/bootstrap.min.js"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/js/jquery.growl.js"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/js/local-script.js"></script>
     </body>
 </html>

@@ -8,17 +8,17 @@ class User extends CFormModel {
     var $tbl_template = "{{rsm_template}}";
     var $default_groupID = 19;
     var $table_user_meta = "{{user_metas}}";
-    
     //search
     var $tablenamesearch = "{{videos}}";
     var $table_categories = "{{categories}}";
 //    var $table_episode = "{{episode}}";
 //    var $table_like = "{{like}}";
     //end search
-    
+
     var $str_error = "";
     var $db = "";
     var $user = null;
+    var $_identity = null;
     private $command;
     private $connection;
 
@@ -37,122 +37,85 @@ class User extends CFormModel {
             $instance = new User();
         }
         return $instance;
-    }
+    } 
 
-    function getAccountInfo() {
-        global $mainframe, $db;
-        $user = $mainframe->getUser();
+    function login() {
+        $username = Request::getVar('username', '');
+        $password = Request::getVar('password', '');
+        $remembre = Request::getVar('remembre', 0);
 
-        $query = "SELECT count(*) FROM  " . $this->tbl_resume . " WHERE user_id = " . $mainframe->getUserID() . " AND status = 1 ";
-
-        $query = "SELECT count(*) FROM  " . $this->tbl_resume . " a, " . $this->tbl_template . " b "
-                . "WHERE a.template_id = b.id AND a.user_id = " . $mainframe->getUserID() . " AND a.status = 1 AND b.status = 1 ";
-        $conmmand = $db->createCommand($query);
-        return $conmmand->queryScalar();
-    }
-
-    function check_login($data) {
-        $command = Yii::app()->db->createCommand()
-                ->select('*')
-                ->from($this->tablename);
-        $command->where(
-                array(
-            'AND',
-            'username = :username',
-            'password =:password',
-            'status=:status'
-                ), array(
-            ':username' => $data['username'],
-            ':password' => $data['password'],
-            ':status' => 1
-                )
-        );
-        $result = $command->queryRow();
-        return $result;
-    }
-
-    function userRegister($data) {
-        $transaction = $this->connection->beginTransaction();
-        try {
-            $this->command->insert($this->tablename, $data['user']);
-            $user_id = $this->connection->getLastInsertID();
-            if (isset($data['user_meta']) && $data['user_meta']) {
-                foreach ($data['user_meta'] as $meta_data) {
-                    if (isset($meta_data) && $meta_data) {
-                        foreach ($meta_data as $meta_key => $meta_value) {
-                            $meta = array(
-                                'meta_key' => $meta_key,
-                                'meta_value' => $meta_value,
-                                'user_id' => $user_id,
-                            );
-                            $this->command->insert($this->table_user_meta, $meta);
-                        }
-                    }
-                }
-            }
-            return $transaction->commit();
-        } catch (Exception $exc) {
-            Yii::log('Error! :', var_export($exc->getMessage()));
-            return $transaction->rollback();
-        }
-    }
-
-    function register($email, $password, $country) {
-        global $mainframe;
-
-        $db = $this->db;
-
-        $time = mktime();
-        $activeCode = md5($email . ':' . md5($password) . ':' . $time);
-        $activeCodeStore = $activeCode . ':' . $time;
-
-        $name = preg_replace("/\@.*$/ism", '', $email);
-        // check existing
-        $query = "SELECT * FROM " . $this->tablename . " WHERE email =:email";
-        $query_command = $db->createCommand($query);
-        $query_command->bindParam(':email', $email);
-        $user = $query_command->queryRow();
-        if ($user != false) {
-            $this->str_error = "Your email is existing";
+        $tbl_user = YiiUser::getInstance();
+        $erCode = $tbl_user->login($username, $password);
+        if ($erCode) {
             return false;
-        } else {
-
-            $query = "INSERT INTO " . $this->tablename .
-                    " SET first_name=:first_name, email =:email , password =:password, countrycode=:countrycode"
-                    . ",verify = 1, status = 1, register_time = " . mktime();
-
-            $query_command = $db->createCommand($query);
-            $query_command->bindParam(':first_name', $name);
-            $query_command->bindParam(':email', $email);
-            $query_command->bindParam(':countrycode', $country);
-            $pw = md5($password);
-            $query_command->bindParam(':password', $pw);
-            $return = $query_command->execute();
-            $userID = $db->lastInsertID;
-
-            $query = "SELECT * FROM  " . $this->tablename . " WHERE id= $userID";
-            $query_command = $db->createCommand($query);
-
-            $result = $query_command->queryRow();
-            $result['suppliers'] = "";
-            Yii::app()->session['userfront'] = $result;
-            $mainframe->set("user", $result);
         }
 
-//        $_link_active = 'http://' . WEB_SITE . CController::createUrl("/user/active");
-//        $link_active = $_link_active . "/$activeCode";
-//        $message = 'Dear ' . $name;
-//        $message .= "<br /> You are register an account effect members on the <b>" . WEB_SITE . "</b>. "
-//                . '<br /> Please review this e-mail in its entirety as it contains important information.';
-//        $message .= "<br /> " . "To confirm the information an account, please go to the path following:";
-//        $message .= " <br /> <br /> <a href='" . $link_active . "' > " . $_link_active . "</a> <br /> <br />";
-//        $message .= " <br /> After being click this path, your account is active, and you will be logged on automatically on <b>" . WEB_SITE . "</b>";
-//        $message .= " <br /> This path is only be used 1 times to active and timeout after <b style='color: red; '>".TIME_OUT_ACTIVE_ACCOUNT. " " . TIME_OUT_ACTIVE_UNIT ."</b> ";
-//        $message .= " <br /> Thank you for signing up to <b>" . WEB_SITE . "</b>";
-//        $mainframe->sendMail(MAILFROM, $email, "Welcome To " . WEB_SITE, $message);
-        return $return;
+        $app = Yii::app();
+        if ($remembre === 0) {
+            $cookie = new CHttpCookie('remember_user', 0, array("expire" => time() - 1));
+            $app->getRequest()->getCookies()->add($cookie->name, $cookie);
+        } else {
+            $timeout = isset(Yii::app()->params->timeout2)?Yii::app()->params->timeout2:43200; // 30 ngay
+            $duration = time() + $timeout * 60; // 30 days
+            $cookie = new CHttpCookie('remember_user', 1, array("expire" => $duration));
+            $app->getRequest()->getCookies()->add($cookie->name, $cookie);
+        }
+
+        return true;
     }
 
+    function register() {
+        global $mainframe;
+        $captcha = Request::getVar('captcha', null);
+
+        $obj_captcha = Yii::app()->getController()->createAction("captcha");
+
+        $code = $obj_captcha->verifyCode;
+
+        if ($captcha != $code) {
+            YiiMessage::raseNotice("Please enter verify code");
+            return false;
+        }
+        $user_meta = array();
+        $data_user = array(
+            'username' => $_POST['username'],
+            'password' => md5($_POST['password']),
+            'mobile' => $_POST['phone'],
+            'first_name' => $_POST['firstname'],
+            'last_name' => $_POST['lastname'],
+            'status' => 1,
+            'groupID' => 19
+        );
+        if (isset($_POST['meta']) && $_POST['meta']) {
+            foreach ($_POST['meta'] as $meta_key => $meta_value) {
+                $data_user[$meta_key] = $meta_value;
+            }
+        }
+        if ($_POST['password'] == "") {
+            YiiMessage::raseNotice("Please enter password");
+            return false;
+        }
+        if ($_POST['phone'] == "") {
+            YiiMessage::raseNotice("Please enter your mobile");
+            return false;
+        }
+
+        if (Request::getVar('agree', null) == null) {
+            YiiMessage::raseNotice("You must agree to Our Terms of Service.");
+            return false;
+        }
+
+        $tbl_user = YiiUser::getInstance();
+        if (!$tbl_user->registration($data_user)) {
+            return false;
+        }
+        return true;
+    }
+
+    
+    
+    
+    
     function forgotPass($email) {
         global $mainframe;
         $db = $this->db;
@@ -184,29 +147,7 @@ class User extends CFormModel {
         ;
         // send email
     }
-
-    function checkActiveCode($random_reset) {
-        global $mainframe;
-        $db = $this->db;
-        $query = "SELECT * FROM " . $this->tablename . " WHERE activeCode like :activeCode";
-        $query_command = $db->createCommand($query);
-        $activeCode = $random_reset . ":%";
-        $query_command->bindParam(':activeCode', $activeCode);
-        if (!$row = $query_command->queryRow()) {
-            return false;
-        }
-
-        $activeCode = $row['activeCode'];
-        $activeCode = explode(':', $activeCode);
-        $time = mktime() - $activeCode[1];
-
-        if ($time > 86400) {
-            return -1;
-        }
-        $this->user = $row;
-        return true;
-    }
-
+  
     function resetPass($newpassword, $repassword) {
         $db = $this->db;
         if ($newpassword == "") {
@@ -227,130 +168,38 @@ class User extends CFormModel {
 
     function changepass() {
         global $mainframe;
-        if (!$mainframe->isLogin()) {
-            $this->str_error = "Please login before change password !!!";
-            return FALSE;
-        }
-        $user = $mainframe->getUser();
-
-        $db = $this->db;
-        $dataForm = Request::getVar("ChangepassForm");
-
-        if ($user['password'] != "") {
-            if (md5($dataForm['password']) != $user['password']) {
-                $this->str_error = "Type old password";
-                return FALSE;
-            }
-        }
-
-        if ($dataForm['new-password'] == "") {
-            $this->str_error = "Type new password";
-            return FALSE;
-        }
-
-        if ($dataForm['re-password'] !== $dataForm['new-password']) {
-            $this->str_error = "Type verifi password";
-            return FALSE;
-        }
-
-        $query = "UPDATE " . $this->tablename . " SET password = :password WHERE id = " . $user['id'];
-        $pw = md5($dataForm['new-password']);
-        $query_command = $db->createCommand($query);
-        $query_command->bindParam(':password', $pw);
-        $query_command->execute();
-
-        $user['password'] = $pw;
-        Yii::app()->session['userfront'] = $user;
-        $mainframe->set("user", $user);
-        return true;
-    }
-
-    function changepass1() {
-        global $mainframe, $db;
-        $user = $mainframe->getUser();
-
-        $dataForm = Request::getVar("ChangepassForm");
-        if ($user['suppliers'] == "" OR $user['password'] != "") {
-            if ($dataForm["password"] == "") {
-                $this->str_error = "Type old password";
-                return FALSE;
-            }
-
-            $pass = md5($dataForm["password"]);
-            if ($pass !== $user['password']) {
-                $this->str_error = "Old password is false";
-                return FALSE;
-            }
-        }
-
-        if ($dataForm['new-password'] == "") {
-            $this->str_error = "Type new password";
-            return FALSE;
-        }
-
-        if ($dataForm['re-password'] !== $dataForm['new-password']) {
-            $this->str_error = "Type verifi password";
-            return FALSE;
-        }
-
-        $query = "UPDATE " . $this->tablename . " SET password = :password WHERE id = " . $user['id'];
-        $query_command = $db->createCommand($query);
-        $pw = md5($dataForm['new-password']);
-        $query_command->bindParam(':password', $pw);
-        $query_command->execute();
-
-        $user['password'] = md5($dataForm['new-password']);
-        Yii::app()->session['userfront'] = $user;
-        $mainframe->set("user", $user);
-        return true;
-    }
-
-    function check_user($username) {
-        $db = $this->db;
-        $query = "SELECT * FROM " . $this->tablename . "  WHERE username=:username";
-        $query_command = $db->createCommand($query);
-        $query_command->bindParam(':username', $username);
-        $result = $query_command->queryRow();
-
-        return $result;
-    }
-    
-    //search
-    
-    public function getVideos($limit = 10, $offset = 0, $where = array(), $query = array(), $oder = 'm.viewed', $by = 'DESC', $random = false) {
-        //var_dump($query); die;
-        if ($limit > 0) {
-            $this->command->limit($limit, $offset);
-        }
-
-        if ($where && is_array($where)) {
-            foreach ($where as $key => $value) {
-                if (!is_array($value)) {
-                    $param = explode('.', $key);
-                    if (is_array($param))
-                        $param = $param[1];
-                    $this->command->where(array("OR", "$key" . "=:" . "$param"), array("$param" => $value));
-                }
-            }
-        }
         
-        if ($query) {
-            $this->command->where(array('like', 'm.title', "%$query%"));
+        $user = $mainframe->getUser();
+          
+        $db = $this->db;
+        $password = Request::getVar("password");
+        $newpassword = Request::getVar("new-password");
+        $renewpassword = Request::getVar("renew-password");
+        
+        if ($password != "") {
+            if (md5($password) != $user->password) {
+                YiiMessage::raseNotice('Type old password !!!');
+                return FALSE;
+            }
         }
-        if ($oder) {
-            $this->command->order("$oder $by");
+
+        if ($newpassword == "") {
+            YiiMessage::raseNotice('Type new password !!!');
+            return FALSE;
         }
-        if ($random) {
-            $this->command->order(array('RAND()'));
+
+        if ($newpassword !== $renewpassword) {
+            YiiMessage::raseNotice('Type verifi password !!!');
+            return FALSE;
         }
-        $results = $this->command->select('m.*,c.title as name,c.alias as calias, c.id as cid')
-                ->from("$this->tablenamesearch  m")
-                ->join("$this->table_categories  c", 'm.catID=c.id')
-//                ->join("$this->table_episode  ep", 'm.id=ep.film_id')
-//                ->leftjoin("$this->table_like lk", "m.id=lk.fid")
-                ->queryAll();
-        return $results;
-    }
-    
-    //register cbv
+ 
+        $tbl_user = YiiTables::getInstance(TBL_USERS, null, true);
+        $tbl_user->load($user->id);
+        $tbl_user->password = md5($newpassword);
+        $tbl_user->store();
+        
+        return true;
+    } 
+
+     
 }
