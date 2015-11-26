@@ -1,5 +1,5 @@
 @media(min-width:768px){
-    .users #wrapper .container{
+    .page-users-form .container{
         width: 530px;
         margin-top: 7px;
     }

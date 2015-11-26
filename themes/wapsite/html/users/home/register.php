@@ -1,4 +1,4 @@
-<div class="users">
+<div class="page-users-form">
     <div class="section">
         <div class="container">
             <div class="form-entry row">
@@ -134,5 +134,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="col-md-12 input-control">
+        <a href="<?php echo Router::buildLink('users', array('layout' => 'login')); ?>" class="btn btn-info">Đăng nhập</a>
+        <a href="<?php echo Router::buildLink('users', array('layout' => 'forgotpass')); ?>" class="btn btn-success">Quên mật khẩu</a>
     </div>
 </div>

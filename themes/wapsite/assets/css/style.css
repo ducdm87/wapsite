@@ -249,7 +249,7 @@ a:hover{
     margin-bottom: 30px;
 }
 .entry-container .entry-header{
-    background: url(../imagesentry-header.png) repeat-x;
+    background: url(../images/entry-header.png) repeat-x;
     height: 32px;
     overflow: hidden;
 }
@@ -258,16 +258,16 @@ a:hover{
 }
 
 .entry-container .entry-header .entry-title .box-bg-left{ 
-     background: url(../imagesbtn-box-left.png) no-repeat;
+     background: url(../images/btn-box-left.png) no-repeat;
      padding: 0 0 0 10px;
 }
 .entry-container .entry-header .entry-title .box-bg-right{  
-    background: url(../imagesbtn-box-right.png) no-repeat scroll right 0; 
+    background: url(../images/btn-box-right.png) no-repeat scroll right 0; 
     padding: 0 22px 0 0px;
     display: inline-block;  
 }
 .entry-container .entry-header .entry-title .box-bg-center{  
-    background: url(../imagesbtn-box-center.png) repeat-x; 
+    background: url(../images/btn-box-center.png) repeat-x; 
     color: #fff;
     font-size: 18px;    
     line-height: 32px;
@@ -288,7 +288,7 @@ a:hover{
  
  
 .entry-container .entry-body .thumbnail .icon-play{
-    background: rgba(0, 0, 0, 0) url("../imagesicon-play.png") no-repeat scroll center center;
+    background: rgba(0, 0, 0, 0) url("../images/icon-play.png") no-repeat scroll center center;
     display: block;
     height: 100%;
     left: 0;
@@ -527,40 +527,42 @@ footer .footer-bellow span{
 /*
 ========================User================================*/
 
-body.users {
-    background: url(../imagesuser-bgi.png) repeat-x;
+.page-users-form {
+    background: url(../images/user-bgi.png) repeat-x;
 }
-.users .navbar-inner{
-    background: url(../imagesuser-header-bg.png) repeat-x;
+.page-users-form .navbar-inner{
+    background: url(../images/user-header-bg.png) repeat-x;
     height: 135px;
     padding-top: 5px;
     padding-bottom: 10px;
 }
 
-.users .entry-title{
-    background: url(../imagesuser-entry-title.png) repeat-x;
+.page-users-form .entry-title{
+    background: url(../images/user-entry-title.png) repeat-x;
     height: 65px;
     border-bottom: none;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
 }
 
-.users .entry-title img{
+.page-users-form .entry-title img{
     margin: 15px;
 }
 
-.users .entry-title h4{
+.page-users-form .entry-title h4{
     text-transform: uppercase;
     color: #ffffff;
     font-weight: 400;
     margin-top: 0px;
 }
 
-.users .section .container{
-    background: url(../imagesuser-form-bg.png) repeat-x;
+.page-users-form .container{
+    background: url(../images/user-form-bg.png) repeat-x;
 
 }
-
+.page-users-form form {
+    color: #ffffff;
+}
 /*
 =======================*/
 
@@ -599,7 +601,7 @@ body.users {
 .icon-addon .glyphicon, 
 .icon-addon.addon-md .fa,
 .icon-addon .fa, .flag {
-    background: url(../imagesvn_48.png);
+    background: url(../images/vn_48.png);
     position: absolute;
     z-index: 2;
     width: 48px;
@@ -611,14 +613,14 @@ body.users {
     padding: 10px 0;
     top: -5px
 }
-.users .form-control{
+.page-users-form .form-control{
     border-radius: 0px;
 }
-.users .btn-user{
-    background: url(../imagesuser-btn-bg.png) no-repeat;
+.page-users-form .btn-user{
+    background: url(../images/user-btn-bg.png) no-repeat;
     height: 80px;
 }
-.users .btn-user .btn{
+.page-users-form .btn-user .btn{
     background: transparent;
     color: #fff;
     text-transform: uppercase;
@@ -672,7 +674,7 @@ body.users {
 }
 
 .btn-register{
-    background: url(../imagesuser-btn-res.png) repeat-x;
+    background: url(../images/user-btn-res.png) repeat-x;
     color: #000000;
     font-weight:400;
 
@@ -691,7 +693,7 @@ body.users {
 =======================================*/
 
 .jp-video-play-icon{
-    background: url(../imagesicon-play.png) !important;
+    background: url(../images/icon-play.png) !important;
     height: 106px !important;
 }
 
@@ -802,7 +804,7 @@ body.users {
 
 
 .more-page{ 
-    background: rgba(0, 0, 0, 0) url("../imagesarrow-more-down.png") no-repeat scroll right 13px;
+    background: rgba(0, 0, 0, 0) url("../images/arrow-more-down.png") no-repeat scroll right 13px;
     font-size: 17px;
     font-weight: bold;
     height: 32px;
@@ -828,6 +830,9 @@ body.users {
 .btn-warning,.btn-warning:hover {
     background-color: #FF0000;
     border: 0px  
+}
+.btn:hover {
+    color: #fff;
 }
 .close {
     float: right;

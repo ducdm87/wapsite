@@ -1,4 +1,4 @@
-<body class="users">
+<div class="page-users-form">
 <div id="wrapper">
     <div class="section">
         <div class="container">
@@ -48,4 +48,4 @@
     </div>
 
 </div>
-</body>
+</div>

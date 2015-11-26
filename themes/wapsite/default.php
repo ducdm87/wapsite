@@ -7,9 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title><?php echo getSysConfig("seopage.title"); ?></title>
-        <?php 
-        global $cur_temp;
-        ?>
+        <?php  global $cur_temp; ?>
         <meta name="description" content="<?php echo getSysConfig("seopage.description"); ?>" />
         <meta name="keywords" content="<?php echo getSysConfig("seopage.keyword"); ?>" />
         
@@ -19,7 +17,17 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/css/style.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/css/mobile.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/growl/jquery.growl.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/gvalidator/css/bootstrapValidator.css" />
 
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/js/jquery-1.11.1.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/js/bootstrap.min.js"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/js/jquery.growl.js"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/js/local-script.js"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/validator/js/bootstrapValidator.js"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/js/form-validator.js"></script>
+        
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -70,7 +78,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="<?php echo $this->createUrl('')?>">
+                            <a class="navbar-brand" href="/">
                                 <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/logo.png" class="hidden-xs hiden-sm"/>
                                 <div class="text-center ">
                                     <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/app/mobile-logo.png" class="hidden-lg hiden-md"/>
@@ -109,7 +117,7 @@
                 <div class="container-nav">
                     <nav class="navbar navbar-static-top show-mobile">
                         <ul class="show-nav-main-mobile">
-                            <li><a href="<?php echo $this->createUrl(''); ?>">TRANG CHỦ</a></li>
+                            <li><a href="/">TRANG CHỦ</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -118,15 +126,24 @@
         </header>
         <div id="wrapper">
             <div class="section">                 
+                <?php
+                global $mainframe; 
+                $app = Request::getVar('app');
+                if($app != "users"){
+                ?>
                     <div class="banner hidden-xs hidden-sm"> 
                         <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/app/banner.png" alt="Banner" class="img-responsive"/>
                     </div>
+                <?php 
+                }
+                if(!$mainframe->isLogin()){?>
                     <div class="dialog-message">
                         <div class="alert alert-warning alert-dismissible text-center" role="alert">
                             <p>Qúy khách vui lòng đăng nhập <strong><a href="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'login')); ?>">Tại đây</a></strong> hoặc vui lòng chuyển sang truy cập GPRS/3G/DEGE
                             </p>
                         </div>
                     </div>
+                <?php } ?>
                 <?php YiiMessage::showMessage(); ?>
                 <div class="page-content">
                     <?php echo $content; ?>                
@@ -147,12 +164,6 @@
                     <span>Người chịu trách nhiệm nội dung: Bà Nguyễn Thu Dung</span>
                 </div>
             </div>
-        </footer>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/js/jquery-1.11.1.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/js/bootstrap.min.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/js/jquery.growl.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/<?php echo $cur_temp; ?>/assets/js/local-script.js"></script>
+        </footer>        
     </body>
 </html>
