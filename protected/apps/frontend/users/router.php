@@ -11,20 +11,19 @@ function fnHelperFindMenuUser($view = "home", $layout = "") {
     $menuItem = $YiiMenu->getMenuApp("users");
     $found = false;
     $itemid = false;
+//echo '<meta charset="utf-8">';
 
-    foreach ($menuItem as $item) {
+    foreach ($menuItem as $item) {         
         $params = $item['params'];
-        if ($layout == "") {
-            if ($params->view == $view) {
-                $itemid = $item['id'];
-            }
-            if ($params->view == $view AND(!isset($params->layout) OR $params->layout == "" OR $params->layout == 'display')) {
-                return $item['id'];
-            }
-        } else {
-            if ($params->view == $view AND $params->layout == $layout) {
-                return $item['id'];
-            }
+        $_view = isset($params->view)?$params->view:"";
+        $_layout = isset($params->layout)?$params->layout:"";
+        if($_view == "home") $_view = "";
+        if($_layout == "display") $_layout = "";
+        if ($_view == $view AND $_layout == $layout) {
+            return $item['id'];
+        }else if($layout == "" AND $view == $_view){
+            $itemid = $item['id'];
+        }else{            
         }
     }
     return $itemid;
@@ -33,8 +32,7 @@ function fnHelperFindMenuUser($view = "home", $layout = "") {
 // $query: array query [view:detail, id:10 ...]
 // build
 function usersBuildRoute(& $query) {
-    $segments = array();
- 
+    $segments = array();    
     if ($menuID = fnHelperFindMenuUser($query['view'], $query['layout'])) {
         $query['menuID'] = $menuID;
         unset($query['view']);

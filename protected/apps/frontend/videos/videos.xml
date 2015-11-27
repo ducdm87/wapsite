@@ -20,7 +20,7 @@
                 <layout value="list" desc="Danh mục bài danh sach">List</layout>
             </layouts>              
             <param title="advance">
-                <field type="catid" name="id" label="Category" />                 
+                <field type="catid" name="id" label="Category" request="true" />                 
                  <field type="text" name="limit" label="Limit" />
                  <field type="text" name="col" label="Col" />
             </param>

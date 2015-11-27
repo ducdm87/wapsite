@@ -239,18 +239,22 @@ $(function () {
 });
 
 function setmenutype(app_name, view_name, layout_name){
-    $("#params_app").val(app_name);
-    $("#params_view").val(view_name);
-    $("#params_layout").val(layout_name);
+    $("#params_app").val(app_name);    
     document.adminForm.menu_type.value = app_name;
     if(app_name == "System"){
         $("#field_link").attr('readonly', false)
         $("#type").val("url");
     }else{
         $("#field_link").attr('readonly', true)
-        var link = "index.php?app="+app_name+"&view="+view_name;
-        if(layout_name != undefined && layout_name != "")
+        var link = "/index.php?app="+app_name
+        if(view_name != undefined && view_name != "" && view_name != "home"){
+            link = link + "&view="+view_name;
+            $("#params_view").val(view_name);
+        }
+        if(layout_name != undefined && layout_name != "" && layout_name != "display"){
             link = link + "&layout="+layout_name;
+            $("#params_layout").val(layout_name);
+        }
         $("#field_link").val(link);
         $("#type").val("app");
     }

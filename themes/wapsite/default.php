@@ -54,9 +54,9 @@
                         <?php 
                         if ($mainframe->isLogin()): ?>
                             <li class="dropdown">
-                                <a href="<?php echo $this->createUrl('/users/profile') ?>"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="span-header-top">Xin chào : <?php echo $user->username ?></span> </a>
+                                <a href="<?php echo Router::buildLink('users'); ?>"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="span-header-top">Xin chào : <?php echo $user->username ?></span> </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="<?php echo Router::buildLink('users', array('layout'=>'profile')); ?>">Tài khoản của tôi</a></li>
+                                    <li><a href="<?php echo Router::buildLink('users'); ?>">Tài khoản của tôi</a></li>
                                     <li class="divider"></li>
                                     <li><a href="<?php echo Router::buildLink('users', array('layout'=>'logout')); ?>">Thoát</a></li>
                                 </ul>

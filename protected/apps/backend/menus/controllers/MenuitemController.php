@@ -134,15 +134,27 @@ class MenuitemController extends BackEndController {
     }
     
     function actionApply() {
-        list($menuID, $menuItemID) = $this->store();
-        YiiMessage::raseSuccess("Successfully save Menu Item");
-        $this->redirect(Router::buildLink('menus', array("view"=>"menuitem",'menu'=>$menuID, 'layout'=>'edit','cid'=>$menuItemID)));
+        $model = MenuItem::getInstance();         
+        $result = $model->storeItem();
+        if($result == false){
+            $this->redirect(Router::buildLink("menus", array("view"=>'menutype')));
+        }else{
+            list($menuID, $menuItemID) = $result;
+            YiiMessage::raseSuccess("Successfully save Menu Item");
+            $this->redirect(Router::buildLink('menus', array("view"=>"menuitem",'menu'=>$menuID, 'layout'=>'edit','cid'=>$menuItemID)));
+        }
     }
     
     function actionSave() {
-        list($menuID, $menuItemID) = $this->store();  
-        YiiMessage::raseSuccess("Successfully save Menu Item");
-        $this->redirect(Router::buildLink('menus', array("view"=>"menuitem",'menu'=>$menuID)));
+        $model = MenuItem::getInstance();
+        $result = $model->storeItem();
+        if($result == false){
+            $this->redirect(Router::buildLink("menus", array("view"=>'menutype')));
+        }else{
+            list($menuID, $menuItemID) = $result;
+            YiiMessage::raseSuccess("Successfully save Menu Item");
+            $this->redirect(Router::buildLink('menus', array("view"=>"menuitem",'menu'=>$menuID)));
+        }
     }
     
     function actionCancel(){
@@ -153,32 +165,8 @@ class MenuitemController extends BackEndController {
         }else{           
             $this->redirect(Router::buildLink('menus', array("view"=>"menuitem",'menu'=>$menuID)));
         }
-    }
-   
-    
-    function store() {
-        global $mainframe, $user;
-        if (!$user->isSuperAdmin()) {
-            YiiMessage::raseNotice("Your account not have permission to modify menu item");
-            $this->redirect(Router::buildLink("menus", array("view"=>'menutype')));
-        }
-        
-        $post = $_POST;
-       
-        $id = Request::getVar("id", 0);  
-        $params = Request::getVar("params", array());  
-        $obj_menu = YiiMenu::getInstance();
-        $tbl_menu = $obj_menu->loadItem($id);        
-        $tbl_menu->_ordering = isset($post['ordering'])?$post['ordering']:null;
-        $tbl_menu->_old_parent = $tbl_menu->parentID;        
-        $tbl_menu->bind($post);
-        $tbl_menu->app = $params['app'];
-        $params = json_encode($params);        
-        $tbl_menu->params = $params;  
-        $tbl_menu->store();
-        YiiMessage::raseSuccess("Successfully save Menu Item");
-        return array($tbl_menu->menuID, $tbl_menu->id);
-    }
+    } 
+     
     
     function actionLoadconfigmenuitem(){
         $model = MenuItem::getInstance();

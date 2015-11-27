@@ -137,16 +137,15 @@ class Router {
         $enable_sef = isset(Yii::app()->params->sef) ? Yii::app()->params->sef : 1;
         $enable_sefsuffix = isset(Yii::app()->params->sef_suffix) ? Yii::app()->params->sef_suffix : 1;
         $sefsuffix = isset(Yii::app()->params->sef_urlsuffix) ? Yii::app()->params->sef_urlsuffix : ".html";
-
         if ($enable_sef == 1) {
             $link = "/app/$app/";
             if (file_exists($app_router)) {
-                require_once $app_router;
+                require_once $app_router;                
                 if (function_exists($functionName)) {
-                    if (!isset($query['view']) OR empty($query['view']))
-                        $query['view'] = 'home';
-                    if (!isset($query['layout']) OR empty($query['layout']))
-                        $query['layout'] = 'display';
+                    if (!isset($query['view']) OR (isset($query['view']) AND $query['view'] == 'home') )
+                        $query['view'] = "";
+                    if (!isset($query['layout']) OR (isset($query['layout']) AND $query['layout'] == 'display') )
+                        $query['layout'] = ""; 
 
                     $segments = $functionName($query);
 
