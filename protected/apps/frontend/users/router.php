@@ -37,15 +37,9 @@ function usersBuildRoute(& $query) {
  
     if ($menuID = fnHelperFindMenuUser($query['view'], $query['layout'])) {
         $query['menuID'] = $menuID;
-    } elseif ($menuID = fnHelperFindMenuUser()) {
-        $query['menuID'] = $menuID;
-    } else {
-        $segments[] = $query['view'];
-        $segments[] = $query['layout'];
+        unset($query['view']);
+        unset($query['layout']);
     }
-
-    unset($query['view']);
-    unset($query['layout']);
 
     return $segments;
 }
@@ -62,6 +56,6 @@ function usersParseRoute($segments, $_params = null) {
 //        $params['view'] = 'user';
         $params['layout'] = 'captcha';
         $params['refresh'] = '1';
-    } 
+    }
     return $params;
 }

@@ -13,12 +13,12 @@
                                 <div class="clearfix"></div>
                                 <div class="col-md-6 no-pading-left mb-no-pading">
                                     <div class="form-group">
-                                        <input type="text" name="firstname" class="form-control">
+                                        <input type="text" name="first_name" class="form-control" value="<?php echo isset($data_user['first_name'])?$data_user['first_name']:""; ?>" />
                                     </div> 
                                 </div>
                                 <div class="col-md-6 no-pading-right mb-no-pading">
                                     <div class="form-group ">
-                                        <input type="text" name="lastname" class="form-control">
+                                        <input type="text" name="last_name" class="form-control" value="<?php echo isset($data_user['last_name'])?$data_user['last_name']:""; ?>" />
                                     </div>
                                 </div>
                             </div>
@@ -26,7 +26,7 @@
                             <div class="row-fuld form-group">
                                 <label class="">Chọn tên người dùng của bạn</label>
                                 <div class="form-group ">
-                                    <input type="text" name="username" class="form-control">
+                                    <input type="text" name="username" class="form-control" value="<?php echo isset($data_user['username'])?$data_user['username']:""; ?>" />
                                 </div>
 
                             </div>
@@ -34,13 +34,13 @@
                             <div class="row-fuld form-group">
                                 <label class="">Tạo mật khẩu</label>
                                 <div class="form-group ">
-                                    <input type="password" name="password" class="form-control">
+                                    <input type="password" name="password" class="form-control" value="<?php echo isset($data_user['password'])?$data_user['password']:""; ?>" />
                                 </div>
                             </div>
                             <div class="row-fuld form-group">
                                 <label class="">Re Mật khẩu</label>
                                 <div class="form-group ">
-                                    <input type="password" name="re_password" class="form-control">
+                                    <input type="password" name="re_password" class="form-control" value="<?php echo isset($data_user['re_password'])?$data_user['re_password']:""; ?>" />
                                 </div>
                             </div>
 
@@ -91,8 +91,8 @@
                                 <div class="" style="position: relative">
                                     <div class="form-group">
                                         <div class="icon-addon addon-md">
-                                            <input type="text" placeholder="84 +" class="form-control" id="phone" name="phone">
-                                            <label for="email" class="flag" rel="tooltip" title="email"></label>
+                                            <input type="text" placeholder="84 +" class="form-control" id="mobile" name="mobile" value="<?php echo isset($data_user['mobile'])?$data_user['mobile']:""; ?>" />
+                                            <label for="mobile" class="flag flag-form-input" rel="tooltip" title="mobile"></label>
                                         </div>
                                     </div>
                                 </div>
@@ -103,7 +103,7 @@
                                 <div class="clearfix"></div>
                                 <div class="col-md-6 no-pading-left mb-no-pading">
                                     <div class="form-group">
-                                        <input type="text" name="captcha" class="form-control"/>
+                                        <input type="text" name="captcha" class="form-control" value="<?php echo isset($data_user['captcha'])?$data_user['captcha']:""; ?>"/>
                                     </div>
                                 </div>
                                 <div class="col-md-6 no-pading-right mb-no-pading">
@@ -140,3 +140,8 @@
         <a href="<?php echo Router::buildLink('users', array('layout' => 'forgotpass')); ?>" class="btn btn-success">Quên mật khẩu</a>
     </div>
 </div>
+<script type="text/javascript">
+    var link_checkuser = "<?php echo Router::buildLink('users',array('layout'=>"checkuser"))?>";
+    var link_checkcaptacha = "<?php echo Router::buildLink('users',array('layout'=>"checkcaptcha"))?>";    
+    var link_checkmobile = "<?php echo Router::buildLink('users',array('layout'=>"checkmobile"))?>";    
+</script>    

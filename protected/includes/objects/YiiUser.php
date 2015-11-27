@@ -382,7 +382,7 @@ class YiiUser {
             YiiMessage::raseNotice("username is already registered");
             return false;
         }
-
+        $data_post['password'] = md5($data_post['password']);
         $tbl_user->bind($data_post);
         $tbl_user->store();
         $this->setLogin($tbl_user->id);

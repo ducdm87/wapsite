@@ -597,10 +597,7 @@ footer .footer-bellow span{
     clear: both;
 }
 
-.icon-addon.addon-md .glyphicon,
-.icon-addon .glyphicon, 
-.icon-addon.addon-md .fa,
-.icon-addon .fa, .flag {
+.flag-form-input {
     background: url(../images/vn_48.png);
     position: absolute;
     z-index: 2;
@@ -666,12 +663,7 @@ footer .footer-bellow span{
     top: -1px
 }
 
-.icon-addon .form-control:focus + .glyphicon,
-.icon-addon:hover .glyphicon,
-.icon-addon .form-control:focus + .fa,
-.icon-addon:hover .fa {
-    color: #2580db;
-}
+ 
 
 .btn-register{
     background: url(../images/user-btn-res.png) repeat-x;

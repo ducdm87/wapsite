@@ -16,6 +16,12 @@ require_once($yii);
 $yiiapp = Yii::createWebApplication($config);
 require_once dirname(__FILE__).'/protected/router.php';
 
+$site_offline = isset(Yii::app()->params->siteoffline) ? Yii::app()->params->siteoffline : 0;
+if($site_offline != 0){
+    $offlineMessage = isset(Yii::app()->params->offlineMessage) ? Yii::app()->params->offlineMessage : "Please check back again soon.";
+    echo $offlineMessage; die;
+}
+
 $params = Router::parseLink();
 
 global $pagetype, $cur_temp;

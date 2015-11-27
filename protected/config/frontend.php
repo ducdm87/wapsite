@@ -18,9 +18,15 @@ $settings = array(
             'loginUrl' => array('user/login'),
         ),
         'session' => array(
-            'class' => 'CHttpSession',
+            //'class' => 'CHttpSession',
+            'class' => 'CDbHttpSession',
             'sessionName' => md5("front-end-yii:193jjo2ue"),
-        ),
+            'connectionID' => "db",
+            'sessionTableName' => "tbl_yiisession",
+            'timeout'=> 30*24*60*60 ,
+//            'autoCreateSessionTable' => false,
+        ), 
+        
     ),
     'import' => array(
         'application.models.*',
@@ -31,9 +37,12 @@ $settings = array(
     ),
     'params' => array(
         // time out minute
-        'timeout' => 15, 
-        'timeout2' => 30*24*60, 
-         'adminEmail' => 'ducdm@binhhoang.com',
+        'timeout' => 30*60, 
+        'timeout2' => 30*24*60*60, 
+        'adminEmail' => 'ducdm@binhhoang.com',        
+        'sef' => 1,
+        'sef_suffix' => 0,
+        'sef_urlsuffix' => ".html",
         'siteoffline' => 0,
         'offlineMessage' => "This site is down for maintenance. Please check back again soon.",
 //        'defaultApp' => 'news',

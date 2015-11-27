@@ -64,33 +64,18 @@ class User extends CFormModel {
         return true;
     }
 
-    function register() {
+    function register($data_user) {
         global $mainframe;
+        
         $captcha = Request::getVar('captcha', null);
 
         $obj_captcha = Yii::app()->getController()->createAction("captcha");
-
-        $code = $obj_captcha->verifyCode;
-
-        if ($captcha != $code) {
+        
+        if ($obj_captcha->validate($captcha,0) == false) {
             YiiMessage::raseNotice("Please enter verify code");
             return false;
         }
-        $user_meta = array();
-        $data_user = array(
-            'username' => $_POST['username'],
-            'password' => md5($_POST['password']),
-            'mobile' => $_POST['phone'],
-            'first_name' => $_POST['firstname'],
-            'last_name' => $_POST['lastname'],
-            'status' => 1,
-            'groupID' => 19
-        );
-        if (isset($_POST['meta']) && $_POST['meta']) {
-            foreach ($_POST['meta'] as $meta_key => $meta_value) {
-                $data_user[$meta_key] = $meta_value;
-            }
-        }
+ 
         if ($_POST['password'] == "") {
             YiiMessage::raseNotice("Please enter password");
             return false;

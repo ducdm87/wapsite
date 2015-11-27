@@ -44,14 +44,15 @@ class FrontEndController extends CController {
         $mainframe = MainFrame::getInstance($this->db, $this->user, "frontend");
         
         $YiiApp = Yii::app();
-        if (!$mainframe->isLogin()) {            
-            $duration = time() + 300; // 365 days            
+        if (!$mainframe->isLogin()) {  
+            $timeout = isset(Yii::app()->params->timeout)?Yii::app()->params->timeout:30*60; // 15 phut 
+            $duration = time() + $timeout; // 5 phut           
         } else {
             $remember_user = (isset($_COOKIE['remember_user']) AND $_COOKIE['remember_user'] == 1 )?1:0;
             if($remember_user == 1)
                 $timeout = isset(Yii::app()->params->timeout2)?Yii::app()->params->timeout2:43200; // 30 ngay
-            else $timeout = isset(Yii::app()->params->timeout)?Yii::app()->params->timeout:15; // 15 phut    
-            $duration = time() + $timeout * 60;
+            else $timeout = isset(Yii::app()->params->timeout)?Yii::app()->params->timeout:1800; // 15 phut    
+            $duration = time() + $timeout;
         }
         
         $cookie = new CHttpCookie(session_name(), session_id(), array("expire" => $duration));

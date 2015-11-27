@@ -14,14 +14,14 @@ $(function () {
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
-            firstname: {
+            first_name: {
                 validators: {
                     notEmpty: {
                         message: 'Trường này bắt bộc.'
                     }
                 }
             },
-            lastname: {
+            last_name: {
                 validators: {
                     notEmpty: {
                         message: 'Trường này bắt bộc.'
@@ -33,7 +33,7 @@ $(function () {
                     notEmpty: {
                         message: 'Trường này bắt bộc.'
                     }, remote: {
-                        url: 'users/checkuser',
+                        url: link_checkuser,
                         message: "Tên này đã tồn tại."
                     }
                 }
@@ -62,10 +62,13 @@ $(function () {
                     }
                 }
             },
-            phone: {
+            mobile: {
                 validators: {
                     notEmpty: {
                         message: 'Trường này bắt bộc.'
+                    }, remote: {
+                        url: link_checkmobile,
+                        message: "Số điện thoại đã được sử dụng."
                     }
                 }
             },
@@ -75,7 +78,7 @@ $(function () {
                     notEmpty: {
                         message: 'Trường này bắt bộc.'
                     }, remote: {
-                        url: 'users/checkcaptcha',
+                        url: link_checkcaptacha,
                         message: "Mã nhập không hợp lệ."
                     }
                 }
