@@ -40,7 +40,7 @@
                     <ul class="pull-right list-inline">
                         <?php if (isset($user_session) && $user_session): ?>
                             <li class="dropdown">
-                                <a href="<?php echo $this->createUrl('/users/profile') ?>"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="span-header-top">Xin chào : <?php echo $user_session['username'] ?></span> </a>
+                                <a href="<?php echo $this->createUrl('/user/profile') ?>"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="span-header-top">Xin chào : <?php echo $user_session['username'] ?></span> </a>
                                 <ul class="dropdown-menu">
                                     <li><a href="/users/profile">Tài khoản của tôi</a></li>
                                     <li class="divider"></li>
@@ -48,8 +48,8 @@
                                 </ul>
                             </li>
                         <?php else: ?>
-                            <li><a href="<?php echo $this->createUrl('/users') ?>">Đăng Kí</a> <span class="span-header-top"> | </span></li>
-                            <li><a href="<?php echo $this->createUrl('/users/login') ?>">Đăng Nhập</a></li>
+                            <li><a href="<?php echo $this->createUrl('/user') ?>">Đăng Kí</a> <span class="span-header-top"> | </span></li>
+                            <li><a href="<?php echo $this->createUrl('/user/login') ?>">Đăng Nhập</a></li>
                         <?php endif; ?>
                     </ul>
                 </div>
@@ -87,10 +87,10 @@
             <div class="hidden-lg hidden-md">
                  <div class="collapse navbar-collapse " id="navbar-collapse-mobile">
                     <ul class="nav navbar-nav">
-                            <li><a href="<?php echo $this->createUrl('articles/') ?>" class="<?php if($controll == "articles") echo 'active'; ?>">Tin Tức</a></li>
-                            <li><a href="<?php echo $this->createUrl('videos/category',array('alias'=> "the-thao") ); ?>" class="<?php if($controll == "videos" AND $param_alias == "the-thao") echo 'active'; ?>">Thể Thao</a></li>
-                            <li><a href="<?php echo $this->createUrl('videos/category',array('alias'=> "hai-huoc") ); ?>" class="<?php if($controll == "videos" AND $param_alias == "hai-huoc") echo 'active'; ?>">Hài hước</a></li>
-                            <li><a href="<?php echo $this->createUrl('videos/category',array('alias'=> "vui-nhon") ); ?>"  class="<?php if($controll == "videos" AND $param_alias == "vui-nhon") echo 'active'; ?>">Vui nhộn</a></li>
+                            <li><a href="<?php echo $this->createUrl('article/') ?>" class="<?php if($controll == "articles") echo 'active'; ?>">Tin Tức</a></li>
+                            <li><a href="<?php echo $this->createUrl('video/category',array('alias'=> "the-thao") ); ?>" class="<?php if($controll == "videos" AND $param_alias == "the-thao") echo 'active'; ?>">Thể Thao</a></li>
+                            <li><a href="<?php echo $this->createUrl('video/category',array('alias'=> "hai-huoc") ); ?>" class="<?php if($controll == "videos" AND $param_alias == "hai-huoc") echo 'active'; ?>">Hài hước</a></li>
+                            <li><a href="<?php echo $this->createUrl('video/category',array('alias'=> "vui-nhon") ); ?>"  class="<?php if($controll == "videos" AND $param_alias == "vui-nhon") echo 'active'; ?>">Vui nhộn</a></li>
                     </ul>
                 </div>
             </div>
@@ -101,10 +101,10 @@
                         <div id="nav"><?php echo YiiModule::loadModules($position = "menu-nav", "benhvien"); ?></div>
                         <ul class="nav navbar-nav hide">
                             <li><a href="<?php echo $this->createUrl('app/') ?>" class="<?php if($controll == "app") echo 'active'; ?>">Home</a></li>
-                            <li><a href="<?php echo $this->createUrl('articles/') ?>" class="<?php if($controll == "articles") echo 'active'; ?>">Tin Tức</a></li>
-                            <li><a href="<?php echo $this->createUrl('videos/category',array('alias'=> "the-thao") ); ?>" class="<?php if($controll == "videos" AND $param_alias == "the-thao") echo 'active'; ?>">Thể Thao</a></li>
-                            <li><a href="<?php echo $this->createUrl('videos/category',array('alias'=> "hai-huoc") ); ?>" class="<?php if($controll == "videos" AND $param_alias == "hai-huoc") echo 'active'; ?>">Hài hước</a></li>
-                            <li><a href="<?php echo $this->createUrl('videos/category',array('alias'=> "vui-nhon") ); ?>"  class="<?php if($controll == "videos" AND $param_alias == "vui-nhon") echo 'active'; ?>">Vui nhộn</a></li>
+                            <li><a href="<?php echo $this->createUrl('article/') ?>" class="<?php if($controll == "articles") echo 'active'; ?>">Tin Tức</a></li>
+                            <li><a href="<?php echo $this->createUrl('video/category',array('alias'=> "the-thao") ); ?>" class="<?php if($controll == "videos" AND $param_alias == "the-thao") echo 'active'; ?>">Thể Thao</a></li>
+                            <li><a href="<?php echo $this->createUrl('video/category',array('alias'=> "hai-huoc") ); ?>" class="<?php if($controll == "videos" AND $param_alias == "hai-huoc") echo 'active'; ?>">Hài hước</a></li>
+                            <li><a href="<?php echo $this->createUrl('video/category',array('alias'=> "vui-nhon") ); ?>"  class="<?php if($controll == "videos" AND $param_alias == "vui-nhon") echo 'active'; ?>">Vui nhộn</a></li>
                         </ul>
                     </nav>
                 </div>

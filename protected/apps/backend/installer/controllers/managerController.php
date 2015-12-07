@@ -34,16 +34,28 @@ class ManagerController extends BackEndController {
             for ($i = 0; $i < count($cids); $i++) {
                 $cid = $cids[$i];
                 if ($task == "publish")
-                    $this->changeStatus($cid, 1);
+                    $this->changeState($cid, 1);
                 else if ($task == "hidden")
-                    $this->changeStatus($cid, 2);
+                    $this->changeState($cid, 2);
                 else
-                    $this->changeStatus($cid, 0);
+                    $this->changeState($cid, 0);
             }
             YiiMessage::raseSuccess("Successfully saved changes status for extention");
-        }else if ($task == "delete") {
-            var_dump($_POST);
-            die;
+        }else if ($task == "allowall.on" OR $task == "allowall.off") {
+            $cids = Request::getVar('cid');
+            
+            $type = "On";
+            for ($i = 0; $i < count($cids); $i++) {
+                $cid = $cids[$i];
+                if ($task == "allowall.on"){
+                    $this->changeState($cid, 1, "allowall");
+                }
+                else{
+                    $type = "Off";
+                    $this->changeState($cid, 0, "allowall");
+                }
+            }
+            YiiMessage::raseSuccess("Successfully saved changes extention for allowall: $type");
         }
  
         $obj_ext = YiiExtensions::getInstance();
@@ -55,7 +67,7 @@ class ManagerController extends BackEndController {
         $this->render('default', array("extentions" => $extension));
     }
 
-    function changeStatus($cid, $value) {
+    function changeState($cid, $value, $name = "status") {
         global $mainframe, $user;
         if (!$user->isSuperAdmin()) {
             YiiMessage::raseNotice("Your account not have permission to modify extension");
@@ -64,7 +76,7 @@ class ManagerController extends BackEndController {
         
         $obj_ext = YiiExtensions::getInstance();
         $obj_tblExt = $obj_ext->loadExt($cid);
-        $obj_tblExt->status = $value;
+        $obj_tblExt->$name = $value;
         $obj_tblExt->store();
     }
 }

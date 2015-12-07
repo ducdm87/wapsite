@@ -335,12 +335,15 @@ class YiiUser {
 
     /*
      * @Desc: kiem tra xem tai nguyen cua userID co cho user hien tai thay doi hay khong
+     *      
      * $allowLeader = bool
      *      true: cho phep leader sua tai nguyen cua thanh vien cung nhom(cung level)
      *      false: khong cho phep leader sua tai nguyen cua thanh vien cung nhom(cung level)
      */
 
     function modifyChecking($userID, $allowLeader = false) {
+        $copyright = (int)Yii::app()->params->copyright;
+        if($copyright == 0) return true;
         $userID = (int) $userID;
         if ($userID == 0)
             return true;

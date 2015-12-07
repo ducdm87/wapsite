@@ -474,7 +474,7 @@ function fnDisplayVideo($item){
     return $html;
 }
 
-function sysLoadXmlParama($xml_file, $values = null, $type = "Module"){
+function sysLoadXmlParam($xml_file, $values = null, $type = "Module"){
     global $mainframe;
         $obj_xml = simplexml_load_file($xml_file);
         

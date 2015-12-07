@@ -59,6 +59,37 @@ class buildHtml {
         return $return;
     }
 
+	
+    /*
+     * $items aray(array(value, text, type));
+     * active btn-success btn-danger
+     */
+    static function showBtnGroup($name, $items = array(), $selected = 1) {
+        if(!is_array($items) OR count($items)==0) return false;        
+        ob_start();
+            ?>
+            <fieldset class="btn-group btn-group-action" for='btnform_<?php echo $name;?>'>
+                <?php foreach($items as $item){ 
+                        $value = isset($item->value)?$item->value:$item[0];
+                        $text = isset($item->text)?$item->text:$item[1];
+                        $type = isset($item->type)?$item->type:$item[2];
+                        $class = "btn-default";
+                        if($value == $selected){
+                            $class = "btn-default btn-$type";
+                        }
+                        ?>                
+                        <label for="btnform_<?php echo $name; ?>" class="btn btn-vsm <?php echo $class; ?>" aria-checked="<?php echo $type; ?>" aria-value="<?php echo $value;?>">
+                            <?php echo $text; ?>
+                        </label>
+                <?php } ?>
+            </fieldset>
+            <?php
+            echo '<input type="hidden" value="'.$selected.'" name="btnform['.$name.']" id="btnform_'.$name.'">';
+        $return = ob_get_contents();
+        ob_end_clean();
+        return $return;
+    }
+	
     static function choseStatus($name = "status", $value = 1, $show_default = 1) {
         ob_start();
         $id = trim(preg_replace('/[^\d\w]/ism', '_', $name), '_');

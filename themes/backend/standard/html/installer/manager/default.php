@@ -8,6 +8,7 @@
                 <th class="title"> <a>Name</a></th>
                 <th class="title" width="10%"> <a>Type</a></th>                
                 <th class="title" width="3%"> <a>Status</a></th>
+                <th class="title" width="3%"> <a>Allow all</a></th>
                 <th class="title" width="7%"> <a>Version</a></th>
                 <th class="title" width="15%"> <a>Date </a></th>
                 <th class="title" width="20%"> <a>Author</a></th>
@@ -25,6 +26,7 @@
                     <td><?php echo $item['title']; ?></td>
                     <td><?php echo $item['type']; ?></td>
                     <td><?php echo buildHtml::status($i, $item['status']); ?></td>
+                    <td><?php echo buildHtml::changState($i, $item['allowall'],'allowall.'); ?></td>
                     <td><?php echo $item['version']; ?></td>
                     <td><?php echo $item['creationDate']; ?></td>
                     <td><?php echo $item['author']; ?></td>

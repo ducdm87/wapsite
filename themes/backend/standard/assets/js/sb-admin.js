@@ -211,6 +211,21 @@ $(function () {
          $(".modal-dialog .close").click();
     });
     
+    $("#changePermission .apply-form").click(function(){
+        var per_ck = {};
+        per_ck.allow = [];
+        per_ck.deny = [];
+        $(".btn-group-action").each(function(stt,el){
+            var v_for = $(el).attr('for');
+            key = v_for.replace('btnform_resource-',"");
+            var v_value = parseInt($("#"+v_for).val());
+            if(v_value == 1) per_ck.allow.push(key);
+            else if(v_value == 0) per_ck.deny.push(key);
+        });         
+         $("#formPsermission").val(JSON.stringify(per_ck));
+          $("#changePermission").modal('hide');
+    });
+    
      $(document).delegate(".user-tree ul li.folder .folder-btn", "click", function() {
          var parent_group = $(this).parent();
          if($(this).hasClass('btn-close')){
@@ -275,3 +290,31 @@ function loadConfigFile(app_name, view_name){
         }
     }).done(function() {  });
 }
+
+
+// form-resource-edit: hien thi chu thich huong dan tung truong 1
+$(function () {
+    $(".form-resource-edit .node_introduct_fields .node_introduct_field").hide();
+    $(".form-resource-edit .node_introduct_fields .node_introduct_field:first").show();
+    $(".form-resource-edit .field-introduct").click(function(){
+        var name = $(this).attr('name');
+        var el = $(".form-resource-edit .node_introduct_fields .node_"+name);
+        if($(el).hasClass("node_introduct_field")){
+            $(".form-resource-edit .node_introduct_fields .node_introduct_field").hide();
+            $(el).show();
+        }
+    });
+});
+
+$(function(){
+    $(".btn-group-action .btn").click(function(){
+        var v_for = $(this).attr('for');
+        var v_type = $(this).attr('aria-checked');
+        var v_value = $(this).attr('aria-value');
+        $(this).parent().find(".btn").each(function(stt,el){
+            $(el).removeClass("btn-"+ $(el).attr('aria-checked'));
+        });
+        $(this).addClass("btn-"+v_type);
+        $("#"+v_for).val(v_value);
+    });
+});

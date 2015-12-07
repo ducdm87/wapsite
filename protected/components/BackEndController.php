@@ -35,15 +35,24 @@ class BackEndController extends CController {
         $mainframe = MainFrame::getInstance($this->db, $user);
 
         parent::init();
+		
+        $copyright = isset(Yii::app()->params->copyright)?Yii::app()->params->copyright:0;
+          
+        $timeout = isset(Yii::app()->params->timeout)?Yii::app()->params->timeout:900; // 15 phut 
+        $timeout2 = isset(Yii::app()->params->timeout2)?Yii::app()->params->timeout2:1800; // 30 phut 
 
         $YiiApp = Yii::app();
         if (!$mainframe->isLogin()) {            
-            $duration = time() + 300; // 365 days            
+            $duration = time() + $timeout; // 365 days            
         } else {
+            $permission = isset(Yii::app()->params->permission)?Yii::app()->params->permission:1;
+            if($permission == 1)
+                CheckPerMission::checking();
+			
             $remember_admin = (isset($_COOKIE['remember_admin']) AND $_COOKIE['remember_admin'] == 1 )?1:0;
             if($remember_admin == 1)
-                $duration = time() + 86400*30; // 365 days
-            else $duration = time() + 900; // 15 minutes            
+                $duration = time() + $timeout2; // 365 days
+            else $duration = time() + $timeout; // 15 minutes               
         }
         
         $cookie = new CHttpCookie(session_name(), session_id(), array("expire" => $duration));
@@ -122,11 +131,11 @@ class BackEndController extends CController {
             if (!$user->isAdmin()) {
                 YiiMessage::raseWarning("Your account not have permission to visit backend page");
                 Yii::app()->session['userbackend'] = null;                
-                $this->redirect(Router::buildLink("users",array("view"=>'user','layout'=>'logout')));
+                $this->redirect(Router::buildLink("user",array("view"=>'user','layout'=>'logout')));
 //                $this->redirect(array('users/logout'));
                 return;
             }            
-            if ($app == "users" and $view == "user" AND $layout == "login") {
+            if ($app == "user" and $view == "user" AND $layout == "login") {
                 $this->redirect(Router::buildLink("cpanel"));
 //                $this->redirect(array('/cpanel'));
                 return;
@@ -139,7 +148,7 @@ class BackEndController extends CController {
                 )
             );
             return $return;
-        } else if ($app == "users" and $view == "user" AND $layout == "login") {
+        } else if ($app == "user" and $view == "user" AND $layout == "login") {
 
             return array(
                 array('allow', // allow all users to access 'formlogin' and 'login' actions.
@@ -154,7 +163,7 @@ class BackEndController extends CController {
                 ),
             );
         } else {            
-            $this->redirect(Router::buildLink("users",array("view"=>'user','layout'=>'login')));
+            $this->redirect(Router::buildLink("user",array("view"=>'user','layout'=>'login')));
 //            return array();
         }
     }

@@ -134,7 +134,17 @@ class YiiExtensions{
         return $items;
     }
     
-    /* 
+     /* 
      */
-    function loadApp($appID = null){ }    
+    function loadApps($field = "*", $conditions = null){         
+        $command = $this->_db->createCommand()->select($field)
+                ->from(TBL_EXTENSIONS);
+        
+        $conditions = " type = 'app'";
+        
+        if($conditions != null) $command->where($conditions);
+        $items = $command->queryAll();
+        return $items;
+    }   
+    function loadApp($appID = null){ }     
 }

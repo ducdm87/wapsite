@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2015 at 06:00 AM
+-- Generation Time: Dec 07, 2015 at 09:01 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -484,7 +484,7 @@ INSERT INTO `tbl_articles` (`id`, `title`, `alias`, `introtext`, `fulltext`, `ca
 (9, ' Lý Nhã Kỳ mời họa sĩ 15 tuổi vẽ tranh cho show thời trang', 'ly-nha-ky-moi-hoa-si-15-tuoi-ve-tranh-cho-show-thoi-trang', 'Cựu Đại sứ du lịch đầu tư thiết kế thảm đỏ, thiệp mời, poster... bằng hội họa để tạo không gian phù hợp cho những bộ váy Haute Couture.', '<div class="fck_detail width_common">\r\n	<p class="Normal">\r\n		<span>L&yacute; Nh&atilde; Kỳ tiết lộ nhiều bức họa được sử dụng trong Lynk Fashion Show 2015 l&agrave; c&aacute;ch thể hiện sự tr&acirc;n trọng m&agrave; c&ocirc; d&agrave;nh cho nh&agrave; thiết kế&nbsp;</span><span>Alexis Mabille</span><span>, đồng thời l&agrave;m tăng gi&aacute; trị nghệ thuật cho buổi diễn.&nbsp;</span></p>\r\n	<p class="Normal">\r\n		Với &yacute; tưởng sử dụng tranh vẽ, từ đầu năm nay, L&yacute; Nh&atilde; Kỳ đ&atilde; t&igrave;m c&aacute;c họa sĩ ph&ugrave; hợp thực hiện c&ocirc;ng việc.&nbsp;<span>To&agrave;n bộ h&igrave;nh ảnh trang tr&iacute; được những nghệ sĩ t&agrave;i hoa của Việt Nam v&agrave; quốc tế vẽ tay.&nbsp;</span></p>\r\n	<table align="center" border="0" cellpadding="3" cellspacing="0" class="tplCaption" style="width: 100%;">\r\n		<tbody>\r\n			<tr>\r\n				<td>\r\n					<img alt="Lý Nhã Kỳ khoe bức tranh chân dung Xa Thi Mạn được vẽ bởi chàng trai 15 tuổi." data-natural-width="500" data-pwidth="470.4" data-width="500" src="http://img.f9.giaitri.vnecdn.net/2015/10/28/DAIN7458-3324-1445997123.jpg" style="width: 100%;" /></td>\r\n			</tr>\r\n			<tr>\r\n				<td>\r\n					<p class="Image">\r\n						L&yacute; Nh&atilde; Kỳ khoe bức tranh ch&acirc;n dung Xa Thi Mạn được vẽ bởi ch&agrave;ng&nbsp;họa sĩ&nbsp;15 tuổi.</p>\r\n				</td>\r\n			</tr>\r\n		</tbody>\r\n	</table>\r\n	<p class="Normal">\r\n		<span>​</span><span>Ch&agrave;ng trai 15 tuổi đến từ Nghệ An t&ecirc;n Phan Đăng Ho&agrave;ng, người từng tặng cựu Đại sứ Du lịch những bức ch&acirc;n dung của c&ocirc;, l&agrave; một trong số họa sĩ được Cựu Đại sứ Du lịch tin tưởng. Đăng Ho&agrave;ng sẽ vẽ c&aacute;c nh&acirc;n vật quan trọng trong show như&nbsp;</span><a href="http://giaitri.vnexpress.net/tin-tuc/thoi-trang/lang-mot/xa-thi-man-toi-viet-nam-du-show-thoi-trang-cua-ly-nha-ky-3299898.html">Xa Thi Mạn</a><span>,&nbsp;</span><a href="http://giaitri.vnexpress.net/tin-tuc/thoi-trang/lang-mot/ly-nha-ky-toat-mo-hoi-dap-ung-yeu-cau-cua-alexis-mabille-3298053.html">Alexis Mabille</a><span>... L&yacute; Nh&atilde; Kỳ cho biết c&ocirc; thường xuy&ecirc;n theo s&aacute;t c&acirc;y cọ trẻ tuổi để g&oacute;p &yacute; ho&agrave;n thiện n&eacute;t vẽ, l&agrave;m bật l&ecirc;n thần th&aacute;i nh&acirc;n vật.&nbsp;</span></p>\r\n	<p class="Normal">\r\n		<span>Trong nhiều th&aacute;ng qua, Phan Đăng Ho&agrave;ng ng&agrave;y đ&ecirc;m vẽ ch&acirc;n dung người nổi tiếng sẽ tham gia show diễn. C&aacute;c bức vẽ &quot;Hoa hậu TVB&quot; Xa Thi Mạn v&agrave; nh&agrave; thiết kế Alexis Mabille hứa hẹn g&acirc;y bất ngờ với quan kh&aacute;ch ở chương tr&igrave;nh. Ngo&agrave;i ra, show c&ograve;n giới thiệu&nbsp;</span><span>50 bức ch&acirc;n dung nh&acirc;n vật đặc biệt kh&aacute;c.&nbsp;</span></p>\r\n	<p class="Normal" style="text-align:right;">\r\n		<strong>V&acirc;n An</strong></p>\r\n</div>\r\n<p>\r\n	&nbsp;</p>\r\n', 30, 0, 'http://img.f9.giaitri.vnecdn.net/2015/10/28/DAIN7458-3324-1445997123.jpg', 0, '2015-09-01 21:32:17', 28, 0, 'Lý Nhã Kỳ mời họa sĩ 15 tuổi vẽ tranh cho show thời trang', 'Cựu Đại sứ du lịch đầu tư thiết kế thảm đỏ, thiệp mời, poster... bằng hội họa để tạo không gian phù hợp cho những bộ váy Haute Couture.', '2015-09-01 21:32:17', '2015-10-28 08:17:51', 1, 0, 'http://vnexpress.net/tin-tuc/thoi-su/pho-tong-tham-muu-truong-chon-cach-tiet-kiem-khi-to-chuc-dieu-binh-3272453.html');
 INSERT INTO `tbl_articles` (`id`, `title`, `alias`, `introtext`, `fulltext`, `catID`, `uid`, `thumbnail`, `ordering`, `created`, `created_by`, `modified_by`, `metakey`, `metadesc`, `cdate`, `mdate`, `status`, `feature`, `link_original`) VALUES
 (10, 'Kính hàng hiệu có chất lượng thế nào so với đồ bình dân', 'kinh-hang-hieu-co-chat-luong-the-nao-so-voi-do-binh-dan', 'Những cặp kính giá vài chục tới vài trăm triệu đồng thực chất được sản xuất cùng một "lò" với hàng bình dân, khả năng chống tia UV không vượt trội hơn là bao', '<div class="short_intro txt_666">\r\n	Những cặp k&iacute;nh gi&aacute; v&agrave;i chục tới v&agrave;i trăm triệu đồng thực chất được sản xuất c&ugrave;ng một &quot;l&ograve;&quot; với h&agrave;ng b&igrave;nh d&acirc;n, khả năng chống tia UV kh&ocirc;ng vượt trội hơn l&agrave; bao.</div>\r\n<div style="page-break-after: always;">\r\n	<span style="display: none;">&nbsp;</span></div>\r\n<div class="fck_detail width_common">\r\n	<p class="Normal">\r\n		K&iacute;nh mắt trong nhiều thập kỷ qua vẫn được xem l&agrave; m&oacute;n phụ kiện <a href="http://giaitri.vnexpress.net/tin-tuc/thoi-trang/lang-mot/7-mon-do-ua-thich-cua-phu-nu-sanh-dieu-3025460.html">kh&ocirc;ng thể thiếu</a> với cả đ&agrave;n &ocirc;ng lẫn phụ nữ khi xuống phố. Mỗi m&ugrave;a mốt tr&ocirc;i qua, c&aacute;c qu&yacute; &ocirc;ng, qu&yacute; c&ocirc; lại &quot;l&ugrave;ng sục&quot; để sở hữu những kiểu k&iacute;nh r&acirc;m <a href="http://giaitri.vnexpress.net/tin-tuc/thoi-trang/lang-mot/nhung-mau-kinh-dep-nhat-xuan-he-nam-nay-2968220.html">hợp mốt</a>, từ Prada, Tom Ford, Ray Ban, Oakley, Dolce &amp; Gabbana cho đến Salvatore Ferragamo, Chanel, Celine, Chopard... Gi&aacute; của m&oacute;n phụ kiện nhỏ b&eacute; n&agrave;y dao động từ v&agrave;i trăm đ&ocirc; đến v&agrave;i trăm ngh&igrave;n đ&ocirc; t&ugrave;y v&agrave;o độ cầu kỳ, tinh xảo v&agrave; nguy&ecirc;n liệu của sản phẩm. Vậy điểm kh&aacute;c biệt giữa k&iacute;nh h&agrave;ng hiệu cao cấp với những sản phẩm b&igrave;nh d&acirc;n do c&aacute;c thương hiệu nhỏ sản xuất l&agrave; g&igrave;?</p>\r\n	<table align="center" border="0" cellpadding="3" cellspacing="0" class="tplCaption" style="width: 100%;">\r\n		<tbody>\r\n			<tr>\r\n				<td>\r\n					<img alt="5-9369-1441597147.jpg" data-natural-width="500" data-pwidth="470.4" data-width="500" src="http://c1.f9.img.vnecdn.net/2015/09/07/5-9369-1441597147.jpg" style="width: 100%;" /></td>\r\n			</tr>\r\n			<tr>\r\n				<td>\r\n					<p class="Image">\r\n						Những cặp k&iacute;nh thời trang gi&aacute; h&agrave;ng trăm đ&ocirc; thậm ch&iacute; l&ecirc;n tới v&agrave;i trăm ngh&igrave;n đ&ocirc; la khiến kh&ocirc;ng &iacute;t người đặt c&acirc;u hỏi ch&uacute;ng c&oacute; g&igrave; đặc biệt hơn so với đồ b&igrave;nh d&acirc;n. Ảnh<em>: Dolcegabbana.</em></p>\r\n				</td>\r\n			</tr>\r\n		</tbody>\r\n	</table>\r\n	<p class="Normal">\r\n		<strong>Tr&ecirc;n thực tế, c&aacute;c thương hiệu k&iacute;nh cao cấp nhất v&agrave; c&aacute;c sản phẩm của h&atilde;ng b&igrave;nh d&acirc;n đều chung nguồn gốc. </strong></p>\r\n	<p class="Normal">\r\n		Luxottica - c&ocirc;ng ty sản xuất k&iacute;nh c&oacute; trụ sở ch&iacute;nh tại Milan, Italy - được coi l&agrave; &quot;&ocirc;ng tr&ugrave;m&quot; trong ng&agrave;nh sản xuất k&iacute;nh thế giới. Mỗi năm, h&atilde;ng n&agrave;y lại cho ra l&ograve; ra h&agrave;ng triệu cặp k&iacute;nh thời trang để đưa về c&aacute;c h&atilde;ng, từ Burberry, Chanel, Paul Smith, Tiffany &amp; Co., Versace, Vogue, Person, Miu Miu, Tory Burch, Paul Smith Donna Karan... cho đến những thương hiệu nhỏ hơn. B&ecirc;n cạnh đ&oacute;, Luxottica cũng sở hữu một loạt c&aacute;c nh&atilde;n hiệu k&iacute;nh nổi tiếng như Ray Ban, Oakley, Oliver Peoples v&agrave; REVO.</p>\r\n	<p class="Normal">\r\n		Luca Biondolillo - đại diện h&atilde;ng cho biết: &quot;70% k&iacute;nh mắt của c&aacute;c h&atilde;ng đều được ch&uacute;ng t&ocirc;i sản xuất tại nh&agrave; m&aacute;y ở Italy, phần c&ograve;n lại l&agrave; Mỹ v&agrave; Trung Quốc. Luxottica kh&ocirc;ng chỉ phụ tr&aacute;ch sản xuất m&agrave; c&ograve;n cả tạo mẫu v&agrave; marketing&quot;. Người n&agrave;y cho biết mỗi nh&agrave; mốt sẽ l&agrave;m việc với đội thiết kế của h&atilde;ng để đưa ra mẫu số chung rồi thỏa thuận cấp ph&eacute;p v&agrave; sản xuất đại tr&agrave; hay giới hạn. Mỗi thỏa thuận cấp ph&eacute;p gi&uacute;p cho thiết kế k&iacute;nh của từng h&atilde;ng được bảo hộ độc quyền trong v&ograve;ng 3-10 năm.</p>\r\n	<p class="Normal">\r\n		Ngo&agrave;i Luxottica, thị trường k&iacute;nh mắt thế giới c&ograve;n bị &quot;thao t&uacute;ng&quot; bởi một &quot;&ocirc;ng lớn&quot; kh&aacute;c l&agrave; Safilo. C&ocirc;ng ty Italy n&agrave;y sản xuất k&iacute;nh cho những h&atilde;ng như Alexander McQueen, A/X Armani Exchange, Balenciaga, Banana Republic, Bottega Veneta, Dior, Emporio Armani, Fossil, Giorgio Armani, Gucci,Yves Saint Laurent, Marc Jacobs... Safilo cũng sở hữu thương hiệu của ri&ecirc;ng m&igrave;nh như Carrera, Polaroid, Smith Optics, Oxydo hay Blue Bay.</p>\r\n	<p class="Normal">\r\n		Theo t&iacute;nh to&aacute;n của c&aacute;c chuy&ecirc;n gia, cứ mỗi một đ&ocirc; la (hơn 20.000 đồng) c&oacute; trong c&aacute;c cặp k&iacute;nh b&aacute;n ra, những c&ocirc;ng ty như Luxottica hay Sofila sẽ thu về khoảng 64 cent (khoảng hơn 12.000 đồng). Cả khi đ&atilde; trừ c&aacute;c khấu hao li&ecirc;n quan đến b&aacute;n h&agrave;ng v&agrave; marketing, số tiền họ kiếm được tr&ecirc;n mỗi sản phẩm vẫn chiếm hơn một nửa gi&aacute; b&aacute;n ra.</p>\r\n	<table align="center" border="0" cellpadding="3" cellspacing="0" class="tplCaption" style="width: 85.034%;">\r\n		<tbody>\r\n			<tr>\r\n				<td>\r\n					<img alt="1-3243-1441597147.jpg" data-pwidth="470.4" data-width="400" src="http://c1.f9.img.vnecdn.net/2015/09/07/1-3243-1441597147.jpg" /></td>\r\n			</tr>\r\n			<tr>\r\n				<td>\r\n					<p class="Image">\r\n						Những mẫu k&iacute;nh h&agrave;ng hiệu v&agrave; b&igrave;nh d&acirc;n tr&ecirc;n thế giới hiện nay hầu hết được sản xuất bởi một số nh&agrave; cung cấp từ Italy. Ảnh:<em> Blogspot.</em></p>\r\n				</td>\r\n			</tr>\r\n		</tbody>\r\n	</table>\r\n	<p class="Normal">\r\n		<span>Đeo k&iacute;nh h&agrave;ng hiệu cũng kh&ocirc;ng tốt hơn cho mắt so với k&iacute;nh b&igrave;nh d&acirc;n bởi khả năng chống tia UV - c&ocirc;ng dụng ch&iacute;nh của k&iacute;nh - l&agrave; như nhau.&nbsp;</span><span>&quot;Một cặp k&iacute;nh 300 USD (hơn 6 triệu đồng) thực chất chẳng kh&aacute;c nhiều so với h&agrave;ng 100 USD (hơn 2 triệu đồng) về khả năng bảo vệ mắt, ngoại trừ việc tr&ocirc;ng ch&uacute;ng đẹp hơn v&agrave; c&oacute; t&ecirc;n thương hiệu nổi tiếng đi k&egrave;m&quot;, Jay Duker - chủ tịch của trung t&acirc;m nh&atilde;n khoa Tufts Medical Center (Mỹ) cho biết. Theo chuy&ecirc;n gia, chỉ cần bỏ ra 40-70 USD, c&aacute;c &quot;thượng đế&quot; đ&atilde; sở hữu được một cặp k&iacute;nh c&oacute; khả năng chống tia cực t&iacute;m (UV) tối đa c&ugrave;ng nhiều lợi &iacute;ch kh&aacute;c.</span></p>\r\n	<p class="Normal">\r\n		Tiến sĩ Reza Dana, Gi&aacute;m đốc phụ tr&aacute;ch mảng phẫu thuật gi&aacute;c mạc v&agrave; c&aacute;c tật kh&uacute;c xạ về mắt ở bệnh viện tai-mắt Massachusetts (Mỹ) khẳng định: &quot;Những cặp mắt k&iacute;nh c&oacute; khả năng chống tia UV sử dụng c&ocirc;ng nghệ kh&ocirc;ng mấy đắt đỏ&quot;.</p>\r\n	<p class="Normal">\r\n		<strong>V&igrave; thế, số tiền đắt đỏ m&agrave; kh&aacute;ch h&agrave;ng phải chi cho c&aacute;c cặp k&iacute;nh hiệu phần nhiều v&igrave; c&aacute;c yếu tố ngo&agrave;i chất lượng</strong>.<strong> </strong></p>\r\n	<p class="Normal">\r\n		Gi&aacute; trị thương hiệu l&agrave; một trong những yếu tố g&acirc;y ảnh hưởng nhất đến gi&aacute; b&aacute;n. Để c&oacute; được lợi nhuận cao, c&aacute;c <a href="http://giaitri.vnexpress.net/tin-tuc/thoi-trang/lang-mot/nha-mot-lon-vung-tien-cho-sao-quang-ba-thuong-hieu-2994204.html">thương hiệu lớn</a> phải chi <a href="http://giaitri.vnexpress.net/tin-tuc/thoi-trang/lang-mot/quang-cao-soc-sex-bai-toan-cau-khach-cua-thoi-trang-hien-dai-3109624.html?commentid=9501581&amp;focus=reply">bộn tiền</a> cho <a href="http://giaitri.vnexpress.net/tin-tuc/thoi-trang/lang-mot/chieu-quang-cao-dua-bong-sao-lon-cua-nha-mot-3030903.html">quảng c&aacute;o</a>. B&ecirc;n cạnh đ&oacute;, họ c&ograve;n phải chịu c&aacute;c khoản ph&iacute; về b&aacute;n h&agrave;ng, quản l&yacute; hay thuế. Việc đẩy gi&aacute; c&aacute;c mặt h&agrave;ng l&ecirc;n cao để đảm bảo được cả hai yếu tố quảng b&aacute; thương hiệu lẫn lợi nhuận l&agrave; điều cần thiết.</p>\r\n	<p class="Normal">\r\n		Will Wister, một chuy&ecirc;n gia đầu tư, cho biết nếu coi số lượng h&agrave;ng h&oacute;a sản xuất kh&ocirc;ng thay đổi, việc mở rộng thiết kế sẽ khiến c&aacute;c nh&agrave; mốt mất nhiều chi ph&iacute; hơn cho lĩnh vực nghi&ecirc;n cứu v&agrave; ph&aacute;t triển. C&aacute;c khoản chi tăng l&ecirc;n cũng đồng nghĩa với việc gi&aacute; b&aacute;n của sản phẩm phải &quot;đội&quot; l&ecirc;n th&igrave; mới đem lại được lợi nhuận về cho người sản xuất.</p>\r\n	<table align="center" border="0" cellpadding="3" cellspacing="0" class="tplCaption" style="width: 92.0493%;">\r\n		<tbody>\r\n			<tr>\r\n				<td>\r\n					<img alt="chopard-6370-1441619936.jpg" data-pwidth="470.4" data-width="433" src="http://c1.f9.img.vnecdn.net/2015/09/07/chopard-6370-1441619936.jpg" /></td>\r\n			</tr>\r\n			<tr>\r\n				<td>\r\n					<p class="Image">\r\n						Phụ kiện h&agrave;ng hiệu vẫn c&oacute; được chỗ đứng trong l&ograve;ng người y&ecirc;u thời trang bởi danh tiếng của thương hiệu. Từ tr&ecirc;n xuống, c&aacute;c mẫu k&iacute;nh gi&aacute; cao &quot;ngất ngưởng&quot; của Cartier Panthere (159.000 USD), Dolce &amp; Gabbana DG2027B (383.000 USD), Chopard (400.000 USD).</p>\r\n				</td>\r\n			</tr>\r\n		</tbody>\r\n	</table>\r\n	<p class="Normal">\r\n		Tuy nhi&ecirc;n, việc kho&aacute;c l&ecirc;n m&igrave;nh m&oacute;n đồ xa xỉ, c&oacute; sẵn danh tiếng vẫn được xem như một c&aacute;ch khẳng định đẳng cấp. Hầu hết thương hiệu lớn đều đăng k&yacute; một thiết kế độc quyền, đồng nghĩa với việc ai sở hữu những cặp k&iacute;nh thời thượng đắt đỏ cũng sẽ l&agrave; người đi đầu về phong c&aacute;ch. Một số nh&agrave; sản xuất c&ograve;n t&igrave;m c&aacute;ch đưa c&aacute;c loại trang sức, đ&aacute; qu&yacute; cũng như vật liệu chống nước, chịu lực, chống sương... để những m&oacute;n phụ kiện th&ecirc;m phần độc đ&aacute;o. <span class="_5yl5"><span>C&aacute;c &ocirc;ng lớn như Chopard (Thụy Sĩ), Dolce &amp; Gabbana (Italy), Shiels Emerald (Australia), Cartier (Ph&aacute;p) đ&atilde; đua nhau tr&igrave;nh l&agrave;ng những mẫu k&iacute;nh xa xỉ, sử dụng c&aacute;c nguy&ecirc;n liệu như v&agrave;ng, v&agrave;ng trắng, kim cương, hồng ngọc... trang tr&iacute;. Mẫu k&iacute;nh Panthere của Cartier trị gi&aacute; 159.000 USD c&oacute; h&agrave;ng trăm vi&ecirc;n kim cương c&ugrave;ng sapphires sắc xanh tạo h&igrave;nh con b&aacute;o dọc hai gọng k&iacute;nh. Hay như mẫu k&iacute;nh đắt gi&aacute; nhất thế giới năm 2014 của thương hiệu Chopard &quot;h&eacute;t&quot; gi&aacute; 400.000 USD bởi phần mắt được phủ 51 vi&ecirc;n kim cương, c&ograve;n gọng d&aacute;t v&agrave;ng nguy&ecirc;n chất 24 cara.</span></span></p>\r\n	<p class="Normal">\r\n		Nếu so s&aacute;nh về gi&aacute; trị sử dụng (khả năng che chắn nắng, bụi), khoảng c&aacute;ch giữa c&aacute;c cặp k&iacute;nh h&agrave;ng hiệu với b&igrave;nh d&acirc;n kh&ocirc;ng lớn. Nhưng x&eacute;t về mặt thẩm mỹ v&agrave; s&aacute;ng tạo, những m&oacute;n phụ kiện ph&ugrave; phiếm vẫn vượt trội hơn nhiều so với c&aacute;c đối thủ gi&aacute; rẻ. Bởi vậy, c&acirc;u trả lời cho thắc mắc &quot;k&iacute;nh h&agrave;ng hiệu c&oacute; đ&aacute;ng tiền kh&ocirc;ng?&quot; ph&ugrave; thuộc phần nhiều v&agrave;o khả năng kinh tế cũng như quan niệm về c&aacute;n c&acirc;n thẩm mỹ - t&uacute;i tiền của từng người.</p>\r\n	<table border="1" cellpadding="1" cellspacing="0">\r\n		<tbody>\r\n			<tr>\r\n				<td style="background-color: rgb(255, 255, 204);">\r\n					<p class="Normal" style="text-align:center;">\r\n						<strong>Lưu &yacute; khi sử dụng&nbsp;k&iacute;nh</strong></p>\r\n					<p class="Normal">\r\n						1. Kh&ocirc;ng đeo k&iacute;nh trong nh&agrave; hoặc v&agrave;o buổi tối.</p>\r\n					<p class="Normal">\r\n						2. Chọn k&iacute;ch thước ph&ugrave; hợp với khu&ocirc;n mặt v&agrave; phong c&aacute;ch.</p>\r\n					<p class="Normal">\r\n						3. Lu&ocirc;n đảm bảo mắt k&iacute;nh kh&ocirc;ng bị mờ.</p>\r\n					<p class="Normal">\r\n						4.&nbsp;<span>Kh&ocirc;ng n&ecirc;n đeo k&iacute;nh mắt gương khi n&oacute;i chuyện với người kh&aacute;c bởi n&oacute; khiến người đối diện bị bối rối v&igrave; chỉ thấy b&oacute;ng m&igrave;nh trước mặt.</span></p>\r\n					<p class="Normal">\r\n						5. Kh&ocirc;ng n&ecirc;n g&agrave;i k&iacute;nh l&ecirc;n đỉnh đầu. N&oacute; chỉ ph&ugrave; hợp khi bạn kh&ocirc;ng c&oacute; t&uacute;i &aacute;o để cất k&iacute;nh.</p>\r\n					<p class="Normal">\r\n						6. Kh&ocirc;ng vứt k&iacute;nh nếu kh&ocirc;ng bị hỏng. Thời trang lu&ocirc;n tuần ho&agrave;n n&ecirc;n phụ kiện kh&ocirc;ng c&ograve;n hợp mốt sẽ c&oacute; thể trở lại th&agrave;nh xu hướng v&agrave;o những năm sau.</p>\r\n				</td>\r\n			</tr>\r\n		</tbody>\r\n	</table>\r\n</div>\r\n<p>\r\n	&nbsp;</p>\r\n', 31, 0, 'http://c1.f9.img.vnecdn.net/2015/09/07/1-3243-1441597147.jpg', 0, '2015-09-07 22:45:32', 28, 0, 'Kính hàng hiệu có chất lượng thế nào so với đồ bình dân', 'Những cặp kính giá vài chục tới vài trăm triệu đồng thực chất được sản xuất cùng một lò với hàng bình dân, khả năng chống tia UV không vượt trội hơn là bao', '2015-09-07 22:45:32', '2015-10-28 08:14:26', 1, 0, 'http://giaitri.vnexpress.net/tin-tuc/thoi-trang/lang-mot/kinh-hang-hieu-co-chat-luong-the-nao-so-voi-do-binh-dan-3275162.html'),
-(11, '100 năm phát triển nội y được tái hiện trong video 3 phút', '100-nam-phat-trien-noi-y-duoc-tai-hien-trong-video-3-phut', 'Trong video do trang Mode thực hiện, người xem có thể thấy rõ sự biến đổi về kiểu dáng và chất liệu của nội y dành cho phụ nữ qua từng thập kỷ.', '<p class="Normal" style="margin: 0px 0px 1em; padding: 0px; line-height: 18px; text-rendering: geometricPrecision; font-family: arial; font-size: 14px;">\r\n	<span style="margin: 0px; padding: 0px;">Video d&agrave;i gần ba ph&uacute;t, trong đ&oacute; c&aacute;c người mẫu lần lượt thể hiện từng mẫu nội y đặc trưng qua c&aacute;c giai đoạn từ năm 1915 đến nay.</span></p>\r\n<p class="Normal" style="margin: 0px 0px 1em; padding: 0px; line-height: 18px; text-rendering: geometricPrecision; font-family: arial; font-size: 14px;">\r\n	<span style="margin: 0px; padding: 0px;">Thập ni&ecirc;n 1910, nội y d&agrave;nh cho nữ giới đơn giản l&agrave; chiếc &aacute;o liền th&acirc;n tối giản. Năm 1925, v&aacute;y ngủ hai d&acirc;y (slipdress) mỏng manh so&aacute;n ng&ocirc;i. Ch&uacute;ng được l&agrave;m từ nhiều chất liệu như&nbsp;</span><span style="margin: 0px; padding: 0px;">lụa, mousseline.</span><span style="margin: 0px; padding: 0px;">&nbsp;L&uacute;c n&agrave;y, c&aacute;c c&ocirc; g&aacute;i c&oacute; th&ecirc;m &aacute;o kho&aacute;c nhẹ b&ecirc;n ngo&agrave;i.&nbsp;</span><span style="margin: 0px; padding: 0px;">Trong những năm 1930, phụ nữ bắt đầu diện kiểu &aacute;o l&oacute;t c&uacute;p ngực, mặc k&egrave;m quần short rộng v&agrave; mỏng.</span></p>\r\n<table align="center" border="1" cellpadding="1" cellspacing="0" class="tbl_insert" style="margin: 0px auto 10px; padding: 0px; max-width: 100%; font-family: arial; font-size: 14px; line-height: normal; width: 468px;">\r\n	<tbody style="margin: 0px; padding: 0px;">\r\n		<tr style="margin: 0px; padding: 0px;">\r\n			<td style="margin: 0px; padding: 2px;">\r\n				<div style="margin: 0px; padding: 0px; text-align: center;">\r\n					<div class="embed-container" style="margin: 0px 0px 1em; padding: 0px 0px 259.875px; position: relative; height: 0px; overflow: hidden;">\r\n						 </div>\r\n				</div>\r\n			</td>\r\n		</tr>\r\n		<tr style="margin: 0px; padding: 0px;">\r\n			<td style="margin: 0px; padding: 2px;">\r\n				&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<p class="Normal" style="margin: 0px 0px 1em; padding: 0px; line-height: 18px; text-rendering: geometricPrecision; font-family: arial; font-size: 14px;">\r\n	<span style="margin: 0px; padding: 0px;">Năm 1945, &aacute;o&nbsp;</span><span style="margin: 0px; padding: 0px;">ngực c&oacute; m&uacute;t l&oacute;t ra đời với phom d&aacute;ng liền th&acirc;n như một chiếc v&aacute;y ống ngắn b&oacute; s&aacute;t cơ thể, phần ngực cắt c&uacute;p &ocirc;m trọn v&ograve;ng một. 10 năm sau, b&ecirc;n cạnh chiếc &aacute;o ngực hai d&acirc;y, nữ giới được l&agrave;m quen với &aacute;o ngủ rộng v&agrave; ngắn theo kiểu babydoll. L&uacute;c n&agrave;y, quần l&oacute;t được may b&oacute; cơ thể hơn với d&aacute;ng quần short xếp b&egrave;o nh&uacute;n. Năm 1965 đ&aacute;nh dấu một bước ngoặt lớn khi&nbsp;</span><span style="margin: 0px; padding: 0px;">đồ l&oacute;t cả &aacute;o lẫn quần được l&agrave;m b&oacute; s&aacute;t cơ thể, t&ocirc;n l&ecirc;n bầu ngực, cắt c&uacute;p nhỏ gọn, tinh tế hơn. Năm 1975, v&aacute;y ngủ hai d&acirc;y tiếp tục trỗi dậy với phi&ecirc;n bản d&agrave;i bằng lụa, &ocirc;m d&aacute;ng hơn so với thời kỳ 1925.</span></p>\r\n<p class="Normal" style="margin: 0px 0px 1em; padding: 0px; line-height: 18px; text-rendering: geometricPrecision; font-family: arial; font-size: 14px;">\r\n	Từ năm 1985 đến nay, c&aacute;c d&aacute;ng &aacute;o corset đầy khi&ecirc;u kh&iacute;ch ph&aacute;t triển như vũ b&atilde;o. C&aacute;c nh&agrave; thiết kế ng&agrave;y c&agrave;ng đơn giản h&oacute;a nội y, sử dụng đa chất liệu hơn, kiểu d&aacute;ng tinh tế v&agrave; phong ph&uacute;, đem lại nhiều lựa chọn cho nữ giới.</p>\r\n', 30, 0, 'http://c1.img.video.giaitri.vnecdn.net/web/2015/09/07/hanh-trinh-100-nam-bien-doi-cua-do-lot-1441614622_490x294.jpg', 0, '2015-09-07 23:05:49', 28, 0, 'Trong video do trang Mode thực hiện, người xem có thể thấy rõ sự biến đổi về kiểu dáng và chất liệu của nội y dành cho phụ nữ qua từng thập kỷ.', 'Trong video do trang Mode thực hiện, người xem có thể thấy rõ sự biến đổi về kiểu dáng và chất liệu của nội y dành cho phụ nữ qua từng thập kỷ.', '2015-09-07 23:05:49', '2015-10-29 09:39:46', 1, 0, 'http://giaitri.vnexpress.net/tin-tuc/thoi-trang/lang-mot/100-nam-phat-trien-noi-y-duoc-tai-hien-trong-video-3-phut-3275574.html'),
+(11, '100 năm phát triển nội y được tái hiện trong video 3 phút', '100-nam-phat-trien-noi-y-duoc-tai-hien-trong-video-3-phut', 'Trong video do trang Mode thực hiện, người xem có thể thấy rõ sự biến đổi về kiểu dáng và chất liệu của nội y dành cho phụ nữ qua từng thập kỷ.', '<p class="Normal" style="margin: 0px 0px 1em; padding: 0px; line-height: 18px; text-rendering: geometricPrecision; font-family: arial; font-size: 14px;">\r\n	<span style="margin: 0px; padding: 0px;">Video d&agrave;i gần ba ph&uacute;t, trong đ&oacute; c&aacute;c người mẫu lần lượt thể hiện từng mẫu nội y đặc trưng qua c&aacute;c giai đoạn từ năm 1915 đến nay.</span></p>\r\n<p class="Normal" style="margin: 0px 0px 1em; padding: 0px; line-height: 18px; text-rendering: geometricPrecision; font-family: arial; font-size: 14px;">\r\n	<span style="margin: 0px; padding: 0px;">Thập ni&ecirc;n 1910, nội y d&agrave;nh cho nữ giới đơn giản l&agrave; chiếc &aacute;o liền th&acirc;n tối giản. Năm 1925, v&aacute;y ngủ hai d&acirc;y (slipdress) mỏng manh so&aacute;n ng&ocirc;i. Ch&uacute;ng được l&agrave;m từ nhiều chất liệu như&nbsp;</span><span style="margin: 0px; padding: 0px;">lụa, mousseline.</span><span style="margin: 0px; padding: 0px;">&nbsp;L&uacute;c n&agrave;y, c&aacute;c c&ocirc; g&aacute;i c&oacute; th&ecirc;m &aacute;o kho&aacute;c nhẹ b&ecirc;n ngo&agrave;i.&nbsp;</span><span style="margin: 0px; padding: 0px;">Trong những năm 1930, phụ nữ bắt đầu diện kiểu &aacute;o l&oacute;t c&uacute;p ngực, mặc k&egrave;m quần short rộng v&agrave; mỏng.</span></p>\r\n<table align="center" border="1" cellpadding="1" cellspacing="0" class="tbl_insert" style="margin: 0px auto 10px; padding: 0px; max-width: 100%; font-family: arial; font-size: 14px; line-height: normal; width: 468px;">\r\n	<tbody style="margin: 0px; padding: 0px;">\r\n		<tr style="margin: 0px; padding: 0px;">\r\n			<td style="margin: 0px; padding: 2px;">\r\n				<div style="margin: 0px; padding: 0px; text-align: center;">\r\n					<div class="embed-container" style="margin: 0px 0px 1em; padding: 0px 0px 259.875px; position: relative; height: 0px; overflow: hidden;">\r\n						 </div>\r\n				</div>\r\n			</td>\r\n		</tr>\r\n		<tr style="margin: 0px; padding: 0px;">\r\n			<td style="margin: 0px; padding: 2px;">\r\n				&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<p class="Normal" style="margin: 0px 0px 1em; padding: 0px; line-height: 18px; text-rendering: geometricPrecision; font-family: arial; font-size: 14px;">\r\n	<span style="margin: 0px; padding: 0px;">Năm 1945, &aacute;o&nbsp;</span><span style="margin: 0px; padding: 0px;">ngực c&oacute; m&uacute;t l&oacute;t ra đời với phom d&aacute;ng liền th&acirc;n như một chiếc v&aacute;y ống ngắn b&oacute; s&aacute;t cơ thể, phần ngực cắt c&uacute;p &ocirc;m trọn v&ograve;ng một. 10 năm sau, b&ecirc;n cạnh chiếc &aacute;o ngực hai d&acirc;y, nữ giới được l&agrave;m quen với &aacute;o ngủ rộng v&agrave; ngắn theo kiểu babydoll. L&uacute;c n&agrave;y, quần l&oacute;t được may b&oacute; cơ thể hơn với d&aacute;ng quần short xếp b&egrave;o nh&uacute;n. Năm 1965 đ&aacute;nh dấu một bước ngoặt lớn khi&nbsp;</span><span style="margin: 0px; padding: 0px;">đồ l&oacute;t cả &aacute;o lẫn quần được l&agrave;m b&oacute; s&aacute;t cơ thể, t&ocirc;n l&ecirc;n bầu ngực, cắt c&uacute;p nhỏ gọn, tinh tế hơn. Năm 1975, v&aacute;y ngủ hai d&acirc;y tiếp tục trỗi dậy với phi&ecirc;n bản d&agrave;i bằng lụa, &ocirc;m d&aacute;ng hơn so với thời kỳ 1925.</span></p>\r\n<p class="Normal" style="margin: 0px 0px 1em; padding: 0px; line-height: 18px; text-rendering: geometricPrecision; font-family: arial; font-size: 14px;">\r\n	Từ năm 1985 đến nay, c&aacute;c d&aacute;ng &aacute;o corset đầy khi&ecirc;u kh&iacute;ch ph&aacute;t triển như vũ b&atilde;o. C&aacute;c nh&agrave; thiết kế ng&agrave;y c&agrave;ng đơn giản h&oacute;a nội y, sử dụng đa chất liệu hơn, kiểu d&aacute;ng tinh tế v&agrave; phong ph&uacute;, đem lại nhiều lựa chọn cho nữ giới.</p>\r\n', 30, 0, 'http://c1.img.video.giaitri.vnecdn.net/web/2015/09/07/hanh-trinh-100-nam-bien-doi-cua-do-lot-1441614622_490x294.jpg', 0, '2015-09-07 23:05:49', 28, 0, 'Trong video do trang Mode thực hiện, người xem có thể thấy rõ sự biến đổi về kiểu dáng và chất liệu của nội y dành cho phụ nữ qua từng thập kỷ.', 'Trong video do trang Mode thực hiện, người xem có thể thấy rõ sự biến đổi về kiểu dáng và chất liệu của nội y dành cho phụ nữ qua từng thập kỷ.', '2015-09-07 23:05:49', '2015-12-07 10:24:51', 1, 0, 'http://giaitri.vnexpress.net/tin-tuc/thoi-trang/lang-mot/100-nam-phat-trien-noi-y-duoc-tai-hien-trong-video-3-phut-3275574.html'),
 (13, ' Quốc hội thông qua tăng 5% lương cơ sở từ 1/5/2016', 'quoc-hoi-thong-qua-tang-5-luong-co-so-tu-1-5-2016', 'Sáng nay (11/11), Quốc hội đã biểu quyết thông qua Nghị quyết về dự toán ngân sách Nhà nước (NSNN) năm 2016. Theo đó, từ ngày 1/5/2016 điều chỉnh tăng mức lương cơ sở từ 1,15 triệu đồng/tháng lên 1,21 triệu đồng/tháng (tăng khoảng 5%) đối với cán bộ, công', '<p>\r\n	<strong>Bội chi Ng&acirc;n s&aacute;ch Nh&agrave; nước năm 2016 ở mức 254.000 tỷ đồng</strong></p>\r\n<p>\r\n	S&aacute;ng 11/11, Quốc hội đ&atilde; biểu quyết th&ocirc;ng qua Nghị quyết về dự to&aacute;n ng&acirc;n s&aacute;ch Nh&agrave; nước (NSNN) năm 2016 với tỉ lệ 79,35% &yacute; kiến t&aacute;n th&agrave;nh.</p>\r\n<div class="VCSortableInPreviewMode" style="display:inline-block;width:100%; text-align:center;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;" type="Photo">\r\n	<div>\r\n		<img alt="" id="img_120483" rel="https://dantri4.vcmedia.vn/534992cb49/2015/11/02/qh-tinh-hinh-t-1446432411366.JPG" src="https://dantri4.vcmedia.vn/k:534992cb49/2015/11/02/qh-tinh-hinh-t-1446432411366/quoc-hoi-thong-qua-tang-5-luong-co-so-tu-152016.JPG" style="max-width:100%;" type="photo" /></div>\r\n</div>\r\n<p>\r\n	Theo đ&oacute;, Quốc hội đ&atilde; th&ocirc;ng qua&nbsp;mục ti&ecirc;u tổng số thu c&acirc;n đối NSNN l&agrave; 1.014.500 tỷ đồng. Nếu t&iacute;nh cả 4.700 tỷ đồng thu chuyển nguồn ng&acirc;n s&aacute;ch địa phương từ năm 2015 sang năm 2016 th&igrave; tổng số thu NSNN l&agrave; 1.019.200 tỷ đồng.</p>\r\n<p>\r\n	Tổng số chi c&acirc;n đối ng&acirc;n s&aacute;ch nh&agrave; nước l&agrave; 1.273.200 tỷ đồng. Mức bội chi NSNN l&agrave; 254.000 tỷ đồng, tương đương 4,95% tổng sản phẩm trong nước (GDP).</p>\r\n<p>\r\n	Quốc hội nhất tr&iacute; giao Ch&iacute;nh phủ thực hiện điều chỉnh tiền lương đối với người c&oacute; mức lương hưu, trợ cấp mất sức lao động dưới 2 triệu đồng/th&aacute;ng v&agrave; trợ cấp đối với gi&aacute;o vi&ecirc;n mầm non c&oacute; thời gian c&ocirc;ng t&aacute;c trước năm 1995 để lương hưu của c&aacute;c đối tượng n&agrave;y đạt mức lương cơ sở, thời điểm thực hiện từ ng&agrave;y 1/1/2016.</p>\r\n<p>\r\n	Từ ng&agrave;y 1/1-30/4/2016, tiếp tục thực hiện mức điều chỉnh đối với c&aacute;c đối tượng như quy định tại&nbsp; Nghị quyết số 78/2014/QH13 ng&agrave;y 10/11/2014 của Quốc hội.</p>\r\n<p>\r\n	Từ ng&agrave;y 1/5/2016, thực hiện điều chỉnh tăng mức lương cơ sở từ 1,15 triệu đồng/th&aacute;ng l&ecirc;n 1,21 triệu đồng/th&aacute;ng (tăng khoảng 5%) đối với c&aacute;n bộ, c&ocirc;ng chức, vi&ecirc;n chức, lực lượng vũ trang, bảo đảm thu nhập của đối tượng c&oacute; hệ số lương từ 2,34 trở xuống kh&ocirc;ng giảm so với mức đang hưởng.</p>\r\n<p>\r\n	Ri&ecirc;ng lương hưu, trợ cấp ưu đ&atilde;i người c&oacute; c&ocirc;ng, tiếp tục giữ mức tăng 8% như thực hiện năm 2015.</p>\r\n<p>\r\n	Giao c&aacute;c bộ, ng&agrave;nh, địa phương tr&ecirc;n cơ sở dự to&aacute;n ng&acirc;n s&aacute;ch nh&agrave; nước được giao tự c&acirc;n đối để bố tr&iacute; nguồn tăng lương. Ng&acirc;n s&aacute;ch trung ương hỗ trợ một phần tiền lương tăng th&ecirc;m cho một số địa phương ngh&egrave;o, ng&acirc;n s&aacute;ch kh&oacute; khăn theo quy định của Ch&iacute;nh phủ.</p>\r\n<p>\r\n	<strong>Th&ocirc;ng qua ph&aacute;t h&agrave;nh 3 tỷ USD tr&aacute;i phiếu Ch&iacute;nh phủ ra thị trường quốc tế</strong></p>\r\n<p>\r\n	Quốc hội cũng đồng &yacute; sử dụng 40.000 tỷ đồng tiền b&aacute;n cổ phần sở hữu của Nh&agrave; nước tại một số doanh nghiệp để đầu tư ph&aacute;t triển. Trường hợp ng&acirc;n s&aacute;ch trung ương năm 2015 bị hụt thu, cho ph&eacute;p sử dụng kh&ocirc;ng qu&aacute; 10.000 tỷ đồng tiền b&aacute;n cổ phần sở hữu của nh&agrave; nước nhưng chỉ để c&acirc;n đối, đ&aacute;p ứng nhiệm vụ chi đầu tư ph&aacute;t triển. C&aacute;c đại biểu cũng t&aacute;n th&agrave;nh việc sử dụng 30.000 tỷ đồng đưa v&agrave;o dự to&aacute;n ng&acirc;n s&aacute;ch nh&agrave; nước năm 2016 để tăng chi đầu tư ph&aacute;t triển.</p>\r\n<p>\r\n	B&ecirc;n cạnh đ&oacute;, c&aacute;c đại biểu cũng t&aacute;n th&agrave;nh thực hiện đa dạng h&oacute;a kỳ hạn tr&aacute;i phiếu Ch&iacute;nh phủ ph&aacute;t h&agrave;nh trong năm 2015 v&agrave; năm 2016, trong đ&oacute;, chỉ ph&aacute;t h&agrave;nh tr&aacute;i phiếu Ch&iacute;nh phủ c&oacute; thời hạn từ 3 năm đến dưới 5 năm với tỷ lệ kh&ocirc;ng qu&aacute; 30% tổng khối lượng tr&aacute;i phiếu Ch&iacute;nh phủ ph&aacute;t h&agrave;nh, 70% đảm bảo từ 5 năm trở l&ecirc;n.</p>\r\n<p>\r\n	Quốc hội cũng đồng &yacute; giao Ch&iacute;nh phủ thực hiện việc ph&aacute;t h&agrave;nh tr&aacute;i phiếu Ch&iacute;nh phủ ra thị trường vốn quốc tế để cơ cấu lại nợ trong nước của Ch&iacute;nh phủ, tr&ecirc;n cơ sở so s&aacute;nh, ph&acirc;n t&iacute;ch, đảm bảo c&oacute; lợi cho quốc gia v&agrave; chỉ thực hiện trong năm 2015 v&agrave; năm 2016, với tổng mức ph&aacute;t h&agrave;nh tối đa l&agrave; 3 tỷ USD.</p>\r\n<p>\r\n	Đồng thời, Quộc hội cũng đồng &yacute; giao Ch&iacute;nh phủ r&agrave; so&aacute;t quy m&ocirc;, thiết kế, hiệu quả v&agrave; ph&acirc;n bổ 14.259 tỷ đồng vốn tr&aacute;i phiếu Ch&iacute;nh phủ c&ograve;n dư của c&aacute;c dự &aacute;n cải tạo, n&acirc;ng cấp Quốc lộ 1A v&agrave; đường Hồ Ch&iacute; Minh đoạn qua T&acirc;y Nguy&ecirc;n để đầu tư cho một số dự &aacute;n cụ thể.</p>\r\n<p>\r\n	Trường hợp sau khi r&agrave; so&aacute;t, ph&acirc;n bổ, ngo&agrave;i số vốn dư n&ecirc;u tr&ecirc;n, nếu vẫn tiếp tục c&ograve;n dư, giao Ch&iacute;nh phủ ph&acirc;n bổ cho c&aacute;c dự &aacute;n li&ecirc;n quan đến đầu tư x&acirc;y dựng 2 tuyến đường n&agrave;y theo đ&uacute;ng quy định của ph&aacute;p luật.</p>\r\n<p style="text-align: right;">\r\n	<strong>B&iacute;ch Diệp</strong></p>\r\n', 33, 0, 'https://dantri4.vcmedia.vn/k:534992cb49/2015/11/02/qh-tinh-hinh-t-1446432411366/quoc-hoi-thong-qua-tang-5-luong-co-so-tu-152016.JPG', 0, '0000-00-00 00:00:00', 28, 0, '', '', '2015-11-11 10:06:26', '2015-11-11 10:06:26', 1, 0, ''),
 (14, 'asd', 'asd', 'dasd', '<p>\r\n	dasd</p>\r\n', 29, 0, '', 0, '0000-00-00 00:00:00', 28, 28, '', '', '2015-11-18 10:00:43', '2015-11-18 10:00:43', 0, 0, '');
 
@@ -525,7 +525,7 @@ CREATE TABLE IF NOT EXISTS `tbl_categories` (
 INSERT INTO `tbl_categories` (`id`, `title`, `alias`, `scope`, `created_by`, `modified_by`, `cdate`, `mdate`, `ordering`, `lft`, `rgt`, `type`, `description`, `metakey`, `metadesc`, `showpath`, `status`, `feature`, `link_original`, `redirect`) VALUES
 (31, 'Tin tức-Làm đẹp', 'tin-tuc-lam-dep', 'article', 0, 0, '2015-08-26 08:14:25', '2015-10-21 21:15:15', 0, 0, 0, 0, 'Tin tức-Làm đẹp', 'Tin tức-Làm đẹp', 'Tin tức-Làm đẹp', 0, 1, 1, '', 0),
 (30, 'Tin tức-Sao việt', 'tin-tuc-sao-viet', 'article', 0, 0, '2015-08-26 08:14:12', '2015-10-21 21:15:30', 0, 0, 0, 0, 'Tin tức-Sao việt', 'Tin tức-Sao việt', 'Tin tức-Sao việt', 0, 1, 1, '', 0),
-(29, 'Vui nhộn', 'vui-nhon', 'videos', 0, 0, '2015-08-25 03:54:49', '2015-10-29 09:38:08', 0, 0, 0, 1, 'Vui nhộn', 'Vui nhộn', 'Vui nhộn', 0, 1, 1, '', 0),
+(29, 'Vui nhộn', 'vui-nhon', 'videos', 0, 0, '2015-08-25 03:54:49', '2015-12-07 10:23:52', 0, 0, 0, 1, 'Vui nhộn', 'Vui nhộn', 'Vui nhộn', 0, 1, 1, '', 0),
 (28, 'Phim Con Heo', 'phim-con-heo', 'videos', 0, 0, '2015-08-25 03:54:21', '2015-08-25 03:54:21', 0, 0, 0, 1, 'Phim con heo', 'Phim con heo', 'Phim con heo', 0, 1, 0, '', 0),
 (27, 'Hài Hước', 'hai-huoc', 'videos', 0, 0, '2015-08-25 03:51:41', '2015-08-25 03:51:41', 0, 0, 0, 1, 'ádasd', 'ádas', 'ádasdas', 0, 1, 0, '', 0),
 (32, 'Thể Thao', 'the-thao', 'videos', 0, 0, '2015-08-27 11:16:04', '2015-10-21 21:15:40', 0, 0, 0, 1, 'thể thao', '', '', 0, 1, 1, '', 0),
@@ -551,25 +551,27 @@ CREATE TABLE IF NOT EXISTS `tbl_extensions` (
   `folder` varchar(128) NOT NULL,
   `client` varchar(32) NOT NULL COMMENT 'site, backend',
   `status` smallint(6) NOT NULL,
+  `allowall` tinyint(4) NOT NULL COMMENT 'cho phep tat ca acc truy cap hay khong',
   `params` text NOT NULL,
   `cdate` datetime NOT NULL,
   `mdate` datetime NOT NULL,
-  `required` tinyint(4) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `tbl_extensions`
 --
 
-INSERT INTO `tbl_extensions` (`id`, `title`, `name`, `alias`, `author`, `version`, `description`, `creationDate`, `ordering`, `type`, `folder`, `client`, `status`, `params`, `cdate`, `mdate`, `required`) VALUES
-(1, 'Article', 'article', 'article', 'ducdm87', '1.0', 'bai viet', '', 4, 'app', 'article', '', 1, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1),
-(2, 'Banner', 'banner', 'banner', 'ducdm87', '', 'banner', '', 2, 'app', 'banner', '', 1, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1),
-(3, 'tophits', 'tophits', '', 'BHmedia group php', '', 'Top hits article', 'July 2006', 1, 'module', 'tophits', 'site', 1, '{"param":{"attr":{"title":{"0":"advance"},"path":{"0":"extensions\\/modules\\/tophits\\/element"}},"field":[{"@attributes":{"type":"text","name":"","default":"","label":"","description":""}},{"@attributes":{"type":"textarea","name":"","default":"","label":"","description":"","cols":"10","rows":"10"}},{"@attributes":{"type":"radio","name":"","default":"","label":"","description":""},"option":["On","Off"]},{"@attributes":{"type":"select","name":"layout","default":"","label":"","description":""},"option":["tin moi","tin noi bat"]},{"@attributes":{"type":"category","name":"catID","label":"","description":"","scope":"","parent":"","maxlevel":"2"}},{"@attributes":{"type":"date","name":"date","label":"","description":""}}]}}', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
-(4, 'main menu', 'mainmenu', 'main-menu', 'ducdm87', '1.0', '', 'January 1', 0, 'module', 'mainmenu', '1', 1, '{"menutype":"1","menu_style":"horiz_flat","showAllChildren":"1","moduleclass_sfx":"sdf -aasd","header":"as","footer":"dsa","cache":"1","cache_time":"600"}', '2015-10-02 10:37:49', '2015-10-16 04:59:40', 1),
-(5, 'Home Page', 'homepage', 'home-page', 'ducdm87', '1.0', '', '', 1, 'app', 'homepage', '', 1, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1),
-(6, 'Videos', 'videos', 'videos', 'ducdm87', '1.0', '', '', 5, 'app', 'videos', '', 1, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1),
-(7, 'Users', 'users', 'users', 'ducdm87', '1.0', '', '', 3, 'app', 'users', '', 0, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1);
+INSERT INTO `tbl_extensions` (`id`, `title`, `name`, `alias`, `author`, `version`, `description`, `creationDate`, `ordering`, `type`, `folder`, `client`, `status`, `allowall`, `params`, `cdate`, `mdate`) VALUES
+(1, 'Article', 'article', 'article', 'ducdm87', '1.0', 'bai viet', '', 4, 'app', 'article', '', 1, 1, '', '0000-00-00 00:00:00', '2015-12-07 11:24:55'),
+(2, 'Banner', 'banner', 'banner', 'ducdm87', '', 'banner', '', 2, 'app', 'banner', '', 1, 0, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(3, 'tophit', 'tophit', '', 'BHmedia group php', '', 'Top hits article', 'July 2006', 1, 'module', 'tophit', 'site', 1, 0, '{"param":{"attr":{"title":{"0":"advance"},"path":{"0":"extensions\\/modules\\/tophits\\/element"}},"field":[{"@attributes":{"type":"text","name":"","default":"","label":"","description":""}},{"@attributes":{"type":"textarea","name":"","default":"","label":"","description":"","cols":"10","rows":"10"}},{"@attributes":{"type":"radio","name":"","default":"","label":"","description":""},"option":["On","Off"]},{"@attributes":{"type":"select","name":"layout","default":"","label":"","description":""},"option":["tin moi","tin noi bat"]},{"@attributes":{"type":"category","name":"catID","label":"","description":"","scope":"","parent":"","maxlevel":"2"}},{"@attributes":{"type":"date","name":"date","label":"","description":""}}]}}', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(4, 'main menu', 'mainmenu', 'main-menu', 'ducdm87', '1.0', '', 'January 1', 0, 'module', 'mainmenu', '1', 1, 1, '{"menutype":"1","menu_style":"horiz_flat","showAllChildren":"1","moduleclass_sfx":"sdf -aasd","header":"as","footer":"dsa","cache":"1","cache_time":"600"}', '2015-10-02 10:37:49', '2015-12-07 11:17:29'),
+(5, 'Home Page', 'homepage', 'home-page', 'ducdm87', '1.0', '', '', 1, 'app', 'homepage', '', 1, 1, '', '0000-00-00 00:00:00', '2015-12-07 11:17:41'),
+(6, 'Video', 'video', 'video', 'ducdm87', '1.0', '', '', 5, 'app', 'video', '', 1, 1, '', '0000-00-00 00:00:00', '2015-12-07 11:12:38'),
+(7, 'User', 'user', 'user', 'ducdm87', '1.0', '', '', 3, 'app', 'user', '', 0, 0, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(8, 'Module manager', 'module', 'module', '', '', '', '', 0, 'app', 'module', '', 0, 1, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(11, 'Cpanel', 'cpanel', 'cpanel', '', '', '', '', 0, 'app', 'cpanel', '', 1, 1, '', '0000-00-00 00:00:00', '2015-12-07 13:47:12');
 
 -- --------------------------------------------------------
 
@@ -722,18 +724,18 @@ CREATE TABLE IF NOT EXISTS `tbl_menu_item` (
 
 INSERT INTO `tbl_menu_item` (`id`, `title`, `alias`, `menuID`, `parentID`, `lft`, `rgt`, `type`, `default`, `link`, `app`, `action`, `level`, `ordering`, `status`, `cdate`, `mdate`, `params`) VALUES
 (1, 'menu_root', 'root', 0, 0, 0, 67, 'app', 0, '', '', '', 0, 0, 0, '0000-00-00 00:00:00', '2015-08-17 10:15:59', ''),
-(24, 'Tin tức-Làm đẹp', 'tin-tuc-lam-dep', 1, 17, 8, 9, 'app', 0, '/index.php?app=article&view=category&layout=blog&id=31', 'article', '', 2, 24, 1, '0000-00-00 00:00:00', '2015-11-27 08:33:35', '{"id":"31","app":"article","view":"category","layout":"blog"}'),
-(17, 'Tin tức', 'tin-tuc', 1, 1, 5, 42, 'app', 0, '/index.php?app=article', 'article', '', 1, 17, 1, '0000-00-00 00:00:00', '2015-11-27 08:35:37', '{"app":"article","view":"home"}'),
-(19, 'Hài hước', 'hai-huoc', 1, 1, 49, 50, 'app', 0, '/index.php?app=videos&view=category&layout=blog&id=27', 'videos', '', 1, 19, 1, '0000-00-00 00:00:00', '2015-11-27 08:35:09', '{"id":"27","app":"videos","view":"category","layout":"blog"}'),
-(25, 'Tin tức - sao việt', 'tin-tuc-sao-viet', 1, 17, 10, 27, 'app', 0, '/index.php?app=article&view=category&layout=blog&id=30', 'article', '', 2, 25, 1, '0000-00-00 00:00:00', '2015-11-27 08:33:59', '{"id":"30","app":"article","view":"category","layout":"blog"}'),
-(32, 'Trang chủ', 'trang-chu', 1, 1, 3, 30, 'app', 1, '/index.php?app=homepage', 'homepage', 'display', 1, 32, 1, '0000-00-00 00:00:00', '2015-11-12 09:37:46', '{"id":"","Menutype":"3","limit":"","col":"","app":"homepage","view":"home","layout":""}'),
-(40, 'videos', 'videos', 6, 1, 53, 54, 'app', 0, '/index.php?app=videos', 'videos', '', 1, 0, 1, '2015-11-13 03:50:01', '2015-11-13 03:50:01', '{"id":"","limit":"","col":"","app":"videos","view":"home","layout":""}'),
-(41, 'Đăng ký', 'dang-ky', 3, 1, 55, 56, 'app', 0, '/index.php?app=users&layout=register', 'users', '', 1, 41, 1, '2015-11-17 08:51:05', '2015-11-27 03:31:35', '{"app":"users","view":"home","layout":"register"}'),
-(42, 'Đăng nhập', 'dang-nhap', 3, 1, 57, 58, 'app', 0, '/index.php?app=users&layout=login', 'users', '', 1, 42, 1, '2015-11-17 08:56:26', '2015-11-25 04:45:51', '{"app":"users","view":"home","layout":"login"}'),
-(43, 'Hồ sơ cá nhân', 'ho-so-ca-nhan', 3, 1, 59, 60, 'app', 0, '/index.php?app=users', 'users', '', 1, 43, 1, '2015-11-25 04:52:21', '2015-11-27 07:45:54', '{"app":"users"}'),
-(44, 'Thoát', 'thoat', 3, 1, 61, 62, 'app', 0, '/index.php?app=users&layout=logout', 'users', '', 1, 0, 1, '2015-11-25 06:00:26', '2015-11-25 06:02:13', '{"app":"users","view":"home","layout":"logout"}'),
-(45, 'Thay đổi thông tin', 'thay-doi-thong-tin', 3, 1, 63, 64, 'app', 0, '/index.php?app=users&layout=changeinfo', 'users', '', 1, 0, 1, '2015-11-25 10:30:34', '2015-11-25 10:30:34', '{"app":"users","view":"home","layout":"changeinfo"}'),
-(46, 'Thay đổi mật khẩu', 'thay-doi-mat-khau', 3, 1, 65, 66, 'app', 0, '/index.php?app=users&layout=changepass', 'users', '', 1, 0, 1, '2015-11-25 10:31:37', '2015-11-25 10:31:37', '{"app":"users","view":"home","layout":"changepass"}');
+(24, 'Tin tức-Làm đẹp', 'tin-tuc-lam-dep', 1, 17, 8, 9, 'app', 0, 'index.php?app=article&view=category&layout=blog', 'article', '', 2, 24, 1, '0000-00-00 00:00:00', '2015-11-11 10:18:24', '{"id":"31","limit":"","col":"","app":"article","view":"category","layout":"blog"}'),
+(17, 'Tin tức', 'tin-tuc', 1, 1, 5, 42, 'app', 0, 'index.php?app=article&view=home', 'article', '', 1, 17, 1, '0000-00-00 00:00:00', '2015-11-11 09:36:39', '{"id":"","limit":"","col":"","app":"article","view":"home","layout":""}'),
+(19, 'Hài hước', 'hai-huoc', 1, 1, 49, 50, 'app', 0, 'index.php?app=videos&view=category&layout=blog', 'videos', '', 1, 19, 1, '0000-00-00 00:00:00', '2015-11-13 05:21:03', '{"id":"27","limit":"","col":"","app":"videos","view":"category","layout":"blog"}'),
+(25, 'Tin tức - sao việt', 'tin-tuc-sao-viet', 1, 17, 10, 27, 'app', 0, 'index.php?app=article&view=category&layout=blog', 'article', '', 2, 25, 1, '0000-00-00 00:00:00', '2015-11-11 09:37:25', '{"id":"30","limit":"","col":"","app":"article","view":"category","layout":"blog"}'),
+(32, 'Trang chủ', 'trang-chu', 1, 1, 3, 30, 'app', 1, 'index.php?app=homepage&view=home', 'homepage', 'display', 1, 32, 1, '0000-00-00 00:00:00', '2015-11-12 09:37:46', '{"id":"","Menutype":"3","limit":"","col":"","app":"homepage","view":"home","layout":""}'),
+(40, 'videos', 'videos', 6, 1, 53, 54, 'app', 0, 'index.php?app=videos&view=home', 'videos', '', 1, 0, 1, '2015-11-13 03:50:01', '2015-11-13 03:50:01', '{"id":"","limit":"","col":"","app":"videos","view":"home","layout":""}'),
+(41, 'Đăng ký', 'dang-ky', 3, 1, 55, 56, 'app', 0, 'index.php?app=users&view=home&layout=register', 'users', '', 1, 41, 1, '2015-11-17 08:51:05', '2015-11-25 10:32:09', '{"app":"users","view":"home","layout":"register"}'),
+(42, 'Đăng nhập', 'dang-nhap', 3, 1, 57, 58, 'app', 0, 'index.php?app=users&view=home&layout=login', 'users', '', 1, 42, 1, '2015-11-17 08:56:26', '2015-11-25 04:45:51', '{"app":"users","view":"home","layout":"login"}'),
+(43, 'Hồ sơ cá nhân', 'ho-so-ca-nhan', 3, 1, 59, 60, 'app', 0, 'index.php?app=users&view=home', 'users', '', 1, 0, 1, '2015-11-25 04:52:21', '2015-11-25 04:52:21', '{"app":"users","view":"home","layout":""}'),
+(44, 'Thoát', 'thoat', 3, 1, 61, 62, 'app', 0, 'index.php?app=users&view=home&layout=logout', 'users', '', 1, 0, 1, '2015-11-25 06:00:26', '2015-11-25 06:02:13', '{"app":"users","view":"home","layout":"logout"}'),
+(45, 'Thay đổi thông tin', 'thay-doi-thong-tin', 3, 1, 63, 64, 'app', 0, 'index.php?app=users&view=home&layout=changeinfo', 'users', '', 1, 0, 1, '2015-11-25 10:30:34', '2015-11-25 10:30:34', '{"app":"users","view":"home","layout":"changeinfo"}'),
+(46, 'Thay đổi mật khẩu', 'thay-doi-mat-khau', 3, 1, 65, 66, 'app', 0, 'index.php?app=users&view=home&layout=changepass', 'users', '', 1, 0, 1, '2015-11-25 10:31:37', '2015-11-25 10:31:37', '{"app":"users","view":"home","layout":"changepass"}');
 
 -- --------------------------------------------------------
 
@@ -829,22 +831,73 @@ CREATE TABLE IF NOT EXISTS `tbl_rsm_resources` (
   `title` varchar(255) NOT NULL,
   `affected` varchar(4) NOT NULL,
   `parentID` int(11) NOT NULL,
+  `level` tinyint(4) NOT NULL,
   `type` varchar(32) NOT NULL COMMENT 'label/request',
   `app` varchar(64) NOT NULL,
+  `view` varchar(64) NOT NULL,
   `params` varchar(255) NOT NULL,
   `redirect_url` varchar(255) NOT NULL,
-  `message` varchar(25) NOT NULL,
+  `redirect_msg` varchar(255) NOT NULL,
   `created_by` int(11) NOT NULL,
   `modified_by` int(11) NOT NULL,
   `cdate` datetime NOT NULL,
   `mdate` datetime NOT NULL,
   `status` smallint(6) NOT NULL,
+  `lft` int(11) NOT NULL,
+  `rgt` int(11) NOT NULL,
+  `ordering` int(11) NOT NULL,
   `description` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `affected` (`affected`),
   KEY `app` (`app`),
   KEY `type` (`type`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `tbl_rsm_resources`
+--
+
+INSERT INTO `tbl_rsm_resources` (`id`, `title`, `affected`, `parentID`, `level`, `type`, `app`, `view`, `params`, `redirect_url`, `redirect_msg`, `created_by`, `modified_by`, `cdate`, `mdate`, `status`, `lft`, `rgt`, `ordering`, `description`) VALUES
+(1, 'ROOT', 'BF', 0, 0, '0', '', '', '', '', '', 28, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 1, 12, 0, ''),
+(2, 'Admin', 'B', 1, 1, '0', '0', '', '', '', '', 28, 31, '0000-00-00 00:00:00', '2015-12-07 14:10:28', 1, 2, 7, 0, ''),
+(3, 'Article', 'B', 2, 2, '1', 'article', '', 'view=home&layout=edit', '?app=cpanel', 'ban khong co quyen', 28, 28, '0000-00-00 00:00:00', '2015-11-20 04:57:49', 1, 3, 4, 1, 'abc'),
+(4, 'Module', 'B', 2, 2, '1', 'module', '', '', '', '', 28, 28, '0000-00-00 00:00:00', '2015-12-07 11:52:56', 0, 5, 6, 2, ''),
+(5, 'Seo', 'BF', 1, 1, '0', '0', '', '', '', '', 28, 28, '2015-11-20 08:14:53', '2015-11-20 08:14:53', 1, 8, 11, 0, ''),
+(6, 'Article', 'BF', 5, 2, '1', 'article', '', '', '', '', 28, 28, '2015-11-20 08:16:38', '2015-11-20 08:16:38', 0, 9, 10, 0, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_rsm_resource_xref`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_rsm_resource_xref` (
+  `objectID` int(11) NOT NULL,
+  `resourceID` int(11) NOT NULL,
+  `object_type` tinyint(4) NOT NULL,
+  `value` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_rsm_resource_xref`
+--
+
+INSERT INTO `tbl_rsm_resource_xref` (`objectID`, `resourceID`, `object_type`, `value`) VALUES
+(39, 2, 2, 1),
+(39, 3, 2, 1),
+(39, 4, 2, 1),
+(39, 5, 2, 1),
+(39, 6, 2, 1),
+(31, 2, 2, 1),
+(31, 3, 2, 1),
+(31, 4, 2, 0),
+(31, 5, 2, 0),
+(31, 6, 2, 0),
+(31, 3, 1, 0),
+(31, 6, 1, 1),
+(31, 5, 1, 1),
+(31, 4, 1, 1),
+(29, 2, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -874,6 +927,28 @@ CREATE TABLE IF NOT EXISTS `tbl_rsm_role_xref` (
   `object_type` tinyint(11) NOT NULL COMMENT '1: userID, 2:groupID, 3: resourceID',
   UNIQUE KEY `role_id` (`role_id`,`object_id`,`object_type`),
   KEY `object_type` (`object_type`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_session`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_session` (
+  `username` varchar(150) DEFAULT '',
+  `time` varchar(14) DEFAULT '',
+  `session_id` varchar(200) NOT NULL DEFAULT '0',
+  `guest` tinyint(4) DEFAULT '1',
+  `userid` int(11) DEFAULT '0',
+  `usertype` varchar(50) DEFAULT '',
+  `gid` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `client_id` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `data` longtext,
+  PRIMARY KEY (`session_id`(64)),
+  KEY `whosonline` (`guest`,`usertype`),
+  KEY `userid` (`userid`),
+  KEY `time` (`time`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -915,18 +990,26 @@ CREATE TABLE IF NOT EXISTS `tbl_users` (
   KEY `status` (`status`),
   KEY `template_id` (`template_id`),
   KEY `email` (`email`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=43 ;
 
 --
 -- Dumping data for table `tbl_users`
 --
 
 INSERT INTO `tbl_users` (`id`, `username`, `password`, `email`, `groupID`, `leader`, `mobile`, `home_phone`, `first_name`, `last_name`, `address`, `city`, `province_state`, `zip_code`, `country`, `suppliers`, `cdate`, `mdate`, `template_id`, `status`, `lastvisit`, `isBlock`, `activeCode`, `params`) VALUES
-(28, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'ducdm87@gmail.com', 2, 1, '0979390590', '', 'dam manh', 'duc', 'trung kinh', 'bhmedia', '', '', 0, '', '0000-00-00 00:00:00', '2015-11-16 09:46:04', 0, 1, '2015-11-27 14:52:13', 0, '', ''),
-(29, 'test', '098f6bcd4621d373cade4e832627b4f6', 'testtest@gmail.com', 31, 0, '', '', 'test', 'test', '', '', '', '', 0, '', '2015-11-17 07:10:59', '2015-11-17 07:10:59', 0, 1, '2015-11-18 17:38:02', 0, '', ''),
-(30, 'test 2', '38b0d2ff1c03df82aea67222983d337e', 'test 2test 2@gmal.com', 31, 1, '', '', 'test 2', 'test 2', '', '', '', '', 0, '', '2015-11-17 07:20:20', '2015-11-17 07:20:31', 0, 1, '0000-00-00 00:00:00', 0, '', ''),
-(31, 'accounttest', 'a1822d98da3ce8a4df9543651a0dc600', '', 19, 0, '09793905911', '', 'dam', 'manh duc', '', '', '', '', 0, '', '2015-11-25 05:46:17', '2015-11-25 10:48:22', 0, 1, '2015-11-27 14:51:21', 0, '', ''),
-(32, 'accounttest2', 'e4dc573c1a32dc8351fcf1863564cf7d', '', 19, 0, '097939059112', '', 'dam', 'Đàm', '', '', '', '', 0, '', '2015-11-27 04:36:49', '2015-11-27 04:36:49', 0, 1, '2015-11-27 10:36:57', 0, '', '');
+(28, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'ducdm87@gmail.com', 2, 1, '0979390590', '', 'dam manh', 'duc', 'trung kinh', 'bhmedia', '', '', 0, '', '0000-00-00 00:00:00', '2015-11-13 20:38:16', 0, 1, '2015-12-07 15:17:05', 0, '', ''),
+(31, 'giamdoc', '23db8f175879817eedc5b488d7b9113b', 'giamdoctrungtam@gmail.com', 39, 1, '0979390590', '', 'giamdoc', 'giamdoc', 'ad', '', '', '', 0, '', '2015-11-13 20:39:30', '2015-12-07 15:09:00', 0, 1, '2015-12-07 15:10:06', 0, '', ''),
+(32, 'phogiamdoc', '23db8f175879817eedc5b488d7b9113b', 'phogiamdoc@gmail.com', 39, 0, '', '', 'pho giamdoc', 'pho giamdoc', '', '', '', '', 0, '', '2015-11-13 20:40:08', '2015-11-13 20:40:11', 0, 1, '0000-00-00 00:00:00', 0, '', ''),
+(33, 'leader1', '2b1e3590458a6e6014c0141b8cd13fe4', 'leader1@gmail.com', 31, 1, '', '', 'leader1', 'leader1', '', '', '', '', 0, '', '2015-11-13 20:41:34', '2015-12-07 15:09:33', 0, 1, '0000-00-00 00:00:00', 0, '', ''),
+(34, 'manager 1', '40d8d27458473fca5c990aaed69fdb26', 'manager1@gmail.com', 31, 0, '', '', 'quản lý khu vực 1', 'quản lý khu vực 1', '', '', '', '', 0, '', '2015-11-13 20:42:13', '2015-11-13 20:42:13', 0, 1, '0000-00-00 00:00:00', 0, '', ''),
+(35, 'manager2', '3f862ef80e8a45b44c4f874a0598ee09', 'manager2@gmail.com', 31, 0, '', '', 'quản lý khu vực 2', 'quản lý khu vực 2', '', '', '', '', 0, '', '2015-11-13 20:42:45', '2015-11-13 20:42:45', 0, 1, '0000-00-00 00:00:00', 0, '', ''),
+(36, 'leader2', '2e11722f670391d487f4c29183a3d099', 'leader2@gmail.com', 32, 0, '', '', 'leader2', 'leader2', '', '', '', '', 0, '', '2015-11-13 20:43:23', '2015-11-13 20:43:23', 0, 1, '0000-00-00 00:00:00', 0, '', ''),
+(37, 'manager3', '2d3a5db4a2a9717b43698520a8de57d0', 'manager3@gmail.com', 32, 0, '', '', 'manager3', 'manager3', '', '', '', '', 0, '', '2015-11-13 20:43:53', '2015-11-13 20:43:53', 0, 1, '0000-00-00 00:00:00', 0, '', ''),
+(38, 'leaderhanoi', '68ef4d991a45e48ab88890b98a620f33', 'leaderhanoi@gmail.com', 34, 1, '', '', 'leaderhanoi', 'leaderhanoi', '', '', '', '', 0, '', '2015-11-13 20:44:38', '2015-11-13 20:44:38', 0, 1, '0000-00-00 00:00:00', 0, '', ''),
+(39, 'hotrovien-hanoi-1', '46eb45e315821d16a0e7cc7123d48cf1', 'hotrovien1@gmail.com', 34, 0, '', '', 'hotrovien1', 'hotrovien1', '', '', '', '', 0, '', '2015-11-13 20:45:20', '2015-11-13 20:46:08', 0, 1, '0000-00-00 00:00:00', 0, '', ''),
+(40, 'hotrovien-hanoi-2', '204f63432e721cefd4bd32c45b014975', 'hotrovien2@gmail.com', 34, 0, '', '', 'hotrovien2', 'hotrovien2', '', '', '', '', 0, '', '2015-11-13 20:45:58', '2015-11-13 20:45:58', 0, 1, '0000-00-00 00:00:00', 0, '', ''),
+(41, 'hotrovien-bacninh-1', '46c242473b887a4a743c79b0bba72c72', 'hotrovien-bacninh-1@gmail.com', 35, 0, '', '', 'hotrovien-bacninh-1', 'hotrovien-bacninh-1', '', '', '', '', 0, '', '2015-11-13 20:46:43', '2015-11-13 20:46:43', 0, 1, '0000-00-00 00:00:00', 0, '', ''),
+(42, 'leader-bacninh', '883664902366803700ea02d0518ee428', 'leader-bacninh@gmail.com', 35, 1, '', '', 'leader-bacninh', 'leader-bacninh', '', '', '', '', 0, '', '2015-11-13 20:47:09', '2015-11-13 20:47:09', 0, 1, '0000-00-00 00:00:00', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -950,21 +1033,27 @@ CREATE TABLE IF NOT EXISTS `tbl_users_group` (
   PRIMARY KEY (`id`),
   KEY `matdep_gacl_parent_id_aro_groups` (`parentID`),
   KEY `matdep_gacl_lft_rgt_aro_groups` (`lft`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
 
 --
 -- Dumping data for table `tbl_users_group`
 --
 
 INSERT INTO `tbl_users_group` (`id`, `parentID`, `name`, `lft`, `rgt`, `level`, `value`, `isActive`, `backend`, `status`, `cdate`, `mdate`) VALUES
-(1, 0, 'ROOT', 1, 26, 0, 'ROOT', '', -1, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(8, 1, 'Registered', 24, 25, 1, 'Registered', '', 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(7, 6, 'Author', 16, 17, 3, 'Author', '', 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(6, 5, 'Editor', 15, 20, 2, 'Editor', '', 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(5, 1, 'Publisher', 14, 23, 1, 'Publisher', '', 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(2, 1, 'Super Administrator', 2, 13, 1, 'Super Administrator', '', 1, 1, '0000-00-00 00:00:00', '2015-10-19 10:19:24'),
-(31, 2, 'quản lý khu vực 1', 7, 10, 2, 'quản lý khu vực 1', '1', 1, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(32, 2, 'quản lý khu vực 2', 5, 6, 2, 'quản lý khu vực 2', '1', 1, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(1, 0, 'ROOT', 1, 46, 0, 'ROOT', '', -1, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(8, 1, 'Registered', 42, 45, 1, 'Registered', '', 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(7, 6, 'Author', 43, 44, 2, 'Author', '', 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(6, 5, 'Editor', 39, 40, 2, 'Editor', '', 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(5, 1, 'Publisher', 38, 42, 1, 'Publisher', '', 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 1, 'Super Administrator', 2, 29, 1, 'Super Administrator', '', 1, 1, '0000-00-00 00:00:00', '2015-10-19 10:19:24'),
+(31, 39, 'quản lý khu vực 1', 24, 31, 3, 'quản lý khu vực 1', '1', 1, 1, '0000-00-00 00:00:00', '2015-11-23 21:45:55'),
+(32, 39, 'quản lý khu vực 2', 32, 37, 3, 'quản lý khu vực 2', '1', 1, 1, '0000-00-00 00:00:00', '2015-11-13 05:47:03'),
+(34, 31, 'trung tâm trợ giúp Hà Nội', 25, 26, 4, '', '', 1, 1, '2015-11-13 05:40:02', '2015-11-13 08:52:56'),
+(35, 31, 'trung tâm trợ giúp Bắc Ninh', 27, 28, 4, '', '', 1, 1, '2015-11-13 05:40:23', '2015-11-13 08:53:03'),
+(36, 31, 'trung tâm trợ giúp Hải Dương', 29, 30, 4, '', '', 1, 1, '2015-11-13 05:40:40', '2015-11-13 08:53:08'),
+(37, 32, 'trung tâm trợ giúp Hưng Yên', 33, 34, 4, '', '', 1, 1, '2015-11-13 05:41:00', '2015-11-13 08:53:12'),
+(38, 32, 'trung tâm trợ giúp Hải Phòng', 35, 36, 4, '', '', 1, 1, '2015-11-13 05:41:20', '2015-11-13 08:53:15'),
+(39, 2, 'Ban Giám đốc trung tâm', 23, 38, 2, '', '', 1, 1, '2015-11-13 05:46:43', '2015-11-23 21:39:16');
 
 -- --------------------------------------------------------
 
@@ -1042,20 +1131,24 @@ INSERT INTO `tbl_videos` (`id`, `title`, `alias`, `image`, `actor`, `info`, `lin
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_yiisession` (
-  `id` char(40) NOT NULL,
+  `id` char(32) NOT NULL,
   `expire` int(11) DEFAULT NULL,
-  `data` mediumtext,
+  `data` longblob,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_yiisession`
 --
 
 INSERT INTO `tbl_yiisession` (`id`, `expire`, `data`) VALUES
-('8ps9s4mci2omj4i4dap06jrf16', 1451191806, ''),
-('7tftuvgl9j4o8mlis3lo06oef3', 1451192404, 'Yii.CCaptchaAction.a57cc658.home.captcha|s:7:"fiwiyue";Yii.CCaptchaAction.a57cc658.home.captchacount|i:1;'),
-('squd5g186m4qq26f9uml0tnt42', 1451202734, '');
+('0vuev43g2t4pomea6521t5vtv3', 1452062789, ''),
+('dbjjfr8ocgd0fraemes0bi0ud0', 1452056614, ''),
+('jq13uuq7h6faclunpdl68upu03', 1452067807, 0x6d6573736167657c4e3b72617365737461747573636f64657c4e3b),
+('k41a0fh8f8d3hd7kok17ehesq2', 1452068228, ''),
+('kcib6isafvachnelilu6itr8i7', 1451401742, 0x5969692e4343617074636861416374696f6e2e61353763633635382e686f6d652e636170746368617c733a363a2261646c697669223b5969692e4343617074636861416374696f6e2e61353763633635382e686f6d652e63617074636861636f756e747c693a313b),
+('pbiv7hl9plkk2ijevudmu6qum4', 1452048257, ''),
+('usslarj5gef63d5570oq845m73', 1452056675, '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -37,17 +37,24 @@ class SysconfigController extends BackEndController {
         $this->setConfig('main', 'connectionString', $connectionString, 'db', "\s*\,\s*\'errorHandler");
         $this->setConfig('main', 'username', '\'' . $db_info['username'] . '\'', 'db', "\s*\,\s*\'errorHandler");
         $this->setConfig('main', 'tablePrefix', '\'' . $db_info['prefix'] . '\'', 'db', "\s*\,\s*\'errorHandler");
-        $this->setConfig('main', 'adminEmail', '\'' . $post['config']['other']['adminEmail'] . '\'', 'params');
+        $this->setConfig('main', 'adminEmail', '\'' . $post['config']['main']['adminEmail'] . '\'', 'params');
+        $this->setConfig('main', 'permission', '\'' . $post['config']['main']['permission'] . '\'', 'params');
+        $this->setConfig('main', 'copyright', '\'' . $post['config']['main']['copyright'] . '\'', 'params');
         $this->writeConfig('main');
 
         $this->setConfig('backend', 'timeout', '\'' . $post['config']['backend']['sessionlifetime'] . '\'', 'params');
-        $this->setConfig('backend', 'sessionName', 'md5("' . $post['config']['backend']['sessionname'] . '")', 'session');
+        $this->setConfig('backend', 'timeout2', '\'' . $post['config']['backend']['sessionlifetime2'] . '\'', 'params');
+        $this->setConfig('backend', 'sessionName', 'md5("' . $post['config']['backend']['sessionname'] . '")', 'session');        
         $this->writeConfig('backend');
 
         $this->setConfig('frontend', 'timeout', '\'' . $post['config']['site']['sessionlifetime'] . '\'', 'params');
+        $this->setConfig('frontend', 'timeout2', '\'' . $post['config']['site']['sessionlifetime2'] . '\'', 'params');
         $this->setConfig('frontend', 'offlineMessage', '\'' . $post['config']['site']['offlinemessage'] . '\'', 'params');
         $this->setConfig('frontend', 'siteoffline', $post['config']['site']['offline'], 'params');
         $this->setConfig('frontend', 'sessionName', 'md5("' . $post['config']['site']['sessionname'] . '")', 'session');
+        $this->setConfig('frontend', 'sef', '\'' . $post['config']['site']['sef'] . '\'', 'params');
+        $this->setConfig('frontend', 'sef_suffix', '\'' . $post['config']['site']['sef_suffix'] . '\'', 'params');
+        $this->setConfig('frontend', 'sef_urlsuffix', '\'' . $post['config']['site']['sef_urlsuffix'] . '\'', 'params');        
         $this->writeConfig('frontend');
 
         YiiMessage::raseSuccess("Successfully saved changes config");
