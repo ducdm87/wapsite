@@ -12,15 +12,6 @@ class HomeController extends FrontEndController {
     } 
 
     public function actionDisplay() {
-        $model = Article::getInstance();
-        $params["items"] = $model->getTinTuc();
-         
-        $page_title = "wapsite - trang tin tức tổng hợp nhanh nhất";
-        
-        setSysConfig("seopage.title",$page_title); 
-        setSysConfig("seopage.keyword",$page_title); 
-        setSysConfig("seopage.description",$page_title);
-        
-        $this->render('default', $params);
+        $this->redirect("/");
     }
 }

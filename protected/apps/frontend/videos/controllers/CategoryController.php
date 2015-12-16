@@ -22,7 +22,7 @@ class CategoryController extends FrontEndController {
         $catID = Request::getVar("id");
         $currentPage = Request::getVar('page',1);
         $limit = 12;
-         
+        
         $data['alias'] = $catAlias;
         $obj_category = $model->getCategory($catID, $catAlias);
           

@@ -31,7 +31,7 @@
                 $params = urlencode(json_encode( array("id"=>$item['slug']) ));
                  
                 $link_view = "/goto.php?control=article&action=detail&params=$params";
-                $link_edit_cat = Router::buildLink("category",array('layout'=>'edit', 'cid'=>$item['catID']));   
+                $link_edit_cat = Router::buildLink("categories",array('layout'=>'edit', 'cid'=>$item['catID']));   
                 $link_created = Router::buildLink("article",array('filter_created_by'=>$item['created_by']));   
                 ?>
                 <tr class="row1">

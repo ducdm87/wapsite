@@ -6,7 +6,7 @@ $settings = array(
         'urlManager' => array(
             'urlFormat' => 'path',
             'rules' => array(
-                                '/' => array('home/display'),
+                '/' => array('home/display'),
                 '/dang-ky/captcha/<v:.*>' => array('home/captcha'),
                 '/dang-ky/re-captcha/<refresh:.*>' => array('home/captcha'),
 

@@ -56,14 +56,14 @@
                             <li class="dropdown">
                                 <a href="<?php echo Router::buildLink('user'); ?>"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="span-header-top">Xin chào : <?php echo $user->username ?></span> </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="<?php echo Router::buildLink('user'); ?>">Tài khoản của tôi</a></li>
+                                    <li><a href="<?php echo Router::buildLink('users'); ?>">Tài khoản của tôi</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="<?php echo Router::buildLink('user', array('layout'=>'logout')); ?>">Thoát</a></li>
+                                    <li><a href="<?php echo Router::buildLink('users', array('layout'=>'logout')); ?>">Thoát</a></li>
                                 </ul>
                             </li>
                         <?php else: ?>
-                            <li><a href="<?php echo Router::buildLink('user', array('layout'=>'register')); ?>">Đăng Kí</a> <span class="span-header-top"> | </span></li>
-                            <li><a href="<?php echo Router::buildLink('user', array('layout'=>'login')); ?>">Đăng Nhập</a> <span class="span-header-top"> </span></li>                            
+                            <li><a href="<?php echo Router::buildLink('users', array('layout'=>'register')); ?>">Đăng Kí</a> <span class="span-header-top"> | </span></li>
+                            <li><a href="<?php echo Router::buildLink('users', array('layout'=>'login')); ?>">Đăng Nhập</a> <span class="span-header-top"> </span></li>                            
                         <?php endif; ?>
                     </ul>
                 </div>
@@ -86,7 +86,7 @@
                             </a>
                         </div>
                         <div class="search-container">
-                            <form method="get" action="<?php echo Router::buildLink('user', array('view'=>'search','layout'=>'search')); ?>">
+                            <form method="get" action="<?php echo Router::buildLink('users', array('view'=>'search','layout'=>'search')); ?>">
                                 <div class="search">
                                     <input type="text" name="q" class="form-control input-sm" maxlength="64" value="<?php echo isset($_GET['q']) ? $_GET['q'] : '' ?>" placeholder="Tìm kiếm..." />
                                     <button type="submit" class="btn btn-warning btn-sm"><i class="fa fa-search"></i></button>
@@ -129,7 +129,7 @@
                 <?php
                 global $mainframe; 
                 $app = Request::getVar('app');
-                if($app != "user"){
+                if($app != "users"){
                 ?>
                     <div class="banner hidden-xs hidden-sm"> 
                         <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/app/banner.png" alt="Banner" class="img-responsive"/>
@@ -139,7 +139,7 @@
                 if(!$mainframe->isLogin()){?>
                     <div class="dialog-message">
                         <div class="alert alert-warning alert-dismissible text-center" role="alert">
-                            <p>Qúy khách vui lòng đăng nhập <strong><a href="<?php echo Router::buildLink('user', array('view'=>'user','layout'=>'login')); ?>">Tại đây</a></strong> hoặc vui lòng chuyển sang truy cập GPRS/3G/DEGE
+                            <p>Qúy khách vui lòng đăng nhập <strong><a href="<?php echo Router::buildLink('users', array('view'=>'user','layout'=>'login')); ?>">Tại đây</a></strong> hoặc vui lòng chuyển sang truy cập GPRS/3G/DEGE
                             </p>
                         </div>
                     </div>

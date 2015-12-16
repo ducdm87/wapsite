@@ -368,7 +368,7 @@ input[disabled],input[readonly]
 }
 
 .items-tree ul li .hide-sub{
-    height: 20px;
+    
     overflow: hidden;
 }
  

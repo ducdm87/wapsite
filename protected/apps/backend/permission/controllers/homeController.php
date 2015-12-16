@@ -16,13 +16,13 @@ class HomeController extends BackEndController {
      * For menu type
      */
     public function actionDisplay() {
-         global $mainframe, $user;
+        global $mainframe, $user;
         if (!$user->isSuperAdmin()) {
             YiiMessage::raseNotice("Your account not have permission to visit page");
             $this->redirect(Router::buildLink("cpanel"));
         }
-         
+         $this->addBarTitle("Resource <small>[manager]</small>", "user"); 
         $this->render('default');
     } 
-     
+    
 }

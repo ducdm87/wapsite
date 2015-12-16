@@ -26,8 +26,7 @@ class CheckPerMission {
 
         $string_url = CheckPerMission::get_fullurl();
         $arr_url = CheckPerMission::get_arr_url();
-        if(!isset($arr_url['app'])) $arr_url['app'] = "cpanel";
-
+        
         $arr_resource = CheckPerMission::getResources($backEnd, $arr_url);
        
         $query_user = "SELECT * FROM ". TBL_RSM_RESOURCE_XREF . " WHERE object_type = 1 AND objectID = $user->id";
@@ -37,7 +36,7 @@ class CheckPerMission {
         $arr_Ggranted = CheckPerMission::getGranted($user->groupID,2);
         
         $table_ext = YiiTables::getInstance(TBL_EXTENSIONS);                
-        $ext_default_1 = $table_ext->loadColumn("name", "allowall = 1 AND status = 1 ");
+        $ext_default_1 = $table_ext->loadColumn("name", "allowall = 1 ");
        
         if(count($arr_resource)){
             // step 1: check allow user
@@ -70,19 +69,18 @@ class CheckPerMission {
         }
 
         // kiem tra mac dinh  
-        $cur_app = Request::getVar('app', "cpanel");
+        $cur_app = Request::getVar('app');
         if(in_array($cur_app, $ext_default_1)){ // neu app hien tai nam trong so app duoc phep thi return true
             return true;
         }else{ // khong duoc truy cap
             if ($mainframe->isBackEnd())
             {
                 YiiMessage::raseNotice("Your account not have permissin to visit page");            
-                if($cur_app == "cpanel"){ // ra trang chu front-end          
+                if($cur_app == "cpanel"){ // ra trang chu froent-end          
                     Yii::app()->getRequest()->redirect("/");
                 }
                 else{
-//                    Yii::app()->getRequest()->redirect("?app=cpanel");
-                    Yii::app()->getRequest()->redirect(Router::buildLink("cpanel"));
+                    Yii::app()->getRequest()->redirect("?app=cpanel");
                 }
 
             }else

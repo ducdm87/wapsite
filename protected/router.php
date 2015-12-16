@@ -75,6 +75,7 @@ class Router {
                     //$app_router =  PATH_APPS_FRONT."$_app/router.php";
                     $sub_path = ltrim($matches[2], "/");
                     $sub_path = explode("/", $sub_path);
+                   
                     $params = array();
                     $params['app'] = $_app;
                      
@@ -84,8 +85,11 @@ class Router {
                         $params['layout'] = $sub_path[1];
                     } else if (is_array($sub_path)) { 
                         // app/app-name/layout-name
-                        $params['view'] = "home";
-                        $params['layout'] = $sub_path[0];
+                        $params['view'] = $sub_path[0];
+//                        $params['layout'] = 'display';
+                    }
+                    foreach($_REQUEST as $k=>$v){
+                        $params[$k] = $v;
                     }
                 }
             }
@@ -125,30 +129,31 @@ class Router {
         }
         if (!isset($params['layout']) OR $params['layout'] == "")
             $params['layout'] = "display";
-
+        
         return $params;
     }
 
     static function buildLink($app, $query = null) {
         $app_router = PATH_APPS_FRONT . "$app/router.php";
         $functionName = $app . "BuildRoute";
-
+      
         // link mac dinh, neu khong su dung den router cua app        
         $enable_sef = isset(Yii::app()->params->sef) ? Yii::app()->params->sef : 1;
         $enable_sefsuffix = isset(Yii::app()->params->sef_suffix) ? Yii::app()->params->sef_suffix : 1;
         $sefsuffix = isset(Yii::app()->params->sef_urlsuffix) ? Yii::app()->params->sef_urlsuffix : ".html";
         if ($enable_sef == 1) {
-            $link = "/app/$app/";
+            if (!isset($query['view']) OR (isset($query['view']) AND $query['view'] == 'home') )
+                $query['view'] = "";
+            if (!isset($query['layout']) OR (isset($query['layout']) AND $query['layout'] == 'display') )
+                $query['layout'] = ""; 
+
+            $link = "/app/$app/";            
             if (file_exists($app_router)) {
                 require_once $app_router;                
                 if (function_exists($functionName)) {
-                    if (!isset($query['view']) OR (isset($query['view']) AND $query['view'] == 'home') )
-                        $query['view'] = "";
-                    if (!isset($query['layout']) OR (isset($query['layout']) AND $query['layout'] == 'display') )
-                        $query['layout'] = ""; 
-
+                     
                     $segments = $functionName($query);
-
+                    
                     if (isset($query['menuID']) AND $query['menuID'] != 0) {
                         $YiiMenu = YiiMenu::getInstance();
                         $item = $YiiMenu->getItem($query['menuID']);
@@ -159,6 +164,7 @@ class Router {
                         $link .= implode("/", $segments) . "/";
                 }
             }
+            
             if (isset($query['view'])) {
                 if ($query['view'] != "" AND $query['view'] != "home") {
                     $link .= $query['view'] . "/";
@@ -187,7 +193,7 @@ class Router {
             $link .= $sefsuffix;
         }
         if (count($arr_query)) {
-            $link .= "&" . implode("&", $arr_query);
+            $link .= "?" . implode("&", $arr_query);
         }
         return $link;
     }

@@ -335,7 +335,6 @@ class YiiUser {
 
     /*
      * @Desc: kiem tra xem tai nguyen cua userID co cho user hien tai thay doi hay khong
-     *      
      * $allowLeader = bool
      *      true: cho phep leader sua tai nguyen cua thanh vien cung nhom(cung level)
      *      false: khong cho phep leader sua tai nguyen cua thanh vien cung nhom(cung level)

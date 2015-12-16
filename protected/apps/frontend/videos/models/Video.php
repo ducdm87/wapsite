@@ -54,7 +54,7 @@ class Video extends CFormModel {
         
         if(count($items))
             foreach($items as &$item){
-                $item['link'] = Yii::app()->createUrl("video/detail", array("id" => $item['id'], "alias" => $item['alias']));
+                $item['link'] = Yii::app()->createUrl("videos/detail", array("id" => $item['id'], "alias" => $item['alias']));
                 addObjectID($item['id'], "videos");
             }
         

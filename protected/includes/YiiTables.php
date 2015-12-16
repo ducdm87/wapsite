@@ -265,6 +265,14 @@ class YiiTables{
     }
     
     
+    function moveItem($id = null, $item = null, $new_parentID = null){
+        if($id == null AND $item ==null ) return false;
+        if($new_parentID == null) return false;
+        if($item == null){
+            $item = $this->load($id);
+        }
+    }
+    
     function remove($id = null, $condition = "")
     {
         if($id == null OR $id == 0 or $id == ""){

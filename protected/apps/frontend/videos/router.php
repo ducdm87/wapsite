@@ -44,7 +44,7 @@ function fnHelperFindVideosMenuCategory($catID) {
     return false;
 }
 
-function fnHelperFindVideosMenu() {
+function fnHelperFindVideosMenuHome() {
     $YiiMenu = YiiMenu::getInstance();
     $menuItem = $YiiMenu->getMenuApp("videos");
     foreach ($menuItem as $item) {
@@ -62,50 +62,57 @@ function VideosBuildRoute(& $query) {
     $segments = array();
     if (isset($query['view'])) {
         if ($query['view'] == "home") {
-            if($menuID = fnHelperFindVideosMenu()){
+            if ($menuID = fnHelperFindVideosMenuHome()) {
                 $query['menuID'] = $menuID;
             }
         } elseif ($query['view'] == "category") {
-            
-            if($menuID = fnHelperFindVideosMenuCategory($query['id'])){
-                 $query['menuID'] = $menuID;
-            }else{
-                if($menuID = fnHelperFindVideosMenu()){
-                    $query['menuID'] = $menuID;
-                }
-                $segments[] = $query['alias'];                
-            }
-            if(isset($query['page']) AND $query['page'] == 0) unset ($query['page']);
-            
-        } elseif ($query['view'] == "detail") {
-            if($menuID = fnHelperFindVideosMenuDetail($query['id'])){
+            if ($menuID = fnHelperFindVideosMenuCategory($query['id'])) {
                 $query['menuID'] = $menuID;
-            }else{
-                if($menuID = fnHelperFindVideosMenuCategory($query['catID'])){
-                     $query['menuID'] = $menuID;
-                 }else{
-                     if($menuID = fnHelperFindVideosMenu()){
-                        $query['menuID'] = $menuID;
-                    } 
-                     $segments[] = $query['cat_alias'];
-                 }                 
-                 
-                $segments[] = $query['id']."-".$query['alias'];
-                $query['_suffix'] = ".html";
-                unset($query['catID']);
+            } else if ($menuID = fnHelperFindVideosMenuHome()) {
+                $query['menuID'] = $menuID;
+                $segments[] = $query['alias'];
+            }
+            if (isset($query['page']) AND $query['page'] == 0)
+                unset($query['page']);
+            if (isset($query['menuID'])) {
+                unset($query['alias']);
+                unset($query['view']);
+                unset($query['id']);
+            }
+        } elseif ($query['view'] == "detail") {
+            if ($menuID = fnHelperFindVideosMenuDetail($query['id'])) {
+                $query['menuID'] = $menuID;
+                unset($query['view']);
+                unset($query['id']);
+                unset($query['alias']);
                 unset($query['cat_alias']);
+                unset($query['catID']);
+            } else {
+                if ($menuID = fnHelperFindVideosMenuCategory($query['catID'])) {
+                    $query['menuID'] = $menuID;
+                    $segments[] = $query['id'] . "-" . $query['alias'];
+                } else {
+                    if ($menuID = fnHelperFindVideosMenuHome()) {
+                        $query['menuID'] = $menuID;
+                        $segments[] = $query['cat_alias'];
+                        $segments[] = $query['id'] . "-" . $query['alias'];
+                    }
+                }
+            }
+            if (isset($query['menuID'])) {
+                unset($query['view']);
+                unset($query['id']);
+                unset($query['alias']);
+                unset($query['cat_alias']);
+                unset($query['catID']);
             }
         }
-        
-        unset($query['view']);
-        unset($query['id']);
-        unset($query['alias']);
-    }else{
-        if($menuID = fnHelperFindVideosMenu()){
+    } else {
+        if ($menuID = fnHelperFindVideosMenuHome()) {
             $query['menuID'] = $menuID;
         }
     }
-   
+
     return $segments;
 }
 
@@ -114,7 +121,7 @@ function VideosParseRoute($segments, $_params = null) {
     $n = count($segments);
     $params = array();
     $segment = array_pop($segments);
- 
+
     if ($_params == null) {
         if ($n == 1) {
             $params['view'] = "category";

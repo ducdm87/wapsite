@@ -30,61 +30,7 @@ class YiiExtensions{
         }
 
         return $instance;
-    }
-    
-    // lay tat ca ext
-    function getItems()
-    {
-        if(count($this->items)>0)
-            return $this->items;
-        
-        $query = "SELECT * FROM ". $this->table_item ." WHERE status = 1 ORDER BY `lft` ASC ";
-        $query_command = Yii::app()->db->createCommand($query);
-        $items = $query_command->queryAll();
-        $arr_new = array();
-        foreach ($items as $key => $item) {            
-            if($item['alias'] == "") $item['alias'] = $item['title'];
-            $item['path'] = $item['alias'];
-            if($item['type'] == "app"){
-                $item['url'] = $item['alias'];
-                if($item['level'] >1 AND isset($arr_new[$item['parentID']])){
-                    $item['url'] = $arr_new[$item['parentID']]['path'] . "/". $item['url'];
-                    $item['path'] = $item['url'];
-                }
-            }else if($item['type'] == "url"){
-                $item['url'] = $item['link'];
-            }
-            $item['params'] = json_decode($item['params']);
-            $arr_new[$item['id']] = $item;
-        }
-        
-        foreach ($arr_new as $key => $item) {            
-             if($item['type'] == "alias"){
-                 $alias_option = $item['params']->alias_option;
-                 if(isset($arr_new[$alias_option])){
-                     $item['url'] = $arr_new[$alias_option]['url'];
-                 }
-             }
-            if($this->active == 0 AND $item['default'] == 1){
-                $this->active = $item['id'];
-                $item['url'] = '';
-            }
-            $arr_new[$key] = $item;
-        }
-        
-        $this->items = $arr_new;
-        return $this->items;
-    }
-    
-    // lay 1 ext
-    function getItem($extID = null) {   }
-     
-    function getModules() { }
-    function getModule($moduleID) { }
-    
-    function getApps() { }
-    function getApp($appID) { }    
-    
+    }  
     /* DANH CHO QUAN TRI */
     
     function loadExts($field = "*", $condition = ""){ 
@@ -134,7 +80,7 @@ class YiiExtensions{
         return $items;
     }
     
-     /* 
+    /* 
      */
     function loadApps($field = "*", $conditions = null){         
         $command = $this->_db->createCommand()->select($field)
@@ -146,5 +92,5 @@ class YiiExtensions{
         $items = $command->queryAll();
         return $items;
     }   
-    function loadApp($appID = null){ }     
+    function loadApp($appID = null){ }    
 }

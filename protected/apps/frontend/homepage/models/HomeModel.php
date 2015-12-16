@@ -47,7 +47,7 @@ class HomeModel {
         if(count($items))
             foreach($items as &$item){
                 $params = array("view" =>"detail", "id" => $item['id'], "alias"=>$item['alias'],"catID" => $item['catID'], "cat_alias"=>$item['cat_alias']) ;
-                $item['link'] = Router::buildLink('article', $params);
+                $item['link'] = Router::buildLink('articles', $params);
                 addObjectID($item['id'], "article");
             }
         return $items;
@@ -72,7 +72,7 @@ class HomeModel {
          for($i=0;$i<count($items);$i++){
              $item = $items[$i];
              $params = array("view"=> "category","id" =>$item['id'], "alias"=>$item['alias']);
-             $item['link'] = Router::buildLink('videos', $params);    
+             $item['link'] = Router::buildLink('videos', $params);             
              $item['videos'] = $this->getVideoCategoy($item['id'],0, $limit);
              $arr_new[$item['id']] = $item;
          }

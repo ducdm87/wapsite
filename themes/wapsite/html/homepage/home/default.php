@@ -84,7 +84,7 @@ function showBlockHome($items, $title = "Video Hot", $url = "", $type="video"){
         ?>
         <?php showBlockHome($category['videos'], $category['title'], $category['link'] ); ?>
     <?php } ?>
-    <?php showBlockHome($items_news, "Tin tức", Yii::app()->createUrl("tin-tuc/"),"tin-tuc/" ); ?>
+    <?php showBlockHome($items_news, "Tin tức",  Router::buildLink('articles'),"tintuc" ); ?>
 </div>
        
      

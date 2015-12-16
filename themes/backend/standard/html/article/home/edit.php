@@ -1,5 +1,5 @@
 <div class="module row">
-    <form action="<?php echo Router::buildLink("articles"); ?>" method="post" name="adminForm">
+    <form action="<?php echo Router::buildLink("article"); ?>" method="post" name="adminForm">
         <input type="hidden" name="id" value="<?php echo $item->id ?>"/>        
         <div class="col-md-8">
             <div class="panel">

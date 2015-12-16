@@ -32,23 +32,23 @@
                     </ul>
                 </li> 
 
-                <?php echo showSideBarMenu("user","", "User", "fa-folder"); ?>
-
-                <?php echo showSideBarMenu("menu","menutype", "Menu", "fa-file"); ?>
+                <?php echo showSideBarMenu("users","", "Users", "fa-folder"); ?>
+ 
+                <?php echo showSideBarMenu("menus","menutype", "Menus", "fa-file"); ?>
                  
 
-                <li class="dropdown <?php if ($app == "category" OR $app == "article"  OR $app == "video") echo "active current"; ?>">
+                <li class="dropdown <?php if ($app == "categories" OR $app == "article"  OR $app == "videos") echo "active current"; ?>">
                     <a href="#" class="dropdown-toggle parent" data-toggle="dropdown">
                         <i class="fa fa-caret-square-o-down"></i> Applications 
                         <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <?php echo showSideBarMenu("category","", "Category"); ?>
+                        <?php echo showSideBarMenu("categories","", "Categories"); ?>
                         <?php echo showSideBarMenu("article","", "Article", "fa-file"); ?>
-                        <?php echo showSideBarMenu("video","", "Video", "fa-film"); ?>
+                        <?php echo showSideBarMenu("videos","", "Videos", "fa-film"); ?>
                     </ul>
                 </li> 
 
-                <?php echo showSideBarMenu("module","", "Module"); ?>
+                <?php echo showSideBarMenu("modules","", "Modules"); ?>
                 <?php
                 if ($user->isSuperAdmin()) {
                 ?>
@@ -60,7 +60,7 @@
                                 <?php echo showSideBarMenu("installer","-manager", "Install"); ?>
                                 <?php echo showSideBarMenu("installer","manager", "Manager"); ?>
                             </ul> 
-                    </li> 
+                    </li>                    
                 <?php 
                 
                 } ?>
@@ -95,9 +95,9 @@
             <li class="dropdown user-dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $mainframe->getUserUsername(); ?> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="<?php echo Router::buildLink("user", array("view"=>'user','layout'=>'progile')); ?>"><i class="fa fa-user"></i> Profile</a></li>                
+                    <li><a href="<?php echo Router::buildLink("users", array("view"=>'user','layout'=>'progile')); ?>"><i class="fa fa-user"></i> Profile</a></li>                
                     <li class="divider"></li>                    
-                    <li><a href="<?php echo Router::buildLink("user", array("view"=>'user','layout'=>'logout')); ?>"> <i class="fa fa-power-off"></i> Logout</a></li>                
+                    <li><a href="<?php echo Router::buildLink("users", array("view"=>'user','layout'=>'logout')); ?>"> <i class="fa fa-power-off"></i> Logout</a></li>                
                 </ul>
             </li>
         </ul>
@@ -108,7 +108,7 @@
 function showSideBarMenu($_app, $_view, $title, $_class="fa-folder")
 {
     global $user;
-    $arr_ignore = array("menu", 'module','installer');
+    $arr_ignore = array("menus", 'modules','installer');
     if(!$user->isSuperAdmin() AND in_array($_app, $arr_ignore)){
         return false;
     }
