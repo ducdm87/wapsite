@@ -131,11 +131,11 @@ class BackEndController extends CController {
             if (!$user->isAdmin()) {
                 YiiMessage::raseWarning("Your account not have permission to visit backend page");
                 Yii::app()->session['userbackend'] = null;                
-                $this->redirect(Router::buildLink("user",array("view"=>'user','layout'=>'logout')));
+                $this->redirect(Router::buildLink("users",array("view"=>'user','layout'=>'logout')));
 //                $this->redirect(array('users/logout'));
                 return;
             }            
-            if ($app == "user" and $view == "user" AND $layout == "login") {
+            if ($app == "users" and $view == "user" AND $layout == "login") {
                 $this->redirect(Router::buildLink("cpanel"));
 //                $this->redirect(array('/cpanel'));
                 return;
@@ -148,7 +148,7 @@ class BackEndController extends CController {
                 )
             );
             return $return;
-        } else if ($app == "user" and $view == "user" AND $layout == "login") {
+        } else if ($app == "users" and $view == "user" AND $layout == "login") {
 
             return array(
                 array('allow', // allow all users to access 'formlogin' and 'login' actions.
@@ -163,7 +163,7 @@ class BackEndController extends CController {
                 ),
             );
         } else {            
-            $this->redirect(Router::buildLink("user",array("view"=>'user','layout'=>'login')));
+            $this->redirect(Router::buildLink("users",array("view"=>'user','layout'=>'login')));
 //            return array();
         }
     }

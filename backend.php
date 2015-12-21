@@ -31,8 +31,15 @@ if($app != null AND $pagetype == 1){
     setSysConfig("sys.template",$cur_temp); 
     setSysConfig("sys.template.path",ROOT_PATH . "themes/backend/$cur_temp/"); 
     setSysConfig("sys.template.url","/themes/backend/$cur_temp/");
-     
-        $yiiapp->setControllerPath(ROOT_PATH.'protected/apps/backend/'.$app.'/controllers/');           
+    $_path_controller = ROOT_PATH.'protected/apps/backend/'.$app.'/controllers/';
+    if(!is_dir($_path_controller)){ 
+        echo '<script> '
+            . 'document.write("Please contact administrator!!!"); '
+            . 'setTimeout(function(){ document.location.href = "'.WEB_URL.'"; },5000); '
+        . '</script>';
+        die();
+    }
+        $yiiapp->setControllerPath($_path_controller);
         if(is_dir(ROOT_PATH."themes/backend/$cur_temp"))                  
           $yiiapp->setViewPath(ROOT_PATH."themes/backend/$cur_temp");
         else $yiiapp->setViewPath(ROOT_PATH.'protected/apps/backend/'.$app.'/views/');
